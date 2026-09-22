@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Grapes 🍇 King👑LIVE</title>
+    <title>Best Grapes 🍇 King👑LIVE | Official Portal</title>
     <style>
         * {
             margin: 0;
@@ -13,48 +13,50 @@
         }
 
         body {
-            background-color: #120024;
+            background-color: #0d0118;
             color: #ffffff;
             text-align: center;
             padding: 20px;
+            line-height: 1.6;
         }
 
         header {
             background: linear-gradient(135deg, #4a00e0, #8e2de2);
-            padding: 40px 20px;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-            margin-bottom: 30px;
+            padding: 50px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(142, 45, 226, 0.4);
+            margin-bottom: 40px;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 10px;
             color: #fff;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
         }
 
-        p {
+        p.hero-subtitle {
             font-size: 1.2rem;
             color: #e0d0ff;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .subscribe-btn {
             display: inline-block;
-            background-color: #ff0000;
+            background: linear-gradient(45deg, #ff0000, #ff5555);
             color: #ffffff;
-            padding: 15px 30px;
+            padding: 15px 35px;
             font-size: 1.2rem;
             font-weight: bold;
             text-decoration: none;
             border-radius: 30px;
-            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
-            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 5px 20px rgba(255, 0, 0, 0.5);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .subscribe-btn:hover {
-            background-color: #cc0000;
             transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.7);
         }
 
         .container {
@@ -63,14 +65,46 @@
         }
 
         .section-title {
-            font-size: 2rem;
-            margin: 40px 0 20px;
-            border-bottom: 2px solid #8e2de2;
+            font-size: 2.2rem;
+            margin: 50px 0 25px;
+            border-bottom: 3px solid #8e2de2;
             display: inline-block;
-            padding-bottom: 5px;
+            padding-bottom: 8px;
             color: #f1e4ff;
         }
 
+        /* Content & Info Box */
+        .info-box {
+            background: #1f0836;
+            border: 1px solid #3b115a;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: left;
+            margin-top: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+        }
+
+        .info-box h3 {
+            color: #c894ff;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .info-box p, .info-box ul {
+            color: #dcd0ff;
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+        }
+
+        .info-box ul {
+            margin-left: 20px;
+        }
+
+        .info-box ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Video Grid */
         .videos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -80,7 +114,7 @@
 
         .video-card {
             background-color: #1f0836;
-            border-radius: 10px;
+            border-radius: 12px;
             padding: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             border: 1px solid #3b115a;
@@ -117,40 +151,150 @@
             border-radius: 5px;
             font-size: 0.9rem;
             margin-top: 5px;
+            transition: background-color 0.2s;
         }
 
         .watch-btn:hover {
             background-color: #4a00e0;
         }
 
+        /* AI Video Studio Tool Section */
+        .tool-card {
+            background: linear-gradient(135deg, #18002e, #310d52);
+            border: 2px solid #8e2de2;
+            border-radius: 15px;
+            padding: 35px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(142, 45, 226, 0.3);
+        }
+
+        .badge-free {
+            background-color: #00e676;
+            color: #000;
+            font-weight: bold;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .tool-input {
+            width: 100%;
+            max-width: 600px;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: 1px solid #8e2de2;
+            background-color: #0d0118;
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            outline: none;
+        }
+
+        .generate-btn {
+            background: linear-gradient(45deg, #8e2de2, #4a00e0);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .generate-btn:hover {
+            opacity: 0.9;
+            transform: scale(1.03);
+        }
+
+        .notice-text {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #ffab40;
+            font-weight: bold;
+        }
+
+        /* Channels Network Grid */
+        .channel-card {
+            background-color: #1f0836;
+            border: 1px solid #3b115a;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .channel-card h3 {
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .channel-card p {
+            color: #bcaaa4;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
         footer {
-            margin-top: 50px;
-            padding: 20px;
+            margin-top: 60px;
+            padding: 25px;
             color: #888;
             font-size: 0.9rem;
+            border-top: 1px solid #22083d;
         }
     </style>
 </head>
 <body>
 
+    <!-- HERO HEADER -->
     <header>
         <h1>Best Grapes 🍇 King👑LIVE</h1>
-        <p>Watch Purple Grapes All Seasons, Episodes, Live Streams & Shorts!</p>
+        <p class="hero-subtitle">Official Hub for Purple Grapes Series, AI Crafts, Gaming & Grape Farming Guide</p>
         <a href="http://www.youtube.com/channel/UCn7lOE2BXHjHffESxT4-HlQ?sub_confirmation=1" target="_blank" class="subscribe-btn">
             ▶ Subscribe Channel
         </a>
     </header>
 
     <div class="container">
-        
-        <!-- 🔴 LIVE STREAM SECTION -->
-        <h2 class="section-title">🔴 24/7 Live Stream</h2>
-        <div class="videos-grid">
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/live_stream?channel=UCn7lOE2BXHjHffESxT4-HlQ" allowfullscreen></iframe>
-                <h3 class="video-title">Best Grapes King 24/7 LIVE Stream</h3>
-                <a href="http://www.youtube.com/channel/UCn7lOE2BXHjHffESxT4-HlQ/live" target="_blank" class="watch-btn">Watch Live</a>
-            </div>
+
+        <!-- 📖 ABOUT THE CHANNEL -->
+        <h2 class="section-title">📺 About Best Grapes King LIVE</h2>
+        <div class="info-box">
+            <h3>Welcome to the Official Grape Network!</h3>
+            <p><strong>Best Grapes King LIVE</strong> is your ultimate entertainment hub dedicated to bringing you top-quality digital series, entertaining animations, and agricultural insights. Home to the world-famous <em>Purple Grapes Series</em> (Seasons 1, 2 & 3), we offer high-energy shorts, full-length episodes, and live creative showcases.</p>
+            <p>Our mission is to entertain fans globally while educating grape enthusiasts on cultivation techniques, harvest secrets, and digital storytelling.</p>
+        </div>
+
+        <!-- 🍇 GRAPE CULTIVATION GUIDE -->
+        <h2 class="section-title">🍇 Complete Grape Farming Guide</h2>
+        <div class="info-box">
+            <h3>How to Grow Healthy & Sweet Grapes</h3>
+            <p>Growing premium quality purple grapes requires patience, proper soil balance, and regular care. Follow these key steps:</p>
+            <ul>
+                <li><strong>1. Sunlight & Soil Preparation:</strong> Grapevines require full sunlight (6-8 hours daily). Plant them in well-drained, sandy loam soil with a pH level between 6.0 and 6.8.</li>
+                <li><strong>2. Support & Trellising:</strong> Install a sturdy trellis or arbor system. Vines are natural climbers and need physical support to expand efficiently.</li>
+                <li><strong>3. Watering Strategy:</strong> Deeply water young vines once a week. Avoid over-watering as mature vines prefer deeper, less frequent moisture.</li>
+                <li><strong>4. Seasonal Pruning:</strong> Prune dormant vines during late winter. Removing old shoots encourages vibrant new growth and maximizes fruit yields for the upcoming season.</li>
+                <li><strong>5. Harvesting:</strong> Harvest grapes when they turn deep purple and taste sweet. Grapes do not continue ripening once picked from the vine!</li>
+            </ul>
+        </div>
+
+        <!-- 🎬 20-SECOND AI VIDEO MAKER TOOL -->
+        <h2 class="section-title">✨ Free 20-Second AI Video Studio</h2>
+        <div class="tool-card">
+            <span class="badge-free">🎁 Limited Time Offer</span>
+            <h3>Create Free 20-Second Short Videos</h3>
+            <p style="color: #dcd0ff; margin-bottom: 20px;">Input your topic or video concept below to generate a custom 20-second short video preview for your program!</p>
+            
+            <input type="text" placeholder="Enter video topic or script prompt..." class="tool-input"><br>
+            <button class="generate-btn" onclick="alert('Demo Mode: Free trial active! Video rendering system ready.')">Generate 20-Sec Video</button>
+
+            <p class="notice-text">
+                ⏳ Special Offer: This option is FREE to use for 1 MONTH! After 30 days, a premium paid subscription will be required to generate videos.
+            </p>
         </div>
 
         <!-- 🍇 SEASON 3 SECTION -->
@@ -229,40 +373,40 @@
 
         </div>
 
-        <!-- 🍇 SEASON 2 SECTION -->
-        <h2 class="section-title">Purple Grapes Season 2</h2>
+        <!-- 🍇 SEASON 2 & 1 SECTIONS -->
+        <h2 class="section-title">Purple Grapes Previous Seasons</h2>
         <div class="videos-grid">
             <div class="video-card">
                 <iframe src="https://www.youtube.com/embed/sOlfwPgsiiQ" allowfullscreen></iframe>
                 <h3 class="video-title">Purple Grapes 🍇 Season 2 Highlights</h3>
-                <a href="http://www.youtube.com/watch?v=sOlfwPgsiiQ" target="_blank" class="watch-btn">Watch on YouTube</a>
+                <a href="http://www.youtube.com/watch?v=sOlfwPgsiiQ" target="_blank" class="watch-btn">Watch Season 2</a>
             </div>
-        </div>
-
-        <!-- 🍇 SEASON 1 SECTION -->
-        <h2 class="section-title">Purple Grapes Season 1</h2>
-        <div class="videos-grid">
             <div class="video-card">
                 <iframe src="https://www.youtube.com/embed/sOlfwPgsiiQ" allowfullscreen></iframe>
                 <h3 class="video-title">Purple Grapes 🍇 Season 1 Episodes</h3>
-                <a href="http://www.youtube.com/watch?v=sOlfwPgsiiQ" target="_blank" class="watch-btn">Watch on YouTube</a>
+                <a href="http://www.youtube.com/watch?v=sOlfwPgsiiQ" target="_blank" class="watch-btn">Watch Season 1</a>
             </div>
         </div>
 
-        <!-- 📱 SHORTS SECTION -->
-        <h2 class="section-title">⚡ YouTube Shorts</h2>
-        <div class="videos-grid shorts-grid">
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/sOlfwPgsiiQ" allowfullscreen></iframe>
-                <h3 class="video-title">Best Purple Grapes Short</h3>
-                <a href="http://www.youtube.com/watch?v=sOlfwPgsiiQ" target="_blank" class="watch-btn">Watch Short</a>
+        <!-- 🌐 OUR NETWORK CHANNELS -->
+        <h2 class="section-title">🌐 Explore Our Official Channels</h2>
+        <div class="videos-grid">
+            <div class="channel-card">
+                <h3>🎨 Rayan AI Craft</h3>
+                <p>Discover cutting-edge AI arts, prompts, digital creations, and automated video workflows.</p>
+                <a href="#" target="_blank" class="watch-btn">Visit Rayan AI Craft</a>
+            </div>
+            <div class="channel-card">
+                <h3>🎮 The Rayan Games</h3>
+                <p>Action-packed gaming streams, gameplay walk-throughs, highlights, and mobile mini-games.</p>
+                <a href="#" target="_blank" class="watch-btn">Visit The Rayan Games</a>
             </div>
         </div>
 
     </div>
 
     <footer>
-        <p>© 2026 Best Grapes King LIVE. All Rights Reserved.</p>
+        <p>© 2026 Best Grapes King LIVE Network. All Rights Reserved.</p>
     </footer>
 
 </body>
