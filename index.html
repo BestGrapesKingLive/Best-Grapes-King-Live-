@@ -1,357 +1,166 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Grapes 🍇 King 👑 LIVE & AI Tools</title>
-    <!-- Google Search Console Verification Meta Tag -->
+    <title>Best Grapes King Live & Official Channels</title>
+    <!-- Google Verification Meta Tag -->
     <meta name="google-site-verification" content="f8Y0j9sO6L9wG0f-X4X8_Y1Z2a3b4c5d" />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
         body {
-            background-color: #0f0c1b;
+            font-family: Arial, sans-serif;
+            background-color: #0f0a1c;
             color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        header {
-            background: linear-gradient(135deg, #2a0845, #6441a5);
-            padding: 15px;
+            margin: 0;
+            padding: 20px;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #19122b;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border: 1px solid #322352;
         }
         h1 {
-            font-size: 22px;
+            color: #a29bfe;
             margin-bottom: 10px;
         }
-        /* Navigation Links */
-        nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            background: #1a1528;
-            padding: 10px;
-            border-bottom: 2px solid #6441a5;
+        p {
+            color: #ccc;
+            font-size: 14px;
         }
-        nav button {
-            background: #2a2040;
-            color: #fff;
-            border: 1px solid #6441a5;
-            padding: 8px 12px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 13px;
-            transition: 0.3s;
-        }
-        nav button:hover, nav button.active {
-            background: #8e44ad;
-            border-color: #a29bfe;
-        }
-        
-        /* Container Sections */
-        .container {
-            padding: 20px 15px;
-            max-width: 900px;
-            margin: 0 auto;
-            width: 100%;
-            flex: 1;
-        }
-        .section {
-            display: none;
-        }
-        .section.active {
-            display: block;
-        }
-
-        /* Card Styles */
-        .card {
-            background: #1c182e;
-            border-radius: 12px;
+        .channel-card {
+            background: #23193d;
+            border-radius: 10px;
             padding: 15px;
-            margin-bottom: 20px;
-            border: 1px solid #332948;
+            margin: 20px 0;
+            border: 1px solid #4834d4;
+            text-align: left;
+        }
+        .channel-card h3 {
+            margin-top: 0;
+            color: #00d2d3;
         }
         .btn-sub {
             display: inline-block;
             background: #ff0000;
-            color: #fff;
-            padding: 8px 16px;
+            color: white;
+            padding: 10px 18px;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-
-        /* Input & Dropdown Styles */
-        input, textarea, select {
-            width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid #443366;
-            background: #0f0c1b;
-            color: #fff;
-            margin-bottom: 12px;
+            border-radius: 6px;
+            margin-top: 8px;
+            margin-right: 5px;
             font-size: 14px;
         }
-        label {
-            display: block;
-            margin-bottom: 5px;
+        .btn-link {
+            display: inline-block;
+            background: #6c5ce7;
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            margin-top: 8px;
+            margin-right: 5px;
+            font-size: 14px;
+        }
+        .input-box {
+            width: 90%;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 1px solid #4834d4;
+            background: #0f0a1c;
+            color: #fff;
+            font-size: 15px;
+        }
+        .btn {
+            background: #6c5ce7;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 95%;
+        }
+        .btn:hover {
+            background: #a29bfe;
+        }
+        .preview-area {
+            margin-top: 20px;
+            padding: 15px;
+            background: #0f0a1c;
+            border-radius: 8px;
+            display: none;
+        }
+        .footer-credit {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid #322352;
             font-size: 13px;
             color: #a29bfe;
             font-weight: bold;
-        }
-        .action-btn {
-            background: linear-gradient(90deg, #8e44ad, #3498db);
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-weight: bold;
-            width: 100%;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 10px;
-        }
-
-        /* Grid Video & Prompt */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
-        .prompt-box {
-            background: #251f38;
-            padding: 10px;
-            border-radius: 8px;
-            border-left: 4px solid #8e44ad;
-        }
-        .preview-box {
-            margin-top: 15px;
-            text-align: center;
-            background: #000;
-            padding: 15px;
-            border-radius: 8px;
-            display: none;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>🍇 Best Grapes King LIVE Hub 👑</h1>
-    </header>
-
-    <!-- Navigation Menu -->
-    <nav>
-        <button onclick="showSection('main-channel', event)" class="active">Best Grapes King</button>
-        <button onclick="showSection('shorts-channel', event)">Shorts Videos</button>
-        <button onclick="showSection('rayan-ai', event)">Rayan AI Craft</button>
-        <button onclick="showSection('rayan-games', event)">The Rayan Games</button>
-        <button onclick="showSection('prompts-sec', event)">Prompts</button>
-        <button onclick="showSection('image-tool', event)">AI Image Generator</button>
-        <button onclick="showSection('video-tool', event)">AI Video Generator</button>
-    </nav>
-
     <div class="container">
+        <h1>Best Grapes King Live 🍇👑</h1>
+        <p>Input your topic or video concept below to generate a custom 20-second short video preview for your program!</p>
+        
+        <input type="text" id="userPrompt" class="input-box" placeholder="Rayan Ai">
+        
+        <button class="btn" onclick="generateVideoPreview()">Generate Video</button>
 
-        <!-- 1. Best Grapes King Live Main Videos -->
-        <div id="main-channel" class="section active">
-            <h2>🍇 Best Grapes King Live</h2>
-            <p>Welcome to the official video hub!</p>
-            <a href="https://www.youtube.com/@bestgrapeskinglive-k7f2q?sub_confirmation=1" target="_blank" class="btn-sub">🔴 Subscribe Channel</a>
-            <br><br>
-            <h3>Latest Videos & Streams</h3>
-            <div class="grid" style="margin-top: 10px;">
-                <div class="card">
-                    <h4>Purple Grapes Season 3 Live</h4>
-                    <p>Continuous Live Stream & Highlights</p>
-                    <a href="https://www.youtube.com/@bestgrapeskinglive-k7f2q" target="_blank" style="color: #a29bfe;">Watch on YouTube</a>
-                </div>
-            </div>
+        <div id="previewArea" class="preview-area">
+            <p style="color: #00b894; font-weight: bold;">Rendering System Ready!</p>
+            <p style="font-size: 13px; color: #aaa;">Your preview process is active for: <span id="promptText" style="color: #fff;"></span></p>
         </div>
 
-        <!-- 2. Shorts Section -->
-        <div id="shorts-channel" class="section">
-            <h2>⚡ Best Grapes King Shorts</h2>
-            <p>Check out our latest Shorts videos!</p>
-            <div class="grid" style="margin-top: 15px;">
-                <div class="card">
-                    <h4>Purple Grapes Short #1</h4>
-                    <a href="https://www.youtube.com/@bestgrapeskinglive-k7f2q/shorts" target="_blank" style="color: #a29bfe;">Watch Short</a>
-                </div>
-            </div>
+        <!-- 1. The Rayan Games Channel Section -->
+        <div class="channel-card">
+            <h3>🎮 The Rayan Games</h3>
+            <p>Welcome to The Rayan Games official channel section! Watch gaming videos, shorts, and gameplay streams.</p>
+            <a href="https://youtube.com/@therayangames-z2c?sub_confirmation=1" target="_blank" class="btn-sub">🔴 Subscribe Channel</a>
+            <a href="https://youtube.com/@therayangames-z2c/videos" target="_blank" class="btn-link">🎬 Videos</a>
+            <a href="https://youtube.com/@therayangames-z2c/shorts" target="_blank" class="btn-link">⚡ Shorts</a>
         </div>
 
-        <!-- 3. Rayan AI Craft -->
-        <div id="rayan-ai" class="section">
-            <h2>🤖 Rayan AI Craft</h2>
-            <p>AI Creations, Music Prompts & Graphics</p>
-            <a href="https://www.youtube.com/@RayanAICraft?sub_confirmation=1" target="_blank" class="btn-sub">🔴 Subscribe Rayan AI Craft</a>
+        <!-- 2. Rayan AI Craft Channel Section -->
+        <div class="channel-card">
+            <h3>🤖 Rayan AI Craft</h3>
+            <p>Official section for Rayan AI Craft! Explore AI video tutorials, custom prompts, music, and digital creations.</p>
+            <a href="https://youtube.com/@rayanaicraft-v9v-m7v?sub_confirmation=1" target="_blank" class="btn-sub">🔴 Subscribe Channel</a>
+            <a href="https://youtube.com/@rayanaicraft-v9v-m7v/videos" target="_blank" class="btn-link">🎬 Videos</a>
+            <a href="https://youtube.com/@rayanaicraft-v9v-m7v/shorts" target="_blank" class="btn-link">⚡ Shorts</a>
         </div>
 
-        <!-- 4. The Rayan Games -->
-        <div id="rayan-games" class="section">
-            <h2>🎮 The Rayan Games</h2>
-            <p>Gaming Videos, Prototypes & Fun</p>
-            <a href="https://www.youtube.com/@TheRayanGames?sub_confirmation=1" target="_blank" class="btn-sub">🔴 Subscribe The Rayan Games</a>
-        </div>
-
-        <!-- 5. Prompts Directory & Maker -->
-        <div id="prompts-sec" class="section">
-            <h2>📝 AI Prompts Directory</h2>
-            <br>
-            <div class="card">
-                <h3>Create Custom Prompt</h3>
-                <input type="text" id="customPrompt" placeholder="Enter your prompt idea here...">
-                <button class="action-btn" onclick="savePrompt()">Save Prompt</button>
-            </div>
-            <h3>Saved & Ready Prompts</h3>
-            <div id="promptsList" class="grid" style="margin-top: 10px;">
-                <div class="prompt-box">
-                    <strong>3D Animation Prompt:</strong>
-                    <p>Cute animated grape character in a magical forest, 8K render, Pixar style.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 6. AI Image Generator -->
-        <div id="image-tool" class="section">
-            <h2>🎨 AI Image Generator</h2>
-            <p>Enter a prompt below to generate custom images!</p>
-            <br>
-            <label for="imgPrompt">Image Prompt:</label>
-            <textarea id="imgPrompt" rows="3" placeholder="Describe the image you want to create..."></textarea>
-
-            <label for="imgRatio">Select Aspect Ratio (Size):</label>
-            <select id="imgRatio">
-                <option value="16:9">16:9 (YouTube Landscape - 1280x720)</option>
-                <option value="9:16">9:16 (Shorts / TikTok / Reels - 720x1280)</option>
-                <option value="1:1">1:1 (Instagram Square - 1000x1000)</option>
-                <option value="4:3">4:3 (Standard Monitor - 1024x768)</option>
-                <option value="21:9">21:9 (Ultrawide Cinematic)</option>
-                <option value="3:4">3:4 (Vertical Portrait)</option>
-            </select>
-
-            <button class="action-btn" onclick="generateImage()">Generate Image</button>
-
-            <div id="imgPreview" class="preview-box">
-                <p style="color: #2ec4b6;">Image generated successfully!</p>
-                <img id="generatedImg" src="" alt="Generated AI Image" style="max-width: 100%; border-radius: 8px; margin-top: 10px;">
-            </div>
-        </div>
-
-        <!-- 7. AI Video Generator Tool -->
-        <div id="video-tool" class="section">
-            <h2>🎬 AI Video Generator Tool</h2>
-            <p>Generate short video previews with custom voice and size!</p>
-            <br>
-            <label for="vidPrompt">Video Script / Prompt:</label>
-            <textarea id="vidPrompt" rows="3" placeholder="Input your topic or video concept..."></textarea>
-
-            <label for="vidVoice">Select Voice (آواز کا انتخاب کریں):</label>
-            <select id="vidVoice">
-                <option value="ur-M">Urdu / Hindi - Male Voice (مردانہ آواز)</option>
-                <option value="ur-F">Urdu / Hindi - Female Voice (زنانہ آواز)</option>
-                <option value="en-M">English - Male Voice</option>
-                <option value="en-F">English - Female Voice</option>
-                <option value="robo">AI Robotic Voice</option>
-                <option value="news">News Anchor Voice</option>
-            </select>
-
-            <label for="vidRatio">Select Video Size / Ratio:</label>
-            <select id="vidRatio">
-                <option value="16:9">16:9 (YouTube Landscape Video)</option>
-                <option value="9:16">9:16 (YouTube Shorts / Reels)</option>
-                <option value="1:1">1:1 (Square Video)</option>
-                <option value="4:3">4:3 (Classic Video)</option>
-                <option value="21:9">21:9 (Cinematic Widescreen)</option>
-            </select>
-
-            <button class="action-btn" onclick="generateVideo()">Generate Video Preview</button>
-
-            <div id="vidPreview" class="preview-box">
-                <p style="color: #2ec4b6; font-weight: bold;">Video rendering completed!</p>
-                <p id="vidDetails" style="font-size: 12px; color: #aaa; margin-top: 5px;"></p>
-                <div style="background: #222; padding: 40px; border-radius: 8px; margin-top: 10px; border: 1px dashed #6441a5;">
-                    ▶️ [Video Preview Player Ready]
-                </div>
-            </div>
+        <!-- Footer Credit -->
+        <div class="footer-credit">
+            Best Grapes King Live Website Powered By Rayan AI Craft & The Rayan Games
         </div>
 
     </div>
 
     <script>
-        // Tab Switcher
-        function showSection(sectionId, evt) {
-            let sections = document.querySelectorAll('.section');
-            sections.forEach(sec => sec.classList.remove('active'));
-
-            let buttons = document.querySelectorAll('nav button');
-            buttons.forEach(btn => btn.classList.remove('active'));
-
-            document.getElementById(sectionId).classList.add('active');
-            if(evt) evt.currentTarget.classList.add('active');
-        }
-
-        // Save Custom Prompt
-        function savePrompt() {
-            let val = document.getElementById('customPrompt').value;
-            if(val.trim() !== '') {
-                let list = document.getElementById('promptsList');
-                let div = document.createElement('div');
-                div.className = 'prompt-box';
-                div.innerHTML = '<strong>User Prompt:</strong><p>' + val + '</p>';
-                list.appendChild(div);
-                document.getElementById('customPrompt').value = '';
+        function generateVideoPreview() {
+            var input = document.getElementById('userPrompt').value;
+            if (input.trim() === "") {
+                return;
             }
-        }
-
-        // Image Generator
-        function generateImage() {
-            let prompt = document.getElementById('imgPrompt').value;
-            let ratio = document.getElementById('imgRatio').value;
-            if(!prompt) return;
-
-            let imgBox = document.getElementById('imgPreview');
-            let img = document.getElementById('generatedImg');
-
-            let width = 1280;
-            let height = 720;
-
-            if(ratio === '9:16') { width = 720; height = 1280; }
-            else if(ratio === '1:1') { width = 1000; height = 1000; }
-            else if(ratio === '4:3') { width = 1024; height = 768; }
-            else if(ratio === '21:9') { width = 1280; height = 540; }
-            else if(ratio === '3:4') { width = 768; height = 1024; }
-
-            imgBox.style.display = 'block';
-            img.src = 'https://image.pollinations.ai/prompt/' + encodeURIComponent(prompt) + '?width=' + width + '&height=' + height + '&nologo=true';
-        }
-
-        // Video Generator Tool (No Alerts)
-        function generateVideo() {
-            let prompt = document.getElementById('vidPrompt').value;
-            let voiceSelect = document.getElementById('vidVoice');
-            let voiceText = voiceSelect.options[voiceSelect.selectedIndex].text;
-            let ratio = document.getElementById('vidRatio').value;
-
-            if(!prompt) return;
-
-            let vidBox = document.getElementById('vidPreview');
-            let vidDetails = document.getElementById('vidDetails');
-
-            vidDetails.innerHTML = 'Selected Voice: <strong>' + voiceText + '</strong> | Aspect Ratio: <strong>' + ratio + '</strong>';
-            vidBox.style.display = 'block';
+            
+            document.getElementById('promptText').innerText = input;
+            document.getElementById('previewArea').style.display = 'block';
         }
     </script>
+
 </body>
 </html>
-
