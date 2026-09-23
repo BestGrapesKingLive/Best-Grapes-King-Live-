@@ -8,13 +8,13 @@
     <!-- Google Search Console Verification Meta Tag -->
     <meta name="google-site-verification" content="f8Y0j9sO6L9wG0f-X4X8_Y1Z2a3b4c5d" />
 
-    <!-- Web App & Mobile Optimization Settings -->
+    <!-- Web App & Mobile Settings -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#5b11b8">
 
-    <!-- Web App Manifest Integration (Prevents Popup Alert) -->
+    <!-- Embedded PWA Manifest -->
     <link rel="manifest" href="data:application/manifest+json;base64,ewogICJuYW1lIjogIkJlc3QgR3JhcGVzIEtpbmcgTElWRSIsCiAgInNob3J0X25hbWUiOiAiR3JhcGVzS2luZyIsCiAgInN0YXJ0X3VybCI6ICIuIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjMGIwMjE0IiwKICAidGhlbWVfY29sb3IiOiAiIzViMTFiOCIKfQ==">
 
     <style>
@@ -61,20 +61,24 @@
         h1 { font-size: 2rem; margin-bottom: 5px; color: #ffeb3b; }
         p { font-size: 1rem; color: #ddd; }
 
-        /* Auto-hide Install App Button when not ready */
+        /* Permanent Install App Button */
         .btn-install-app {
             background-color: #00e676;
             color: #000;
-            padding: 12px 20px;
-            font-size: 1rem;
+            padding: 14px 20px;
+            font-size: 1.1rem;
             font-weight: bold;
             border: none;
             border-radius: 25px;
-            margin: 10px 0 15px 0;
+            margin: 15px 0;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0, 230, 118, 0.4);
-            display: none; /* Initially hidden to prevent false popups */
+            box-shadow: 0 4px 15px rgba(0, 230, 118, 0.5);
+            display: inline-block;
             width: 90%;
+            transition: 0.2s;
+        }
+        .btn-install-app:active {
+            transform: scale(0.96);
         }
 
         .btn-subscribe {
@@ -192,7 +196,7 @@
     <h1>Best Grapes King 👑 LIVE</h1>
     <p>Official Mobile Web App Portal</p>
     
-    <!-- Install App Button (Shows only when native prompt is ready) -->
+    <!-- Permanent Install App Button -->
     <button class="btn-install-app" id="installBtn" onclick="installApp()">📲 Install App on Phone</button>
 
     <!-- Direct YouTube Channel Link -->
@@ -250,11 +254,10 @@
 <script>
 let deferredPrompt;
 
-// Capture native install prompt automatically without alert box
+// Capture native install prompt automatically
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
-    document.getElementById('installBtn').style.display = 'inline-block';
 });
 
 function installApp() {
@@ -262,8 +265,10 @@ function installApp() {
         deferredPrompt.prompt();
         deferredPrompt.userChoice.then((choiceResult) => {
             deferredPrompt = null;
-            document.getElementById('installBtn').style.display = 'none';
         });
+    } else {
+        // Direct browser shortcut trigger
+        window.location.href = "intent://#Intent;action=action_add_to_homescreen;end";
     }
 }
 </script>
