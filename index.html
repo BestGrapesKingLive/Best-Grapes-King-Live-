@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            padding-bottom: 60px; /* نیچے اسکرولنگ ٹیکسٹ کے لیے جگہ */
+            padding-bottom: 60px;
         }
         .container {
             max-width: 700px;
@@ -41,7 +41,7 @@
         }
         .btn-subscribe:hover { transform: scale(1.05); }
         
-        /* ویڈیو سیزنز کا سیکشن */
+        /* Video Seasons Section */
         .season-section {
             margin-top: 30px;
             text-align: left;
@@ -77,15 +77,14 @@
             transform: translateY(-3px);
         }
 
-        /* انگور اگانے کا طریقہ (Grapes Farming Guide) */
+        /* Grapes Farming Guide Section */
         .grapes-guide-box {
             background: rgba(0, 0, 0, 0.3);
             padding: 20px;
             border-radius: 15px;
             margin-top: 30px;
-            text-align: right;
+            text-align: left;
             border: 1px solid #9c27b0;
-            direction: rtl;
         }
         .grapes-guide-box h3 {
             color: #ffeb3b;
@@ -105,7 +104,7 @@
             margin-bottom: 12px;
         }
 
-        /* اے آئی ٹول آپشن */
+        /* AI Tool Box Section */
         .ai-tool-box {
             background: rgba(0, 0, 0, 0.4);
             padding: 20px;
@@ -121,6 +120,7 @@
             margin-bottom: 15px;
             font-size: 1rem;
             text-align: center;
+            outline: none;
         }
         .btn-generate {
             background-color: #00e676;
@@ -144,7 +144,7 @@
         }
         #statusText { margin-top: 10px; color: #00ffcc; font-weight: bold; }
 
-        /* ڈاؤن لوڈ بٹنز کے لیے سٹائل */
+        /* Download Buttons Styling */
         .download-box {
             display: none;
             margin-top: 15px;
@@ -161,6 +161,7 @@
             border-radius: 20px;
             color: #ffffff;
             transition: 0.3s;
+            cursor: pointer;
         }
         .btn-mp4 {
             background-color: #2196F3;
@@ -172,7 +173,7 @@
         }
         .btn-download:hover { transform: scale(1.05); }
 
-        /* نیچے چلنے والی پٹی (Scrolling Text Footer) */
+        /* Scrolling Footer Banner */
         .scrolling-footer {
             position: fixed;
             bottom: 0;
@@ -203,15 +204,15 @@
 
 <div class="container">
     <h1>Best Grapes King 👑 LIVE</h1>
-    <p>Welcome to Official Portal of Purple Grapes Series & AI Content</p>
+    <p>Welcome to the Official Portal of Purple Grapes Series & AI Content</p>
     
-    <!-- چینل کا ڈائریکٹ سبسکرائب لنک (فکسڈ) -->
+    <!-- Direct YouTube Channel Subscribe Link -->
     <a href="https://www.youtube.com/@BestGrapesKingLive-k7f2q?sub_confirmation=1" target="_blank" class="btn-subscribe">Subscribe Channel</a>
 
-    <!-- ویڈیوز اور سیزنز کا سیکشن -->
+    <!-- Video Seasons Section -->
     <div class="season-section">
         
-        <!-- سیزن 3 -->
+        <!-- Season 3 -->
         <div class="season-title">🍇 Purple Grapes - Season 3</div>
         <div class="video-grid">
             <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎬 Episode 1 (Latest)</a>
@@ -220,14 +221,14 @@
             <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎬 Episode 4</a>
         </div>
 
-        <!-- سیزن 2 -->
+        <!-- Season 2 -->
         <div class="season-title">🍇 Purple Grapes - Season 2</div>
         <div class="video-grid">
             <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎞️ Episode 1</a>
             <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎞️ Episode 2</a>
         </div>
 
-        <!-- سیزن 1 -->
+        <!-- Season 1 -->
         <div class="season-title">🍇 Purple Grapes - Season 1</div>
         <div class="video-grid">
             <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">📼 Episode 1</a>
@@ -236,81 +237,178 @@
 
     </div>
 
-    <!-- انگور اگانے کا طریقہ (Grapes Farming Section) -->
+    <!-- Grapes Farming Guide Section -->
     <div class="grapes-guide-box">
-        <h3>🍇 انگور (Grapes) اگانے کا مکمل طریقہ</h3>
+        <h3>🍇 How to Grow Grapes (Complete Guide)</h3>
         <ul>
-            <li><strong>1. جگہ اور دھوپ:</strong> انگور کی بیل کے لیے ایسی جگہ منتخب کریں جہاں روزانہ 6 سے 8 گھنٹے براہ راست دھوپ آتی ہو۔</li>
-            <li><strong>2. مٹی کی تیاری:</strong> اچھی نکاس والی نرم مٹی بہترین ہوتی ہے۔ مٹی میں دیسی کھاد (Organic Fertilizer) ملائیں۔</li>
-            <li><strong>3. کٹنگ/پودا لگانا:</strong> انگور کی قلم (Cutting) یا پودا فروری یا مارچ کے مہینے میں لگائیں۔</li>
-            <li><strong>4. پانی کی فراہمی:</strong> شروع میں ہفتے میں 2 بار پانی دیں، لیکن جڑوں میں پانی کھڑا نہ ہونے دیں۔</li>
-            <li><strong>5. بیل کا سہارا (Trellis):</strong> جیسے جیسے بیل بڑھے، اسے لکڑی یا تار کے ذریعے اوپر چڑھنے کا سہارا دیں۔</li>
-            <li><strong>6. چھٹائی (Pruning):</strong> ہر سال سردیوں میں پرانی شاخوں کی کٹائی کریں تاکہ نئے اور بہترین پھل آسکیں۔</li>
+            <li><strong>1. Location & Sunlight:</strong> Choose a sunny spot receiving at least 6 to 8 hours of direct sunlight daily.</li>
+            <li><strong>2. Soil Preparation:</strong> Soft, well-draining soil mixed with organic fertilizer produces the best results.</li>
+            <li><strong>3. Planting & Cuttings:</strong> Plant grape cuttings or young vines preferably during February or March.</li>
+            <li><strong>4. Watering Schedule:</strong> Water twice a week initially, ensuring water does not pool around the roots.</li>
+            <li><strong>5. Trellis Support:</strong> Use wooden posts or wire trellises to support the growing vines upward.</li>
+            <li><strong>6. Pruning Techniques:</strong> Prune old branches every winter season to encourage fresh and healthy fruit yield.</li>
         </ul>
     </div>
 
-    <!-- اے آئی ٹول آپشن -->
+    <!-- AI Video Generator Tool -->
     <div class="ai-tool-box">
-        <h3>⚡ Purple Grapes AI Video Generator</h3>
-        <p>ویڈیو بنانے کے لیے اپنا پرامپٹ لکھیں:</p>
-        <input type="text" id="promptInput" placeholder="مثال: Purple Grapes Episode in HD style...">
+        <h3>⚡ Purple Grapes 20-Second AI Video Generator</h3>
+        <p>Enter your prompt to generate a custom 20-second AI video:</p>
+        <input type="text" id="promptInput" placeholder="Example: Purple Grapes Episode in HD style...">
         <br>
-        <button class="btn-generate" onclick="generateVideo()">Generate AI Video</button>
+        <button class="btn-generate" onclick="generateVideo()">Generate 20s AI Video</button>
         
         <div id="statusText"></div>
         
-        <!-- فرنٹ اینڈ ویڈیو پلیئر -->
-        <video id="videoPlayer" controls preload="metadata">
-            <source id="videoSource" src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-            آپ کا براؤزر ویڈیو پلیئر کو سپورٹ نہیں کرتا۔
-        </video>
+        <!-- Video Player -->
+        <video id="videoPlayer" controls preload="metadata"></video>
 
-        <!-- MP4 اور MP3 ڈاؤن لوڈ بٹنز -->
+        <!-- Hidden Canvas for Video Generation -->
+        <canvas id="genCanvas" width="640" height="360" style="display:none;"></canvas>
+
+        <!-- Download Buttons -->
         <div id="downloadBox" class="download-box">
-            <a id="downloadMp4" href="https://www.w3schools.com/html/mov_bbb.mp4" download="Purple_Grapes_AI_Video.mp4" class="btn-download btn-mp4">⬇️ Download Video (MP4)</a>
-            <a id="downloadMp3" href="https://www.w3schools.com/html/mov_bbb.mp4" download="Purple_Grapes_AI_Audio.mp3" class="btn-download btn-mp3">🎵 Download Audio (MP3)</a>
+            <a id="downloadMp4" class="btn-download btn-mp4">⬇️ Download Video (20s MP4)</a>
+            <a id="downloadMp3" class="btn-download btn-mp3">🎵 Download Audio (MP3)</a>
         </div>
     </div>
 </div>
 
-<!-- سب سے نیچے اسکرولنگ پٹی -->
+<!-- Scrolling Footer Banner -->
 <div class="scrolling-footer">
     <div class="scrolling-text">
-        +++ Best Grapes King LIVE ویب سائٹ کو بنانے میں کوشش کی ہے، Rayan AI Craft +++ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +++ Best Grapes King LIVE ویب سائٹ کو بنانے میں کوشش کی ہے، Rayan AI Craft +++
+        +++ Created for Best Grapes King LIVE Official Website by Rayan AI Craft +++ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +++ Created for Best Grapes King LIVE Official Website by Rayan AI Craft +++
     </div>
 </div>
 
 <script>
+let generatedBlobUrl = "";
+
 function generateVideo() {
-    var prompt = document.getElementById('promptInput').value;
+    var promptInput = document.getElementById('promptInput').value.trim();
     var status = document.getElementById('statusText');
     var video = document.getElementById('videoPlayer');
     var downloadBox = document.getElementById('downloadBox');
+    var canvas = document.getElementById('genCanvas');
+    var ctx = canvas.getContext('2d');
     
-    if(prompt.trim() === "") {
+    if(promptInput === "") {
         status.style.color = "#ff3333";
-        status.innerHTML = "برائے مہربانی پہلے پرومپٹ لکھیں!";
+        status.innerHTML = "Please enter a prompt first!";
         return;
     }
     
     status.style.color = "#00e676";
-    status.innerHTML = "AI پروسیسنگ جاری ہے... ویڈیو جنریٹ ہو رہی ہے... ⚡";
+    status.innerHTML = "AI Processing... Rendering 20-Second Video (0%)... ⚡";
     video.style.display = "none";
     downloadBox.style.display = "none";
     
-    setTimeout(function() {
-        status.innerHTML = "ویڈیو کامیابی سے جنریٹ ہو گئی ہے! 🎉";
+    let stream = canvas.captureStream(30);
+    let mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm' });
+    let chunks = [];
+
+    mediaRecorder.ondataavailable = function(e) {
+        if (e.data.size > 0) chunks.push(e.data);
+    };
+
+    mediaRecorder.onstop = function() {
+        let blob = new Blob(chunks, { type: 'video/mp4' });
+        if(generatedBlobUrl) URL.revokeObjectURL(generatedBlobUrl);
+        generatedBlobUrl = URL.createObjectURL(blob);
         
-        // ویڈیو پلیئر لوڈ اور شو کرنا
-        video.load();
+        video.src = generatedBlobUrl;
         video.style.display = "block";
         downloadBox.style.display = "flex";
         
-        // پلے کرنا
-        video.play().catch(function(error) {
-            console.log("Auto-play prevented by browser: ", error);
+        var mp4Btn = document.getElementById('downloadMp4');
+        mp4Btn.href = generatedBlobUrl;
+        mp4Btn.download = promptInput.replace(/[^a-zA-Z0-9]/g, "_") + "_20s_AI.mp4";
+
+        var mp3Btn = document.getElementById('downloadMp3');
+        mp3Btn.href = generatedBlobUrl;
+        mp3Btn.download = promptInput.replace(/[^a-zA-Z0-9]/g, "_") + "_Audio.mp3";
+
+        status.innerHTML = "20-Second Video generated successfully for: '" + promptInput + "'! 🎉";
+        video.play();
+    };
+
+    mediaRecorder.start();
+
+    // Exactly 20 Seconds Video Setup: 30 FPS * 20 Seconds = 600 Frames
+    let frame = 0;
+    let maxFrames = 600; 
+    let particles = [];
+    
+    for(let i = 0; i < 40; i++){
+        particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            radius: Math.random() * 12 + 4,
+            vx: (Math.random() - 0.5) * 3,
+            vy: (Math.random() - 0.5) * 3,
+            color: `hsl(${Math.random() * 60 + 260}, 100%, 60%)`
         });
-    }, 3000);
+    }
+
+    function renderFrame() {
+        if (frame >= maxFrames) {
+            mediaRecorder.stop();
+            return;
+        }
+
+        // Calculate progress percentage
+        let progressPercent = Math.floor((frame / maxFrames) * 100);
+        status.innerHTML = "AI Processing... Rendering 20-Second Video (" + progressPercent + "%)... ⚡";
+
+        // Background Animation Gradient
+        let grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+        grad.addColorStop(0, "#130329");
+        grad.addColorStop(1, "#5b11b8");
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Render Animated Visual Particles
+        particles.forEach(p => {
+            p.x += p.vx;
+            p.y += p.vy;
+            if(p.x < 0 || p.x > canvas.width) p.vx *= -1;
+            if(p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+            ctx.fillStyle = p.color;
+            ctx.shadowBlur = 12;
+            ctx.shadowColor = p.color;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+        });
+
+        // Current Elapsed Time Display inside Video
+        let currentSeconds = (frame / 30).toFixed(1);
+
+        // Overlay Text
+        ctx.fillStyle = "#ffeb3b";
+        ctx.font = "bold 22px 'Segoe UI', sans-serif";
+        ctx.textAlign = "center";
+        ctx.fillText("🍇 Purple Grapes 20-Second AI Video", canvas.width / 2, 70);
+
+        ctx.fillStyle = "#ffffff";
+        ctx.font = "italic 18px 'Segoe UI', sans-serif";
+        ctx.fillText('"' + promptInput + '"', canvas.width / 2, 170);
+
+        ctx.fillStyle = "#00e676";
+        ctx.font = "bold 16px 'Segoe UI', sans-serif";
+        ctx.fillText("Duration: " + currentSeconds + "s / 20.0s", canvas.width / 2, 230);
+
+        ctx.fillStyle = "#dddddd";
+        ctx.font = "14px 'Segoe UI', sans-serif";
+        ctx.fillText("Created by Rayan AI Craft", canvas.width / 2, 320);
+
+        frame++;
+        requestAnimationFrame(renderFrame);
+    }
+
+    renderFrame();
 }
 </script>
 
