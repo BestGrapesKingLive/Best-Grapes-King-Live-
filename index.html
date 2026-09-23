@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -7,15 +7,6 @@
     
     <!-- Google Search Console Verification Meta Tag -->
     <meta name="google-site-verification" content="f8Y0j9sO6L9wG0f-X4X8_Y1Z2a3b4c5d" />
-
-    <!-- Web App & Mobile Settings -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="theme-color" content="#5b11b8">
-
-    <!-- Embedded PWA Manifest -->
-    <link rel="manifest" href="data:application/manifest+json;base64,ewogICJuYW1lIjogIkJlc3QgR3JhcGVzIEtpbmcgTElWRSIsCiAgInNob3J0X25hbWUiOiAiR3JhcGVzS2luZyIsCiAgInN0YXJ0X3VybCI6ICIuIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjMGIwMjE0IiwKICAidGhlbWVfY29sb3IiOiAiIzViMTFiOCIKfQ==">
 
     <style>
         * {
@@ -25,15 +16,13 @@
         body {
             background-color: #0b0214;
             color: #ffffff;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
             padding-bottom: 70px;
-            user-select: none;
         }
         
-        /* App Header Bar */
         .app-header {
             background: #5b11b8;
             padding: 15px;
@@ -48,7 +37,6 @@
             justify-content: space-between;
             align-items: center;
         }
-        .app-header span { font-size: 1rem; color: #fff; }
 
         .container {
             max-width: 600px;
@@ -59,27 +47,6 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.6);
         }
         h1 { font-size: 2rem; margin-bottom: 5px; color: #ffeb3b; }
-        p { font-size: 1rem; color: #ddd; }
-
-        /* Permanent Install App Button */
-        .btn-install-app {
-            background-color: #00e676;
-            color: #000;
-            padding: 14px 20px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border: none;
-            border-radius: 25px;
-            margin: 15px 0;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 230, 118, 0.5);
-            display: inline-block;
-            width: 90%;
-            transition: 0.2s;
-        }
-        .btn-install-app:active {
-            transform: scale(0.96);
-        }
 
         .btn-subscribe {
             display: block;
@@ -95,11 +62,7 @@
             width: 90%;
         }
         
-        /* Video Seasons Section */
-        .season-section {
-            margin-top: 25px;
-            text-align: left;
-        }
+        .season-section { margin-top: 25px; text-align: left; }
         .season-title {
             color: #ffeb3b;
             border-bottom: 2px solid #9c27b0;
@@ -123,41 +86,8 @@
             display: block;
             border: 1px solid rgba(255,255,255,0.1);
             text-align: center;
-            font-size: 0.95rem;
-        }
-        .video-card:active {
-            background: rgba(255, 255, 255, 0.25);
-            transform: scale(0.98);
         }
 
-        /* Grapes Farming Guide Section */
-        .grapes-guide-box {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 15px;
-            border-radius: 12px;
-            margin-top: 25px;
-            text-align: left;
-            border: 1px solid #9c27b0;
-        }
-        .grapes-guide-box h3 {
-            color: #ffeb3b;
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            border-bottom: 1px solid #9c27b0;
-            padding-bottom: 5px;
-        }
-        .grapes-guide-box ul {
-            list-style-type: none;
-            padding: 0;
-            line-height: 1.6;
-            font-size: 0.95rem;
-            color: #eeeeee;
-        }
-        .grapes-guide-box li {
-            margin-bottom: 10px;
-        }
-
-        /* Scrolling Footer Banner */
         .scrolling-footer {
             position: fixed;
             bottom: 0;
@@ -167,11 +97,8 @@
             color: #000000;
             white-space: nowrap;
             overflow: hidden;
-            box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
-            z-index: 9999;
             padding: 8px 0;
             font-weight: bold;
-            font-size: 1rem;
         }
         .scrolling-text {
             display: inline-block;
@@ -186,7 +113,6 @@
 </head>
 <body>
 
-<!-- App Header -->
 <div class="app-header">
     <span>📱 Official Web App</span>
     <span>Best Grapes King LIVE</span>
@@ -194,84 +120,24 @@
 
 <div class="container">
     <h1>Best Grapes King 👑 LIVE</h1>
-    <p>Official Mobile Web App Portal</p>
-    
-    <!-- Permanent Install App Button -->
-    <button class="btn-install-app" id="installBtn" onclick="installApp()">📲 Install App on Phone</button>
+    <p>Official Channel Portal</p>
 
-    <!-- Direct YouTube Channel Link -->
     <a href="https://www.youtube.com/@BestGrapesKingLive-k7f2q?sub_confirmation=1" target="_blank" class="btn-subscribe">▶️ Subscribe Official Channel</a>
 
-    <!-- Video Seasons Section -->
     <div class="season-section">
-        
-        <!-- Season 3 -->
         <div class="season-title">🍇 Purple Grapes - Season 3</div>
         <div class="video-grid">
-            <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎬 Episode 1 (Latest)</a>
+            <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎬 Episode 1</a>
             <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎬 Episode 2</a>
-            <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎬 Episode 3</a>
-            <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎬 Episode 4</a>
         </div>
-
-        <!-- Season 2 -->
-        <div class="season-title">🍇 Purple Grapes - Season 2</div>
-        <div class="video-grid">
-            <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎞️ Episode 1</a>
-            <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎞️ Episode 2</a>
-        </div>
-
-        <!-- Season 1 -->
-        <div class="season-title">🍇 Purple Grapes - Season 1</div>
-        <div class="video-grid">
-            <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">📼 Episode 1</a>
-            <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">📼 Episode 2</a>
-        </div>
-
-    </div>
-
-    <!-- Grapes Farming Guide Section -->
-    <div class="grapes-guide-box">
-        <h3>🍇 How to Grow Grapes (Complete Guide)</h3>
-        <ul>
-            <li><strong>1. Location & Sunlight:</strong> Choose a sunny spot receiving 6-8 hours of direct sunlight.</li>
-            <li><strong>2. Soil Preparation:</strong> Well-draining soil mixed with organic fertilizer works best.</li>
-            <li><strong>3. Planting & Cuttings:</strong> Plant grape cuttings during February or March.</li>
-            <li><strong>4. Watering Schedule:</strong> Water twice a week initially, keeping roots moist.</li>
-            <li><strong>5. Trellis Support:</strong> Use wooden posts or wire trellises for vine support.</li>
-            <li><strong>6. Pruning Techniques:</strong> Prune old branches in winter for better fruit yield.</li>
-        </ul>
     </div>
 </div>
 
-<!-- Scrolling Footer Banner -->
 <div class="scrolling-footer">
     <div class="scrolling-text">
-        +++ Created for Best Grapes King LIVE Official Website by Rayan AI Craft +++ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +++ Created for Best Grapes King LIVE Official Website by Rayan AI Craft +++
+        +++ Created for Best Grapes King LIVE Official Website by Rayan AI Craft +++
     </div>
 </div>
-
-<script>
-let deferredPrompt;
-
-// Capture native install prompt automatically
-window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-});
-
-function installApp() {
-    if (deferredPrompt) {
-        deferredPrompt.prompt();
-        deferredPrompt.userChoice.then((choiceResult) => {
-            deferredPrompt = null;
-        });
-    } else {
-        // Direct browser shortcut trigger
-        window.location.href = "intent://#Intent;action=action_add_to_homescreen;end";
-    }
-}
-</script>
 
 </body>
 </html>
