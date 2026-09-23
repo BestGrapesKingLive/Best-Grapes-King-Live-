@@ -3,99 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Grapes 🍇 King👑LIVE | Official Portal</title>
-    <!-- Google Search Console Verification Meta Tag -->
+    <title>Best Grapes 🍇 King👑LIVE | Official App Portal</title>
+    <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="f8Y0j9sO6L9wG0f-X4X8_Y1Z2a3b4c5d" />
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: #0d0118;
+            background-color: #0b0114;
             color: #ffffff;
             text-align: center;
-            padding: 20px;
+            padding: 15px;
             line-height: 1.6;
         }
 
+        /* APP HEADER DESIGN */
         header {
             background: linear-gradient(135deg, #4a00e0, #8e2de2);
-            padding: 50px 20px;
+            padding: 40px 20px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(142, 45, 226, 0.4);
-            margin-bottom: 40px;
+            box-shadow: 0 10px 25px rgba(142, 45, 226, 0.4);
+            margin-bottom: 30px;
         }
 
         h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            color: #fff;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+            color: #ffffff;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
         }
 
         p.hero-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #e0d0ff;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .subscribe-btn {
             display: inline-block;
             background: linear-gradient(45deg, #ff0000, #ff5555);
             color: #ffffff;
-            padding: 15px 35px;
-            font-size: 1.2rem;
+            padding: 12px 30px;
+            font-size: 1.1rem;
             font-weight: bold;
             text-decoration: none;
             border-radius: 30px;
-            box-shadow: 0 5px 20px rgba(255, 0, 0, 0.5);
-            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.5);
+            transition: transform 0.2s;
         }
 
         .subscribe-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.7);
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         .section-title {
-            font-size: 2.2rem;
-            margin: 50px 0 25px;
+            font-size: 2rem;
+            margin: 40px 0 20px;
             border-bottom: 3px solid #8e2de2;
             display: inline-block;
-            padding-bottom: 8px;
+            padding-bottom: 6px;
             color: #f1e4ff;
         }
 
-        /* Content & Info Box */
+        /* ABOUT & FARMING INFO BOXES */
         .info-box {
-            background: #1f0836;
+            background: #18052b;
             border: 1px solid #3b115a;
             border-radius: 15px;
-            padding: 30px;
+            padding: 25px;
             text-align: left;
-            margin-top: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         .info-box h3 {
             color: #c894ff;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
         }
 
         .info-box p, .info-box ul {
             color: #dcd0ff;
-            font-size: 1.05rem;
-            margin-bottom: 15px;
+            font-size: 1rem;
+            margin-bottom: 12px;
         }
 
         .info-box ul {
@@ -103,74 +103,24 @@
         }
 
         .info-box ul li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
-        /* Video Grid */
-        .videos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .video-card {
-            background-color: #1f0836;
-            border-radius: 12px;
-            padding: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            border: 1px solid #3b115a;
-            transition: transform 0.2s;
-        }
-
-        .video-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .video-card iframe {
-            width: 100%;
-            height: 180px;
-            border-radius: 8px;
-            border: none;
-        }
-
-        .video-title {
-            font-size: 1rem;
-            margin: 10px 0;
-            color: #ffffff;
-        }
-
-        .watch-btn {
-            display: inline-block;
-            background-color: #8e2de2;
-            color: #fff;
-            padding: 8px 15px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            margin-top: 5px;
-            transition: background-color 0.2s;
-        }
-
-        .watch-btn:hover {
-            background-color: #4a00e0;
-        }
-
-        /* AI Video Studio Tool Section */
-        .tool-card {
-            background: linear-gradient(135deg, #18002e, #310d52);
+        /* REAL VIDEO GENERATOR APP CARD */
+        .app-tool-card {
+            background: linear-gradient(135deg, #140027, #2b0a48);
             border: 2px solid #8e2de2;
-            border-radius: 15px;
-            padding: 35px;
-            margin-top: 30px;
-            box-shadow: 0 10px 30px rgba(142, 45, 226, 0.3);
+            border-radius: 18px;
+            padding: 30px;
+            margin-top: 25px;
+            box-shadow: 0 8px 25px rgba(142, 45, 226, 0.35);
         }
 
-        .badge-free {
+        .badge-app {
             background-color: #00e676;
             color: #000;
             font-weight: bold;
-            padding: 5px 15px;
+            padding: 6px 16px;
             border-radius: 20px;
             font-size: 0.85rem;
             display: inline-block;
@@ -178,24 +128,25 @@
             text-transform: uppercase;
         }
 
-        .tool-input {
+        .app-input {
             width: 100%;
-            max-width: 600px;
-            padding: 12px 20px;
+            max-width: 550px;
+            padding: 12px 18px;
             border-radius: 25px;
             border: 1px solid #8e2de2;
-            background-color: #0d0118;
+            background-color: #0b0114;
             color: #fff;
             font-size: 1rem;
             margin-bottom: 15px;
             outline: none;
+            text-align: center;
         }
 
-        .generate-btn {
+        .app-btn {
             background: linear-gradient(45deg, #8e2de2, #4a00e0);
             color: white;
             border: none;
-            padding: 12px 30px;
+            padding: 12px 28px;
             font-size: 1rem;
             font-weight: bold;
             border-radius: 25px;
@@ -203,7 +154,7 @@
             transition: 0.3s;
         }
 
-        .generate-btn:hover {
+        .app-btn:hover {
             opacity: 0.9;
             transform: scale(1.03);
         }
@@ -211,8 +162,8 @@
         .preview-area {
             margin-top: 20px;
             padding: 15px;
-            background: #0d0118;
-            border-radius: 10px;
+            background: #0b0114;
+            border-radius: 12px;
             border: 1px dashed #8e2de2;
             display: none;
         }
@@ -221,52 +172,97 @@
             max-width: 100%;
             border-radius: 10px;
             margin-top: 10px;
-            box-shadow: 0 0 15px rgba(142, 45, 226, 0.5);
+            box-shadow: 0 0 12px rgba(142, 45, 226, 0.5);
         }
 
-        .notice-text {
-            margin-top: 15px;
-            font-size: 0.9rem;
-            color: #ffab40;
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #00e676, #00b0ff);
+            color: #000;
+            padding: 10px 22px;
             font-weight: bold;
+            text-decoration: none;
+            border-radius: 20px;
+            margin-top: 15px;
+            cursor: pointer;
         }
 
-        /* Channels Network Grid */
+        /* VIDEO GRID */
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .video-card {
+            background-color: #18052b;
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border: 1px solid #3b115a;
+        }
+
+        .video-card iframe {
+            width: 100%;
+            height: 170px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        .video-title {
+            font-size: 0.95rem;
+            margin: 8px 0;
+            color: #ffffff;
+        }
+
+        .watch-btn {
+            display: inline-block;
+            background-color: #8e2de2;
+            color: #fff;
+            padding: 7px 14px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            margin-top: 4px;
+        }
+
+        /* NETWORK CHANNELS GRID */
         .channel-card {
-            background-color: #1f0836;
+            background-color: #18052b;
             border: 1px solid #3b115a;
             border-radius: 12px;
-            padding: 25px;
+            padding: 20px;
             text-align: center;
         }
 
         .channel-card h3 {
             color: #ffffff;
-            margin-bottom: 10px;
-            font-size: 1.3rem;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
         }
 
         .channel-card p {
             color: #bcaaa4;
-            font-size: 0.95rem;
-            margin-bottom: 15px;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
         }
 
         footer {
-            margin-top: 60px;
-            padding: 25px;
+            margin-top: 50px;
+            padding: 20px;
             color: #888;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             border-top: 1px solid #22083d;
         }
     </style>
 </head>
 <body>
 
-    <!-- HERO HEADER -->
+    <!-- APP HERO HEADER -->
     <header>
         <h1>Best Grapes 🍇 King👑LIVE</h1>
-        <p class="hero-subtitle">Official Hub for Purple Grapes Series, AI Crafts, Gaming & Grape Farming Guide</p>
+        <p class="hero-subtitle">Official Portal for Purple Grapes Series, AI Crafts & Grape Farming Guide</p>
         <a href="http://www.youtube.com/channel/UCn7lOE2BXHjHffESxT4-HlQ?sub_confirmation=1" target="_blank" class="subscribe-btn">
             ▶ Subscribe Channel
         </a>
@@ -274,51 +270,48 @@
 
     <div class="container">
 
-        <!-- 📖 ABOUT THE CHANNEL -->
+        <!-- ABOUT THE CHANNEL -->
         <h2 class="section-title">📺 About Best Grapes King LIVE</h2>
         <div class="info-box">
             <h3>Welcome to the Official Grape Network!</h3>
-            <p><strong>Best Grapes King LIVE</strong> is your ultimate entertainment hub dedicated to bringing you top-quality digital series, entertaining animations, and agricultural insights. Home to the world-famous <em>Purple Grapes Series</em> (Seasons 1, 2 & 3), we offer high-energy shorts, full-length episodes, and live creative showcases.</p>
-            <p>Our mission is to entertain fans globally while educating grape enthusiasts on cultivation techniques, harvest secrets, and digital storytelling.</p>
+            <p><strong>Best Grapes King LIVE</strong> is your premier digital video hub dedicated to entertaining animations, creative series, and agricultural guides. Home to the famous <em>Purple Grapes Series</em> (Seasons 1, 2 & 3), we offer high-energy shorts, full-length episodes, and AI showcases.</p>
+            <p>Our channel aims to entertain viewers worldwide while sharing insights into grape farming and content creation.</p>
         </div>
 
-        <!-- 🍇 GRAPE CULTIVATION GUIDE -->
+        <!-- GRAPE CULTIVATION GUIDE -->
         <h2 class="section-title">🍇 Complete Grape Farming Guide</h2>
         <div class="info-box">
             <h3>How to Grow Healthy & Sweet Grapes</h3>
-            <p>Growing premium quality purple grapes requires patience, proper soil balance, and regular care. Follow these key steps:</p>
+            <p>Growing high-quality purple grapes requires careful soil balance and consistent attention. Here are essential tips:</p>
             <ul>
-                <li><strong>1. Sunlight & Soil Preparation:</strong> Grapevines require full sunlight (6-8 hours daily). Plant them in well-drained, sandy loam soil with a pH level between 6.0 and 6.8.</li>
-                <li><strong>2. Support & Trellising:</strong> Install a sturdy trellis or arbor system. Vines are natural climbers and need physical support to expand efficiently.</li>
-                <li><strong>3. Watering Strategy:</strong> Deeply water young vines once a week. Avoid over-watering as mature vines prefer deeper, less frequent moisture.</li>
-                <li><strong>4. Seasonal Pruning:</strong> Prune dormant vines during late winter. Removing old shoots encourages vibrant new growth and maximizes fruit yields for the upcoming season.</li>
-                <li><strong>5. Harvesting:</strong> Harvest grapes when they turn deep purple and taste sweet. Grapes do not continue ripening once picked from the vine!</li>
+                <li><strong>1. Sunlight & Soil:</strong> Grapevines need 6 to 8 hours of direct sunlight daily in well-drained soil.</li>
+                <li><strong>2. Support System:</strong> Use strong trellises or arbors as vines need physical support to spread properly.</li>
+                <li><strong>3. Watering Strategy:</strong> Deeply water young vines once a week. Avoid over-watering mature plants.</li>
+                <li><strong>4. Pruning:</strong> Prune dormant vines during late winter to encourage strong new growth and high yields.</li>
+                <li><strong>5. Harvesting:</strong> Pick grapes when they turn full deep purple and taste sweet. They stop ripening after picking!</li>
             </ul>
         </div>
 
-        <!-- 🎬 20-SECOND REAL WORKING ANIMATED VIDEO GENERATOR -->
-        <h2 class="section-title">✨ Free 20-Second Animated Video Studio</h2>
-        <div class="tool-card">
-            <span class="badge-free">🎁 100% Working Tool</span>
-            <h3>Create Real Animated Title Video</h3>
-            <p style="color: #dcd0ff; margin-bottom: 20px;">Enter your text or title below to generate a live animated video clip!</p>
+        <!-- REAL WORKING VIDEO GENERATOR APP -->
+        <h2 class="section-title">🎬 Real AI Video Generator App Engine</h2>
+        <div class="app-tool-card">
+            <span class="badge-app">⚡ Real Working Video Engine</span>
+            <h3>Generate & Export Video Clip</h3>
+            <p style="color: #dcd0ff; margin-bottom: 15px;">Enter your video topic or prompt below to render and download a custom video clip directly in your browser!</p>
             
-            <input type="text" id="videoPrompt" placeholder="Enter video topic or title text..." class="tool-input"><br>
-            <button class="generate-btn" onclick="startRealVideoGeneration()">🎬 Generate Video Now</button>
+            <input type="text" id="videoPrompt" placeholder="Enter video topic or title prompt..." class="app-input"><br>
+            <button class="app-btn" onclick="runVideoGeneratorApp()">🎬 Generate & Render Video</button>
 
-            <!-- Working Video Canvas Display -->
+            <!-- Video Rendering Output -->
             <div id="statusPreview" class="preview-area">
-                <p style="color: #00e676; font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">✅ Video Generated Successfully!</p>
-                <canvas id="videoCanvas" width="480" height="270"></canvas>
+                <p id="renderingStatus" style="color: #ffab40; font-weight: bold; font-size: 1rem; margin-bottom: 8px;">⏳ Rendering Video Frames (0%)...</p>
+                <canvas id="videoCanvas" width="640" height="360"></canvas><br>
+                <a id="downloadLink" class="download-btn" style="display:none;">📥 Download Generated Video Clip</a>
             </div>
-
-            <p class="notice-text">
-                ⏳ Free Edition: Generates custom animated motion clips instantly in your browser.
-            </p>
         </div>
 
-        <!-- 🍇 SEASON 3 SECTION -->
-        <h2 class="section-title">Purple Grapes Season 3 (Episodes 1 to 10)</h2>
+        <!-- PURPLE GRAPES SEASON 3 (Episodes 1 to 10) -->
+        <h2 class="section-title">🍇 Purple Grapes Season 3 (Episodes 1 - 10)</h2>
         <div class="videos-grid">
             
             <div class="video-card">
@@ -383,8 +376,8 @@
 
         </div>
 
-        <!-- 🍇 SEASON 2 & 1 SECTIONS -->
-        <h2 class="section-title">Purple Grapes Previous Seasons</h2>
+        <!-- PREVIOUS SEASONS -->
+        <h2 class="section-title">📺 Purple Grapes Previous Seasons</h2>
         <div class="videos-grid">
             <div class="video-card">
                 <iframe src="https://www.youtube.com/embed/sOlfwPgsiiQ" allowfullscreen></iframe>
@@ -398,18 +391,18 @@
             </div>
         </div>
 
-        <!-- 🌐 OUR NETWORK CHANNELS -->
+        <!-- NETWORK CHANNELS -->
         <h2 class="section-title">🌐 Explore Our Official Channels</h2>
         <div class="videos-grid">
             <div class="channel-card">
                 <h3>🎨 Rayan AI Craft</h3>
-                <p>Discover cutting-edge AI arts, prompts, digital creations, and automated video workflows.</p>
-                <a href="#" target="_blank" class="watch-btn">Visit Rayan AI Craft</a>
+                <p>AI art tutorials, prompts, digital creations, and animated video tools.</p>
+                <a href="https://www.youtube.com/@bestgrapeskinglive-k7f2q" target="_blank" class="watch-btn">Visit Rayan AI Craft</a>
             </div>
             <div class="channel-card">
                 <h3>🎮 The Rayan Games</h3>
-                <p>Action-packed gaming streams, gameplay walk-throughs, highlights, and mobile mini-games.</p>
-                <a href="#" target="_blank" class="watch-btn">Visit The Rayan Games</a>
+                <p>Gaming streams, mobile gameplay, guides, and mini-game showcases.</p>
+                <a href="https://www.youtube.com/@bestgrapeskinglive-k7f2q" target="_blank" class="watch-btn">Visit The Rayan Games</a>
             </div>
         </div>
 
@@ -419,72 +412,103 @@
         <p>© 2026 Best Grapes King LIVE Network. All Rights Reserved.</p>
     </footer>
 
-    <!-- REAL WORKING ANIMATED VIDEO SCRIPT -->
+    <!-- IN-BROWSER REAL VIDEO GENERATOR APP ENGINE SCRIPT -->
     <script>
-        let animId;
-        function startRealVideoGeneration() {
-            var inputVal = document.getElementById('videoPrompt').value;
-            if (inputVal.trim() === '') {
-                inputVal = 'Best Grapes King LIVE';
+        function runVideoGeneratorApp() {
+            var promptInput = document.getElementById('videoPrompt').value;
+            if (promptInput.trim() === '') {
+                promptInput = 'Best Grapes King LIVE Studio';
             }
-            
-            document.getElementById('statusPreview').style.display = 'block';
-            
+
+            const previewArea = document.getElementById('statusPreview');
+            const statusText = document.getElementById('renderingStatus');
+            const downloadBtn = document.getElementById('downloadLink');
             const canvas = document.getElementById('videoCanvas');
             const ctx = canvas.getContext('2d');
-            
+
+            previewArea.style.display = 'block';
+            downloadBtn.style.display = 'none';
+            statusText.style.color = '#ffab40';
+            statusText.innerText = '⏳ Initializing Video Engine & Encoding...';
+
+            // Recording Engine Stream
+            const stream = canvas.captureStream(30); 
+            let mediaRecorder;
+            let recordedChunks = [];
+
+            try {
+                mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm' });
+            } catch (e) {
+                mediaRecorder = new MediaRecorder(stream);
+            }
+
+            mediaRecorder.ondataavailable = function(e) {
+                if (e.data.size > 0) {
+                    recordedChunks.push(e.data);
+                }
+            };
+
+            mediaRecorder.onstop = function() {
+                const blob = new Blob(recordedChunks, { type: 'video/webm' });
+                const videoURL = URL.createObjectURL(blob);
+                downloadBtn.href = videoURL;
+                downloadBtn.download = promptInput.replace(/\s+/g, '_') + '_Generated_Video.webm';
+                downloadBtn.style.display = 'inline-block';
+                statusText.style.color = '#00e676';
+                statusText.innerText = '✅ Video Generation Complete! Click Below to Download:';
+            };
+
+            mediaRecorder.start();
+
+            let totalFrames = 240; // ~8 Seconds Active Frame Render
             let frame = 0;
-            if(animId) cancelAnimationFrame(animId);
-            
-            function renderFrame() {
+
+            function drawFrame() {
                 frame++;
-                
-                // Animated Dynamic Gradient Background
+                let progress = Math.min(Math.round((frame / totalFrames) * 100), 100);
+                statusText.innerText = '⏳ Rendering Video Frames (' + progress + '%)...';
+
+                // Background gradient
                 let gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-                let hue1 = (frame) % 360;
-                let hue2 = (frame + 60) % 360;
-                gradient.addColorStop(0, `hsl(${hue1}, 70%, 20%)`);
-                gradient.addColorStop(1, `hsl(${hue2}, 70%, 10%)`);
-                
+                let hue1 = (frame * 3) % 360;
+                let hue2 = (frame * 3 + 90) % 360;
+                gradient.addColorStop(0, `hsl(${hue1}, 75%, 15%)`);
+                gradient.addColorStop(1, `hsl(${hue2}, 75%, 8%)`);
                 ctx.fillStyle = gradient;
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
-                
-                // Animated Moving Grape Orbs
-                for (let i = 0; i < 5; i++) {
-                    let x = (canvas.width / 2) + Math.cos((frame + i * 40) * 0.05) * (80 + i * 20);
-                    let y = (canvas.height / 2) + Math.sin((frame + i * 40) * 0.05) * (40 + i * 10);
+
+                // Animated Visual Particles
+                for (let i = 0; i < 8; i++) {
+                    let x = (canvas.width / 2) + Math.cos((frame + i * 25) * 0.06) * (110 + i * 12);
+                    let y = (canvas.height / 2) + Math.sin((frame + i * 25) * 0.06) * (55 + i * 8);
                     ctx.beginPath();
-                    ctx.arc(x, y, 15 + i * 5, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(142, 45, 226, ${0.3 + (i * 0.1)})`;
+                    ctx.arc(x, y, 18 + i * 3, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(142, 45, 226, ${0.3 + (i * 0.07)})`;
                     ctx.fill();
                 }
 
-                // Pulsing Title Text Animation
-                let scale = 1 + Math.sin(frame * 0.08) * 0.05;
+                // Title Pulsing Motion
+                let scale = 1 + Math.sin(frame * 0.1) * 0.05;
                 ctx.save();
                 ctx.translate(canvas.width / 2, canvas.height / 2);
                 ctx.scale(scale, scale);
-                
-                ctx.font = 'bold 24px Segoe UI, sans-serif';
+
+                ctx.font = 'bold 26px Segoe UI, sans-serif';
                 ctx.fillStyle = '#ffffff';
                 ctx.textAlign = 'center';
                 ctx.shadowColor = '#8e2de2';
-                ctx.shadowBlur = 15;
-                
-                ctx.fillText(inputVal, 0, 0);
-                
-                ctx.font = '12px Segoe UI, sans-serif';
-                ctx.fillStyle = '#00e676';
-                ctx.fillText('🎬 Live AI Motion Preview (Playing)', 0, 30);
-                
-                ctx.restore();
-                
-                animId = requestAnimationFrame(renderFrame);
-            }
-            
-            renderFrame();
-        }
-    </script>
+                ctx.shadowBlur = 18;
 
-</body>
-</html>
+                ctx.fillText(promptInput, 0, -10);
+
+                ctx.font = 'bold 14px Segoe UI, sans-serif';
+                ctx.fillStyle = '#00e676';
+                ctx.fillText('🍇 Best Grapes King LIVE Official App', 0, 30);
+
+                ctx.restore();
+
+                if (frame < totalFrames) {
+                    requestAnimationFrame(drawFrame);
+                } else {
+                    mediaRecorder.stop();
+         
