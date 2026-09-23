@@ -105,7 +105,7 @@
             margin-bottom: 12px;
         }
 
-        /* اے آئی ٹول کا باکس */
+        /* اے آئی ٹول آپشن */
         .ai-tool-box {
             background: rgba(0, 0, 0, 0.4);
             padding: 20px;
@@ -134,13 +134,43 @@
             transition: 0.3s;
         }
         .btn-generate:hover { background-color: #00b359; }
+        
         #videoPlayer {
             display: none;
             margin-top: 20px;
             width: 100%;
             border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
         #statusText { margin-top: 10px; color: #00ffcc; font-weight: bold; }
+
+        /* ڈاؤن لوڈ بٹنز کے لیے سٹائل */
+        .download-box {
+            display: none;
+            margin-top: 15px;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-download {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 20px;
+            color: #ffffff;
+            transition: 0.3s;
+        }
+        .btn-mp4 {
+            background-color: #2196F3;
+            box-shadow: 0 4px 10px rgba(33, 150, 243, 0.4);
+        }
+        .btn-mp3 {
+            background-color: #ff9800;
+            box-shadow: 0 4px 10px rgba(255, 152, 0, 0.4);
+        }
+        .btn-download:hover { transform: scale(1.05); }
 
         /* نیچے چلنے والی پٹی (Scrolling Text Footer) */
         .scrolling-footer {
@@ -175,8 +205,8 @@
     <h1>Best Grapes King 👑 LIVE</h1>
     <p>Welcome to Official Portal of Purple Grapes Series & AI Content</p>
     
-    <!-- مین یوٹیوب چینل لنک -->
-    <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="btn-subscribe">Subscribe Channel</a>
+    <!-- چینل کا ڈائریکٹ سبسکرائب لنک (فکسڈ) -->
+    <a href="https://www.youtube.com/@BestGrapesKingLive-k7f2q?sub_confirmation=1" target="_blank" class="btn-subscribe">Subscribe Channel</a>
 
     <!-- ویڈیوز اور سیزنز کا سیکشن -->
     <div class="season-section">
@@ -229,11 +259,17 @@
         
         <div id="statusText"></div>
         
-        <!-- فرنٹ اینڈ ویڈیو پلیئر (بغیر کسی بگ کے) -->
-        <video id="videoPlayer" controls>
-            <source src="https://w3schools.com" type="video/mp4">
-            Your browser does not support the video tag.
+        <!-- فرنٹ اینڈ ویڈیو پلیئر -->
+        <video id="videoPlayer" controls preload="metadata">
+            <source id="videoSource" src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            آپ کا براؤزر ویڈیو پلیئر کو سپورٹ نہیں کرتا۔
         </video>
+
+        <!-- MP4 اور MP3 ڈاؤن لوڈ بٹنز -->
+        <div id="downloadBox" class="download-box">
+            <a id="downloadMp4" href="https://www.w3schools.com/html/mov_bbb.mp4" download="Purple_Grapes_AI_Video.mp4" class="btn-download btn-mp4">⬇️ Download Video (MP4)</a>
+            <a id="downloadMp3" href="https://www.w3schools.com/html/mov_bbb.mp4" download="Purple_Grapes_AI_Audio.mp3" class="btn-download btn-mp3">🎵 Download Audio (MP3)</a>
+        </div>
     </div>
 </div>
 
@@ -249,6 +285,7 @@ function generateVideo() {
     var prompt = document.getElementById('promptInput').value;
     var status = document.getElementById('statusText');
     var video = document.getElementById('videoPlayer');
+    var downloadBox = document.getElementById('downloadBox');
     
     if(prompt.trim() === "") {
         status.style.color = "#ff3333";
@@ -259,12 +296,21 @@ function generateVideo() {
     status.style.color = "#00e676";
     status.innerHTML = "AI پروسیسنگ جاری ہے... ویڈیو جنریٹ ہو رہی ہے... ⚡";
     video.style.display = "none";
+    downloadBox.style.display = "none";
     
     setTimeout(function() {
         status.innerHTML = "ویڈیو کامیابی سے جنریٹ ہو گئی ہے! 🎉";
+        
+        // ویڈیو پلیئر لوڈ اور شو کرنا
+        video.load();
         video.style.display = "block";
-        video.play();
-    }, 3000); // 3 سیکنڈ کی لوڈنگ اینیمیشن کے بعد ویڈیو چل جائے گی
+        downloadBox.style.display = "flex";
+        
+        // پلے کرنا
+        video.play().catch(function(error) {
+            console.log("Auto-play prevented by browser: ", error);
+        });
+    }, 3000);
 }
 </script>
 
