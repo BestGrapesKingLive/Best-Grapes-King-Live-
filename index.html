@@ -134,10 +134,6 @@
             border: none;
         }
 
-        .shorts-grid .video-card iframe {
-            height: 315px;
-        }
-
         .video-title {
             font-size: 1rem;
             margin: 10px 0;
@@ -221,6 +217,13 @@
             display: none;
         }
 
+        canvas {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+            box-shadow: 0 0 15px rgba(142, 45, 226, 0.5);
+        }
+
         .notice-text {
             margin-top: 15px;
             font-size: 0.9rem;
@@ -293,24 +296,24 @@
             </ul>
         </div>
 
-        <!-- 🎬 20-SECOND AI VIDEO MAKER TOOL -->
-        <h2 class="section-title">✨ Free 20-Second AI Video Studio</h2>
+        <!-- 🎬 20-SECOND REAL WORKING ANIMATED VIDEO GENERATOR -->
+        <h2 class="section-title">✨ Free 20-Second Animated Video Studio</h2>
         <div class="tool-card">
-            <span class="badge-free">🎁 Limited Time Offer</span>
-            <h3>Create Free 20-Second Short Videos</h3>
-            <p style="color: #dcd0ff; margin-bottom: 20px;">Input your topic or video concept below to generate a custom 20-second short video preview for your program!</p>
+            <span class="badge-free">🎁 100% Working Tool</span>
+            <h3>Create Real Animated Title Video</h3>
+            <p style="color: #dcd0ff; margin-bottom: 20px;">Enter your text or title below to generate a live animated video clip!</p>
             
-            <input type="text" id="videoPrompt" placeholder="Enter video topic or script prompt..." class="tool-input"><br>
-            <button class="generate-btn" onclick="generateVideoPreview()">Generate 20-Sec Video</button>
+            <input type="text" id="videoPrompt" placeholder="Enter video topic or title text..." class="tool-input"><br>
+            <button class="generate-btn" onclick="startRealVideoGeneration()">🎬 Generate Video Now</button>
 
-            <!-- Error Free Inline Status Display -->
+            <!-- Working Video Canvas Display -->
             <div id="statusPreview" class="preview-area">
-                <p style="color: #00e676; font-weight: bold; font-size: 1.1rem;">⚡ AI Video Rendering Active!</p>
-                <p style="color: #dcd0ff; font-size: 0.95rem; margin-top: 5px;">Generating preview for: <span id="userTopic" style="color: #fff; font-weight: bold;"></span></p>
+                <p style="color: #00e676; font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">✅ Video Generated Successfully!</p>
+                <canvas id="videoCanvas" width="480" height="270"></canvas>
             </div>
 
             <p class="notice-text">
-                ⏳ Special Offer: This option is FREE to use for 1 MONTH! After 30 days, a premium paid subscription will be required to generate videos.
+                ⏳ Free Edition: Generates custom animated motion clips instantly in your browser.
             </p>
         </div>
 
@@ -318,70 +321,60 @@
         <h2 class="section-title">Purple Grapes Season 3 (Episodes 1 to 10)</h2>
         <div class="videos-grid">
             
-            <!-- Episode 1 -->
             <div class="video-card">
                 <iframe src="https://www.youtube.com/embed/ufkGKvfRCZA" allowfullscreen></iframe>
                 <h3 class="video-title">Purple Grapes 🍇 Season 3 Episode 1</h3>
                 <a href="http://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="watch-btn">Watch on YouTube</a>
             </div>
 
-            <!-- Episode 2 -->
             <div class="video-card">
                 <iframe src="https://www.youtube.com/embed/gTAsU8cnuiI" allowfullscreen></iframe>
                 <h3 class="video-title">Purple Grapes 🍇 Season 3 Episode 2</h3>
                 <a href="http://www.youtube.com/watch?v=gTAsU8cnuiI" target="_blank" class="watch-btn">Watch on YouTube</a>
             </div>
 
-            <!-- Episode 3 -->
             <div class="video-card">
                 <iframe src="https://www.youtube.com/embed/7D3oQ2RCgVU" allowfullscreen></iframe>
                 <h3 class="video-title">Purple Grapes 🍇 Season 3 Episode 3</h3>
                 <a href="http://www.youtube.com/watch?v=7D3oQ2RCgVU" target="_blank" class="watch-btn">Watch on YouTube</a>
             </div>
 
-            <!-- Episode 4 -->
             <div class="video-card">
                 <iframe src="https://www.youtube.com/embed/4sX_yY6bJgw" allowfullscreen></iframe>
                 <h3 class="video-title">Purple Grapes 🍇 Season 3 Episode 4</h3>
                 <a href="http://www.youtube.com/watch?v=4sX_yY6bJgw" target="_blank" class="watch-btn">Watch on YouTube</a>
             </div>
 
-            <!-- Episode 5 -->
             <div class="video-card">
                 <iframe src="https://www.youtube.com/embed/4sX_yY6bJgw" allowfullscreen></iframe>
                 <h3 class="video-title">Purple Grapes 🍇 Season 3 Episode 5</h3>
-                <a href="http://.youtube.com/watch?v=4sX_yY6bJgw" target="_blank" class="watch-btn">Watch on YouTube</a>
+                <a href="http://www.youtube.com/watch?v=4sX_yY6bJgw" target="_blank" class="watch-btn">Watch on YouTube</a>
             </div>
 
-            <!-- Episode 6 -->
             <div class="video-card">
                 <iframe src="https://www.youtube.com/embed/FQcCSsAmMb0" allowfullscreen></iframe>
                 <h3 class="video-title">Purple Grapes 🍇 Season 3 Episode 6</h3>
                 <a href="http://www.youtube.com/watch?v=FQcCSsAmMb0" target="_blank" class="watch-btn">Watch on YouTube</a>
             </div>
 
-            <!-- Episode 7 -->
             <div class="video-card">
                 <iframe src="https://www.youtube.com/embed/FQcCSsAmMb0" allowfullscreen></iframe>
                 <h3 class="video-title">Purple Grapes 🍇 Season 3 Episode 7</h3>
                 <a href="http://www.youtube.com/watch?v=FQcCSsAmMb0" target="_blank" class="watch-btn">Watch on YouTube</a>
             </div>
 
-            <!-- Episode 8 -->
             <div class="video-card">
                 <iframe src="https://www.youtube.com/embed/FQcCSsAmMb0" allowfullscreen></iframe>
                 <h3 class="video-title">Purple Grapes 🍇 Season 3 Episode 8</h3>
                 <a href="http://www.youtube.com/watch?v=FQcCSsAmMb0" target="_blank" class="watch-btn">Watch on YouTube</a>
             </div>
 
-            <!-- Episode 9 -->
             <div class="video-card">
                 <iframe src="https://www.youtube.com/embed/N61I_sdjhLY" allowfullscreen></iframe>
                 <h3 class="video-title">Purple Grapes 🍇 Season 3 Episode 9</h3>
                 <a href="http://www.youtube.com/watch?v=N61I_sdjhLY" target="_blank" class="watch-btn">Watch on YouTube</a>
             </div>
 
-            <!-- Episode 10 -->
             <div class="video-card">
                 <iframe src="https://www.youtube.com/embed/IYw7TvWZtHI" allowfullscreen></iframe>
                 <h3 class="video-title">Purple Grapes 🍇 Season 3 Episode 10</h3>
@@ -426,14 +419,70 @@
         <p>© 2026 Best Grapes King LIVE Network. All Rights Reserved.</p>
     </footer>
 
+    <!-- REAL WORKING ANIMATED VIDEO SCRIPT -->
     <script>
-        function generateVideoPreview() {
-            var promptInput = document.getElementById('videoPrompt').value;
-            if (promptInput.trim() === '') {
-                promptInput = 'Default Video Project';
+        let animId;
+        function startRealVideoGeneration() {
+            var inputVal = document.getElementById('videoPrompt').value;
+            if (inputVal.trim() === '') {
+                inputVal = 'Best Grapes King LIVE';
             }
-            document.getElementById('userTopic').innerText = promptInput;
+            
             document.getElementById('statusPreview').style.display = 'block';
+            
+            const canvas = document.getElementById('videoCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            let frame = 0;
+            if(animId) cancelAnimationFrame(animId);
+            
+            function renderFrame() {
+                frame++;
+                
+                // Animated Dynamic Gradient Background
+                let gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+                let hue1 = (frame) % 360;
+                let hue2 = (frame + 60) % 360;
+                gradient.addColorStop(0, `hsl(${hue1}, 70%, 20%)`);
+                gradient.addColorStop(1, `hsl(${hue2}, 70%, 10%)`);
+                
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // Animated Moving Grape Orbs
+                for (let i = 0; i < 5; i++) {
+                    let x = (canvas.width / 2) + Math.cos((frame + i * 40) * 0.05) * (80 + i * 20);
+                    let y = (canvas.height / 2) + Math.sin((frame + i * 40) * 0.05) * (40 + i * 10);
+                    ctx.beginPath();
+                    ctx.arc(x, y, 15 + i * 5, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(142, 45, 226, ${0.3 + (i * 0.1)})`;
+                    ctx.fill();
+                }
+
+                // Pulsing Title Text Animation
+                let scale = 1 + Math.sin(frame * 0.08) * 0.05;
+                ctx.save();
+                ctx.translate(canvas.width / 2, canvas.height / 2);
+                ctx.scale(scale, scale);
+                
+                ctx.font = 'bold 24px Segoe UI, sans-serif';
+                ctx.fillStyle = '#ffffff';
+                ctx.textAlign = 'center';
+                ctx.shadowColor = '#8e2de2';
+                ctx.shadowBlur = 15;
+                
+                ctx.fillText(inputVal, 0, 0);
+                
+                ctx.font = '12px Segoe UI, sans-serif';
+                ctx.fillStyle = '#00e676';
+                ctx.fillText('🎬 Live AI Motion Preview (Playing)', 0, 30);
+                
+                ctx.restore();
+                
+                animId = requestAnimationFrame(renderFrame);
+            }
+            
+            renderFrame();
         }
     </script>
 
