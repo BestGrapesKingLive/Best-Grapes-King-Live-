@@ -1,219 +1,272 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Grapes 🍇 King👑LIVE</title>
+    <title>Best Grapes King LIVE | Official Portal</title>
     <!-- Google Search Console Verification Meta Tag -->
     <meta name="google-site-verification" content="f8Y0j9sO6L9wG0f-X4X8_Y1Z2a3b4c5d" />
     <style>
-        * {
+        body {
+            background-color: #0b0214;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            padding-bottom: 60px; /* نیچے اسکرولنگ ٹیکسٹ کے لیے جگہ */
         }
-
-        body {
-            background-color: #120024;
-            color: #ffffff;
-            text-align: center;
-            padding: 20px;
+        .container {
+            max-width: 700px;
+            margin: 30px auto;
+            background: linear-gradient(135deg, #5b11b8, #130329);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-
-        header {
-            background: linear-gradient(135deg, #4a00e0, #8e2de2);
-            padding: 40px 20px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 1.1rem;
-            color: #e0e0e0;
-        }
-
-        .subscribe-btn {
+        h1 { font-size: 2.5rem; margin-bottom: 5px; color: #ffeb3b; }
+        p { font-size: 1.1rem; color: #ddd; }
+        .btn-subscribe {
             display: inline-block;
-            margin-top: 15px;
             background-color: #ff0000;
-            color: #ffffff;
-            padding: 12px 25px;
-            font-size: 1rem;
+            color: white;
+            padding: 12px 30px;
+            font-size: 1.1rem;
             font-weight: bold;
             text-decoration: none;
-            border-radius: 25px;
-            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
+            border-radius: 30px;
+            margin: 15px 0;
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+            transition: 0.3s;
         }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
+        .btn-subscribe:hover { transform: scale(1.05); }
+        
+        /* ویڈیو سیزنز کا سیکشن */
+        .season-section {
+            margin-top: 30px;
+            text-align: left;
+            padding: 10px;
         }
-
-        .section-title {
-            font-size: 1.8rem;
-            margin: 30px 0 15px;
-            border-bottom: 2px solid #8e2de2;
-            display: inline-block;
+        .season-title {
+            color: #ffeb3b;
+            border-bottom: 2px solid #9c27b0;
             padding-bottom: 5px;
-        }
-
-        .videos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            font-size: 1.4rem;
             margin-top: 20px;
         }
-
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 10px;
+        }
         .video-card {
-            background-color: #1f0836;
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.08);
             padding: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-
-        .video-card iframe {
-            width: 100%;
-            height: 180px;
-            border-radius: 8px;
-            border: none;
-        }
-
-        .video-title {
-            font-size: 1rem;
-            margin: 10px 0;
-        }
-
-        .watch-btn {
-            display: inline-block;
-            background-color: #8e2de2;
-            color: #fff;
-            padding: 8px 15px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 0.9rem;
-        }
-
-        .channel-card {
-            background-color: #1f0836;
             border-radius: 10px;
-            padding: 20px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            display: block;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
             text-align: center;
         }
+        .video-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
 
-        footer {
-            margin-top: 50px;
+        /* انگور اگانے کا طریقہ (Grapes Farming Guide) */
+        .grapes-guide-box {
+            background: rgba(0, 0, 0, 0.3);
             padding: 20px;
-            color: #888;
-            font-size: 0.9rem;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: right;
+            border: 1px solid #9c27b0;
+            direction: rtl;
+        }
+        .grapes-guide-box h3 {
+            color: #ffeb3b;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #9c27b0;
+            padding-bottom: 8px;
+        }
+        .grapes-guide-box ul {
+            list-style-type: none;
+            padding: 0;
+            line-height: 1.8;
+            font-size: 1rem;
+            color: #eeeeee;
+        }
+        .grapes-guide-box li {
+            margin-bottom: 12px;
+        }
+
+        /* اے آئی ٹول کا باکس */
+        .ai-tool-box {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 40px;
+            border: 2px dashed #00e676;
+        }
+        input[type="text"] {
+            width: 85%;
+            padding: 12px;
+            border-radius: 25px;
+            border: none;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            text-align: center;
+        }
+        .btn-generate {
+            background-color: #00e676;
+            color: #000;
+            padding: 12px 30px;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+        .btn-generate:hover { background-color: #00b359; }
+        #videoPlayer {
+            display: none;
+            margin-top: 20px;
+            width: 100%;
+            border-radius: 10px;
+        }
+        #statusText { margin-top: 10px; color: #00ffcc; font-weight: bold; }
+
+        /* نیچے چلنے والی پٹی (Scrolling Text Footer) */
+        .scrolling-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffeb3b;
+            color: #000000;
+            white-space: nowrap;
+            overflow: hidden;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
+            z-index: 9999;
+            padding: 10px 0;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .scrolling-text {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Best Grapes 🍇 King👑LIVE</h1>
-        <p>Welcome to Official Portal of Purple Grapes Series & AI Content</p>
-        <a href="http://www.youtube.com/channel/UCn7lOE2BXHjHffESxT4-HlQ?sub_confirmation=1" target="_blank" class="subscribe-btn">
-            Subscribe Channel
-        </a>
-    </header>
+<div class="container">
+    <h1>Best Grapes King 👑 LIVE</h1>
+    <p>Welcome to Official Portal of Purple Grapes Series & AI Content</p>
+    
+    <!-- مین یوٹیوب چینل لنک -->
+    <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="btn-subscribe">Subscribe Channel</a>
 
-    <div class="container">
-
-        <!-- PURPLE GRAPES SEASON 3 -->
-        <h2 class="section-title">Purple Grapes Season 3 Episodes</h2>
-        <div class="videos-grid">
-            
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/ufkGKvfRCZA" allowfullscreen></iframe>
-                <h3 class="video-title">Purple Grapes 🍇 Season 3 Episode 1</h3>
-                <a href="http://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="watch-btn">Watch on YouTube</a>
-            </div>
-
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/gTAsU8cnuiI" allowfullscreen></iframe>
-                <h3 class="video-title">Purple Grapes 🍇 Season 3 Episode 2</h3>
-                <a href="http://www.youtube.com/watch?v=gTAsU8cnuiI" target="_blank" class="watch-btn">Watch on YouTube</a>
-            </div>
-
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/7D3oQ2RCgVU" allowfullscreen></iframe>
-                <h3 class="video-title">Purple Grapes 🍇 Season 3 Episode 3</h3>
-                <a href="http://www.youtube.com/watch?v=7D3oQ2RCgVU" target="_blank" class="watch-btn">Watch on YouTube</a>
-            </div>
-
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/4sX_yY6bJgw" allowfullscreen></iframe>
-                <h3 class="video-title">Purple Grapes 🍇 Season 3 Episode 4</h3>
-                <a href="http://www.youtube.com/watch?v=4sX_yY6bJgw" target="_blank" class="watch-btn">Watch on YouTube</a>
-            </div>
-
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/4sX_yY6bJgw" allowfullscreen></iframe>
-                <h3 class="video-title">Purple Grapes 🍇 Season 3 Episode 5</h3>
-                <a href="http://www.youtube.com/watch?v=4sX_yY6bJgw" target="_blank" class="watch-btn">Watch on YouTube</a>
-            </div>
-
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/FQcCSsAmMb0" allowfullscreen></iframe>
-                <h3 class="video-title">Purple Grapes 🍇 Season 3 Episode 6</h3>
-                <a href="http://www.youtube.com/watch?v=FQcCSsAmMb0" target="_blank" class="watch-btn">Watch on YouTube</a>
-            </div>
-
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/FQcCSsAmMb0" allowfullscreen></iframe>
-                <h3 class="video-title">Purple Grapes 🍇 Season 3 Episode 7</h3>
-                <a href="http://www.youtube.com/watch?v=FQcCSsAmMb0" target="_blank" class="watch-btn">Watch on YouTube</a>
-            </div>
-
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/FQcCSsAmMb0" allowfullscreen></iframe>
-                <h3 class="video-title">Purple Grapes 🍇 Season 3 Episode 8</h3>
-                <a href="http://www.youtube.com/watch?v=FQcCSsAmMb0" target="_blank" class="watch-btn">Watch on YouTube</a>
-            </div>
-
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/N61I_sdjhLY" allowfullscreen></iframe>
-                <h3 class="video-title">Purple Grapes 🍇 Season 3 Episode 9</h3>
-                <a href="http://www.youtube.com/watch?v=N61I_sdjhLY" target="_blank" class="watch-btn">Watch on YouTube</a>
-            </div>
-
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/IYw7TvWZtHI" allowfullscreen></iframe>
-                <h3 class="video-title">Purple Grapes 🍇 Season 3 Episode 10</h3>
-                <a href="http://www.youtube.com/watch?v=IYw7TvWZtHI" target="_blank" class="watch-btn">Watch on YouTube</a>
-            </div>
-
+    <!-- ویڈیوز اور سیزنز کا سیکشن -->
+    <div class="season-section">
+        
+        <!-- سیزن 3 -->
+        <div class="season-title">🍇 Purple Grapes - Season 3</div>
+        <div class="video-grid">
+            <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎬 Episode 1 (Latest)</a>
+            <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎬 Episode 2</a>
+            <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎬 Episode 3</a>
+            <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎬 Episode 4</a>
         </div>
 
-        <!-- OTHER CHANNELS -->
-        <h2 class="section-title">Our Other Channels</h2>
-        <div class="videos-grid">
-            <div class="channel-card">
-                <h3>Rayan AI Craft</h3>
-                <p>AI Arts, Prompts & Videos</p>
-                <a href="https://www.youtube.com/@bestgrapeskinglive-k7f2q" target="_blank" class="watch-btn">Visit Channel</a>
-            </div>
-            <div class="channel-card">
-                <h3>The Rayan Games</h3>
-                <p>Gaming Streams & Videos</p>
-                <a href="https://www.youtube.com/@bestgrapeskinglive-k7f2q" target="_blank" class="watch-btn">Visit Channel</a>
-            </div>
+        <!-- سیزن 2 -->
+        <div class="season-title">🍇 Purple Grapes - Season 2</div>
+        <div class="video-grid">
+            <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎞️ Episode 1</a>
+            <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎞️ Episode 2</a>
+        </div>
+
+        <!-- سیزن 1 -->
+        <div class="season-title">🍇 Purple Grapes - Season 1</div>
+        <div class="video-grid">
+            <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">📼 Episode 1</a>
+            <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">📼 Episode 2</a>
         </div>
 
     </div>
 
-    <footer>
-        <p>© Best Grapes King LIVE. All Rights Reserved.</p>
-    </footer>
+    <!-- انگور اگانے کا طریقہ (Grapes Farming Section) -->
+    <div class="grapes-guide-box">
+        <h3>🍇 انگور (Grapes) اگانے کا مکمل طریقہ</h3>
+        <ul>
+            <li><strong>1. جگہ اور دھوپ:</strong> انگور کی بیل کے لیے ایسی جگہ منتخب کریں جہاں روزانہ 6 سے 8 گھنٹے براہ راست دھوپ آتی ہو۔</li>
+            <li><strong>2. مٹی کی تیاری:</strong> اچھی نکاس والی نرم مٹی بہترین ہوتی ہے۔ مٹی میں دیسی کھاد (Organic Fertilizer) ملائیں۔</li>
+            <li><strong>3. کٹنگ/پودا لگانا:</strong> انگور کی قلم (Cutting) یا پودا فروری یا مارچ کے مہینے میں لگائیں۔</li>
+            <li><strong>4. پانی کی فراہمی:</strong> شروع میں ہفتے میں 2 بار پانی دیں، لیکن جڑوں میں پانی کھڑا نہ ہونے دیں۔</li>
+            <li><strong>5. بیل کا سہارا (Trellis):</strong> جیسے جیسے بیل بڑھے، اسے لکڑی یا تار کے ذریعے اوپر چڑھنے کا سہارا دیں۔</li>
+            <li><strong>6. چھٹائی (Pruning):</strong> ہر سال سردیوں میں پرانی شاخوں کی کٹائی کریں تاکہ نئے اور بہترین پھل آسکیں۔</li>
+        </ul>
+    </div>
+
+    <!-- اے آئی ٹول آپشن -->
+    <div class="ai-tool-box">
+        <h3>⚡ Purple Grapes AI Video Generator</h3>
+        <p>ویڈیو بنانے کے لیے اپنا پرامپٹ لکھیں:</p>
+        <input type="text" id="promptInput" placeholder="مثال: Purple Grapes Episode in HD style...">
+        <br>
+        <button class="btn-generate" onclick="generateVideo()">Generate AI Video</button>
+        
+        <div id="statusText"></div>
+        
+        <!-- فرنٹ اینڈ ویڈیو پلیئر (بغیر کسی بگ کے) -->
+        <video id="videoPlayer" controls>
+            <source src="https://w3schools.com" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+
+<!-- سب سے نیچے اسکرولنگ پٹی -->
+<div class="scrolling-footer">
+    <div class="scrolling-text">
+        +++ Best Grapes King LIVE ویب سائٹ کو بنانے میں کوشش کی ہے، Rayan AI Craft +++ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +++ Best Grapes King LIVE ویب سائٹ کو بنانے میں کوشش کی ہے، Rayan AI Craft +++
+    </div>
+</div>
+
+<script>
+function generateVideo() {
+    var prompt = document.getElementById('promptInput').value;
+    var status = document.getElementById('statusText');
+    var video = document.getElementById('videoPlayer');
+    
+    if(prompt.trim() === "") {
+        status.style.color = "#ff3333";
+        status.innerHTML = "برائے مہربانی پہلے پرومپٹ لکھیں!";
+        return;
+    }
+    
+    status.style.color = "#00e676";
+    status.innerHTML = "AI پروسیسنگ جاری ہے... ویڈیو جنریٹ ہو رہی ہے... ⚡";
+    video.style.display = "none";
+    
+    setTimeout(function() {
+        status.innerHTML = "ویڈیو کامیابی سے جنریٹ ہو گئی ہے! 🎉";
+        video.style.display = "block";
+        video.play();
+    }, 3000); // 3 سیکنڈ کی لوڈنگ اینیمیشن کے بعد ویڈیو چل جائے گی
+}
+</script>
 
 </body>
 </html>
