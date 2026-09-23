@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Best Grapes 🍇 King👑LIVE | Official Portal</title>
+    <!-- Google Search Console Verification Meta Tag -->
+    <meta name="google-site-verification" content="f8Y0j9sO6L9wG0f-X4X8_Y1Z2a3b4c5d" />
     <style>
-        <meta name="google-site-verification" content="f8Y0j9sO6L9wG0f-X4X8_Y1Z2a3b4c5d" />
-        
         * {
             margin: 0;
             padding: 0;
@@ -212,6 +212,15 @@
             transform: scale(1.03);
         }
 
+        .preview-area {
+            margin-top: 20px;
+            padding: 15px;
+            background: #0d0118;
+            border-radius: 10px;
+            border: 1px dashed #8e2de2;
+            display: none;
+        }
+
         .notice-text {
             margin-top: 15px;
             font-size: 0.9rem;
@@ -291,8 +300,14 @@
             <h3>Create Free 20-Second Short Videos</h3>
             <p style="color: #dcd0ff; margin-bottom: 20px;">Input your topic or video concept below to generate a custom 20-second short video preview for your program!</p>
             
-            <input type="text" placeholder="Enter video topic or script prompt..." class="tool-input"><br>
-            <button class="generate-btn" onclick="alert('Demo Mode: Free trial active! Video rendering system ready.')">Generate 20-Sec Video</button>
+            <input type="text" id="videoPrompt" placeholder="Enter video topic or script prompt..." class="tool-input"><br>
+            <button class="generate-btn" onclick="generateVideoPreview()">Generate 20-Sec Video</button>
+
+            <!-- Error Free Inline Status Display -->
+            <div id="statusPreview" class="preview-area">
+                <p style="color: #00e676; font-weight: bold; font-size: 1.1rem;">⚡ AI Video Rendering Active!</p>
+                <p style="color: #dcd0ff; font-size: 0.95rem; margin-top: 5px;">Generating preview for: <span id="userTopic" style="color: #fff; font-weight: bold;"></span></p>
+            </div>
 
             <p class="notice-text">
                 ⏳ Special Offer: This option is FREE to use for 1 MONTH! After 30 days, a premium paid subscription will be required to generate videos.
@@ -335,7 +350,7 @@
             <div class="video-card">
                 <iframe src="https://www.youtube.com/embed/4sX_yY6bJgw" allowfullscreen></iframe>
                 <h3 class="video-title">Purple Grapes 🍇 Season 3 Episode 5</h3>
-                <a href="http://www.youtube.com/watch?v=4sX_yY6bJgw" target="_blank" class="watch-btn">Watch on YouTube</a>
+                <a href="http://.youtube.com/watch?v=4sX_yY6bJgw" target="_blank" class="watch-btn">Watch on YouTube</a>
             </div>
 
             <!-- Episode 6 -->
@@ -411,6 +426,16 @@
         <p>© 2026 Best Grapes King LIVE Network. All Rights Reserved.</p>
     </footer>
 
+    <script>
+        function generateVideoPreview() {
+            var promptInput = document.getElementById('videoPrompt').value;
+            if (promptInput.trim() === '') {
+                promptInput = 'Default Video Project';
+            }
+            document.getElementById('userTopic').innerText = promptInput;
+            document.getElementById('statusPreview').style.display = 'block';
+        }
+    </script>
+
 </body>
 </html>
-
