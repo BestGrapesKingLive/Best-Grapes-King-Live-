@@ -1,143 +1,133 @@
-<!DOCTYPE html>
-<html lang="ur">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Best Grapes King LIVE | Official App</title>
-    
-    <!-- Google Search Console Verification Meta Tag -->
-    <meta name="google-site-verification" content="f8Y0j9sO6L9wG0f-X4X8_Y1Z2a3b4c5d" />
+IMPORTANT UPDATES:
 
-    <style>
-        * {
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
-        body {
-            background-color: #0b0214;
-            color: #ffffff;
-            font-family: 'Segoe UI', Roboto, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            padding-bottom: 70px;
-        }
-        
-        .app-header {
-            background: #5b11b8;
-            padding: 15px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #ffeb3b;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+1. REMOVE ALL DEMO/FALLBACK FEATURES
 
-        .container {
-            max-width: 600px;
-            margin: 15px auto;
-            background: linear-gradient(135deg, #4a0e96, #130329);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-        }
-        h1 { font-size: 2rem; margin-bottom: 5px; color: #ffeb3b; }
+Completely remove:
 
-        .btn-subscribe {
-            display: block;
-            background-color: #ff0000;
-            color: white;
-            padding: 14px 20px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 30px;
-            margin: 15px auto;
-            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
-            width: 90%;
-        }
-        
-        .season-section { margin-top: 25px; text-align: left; }
-        .season-title {
-            color: #ffeb3b;
-            border-bottom: 2px solid #9c27b0;
-            padding-bottom: 5px;
-            font-size: 1.3rem;
-            margin-top: 20px;
-        }
-        .video-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        .video-card {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 12px;
-            border-radius: 10px;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            display: block;
-            border: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-        }
+- Try Demo
+- Demo Video
+- Demo Generator
+- Sample Video
+- Example Generated Video
+- Placeholder Video
+- Fake Generation Result
+- Any fallback video
 
-        .scrolling-footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #ffeb3b;
-            color: #000000;
-            white-space: nowrap;
-            overflow: hidden;
-            padding: 8px 0;
-            font-weight: bold;
-        }
-        .scrolling-text {
-            display: inline-block;
-            padding-left: 100%;
-            animation: marquee 18s linear infinite;
-        }
-        @keyframes marquee {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(-100%, 0); }
-        }
-    </style>
-</head>
-<body>
+NEVER show a pre-made video when AI generation fails.
 
-<div class="app-header">
-    <span>📱 Official Web App</span>
-    <span>Best Grapes King LIVE</span>
-</div>
+If the AI generation request fails, show the actual error message and allow the user to retry.
 
-<div class="container">
-    <h1>Best Grapes King 👑 LIVE</h1>
-    <p>Official Channel Portal</p>
+A failed request must NEVER return an old video or a random video.
 
-    <a href="https://www.youtube.com/@BestGrapesKingLive-k7f2q?sub_confirmation=1" target="_blank" class="btn-subscribe">▶️ Subscribe Official Channel</a>
+2. REAL AI GENERATION ONLY
 
-    <div class="season-section">
-        <div class="season-title">🍇 Purple Grapes - Season 3</div>
-        <div class="video-grid">
-            <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎬 Episode 1</a>
-            <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎬 Episode 2</a>
-        </div>
-    </div>
-</div>
+Every new prompt must create a new generation request.
 
-<div class="scrolling-footer">
-    <div class="scrolling-text">
-        +++ Created for Best Grapes King LIVE Official Website by Rayan AI Craft +++
-    </div>
-</div>
+Example:
 
-</body>
-</html>
+Prompt A → Generation A
+
+Prompt B → Generation B
+
+Prompt C → Generation C
+
+Never return Generation A for Prompt B or Prompt C.
+
+Every generation must have a unique generation/request ID and must not use stale browser cache.
+
+3. NO FAKE FUNCTIONALITY
+
+Every visible button must perform its actual function.
+
+Do not include buttons that only look functional.
+
+If a feature is unavailable from the connected AI provider, clearly show that it is unavailable instead of showing a fake result.
+
+4. REAL CHROME INSTALLATION
+
+Make the website a proper Progressive Web App (PWA).
+
+App name MUST be:
+
+Best Grapes King Live
+
+Use this exact name in:
+
+- Web App Manifest
+- Browser installation prompt
+- App name
+- Home-screen installation
+- Splash screen
+- App metadata
+
+The manifest should contain the correct app name, icons, start URL, display mode, theme settings and required PWA metadata.
+
+When supported by Chrome on Android, the user should be able to use the browser's real “Install app” / “Add to Home screen” installation flow.
+
+Do NOT create a fake download button that pretends to install an APK.
+
+5. INSTALL APP BUTTON
+
+Add a clear button:
+
+“INSTALL BEST GRAPES KING LIVE APP”
+
+When the browser supports PWA installation, trigger the real installation prompt.
+
+If installation is not currently available, explain how to install the PWA through Chrome rather than pretending the installation succeeded.
+
+6. APP IDENTITY
+
+The installed application must display:
+
+Best Grapes King Live
+
+Do NOT use:
+
+- Best Scraps King Live
+- Best Grapes King
+- Best Grapes Live
+- Demo App
+
+The exact official app name is:
+
+BEST GRAPES KING LIVE
+
+7. NO ERROR-MASKING
+
+Do not hide generation errors by displaying an old video.
+
+Do not automatically substitute a demo video.
+
+Do not silently change the user's prompt.
+
+Show a clear error and provide:
+
+RETRY GENERATION
+
+8. CACHE PROTECTION
+
+When a new generation starts:
+
+- Clear the previous result from the active generation state.
+- Create a unique request ID.
+- Do not reuse the previous video URL.
+- Do not reuse the previous generation ID.
+- Prevent stale browser/service-worker cache from returning the previous video.
+- Display the new result only after the new generation request succeeds.
+
+9. FINAL RULE
+
+The website must contain REAL FEATURES ONLY.
+
+No demo generator.
+No demo videos.
+No fake AI results.
+No placeholder videos.
+No fake app installation.
+
+The AI generator must either:
+A) generate the requested video through the connected AI provider, or
+B) clearly report the actual error.
+
+Never show an unrelated video as the result.
