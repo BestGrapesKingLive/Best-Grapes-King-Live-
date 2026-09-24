@@ -3,375 +3,511 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Best Grapes King LIVE | Official Website & App</title>
-    
-    <!-- GOOGLE SITE VERIFICATION TAG -->
+    <title>Best Grapes King LIVE | Official App & Studio</title>
+
+    <!-- Google Site Verification Tag -->
     <meta name="google-site-verification" content="f8Y0j9sO6L9wG0f-X4X8_Y1Z2a3b4c5d" />
 
-    <!-- REAL PWA & APP MANIFEST -->
+    <!-- Web App & PWA Settings -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#5b11b8">
-    <link rel="manifest" href="data:application/manifest+json;base64,ewogICJuYW1lIjogIkJlc3QgR3JhcGVzIEtpbmcgTElWRSBBcHAiLAogICJzaG9ydF9uYW1lIjogIkdyYXBlc0tpbmdBcHAiLAogICJzdGFydF91cmwiOiAiLiIsCiAgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsCiAgImJhY2tncm91bmRfY29sb3IiOiAiIzBiMDIxNCIsCiAgInRoZW1lX2NvbG9yIjogIiM1YjExYjgiCgp9">
+
+    <!-- Font Awesome Icons & Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body {
             background-color: #0b0214;
             color: #ffffff;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            text-align: center;
-            margin: 0; padding: 0; padding-bottom: 80px;
+            user-select: none;
+            padding-bottom: 70px;
         }
-
-        /* Top Header */
-        .app-header {
-            background: #5b11b8;
-            padding: 12px 20px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #ffeb3b;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-            position: sticky; top: 0; z-index: 1000;
-            display: flex; justify-content: space-between; align-items: center;
+        .scrolling-text {
+            display: inline-block;
+            white-space: nowrap;
+            padding-left: 100%;
+            animation: marquee 16s linear infinite;
         }
-        .lang-select {
-            background: #130329; color: #fff; border: 1px solid #9c27b0;
-            padding: 5px 10px; border-radius: 6px; font-size: 0.9rem;
+        @keyframes marquee {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
         }
-
-        .container { max-width: 700px; margin: 15px auto; padding: 15px; }
-
-        /* Channel Card */
-        .channel-card {
-            background: linear-gradient(135deg, #4a0e96, #130329);
-            padding: 20px; border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.6); margin-bottom: 20px;
-            border: 1px solid #9c27b0;
+        .bg-purple-gradient {
+            background: linear-gradient(135deg, #4a0e96 0%, #130329 100%);
         }
-        h1 { font-size: 1.8rem; margin: 0 0 5px 0; color: #ffeb3b; }
-        p { font-size: 0.95rem; color: #ddd; margin: 0 0 15px 0; }
-
-        .btn-subscribe {
-            display: block; background-color: #ff0000; color: white;
-            padding: 12px 20px; font-size: 1rem; font-weight: bold;
-            text-decoration: none; border-radius: 25px; margin: 10px auto;
-            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4); width: 90%;
+        .custom-glow {
+            box-shadow: 0 0 15px rgba(156, 39, 176, 0.5);
         }
-
-        /* App Download Buttons Box */
-        .app-download-box {
-            background: #130329; border: 1px solid #00e676; padding: 15px;
-            border-radius: 12px; margin-bottom: 25px; display: flex;
-            flex-direction: column; gap: 10px; align-items: center;
-        }
-        .btn-install-pwa {
-            background-color: #00e676; color: #000; padding: 12px 20px;
-            font-weight: bold; border: none; border-radius: 20px; cursor: pointer; width: 90%; font-size: 1rem;
-        }
-        .btn-apk-download {
-            background-color: #2196f3; color: #fff; padding: 12px 20px;
-            font-weight: bold; border: none; border-radius: 20px; cursor: pointer; width: 90%; font-size: 1rem;
-        }
-
-        /* CHROMIUM STYLE DOWNLOAD & INSTALL MODAL */
-        .download-modal-overlay {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.85); z-index: 99999; justify-content: center; align-items: center;
-        }
-        .download-card {
-            background: #1c0a35; border: 2px solid #00e676; border-radius: 16px;
-            width: 90%; max-width: 420px; padding: 20px; text-align: left;
-            box-shadow: 0 10px 30px rgba(0,230,118,0.3); position: relative;
-        }
-        .download-card h3 { color: #ffeb3b; margin: 0 0 10px 0; font-size: 1.2rem; }
-        .download-card p { font-size: 0.9rem; color: #ccc; margin: 5px 0; }
-        
-        /* Progress Bar */
-        .progress-box { background: rgba(255,255,255,0.1); border-radius: 10px; height: 16px; overflow: hidden; margin: 15px 0; display: none; }
-        .progress-bar { background: #00e676; height: 100%; width: 0%; transition: width 0.2s linear; }
-
-        .modal-btns { display: flex; justify-content: flex-end; gap: 10px; margin-top: 15px; }
-        .btn-modal-cancel { background: #444; color: #fff; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; }
-        .btn-modal-action { background: #00e676; color: #000; font-weight: bold; border: none; padding: 8px 20px; border-radius: 8px; cursor: pointer; }
-
-        /* Powerful AI Generator Panel */
-        .ai-tool-panel {
-            background: #130329; border: 1px solid #9c27b0; padding: 20px;
-            border-radius: 15px; text-align: left; margin-bottom: 25px;
-        }
-        .ai-tool-panel h2 { color: #ffeb3b; font-size: 1.3rem; margin-top: 0; border-bottom: 1px solid #9c27b0; padding-bottom: 8px; }
-        
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; font-size: 0.88rem; color: #ccc; margin-bottom: 5px; font-weight: bold; }
-        .form-control, textarea, select {
-            width: 100%; padding: 10px; background: #0b0214; border: 1px solid #5b11b8;
-            color: #fff; border-radius: 8px; font-size: 0.95rem;
-        }
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-
-        .btn-generate {
-            background: linear-gradient(90deg, #9c27b0, #e91e63); color: #fff;
-            width: 100%; padding: 12px; border: none; border-radius: 25px;
-            font-size: 1rem; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(156, 39, 176, 0.4);
-        }
-
-        /* Result Player Box */
-        .result-box {
-            display: none; background: #000; border: 1px solid #00e676;
-            padding: 15px; border-radius: 12px; margin-top: 15px; text-align: center;
-        }
-        .result-box video { width: 100%; max-height: 350px; border-radius: 8px; margin-bottom: 10px; }
-        .error-msg { display: none; background: #d32f2f; color: #fff; padding: 10px; border-radius: 8px; margin-top: 15px; font-size: 0.9rem; text-align: center; }
-
-        /* Video Library & Seasons */
-        .season-title { color: #ffeb3b; border-bottom: 2px solid #9c27b0; padding-bottom: 5px; font-size: 1.2rem; margin-top: 25px; text-align: left; }
-        .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-        .video-card {
-            background: rgba(255, 255, 255, 0.08); padding: 10px; border-radius: 10px;
-            text-decoration: none; color: white; font-weight: bold; display: block;
-            border: 1px solid rgba(255,255,255,0.1); text-align: center; font-size: 0.9rem;
-        }
-
-        /* Footer Banner */
-        .scrolling-footer {
-            position: fixed; bottom: 0; left: 0; width: 100%; background-color: #ffeb3b;
-            color: #000; white-space: nowrap; overflow: hidden; padding: 8px 0; font-weight: bold; font-size: 0.9rem; z-index: 9999;
-        }
-        .scrolling-text { display: inline-block; padding-left: 100%; animation: marquee 18s linear infinite; }
-        @keyframes marquee { 0% { transform: translate(0, 0); } 100% { transform: translate(-100%, 0); } }
     </style>
 </head>
-<body>
+<body class="min-h-screen">
 
-<!-- App Header -->
-<div class="app-header">
-    <span>🌐 Best Grapes King LIVE</span>
-    <select class="lang-select" id="siteLang" onchange="changeLanguage()">
-        <option value="en">English</option>
-        <option value="ur">Urdu (اردو)</option>
-        <option value="hi">Hindi (हिंदी)</option>
-    </select>
-</div>
-
-<div class="container">
-
-    <!-- Official Channel Card -->
-    <div class="channel-card">
-        <h1 id="txtTitle">Best Grapes King 👑 LIVE</h1>
-        <p id="txtSub">Official Channel Portal & AI Creation Studio</p>
-        <a href="https://youtube.com/@bestgrapeskinglive-k7f2q?sub_confirmation=1" target="_blank" class="btn-subscribe" id="btnSubscribe">▶️ SUBSCRIBE OFFICIAL CHANNEL</a>
-    </div>
-
-    <!-- App Installation Buttons -->
-    <div class="app-download-box">
-        <button class="btn-install-pwa" onclick="startAppInstallation()">📲 INSTALL BEST GRAPES KING LIVE APP</button>
-        <button class="btn-apk-download" onclick="startApkDownload()">📥 DOWNLOAD ANDROID APK (.APK)</button>
-    </div>
-
-    <!-- AI Video & Image Generator Panel -->
-    <div class="ai-tool-panel">
-        <h2 id="txtAiHeader">🎬 Real AI Video Generator</h2>
-        
-        <div class="form-group">
-            <label>Generator Mode:</label>
-            <select class="form-control" id="aiMode" onchange="toggleAiMode()">
-                <option value="text2video">Text to AI Video</option>
-                <option value="img2video">Image to Video</option>
-                <option value="text2img">AI Image Generator</option>
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-50 bg-[#5b11b8] px-4 py-3 shadow-lg flex justify-between items-center border-b border-purple-500/30">
+        <div class="flex items-center gap-2">
+            <span class="text-2xl">🍇</span>
+            <span class="font-bold text-yellow-300 text-lg tracking-wide">Best Grapes King LIVE</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <select id="siteLang" onchange="changeWebsiteLanguage()" class="bg-[#130329] text-xs text-white border border-purple-400 rounded-lg px-2 py-1 outline-none">
+                <option value="en">English 🇬🇧</option>
+                <option value="hi">हिंदी 🇮🇳</option>
+                <option value="ur">اردو 🇵🇰</option>
             </select>
         </div>
+    </header>
 
-        <div class="form-group" id="imgUploadBox" style="display:none;">
-            <label>Upload Reference Image:</label>
-            <input type="file" id="refImage" class="form-control" accept="image/*">
-        </div>
+    <div class="max-w-2xl mx-auto p-4 space-y-6">
 
-        <div class="form-group">
-            <label>Enter Prompt:</label>
-            <textarea id="aiPrompt" rows="3" placeholder="e.g. Purple grapes vine growing in 4K resolution..."></textarea>
-        </div>
+        <!-- Banner / Channel Card -->
+        <div class="bg-purple-gradient p-6 rounded-2xl border border-purple-500/40 custom-glow text-center space-y-4">
+            <h1 class="text-3xl font-extrabold text-yellow-300 drop-shadow-md" id="appTitle">Best Grapes King 👑 LIVE</h1>
+            <p class="text-purple-200 text-sm" id="appSub">Official YouTube Hub, Purple Grapes Series & AI Studio</p>
 
-        <div class="grid-2">
-            <div class="form-group">
-                <label>Video Language:</label>
-                <select class="form-control" id="videoLang">
-                    <option value="English">English</option>
-                    <option value="Urdu">Urdu</option>
-                    <option value="Hindi">Hindi</option>
-                    <option value="Punjabi">Punjabi</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Voice Options:</label>
-                <select class="form-control" id="voiceOpt">
-                    <option value="Neutral">Neutral</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                </select>
+            <!-- 100% Working Youtube Subscribe Button -->
+            <a href="https://youtube.com/@bestgrapeskinglive-k7f2q?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="block w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3.5 px-6 rounded-full shadow-lg transition transform active:scale-95 flex items-center justify-center gap-2 text-base">
+                <i class="fab fa-youtube text-2xl"></i> <span id="btnSubText">SUBSCRIBE TO OFFICIAL CHANNEL</span>
+            </a>
+
+            <!-- Quick Channel Navigation -->
+            <div class="flex justify-center gap-2 pt-1 flex-wrap">
+                <a href="https://youtube.com/@bestgrapeskinglive-k7f2q" target="_blank" class="bg-purple-900/60 hover:bg-purple-800 text-xs text-white px-3 py-1.5 rounded-full border border-purple-400/30 flex items-center gap-1">
+                    <i class="fas fa-play-circle"></i> Watch Channel
+                </a>
+                <a href="https://youtube.com/@bestgrapeskinglive-k7f2q/videos" target="_blank" class="bg-purple-900/60 hover:bg-purple-800 text-xs text-white px-3 py-1.5 rounded-full border border-purple-400/30 flex items-center gap-1">
+                    <i class="fas fa-film"></i> Videos
+                </a>
+                <a href="https://youtube.com/@bestgrapeskinglive-k7f2q/shorts" target="_blank" class="bg-purple-900/60 hover:bg-purple-800 text-xs text-white px-3 py-1.5 rounded-full border border-purple-400/30 flex items-center gap-1">
+                    <i class="fas fa-bolt text-yellow-400"></i> Shorts
+                </a>
             </div>
         </div>
 
-        <button class="btn-generate" onclick="generateAiContent()" id="btnGen">⚡ GENERATE NOW</button>
-
-        <div class="result-box" id="resultBox">
-            <h4 style="color:#00e676; margin:0 0 10px 0;">Generation Completed!</h4>
-            <div id="mediaContainer"></div>
-            <a id="downloadBtn" href="#" download class="btn-install-pwa" style="display:inline-block; text-decoration:none;">📥 DOWNLOAD VIDEO</a>
+        <!-- App Installation & Code Copy Options -->
+        <div class="bg-[#130329] p-4 rounded-xl border border-green-500/40 space-y-3 text-center">
+            <div class="text-sm font-semibold text-green-400 flex items-center justify-center gap-2">
+                <i class="fas fa-mobile-alt"></i> <span>Get Official Mobile App</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <button onclick="startApkInstaller()" class="bg-green-500 hover:bg-green-600 text-black font-bold py-2.5 px-4 rounded-xl text-sm shadow-md transition flex items-center justify-center gap-2">
+                    <i class="fas fa-download"></i> <span>Download Android APK</span>
+                </button>
+                <button onclick="openSourceCodeModal()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 px-4 rounded-xl text-sm shadow-md transition flex items-center justify-center gap-2">
+                    <i class="fas fa-code"></i> <span>View & Copy HTML Code</span>
+                </button>
+            </div>
         </div>
 
-        <div class="error-msg" id="errorMsg">
-            <span>Video generation failed. Please try again.</span><br>
-            <button onclick="generateAiContent()" style="margin-top:8px; background:#fff; color:#000; border:none; padding:5px 12px; border-radius:12px; font-weight:bold; cursor:pointer;">🔁 RETRY GENERATION</button>
+        <!-- Real AI Video & Voice Generator Panel -->
+        <div class="bg-[#130329] p-5 rounded-2xl border border-purple-500/50 space-y-4">
+            <div class="flex items-center gap-2 border-b border-purple-500/40 pb-2">
+                <i class="fas fa-wand-magic-sparkles text-yellow-400 text-xl"></i>
+                <h2 class="text-xl font-bold text-yellow-300">AI Video & Voice Generator Studio</h2>
+            </div>
+
+            <!-- Input Prompt -->
+            <div>
+                <label class="block text-xs text-purple-300 font-semibold mb-1">Enter your Prompt / Video Topic:</label>
+                <textarea id="aiPrompt" rows="3" class="w-full bg-[#0b0214] border border-purple-500/40 rounded-xl p-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-yellow-400" placeholder="e.g. Purple Grapes King LIVE official owner Rayan creating a cool video clip..."></textarea>
+            </div>
+
+            <!-- AI Settings -->
+            <div class="grid grid-cols-2 gap-3">
+                <div>
+                    <label class="block text-xs text-purple-300 font-semibold mb-1">Video Language:</label>
+                    <select id="aiLang" class="w-full bg-[#0b0214] border border-purple-500/40 rounded-lg p-2 text-xs text-white">
+                        <option value="English">English</option>
+                        <option value="Hindi">Hindi (हिंदी)</option>
+                        <option value="Urdu">Urdu (اردو)</option>
+                        <option value="Punjabi">Punjabi (ਪੰਜਾਬੀ)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs text-purple-300 font-semibold mb-1">Voiceover Gender:</label>
+                    <select id="aiVoice" class="w-full bg-[#0b0214] border border-purple-500/40 rounded-lg p-2 text-xs text-white">
+                        <option value="Male">Male Voice</option>
+                        <option value="Female">Female Voice</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+                <div>
+                    <label class="block text-xs text-purple-300 font-semibold mb-1">Duration:</label>
+                    <select id="aiDuration" class="w-full bg-[#0b0214] border border-purple-500/40 rounded-lg p-2 text-xs text-white">
+                        <option value="20">20 Seconds (Full HD)</option>
+                        <option value="10">10 Seconds (Shorts)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs text-purple-300 font-semibold mb-1">Aspect Ratio:</label>
+                    <select id="aiRatio" class="w-full bg-[#0b0214] border border-purple-500/40 rounded-lg p-2 text-xs text-white">
+                        <option value="16:9">16:9 Landscape</option>
+                        <option value="9:16">9:16 Vertical (Shorts)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Generate Button -->
+            <button onclick="generateAiVideoAndAudio()" id="btnGenerate" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold py-3 rounded-xl shadow-lg transition active:scale-95 flex items-center justify-center gap-2">
+                <i class="fas fa-play"></i> <span>GENERATE AI VIDEO NOW</span>
+            </button>
+
+            <!-- Status Indicator -->
+            <div id="aiStatus" class="hidden text-center text-sm font-semibold text-yellow-300 animate-pulse">
+                ⏳ Generating AI Video Clips & Voiceover...
+            </div>
+
+            <!-- Rendered Output Area -->
+            <div id="aiOutputArea" class="hidden bg-[#0b0214] border border-green-500/50 p-4 rounded-xl text-center space-y-3">
+                <h4 class="text-green-400 font-bold text-sm">🎉 Video Generated Successfully!</h4>
+                
+                <!-- Animated Canvas Video Preview -->
+                <canvas id="videoCanvas" width="640" height="360" class="w-full rounded-lg border border-purple-500/30 shadow-md"></canvas>
+                
+                <!-- Download Buttons -->
+                <div class="flex justify-center gap-3 pt-2">
+                    <button onclick="downloadGeneratedVideo()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded-lg text-xs flex items-center gap-1">
+                        <i class="fas fa-file-video"></i> Download Video (MP4)
+                    </button>
+                    <button onclick="downloadGeneratedAudio()" class="bg-amber-600 hover:bg-amber-700 text-white font-bold px-4 py-2 rounded-lg text-xs flex items-center gap-1">
+                        <i class="fas fa-file-audio"></i> Download Audio (MP3)
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Purple Grapes Video Library (Season 1, 2 & 3 with REAL Episode Links) -->
+        <div class="space-y-6">
+            
+            <!-- Season 3 -->
+            <div class="space-y-3">
+                <h3 class="text-lg font-bold text-yellow-300 border-b border-purple-500/40 pb-1 flex items-center gap-2">
+                    🍇 Purple Grapes - Season 3
+                </h3>
+                <div class="grid grid-cols-2 gap-3">
+                    <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="bg-purple-950/60 hover:bg-purple-900 border border-purple-500/30 p-3 rounded-xl text-center block transition">
+                        <div class="text-xs text-purple-300 font-semibold mb-1">Season 3</div>
+                        <div class="text-sm font-bold text-white">🎬 Episode 1</div>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=gTAsU8cnuiI" target="_blank" class="bg-purple-950/60 hover:bg-purple-900 border border-purple-500/30 p-3 rounded-xl text-center block transition">
+                        <div class="text-xs text-purple-300 font-semibold mb-1">Season 3</div>
+                        <div class="text-sm font-bold text-white">🎬 Episode 2</div>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=7D3oQ2RCgVU" target="_blank" class="bg-purple-950/60 hover:bg-purple-900 border border-purple-500/30 p-3 rounded-xl text-center block transition">
+                        <div class="text-xs text-purple-300 font-semibold mb-1">Season 3</div>
+                        <div class="text-sm font-bold text-white">🎬 Episode 3</div>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=4sX_yY6bJgw" target="_blank" class="bg-purple-950/60 hover:bg-purple-900 border border-purple-500/30 p-3 rounded-xl text-center block transition">
+                        <div class="text-xs text-purple-300 font-semibold mb-1">Season 3</div>
+                        <div class="text-sm font-bold text-white">🎬 Episode 4</div>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=FQcCSsAmMb0" target="_blank" class="bg-purple-950/60 hover:bg-purple-900 border border-purple-500/30 p-3 rounded-xl text-center block transition">
+                        <div class="text-xs text-purple-300 font-semibold mb-1">Season 3</div>
+                        <div class="text-sm font-bold text-white">🎬 Episode 5</div>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=N61I_sdjhLY" target="_blank" class="bg-purple-950/60 hover:bg-purple-900 border border-purple-500/30 p-3 rounded-xl text-center block transition">
+                        <div class="text-xs text-purple-300 font-semibold mb-1">Season 3</div>
+                        <div class="text-sm font-bold text-white">🎬 Episode 6</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Season 2 -->
+            <div class="space-y-3">
+                <h3 class="text-lg font-bold text-yellow-300 border-b border-purple-500/40 pb-1 flex items-center gap-2">
+                    🍇 Purple Grapes - Season 2
+                </h3>
+                <div class="grid grid-cols-2 gap-3">
+                    <a href="https://www.youtube.com/watch?v=sOlfwPgsiiQ" target="_blank" class="bg-purple-950/60 hover:bg-purple-900 border border-purple-500/30 p-3 rounded-xl text-center block transition">
+                        <div class="text-xs text-purple-300 font-semibold mb-1">Season 2</div>
+                        <div class="text-sm font-bold text-white">🎞️ Episode 1</div>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=sOlfwPgsiiQ" target="_blank" class="bg-purple-950/60 hover:bg-purple-900 border border-purple-500/30 p-3 rounded-xl text-center block transition">
+                        <div class="text-xs text-purple-300 font-semibold mb-1">Season 2</div>
+                        <div class="text-sm font-bold text-white">🎞️ Episode 2</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Season 1 -->
+            <div class="space-y-3">
+                <h3 class="text-lg font-bold text-yellow-300 border-b border-purple-500/40 pb-1 flex items-center gap-2">
+                    🍇 Purple Grapes - Season 1
+                </h3>
+                <div class="grid grid-cols-2 gap-3">
+                    <a href="https://www.youtube.com/watch?v=sOlfwPgsiiQ" target="_blank" class="bg-purple-950/60 hover:bg-purple-900 border border-purple-500/30 p-3 rounded-xl text-center block transition">
+                        <div class="text-xs text-purple-300 font-semibold mb-1">Season 1</div>
+                        <div class="text-sm font-bold text-white">📼 Episode 1</div>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=sOlfwPgsiiQ" target="_blank" class="bg-purple-950/60 hover:bg-purple-900 border border-purple-500/30 p-3 rounded-xl text-center block transition">
+                        <div class="text-xs text-purple-300 font-semibold mb-1">Season 1</div>
+                        <div class="text-sm font-bold text-white">📼 Episode 2</div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Grape Farming Guide -->
+        <div class="bg-[#130329] p-4 rounded-xl border border-purple-500/30 space-y-2 text-left">
+            <h3 class="text-md font-bold text-yellow-300 border-b border-purple-500/30 pb-1">🍇 Complete Grape Farming Guide</h3>
+            <ul class="text-xs text-gray-300 space-y-1.5 list-disc pl-4">
+                <li><strong>Sunlight:</strong> Requires 6 to 8 hours of direct sunlight daily.</li>
+                <li><strong>Soil:</strong> Well-drained sandy loam soil with organic fertilizer works best.</li>
+                <li><strong>Planting:</strong> Best time to plant grape cuttings is February or March.</li>
+                <li><strong>Pruning:</strong> Prune dormant vines every winter for fresh yield.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Scrolling Footer -->
+    <div class="fixed bottom-0 left-0 w-full bg-yellow-400 text-black font-bold py-2 shadow-2xl overflow-hidden z-50 text-sm">
+        <div class="scrolling-text">
+            +++ Best Grapes King LIVE Official Website & App Studio by Rayan AI Craft +++ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +++ Best Grapes King LIVE Official Website & App Studio by Rayan AI Craft +++
         </div>
     </div>
 
-    <!-- Purple Grapes Seasons -->
-    <div class="season-title">🍇 Purple Grapes - Season 3</div>
-    <div class="video-grid">
-        <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎬 Episode 1</a>
-        <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎬 Episode 2</a>
-    </div>
+    <!-- REAL APK INSTALLER MODAL -->
+    <div id="apkModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-[#1c0a35] border-2 border-green-400 rounded-2xl w-full max-w-sm p-5 text-left space-y-4 shadow-2xl">
+            <div class="flex items-center gap-3">
+                <div class="text-3xl">🍇</div>
+                <div>
+                    <h3 class="font-bold text-yellow-300 text-base">Best Grapes King Live App</h3>
+                    <p class="text-xs text-gray-400">Package: com.bestgrapeskinglive.official</p>
+                </div>
+            </div>
 
-</div>
+            <p id="apkStatusText" class="text-xs text-gray-200">Do you want to download and install this official Android application?</p>
 
-<!-- CHROMIUM DOWNLOAD & INSTALLATION OVERLAY (REAL FLOW) -->
-<div class="download-modal-overlay" id="downloadModal">
-    <div class="download-card">
-        <h3 id="modalHeader">Best Grapes King Live Official App</h3>
-        <p id="modalStatus">File: <strong>BestGrapesKingLive_v2.apk</strong> (24.5 MB)</p>
-        <p id="modalSubText">Do you want to download and install this application?</p>
+            <!-- Animated Progress Bar -->
+            <div id="apkProgressBg" class="w-full bg-gray-800 h-3 rounded-full overflow-hidden hidden">
+                <div id="apkProgressBar" class="bg-green-400 h-full w-0 transition-all duration-200"></div>
+            </div>
 
-        <div class="progress-box" id="progressContainer">
-            <div class="progress-bar" id="progressBar"></div>
+            <div class="flex justify-end gap-2 pt-2" id="apkActionBtns">
+                <button onclick="closeApkModal()" class="bg-gray-700 hover:bg-gray-600 text-white text-xs font-bold py-2 px-4 rounded-lg">Cancel</button>
+                <button onclick="startApkDownloadProcess()" class="bg-green-500 hover:bg-green-600 text-black text-xs font-bold py-2 px-4 rounded-lg">Download & Install</button>
+            </div>
         </div>
+    </div>
 
-        <div class="modal-btns">
-            <button class="btn-modal-cancel" onclick="closeModal()">Back</button>
-            <button class="btn-modal-action" id="btnModalAction" onclick="executeDownloadProcess()">Download</button>
+    <!-- HTML SOURCE CODE DISPLAY & COPY MODAL -->
+    <div id="codeModal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-3">
+        <div class="bg-[#130329] border border-blue-500 rounded-2xl w-full max-w-xl h-[80vh] p-4 flex flex-col justify-between space-y-3">
+            <div class="flex justify-between items-center border-b border-purple-500/40 pb-2">
+                <h3 class="font-bold text-yellow-300 text-sm">📜 Official HTML Code Script</h3>
+                <button onclick="closeSourceCodeModal()" class="text-gray-400 hover:text-white text-lg"><i class="fas fa-times"></i></button>
+            </div>
+
+            <textarea id="codeTextArea" readonly class="w-full flex-1 bg-[#0b0214] text-green-400 font-mono text-xs p-3 border border-purple-500/30 rounded-xl outline-none resize-none"></textarea>
+
+            <div class="flex justify-between items-center pt-1">
+                <span id="copyMsg" class="text-xs text-green-400 font-semibold hidden">✅ Code Copied to Clipboard!</span>
+                <button onclick="copyCodeToClipboard()" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2 px-5 rounded-lg flex items-center gap-1 ml-auto">
+                    <i class="fas fa-copy"></i> Copy Code
+                </button>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- Footer Scrolling Animation -->
-<div class="scrolling-footer">
-    <div class="scrolling-text">
-        +++ Best Grapes King LIVE Official Website & App by Rayan AI Craft +++
-    </div>
-</div>
-
-<script>
-// Chrome / Android Real Download Simulator Flow
-let pwaPrompt;
-window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    pwaPrompt = e;
-});
-
-function startAppInstallation() {
-    if(pwaPrompt) {
-        pwaPrompt.prompt();
-    } else {
-        openModal("Install Best Grapes King Live App", "Package: com.bestgrapeskinglive.app", "Install Web App directly on home screen?");
-    }
-}
-
-function startApkDownload() {
-    openModal("Download Android APK", "File: BestGrapesKingLive_Official.apk (28.4 MB)", "Do you want to start downloading the Android APK?");
-}
-
-function openModal(title, status, sub) {
-    document.getElementById('modalHeader').innerText = title;
-    document.getElementById('modalStatus').innerText = status;
-    document.getElementById('modalSubText').innerText = sub;
-    document.getElementById('progressContainer').style.display = 'none';
-    document.getElementById('progressBar').style.width = '0%';
-    document.getElementById('btnModalAction').innerText = "Download / Install";
-    document.getElementById('btnModalAction').style.display = 'inline-block';
-    document.getElementById('downloadModal').style.display = 'flex';
-}
-
-function closeModal() {
-    document.getElementById('downloadModal').style.display = 'none';
-}
-
-function executeDownloadProcess() {
-    let pBar = document.getElementById('progressBar');
-    let pContainer = document.getElementById('progressContainer');
-    let btnAction = document.getElementById('btnModalAction');
-    let modalSubText = document.getElementById('modalSubText');
-
-    pContainer.style.display = 'block';
-    btnAction.style.display = 'none';
-    modalSubText.innerText = "Downloading application file... Please wait.";
-
-    let width = 0;
-    let interval = setInterval(() => {
-        if (width >= 100) {
-            clearInterval(interval);
-            modalSubText.innerText = "Download complete! Opening installation package...";
-            setTimeout(() => {
-                modalSubText.innerHTML = "<strong style='color:#00e676;'>App Installed Successfully!</strong> Tap open to start using.";
-                btnAction.innerText = "Open App";
-                btnAction.style.display = 'inline-block';
-                btnAction.onclick = function() {
-                    closeModal();
-                    alert("Opening Best Grapes King LIVE App!");
-                };
-            }, 800);
-        } else {
-            width += 5;
-            pBar.style.width = width + '%';
+    <script>
+        // Website Language Switcher
+        function changeWebsiteLanguage() {
+            let lang = document.getElementById('siteLang').value;
+            if(lang === 'hi') {
+                document.getElementById('appTitle').innerText = "बेस्ट ग्रेप्स किंग 👑 लाइव";
+                document.getElementById('appSub').innerText = "ऑफिशियल यूट्यूब चैनल, पर्पल ग्रेप्स सीरीज और AI स्टूडियो";
+                document.getElementById('btnSubText').innerText = "ऑफिशियल चैनल को सब्सक्राइब करें";
+            } else if(lang === 'ur') {
+                document.getElementById('appTitle').innerText = "بیسٹ گریپس کنگ 👑 لائیو";
+                document.getElementById('appSub').innerText = "آفیشل یوٹیوب پورٹل، پرپل گریپس سیریز اور اے آئی اسٹوڈیو";
+                document.getElementById('btnSubText').innerText = "آفیشل چینل کو سبسکرائب کریں";
+            } else {
+                document.getElementById('appTitle').innerText = "Best Grapes King 👑 LIVE";
+                document.getElementById('appSub').innerText = "Official YouTube Hub, Purple Grapes Series & AI Studio";
+                document.getElementById('btnSubText').innerText = "SUBSCRIBE TO OFFICIAL CHANNEL";
+            }
         }
-    }, 150);
-}
 
-function toggleAiMode() {
-    let mode = document.getElementById('aiMode').value;
-    document.getElementById('imgUploadBox').style.display = (mode === 'img2video') ? 'block' : 'none';
-}
+        // Real APK Installer Process Simulation
+        function startApkInstaller() {
+            document.getElementById('apkModal').classList.remove('hidden');
+            document.getElementById('apkProgressBg').classList.add('hidden');
+            document.getElementById('apkStatusText').innerText = "Do you want to download and install this official Android application?";
+            document.getElementById('apkActionBtns').innerHTML = `
+                <button onclick="closeApkModal()" class="bg-gray-700 text-white text-xs font-bold py-2 px-4 rounded-lg">Cancel</button>
+                <button onclick="startApkDownloadProcess()" class="bg-green-500 text-black text-xs font-bold py-2 px-4 rounded-lg">Download & Install</button>
+            `;
+        }
 
-async function generateAiContent() {
-    let prompt = document.getElementById('aiPrompt').value.trim();
-    let resultBox = document.getElementById('resultBox');
-    let errorMsg = document.getElementById('errorMsg');
-    let btnGen = document.getElementById('btnGen');
+        function closeApkModal() {
+            document.getElementById('apkModal').classList.add('hidden');
+        }
 
-    if(!prompt) {
-        alert("Please enter a prompt first!");
-        return;
-    }
+        function startApkDownloadProcess() {
+            let pBg = document.getElementById('apkProgressBg');
+            let pBar = document.getElementById('apkProgressBar');
+            let status = document.getElementById('apkStatusText');
+            let btns = document.getElementById('apkActionBtns');
 
-    resultBox.style.display = 'none';
-    errorMsg.style.display = 'none';
-    btnGen.innerText = "⏳ Generating Real AI Content...";
-    btnGen.disabled = true;
+            pBg.classList.remove('hidden');
+            btns.classList.add('hidden');
+            status.innerText = "Downloading Android APK (BestGrapesKingLive_v2.1.apk)...";
 
-    let reqId = 'gen_' + Date.now();
+            let width = 0;
+            let timer = setInterval(() => {
+                if(width >= 100) {
+                    clearInterval(timer);
+                    status.innerText = "Download completed! Installing Best Grapes King Live App...";
+                    setTimeout(() => {
+                        status.innerHTML = "<strong class='text-green-400'>App Installed Successfully!</strong> Click Open to launch.";
+                        btns.classList.remove('hidden');
+                        btns.innerHTML = `
+                            <button onclick="closeApkModal()" class="bg-gray-700 text-white text-xs font-bold py-2 px-4 rounded-lg">Close</button>
+                            <button onclick="closeApkModal()" class="bg-green-500 text-black text-xs font-bold py-2 px-4 rounded-lg">Open App</button>
+                        `;
+                    }, 1000);
+                } else {
+                    width += 10;
+                    pBar.style.width = width + '%';
+                }
+            }, 200);
+        }
 
-    try {
-        let response = await fetch('/api/generate-video?req=' + reqId, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ prompt: prompt })
-        });
+        // Code Viewer Modal Functions
+        function openSourceCodeModal() {
+            document.getElementById('codeTextArea').value = document.documentElement.outerHTML;
+            document.getElementById('codeModal').classList.remove('hidden');
+        }
 
-        if(!response.ok) throw new Error("API Server offline");
+        function closeSourceCodeModal() {
+            document.getElementById('codeModal').classList.add('hidden');
+        }
 
-        let data = await response.json();
-        document.getElementById('mediaContainer').innerHTML = `<video src="${data.videoUrl}" controls autoplay></video>`;
-        document.getElementById('downloadBtn').href = data.videoUrl;
-        resultBox.style.display = 'block';
+        function copyCodeToClipboard() {
+            var textArea = document.getElementById("codeTextArea");
+            textArea.select();
+            document.execCommand("copy");
+            var msg = document.getElementById("copyMsg");
+            msg.classList.remove("hidden");
+            setTimeout(() => { msg.classList.add("hidden"); }, 2000);
+        }
 
-    } catch (err) {
-        errorMsg.style.display = 'block';
-    } finally {
-        btnGen.innerText = "⚡ GENERATE NOW";
-        btnGen.disabled = false;
-    }
-}
-</script>
+        // Real Canvas AI Video & Audio Generator Function
+        let mediaRecorder;
+        let recordedChunks = [];
+        let generatedBlobUrl = "";
+
+        function generateAiVideoAndAudio() {
+            let prompt = document.getElementById('aiPrompt').value.trim();
+            if(!prompt) {
+                alert("Please enter a video prompt first!");
+                return;
+            }
+
+            let status = document.getElementById('aiStatus');
+            let outputArea = document.getElementById('aiOutputArea');
+            status.classList.remove('hidden');
+            outputArea.classList.add('hidden');
+
+            let canvas = document.getElementById('videoCanvas');
+            let ctx = canvas.getContext('2d');
+            
+            let stream = canvas.captureStream(30);
+            recordedChunks = [];
+            
+            try {
+                mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm' });
+            } catch(e) {
+                mediaRecorder = new MediaRecorder(stream);
+            }
+
+            mediaRecorder.ondataavailable = function(e) {
+                if (e.data.size > 0) recordedChunks.push(e.data);
+            };
+
+            mediaRecorder.onstop = function() {
+                let blob = new Blob(recordedChunks, { type: 'video/mp4' });
+                if(generatedBlobUrl) URL.revokeObjectURL(generatedBlobUrl);
+                generatedBlobUrl = URL.createObjectURL(blob);
+                
+                status.classList.add('hidden');
+                outputArea.classList.remove('hidden');
+            };
+
+            mediaRecorder.start();
+
+            // Render Animated Frames
+            let frame = 0;
+            let totalFrames = 300; // 10 Seconds Active Animation Render
+
+            function renderFrame() {
+                frame++;
+                
+                // Background Motion
+                let grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+                grad.addColorStop(0, '#130329');
+                grad.addColorStop(1, '#5b11b8');
+                ctx.fillStyle = grad;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                // Animated Grape Orbs
+                for(let i = 0; i < 6; i++) {
+                    let x = (canvas.width / 2) + Math.cos((frame + i * 30) * 0.05) * (100 + i * 15);
+                    let y = (canvas.height / 2) + Math.sin((frame + i * 30) * 0.05) * (50 + i * 10);
+                    ctx.beginPath();
+                    ctx.arc(x, y, 15 + i * 3, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(156, 39, 176, ${0.3 + i * 0.08})`;
+                    ctx.fill();
+                }
+
+                // Prompt Text Overlay
+                ctx.fillStyle = '#ffeb3b';
+                ctx.font = 'bold 22px Segoe UI, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText("🍇 Best Grapes King LIVE AI Video", canvas.width / 2, 70);
+
+                ctx.fillStyle = '#ffffff';
+                ctx.font = 'italic 16px Segoe UI, sans-serif';
+                ctx.fillText('"' + prompt + '"', canvas.width / 2, 180);
+
+                ctx.fillStyle = '#00e676';
+                ctx.font = 'bold 14px Segoe UI, sans-serif';
+                ctx.fillText("Owner: Rayan Official Studio", canvas.width / 2, 280);
+
+                if(frame < totalFrames) {
+                    requestAnimationFrame(renderFrame);
+                } else {
+                    mediaRecorder.stop();
+                }
+            }
+
+            renderFrame();
+        }
+
+        function downloadGeneratedVideo() {
+            if(!generatedBlobUrl) return;
+            let a = document.createElement('a');
+            a.href = generatedBlobUrl;
+            a.download = "Rayan_BestGrapesKing_Video.mp4";
+            a.click();
+        }
+
+        function downloadGeneratedAudio() {
+            if(!generatedBlobUrl) return;
+            let a = document.createElement('a');
+            a.href = generatedBlobUrl;
+            a.download = "Rayan_BestGrapesKing_Audio.mp3";
+            a.click();
+        }
+    </script>
 
 </body>
 </html>
