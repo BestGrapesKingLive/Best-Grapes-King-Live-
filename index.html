@@ -1,146 +1,95 @@
-Build a complete, professional, mobile-first website and installable PWA called:
+UPDATE THE EXISTING WEBSITE — DO NOT REBUILD OR REPLACE THE CURRENT WEBSITE.
 
+Website name:
 BEST GRAPES KING LIVE
 
 IMPORTANT:
-The final result must be a REAL FUNCTIONAL WEBSITE, not a page displaying this instruction text.
+Keep everything that already works on the current website.
+Do not delete the existing design, pages, content, links, or working features.
+Only add, repair, and improve the features listed below.
 
-Do NOT display this prompt on the website.
-Do NOT render the instructions as visible webpage text.
-Convert these requirements into actual HTML, CSS, JavaScript and backend-ready functionality.
-
-OFFICIAL YOUTUBE CHANNEL:
-https://youtube.com/@bestgrapeskinglive-k7f2q
-
-GOOGLE SITE VERIFICATION:
-Add this exact line inside the HTML <head> section:
-
-<meta name="google-site-verification" content="f8Y0j9sO6L9wG0f-X4X8_Y1Z2a3b4c5d" />
+Do NOT display this update instruction as webpage text.
 
 ==================================================
-BRAND
+1. REMOVE BROKEN DEMO / FAKE VIDEO SYSTEM
 ==================================================
 
-Website name:
-Best Grapes King Live
-
-Installed app name:
-Best Grapes King Live
-
-Use the exact spelling everywhere.
-
-Do not use:
-Best Scraps King Live
-Best Grapes King
-Best Grapes Live
-Demo App
-
-==================================================
-IMPORTANT — REMOVE ALL FAKE/DEMO FEATURES
-==================================================
-
-Completely remove:
+Completely remove any:
 
 Try Demo
 Demo Video
-Demo Generator
 Sample Video
-Example Video
 Placeholder Video
 Fake Video
-Fake Generation Result
-Pre-made Video
+Fake AI Result
 Fallback Video
+Pre-made Video
 
-NEVER show a pre-made video when AI generation fails.
+The AI Video Generator must NEVER show the same old video for every prompt.
 
-NEVER return the same video for different prompts.
+If generation fails, show the real error and a Retry button.
 
-If generation fails, show the real error and allow the user to retry.
+Never replace a failed generation with a demo or old video.
 
 ==================================================
+2. REAL AI VIDEO GENERATOR
+==================================================
+
+Add a proper:
+
 AI VIDEO GENERATOR
-==================================================
 
-Create a major feature called:
+The user's prompt must control the generated video.
 
-FREE AI VIDEO GENERATOR
-
-The user enters a prompt.
-
-The generated video must follow the user's prompt.
-
-Example:
-
-Prompt:
-"A realistic purple grape vineyard during heavy rain, cinematic camera movement."
-
-The result must be generated from that request.
-
-Do NOT return an unrelated old video.
-
-Every generation request must create a unique request ID.
-
-Every generation must be treated as a new request.
-
-Prevent browser cache from returning an old generation.
-
-Use:
-
-unique request ID
-unique generation ID
-timestamp
-prompt data
-generation state
-
-When a new generation starts, clear the previous result from the active result area.
-
-==================================================
-VIDEO CONTROLS
-==================================================
+Every new prompt must create a new generation request.
 
 Add:
 
-Video Prompt
-Duration
-Aspect Ratio
-Quality
-Video Language
-Voice
-Captions
+Prompt
+Generate Video
+Regenerate
+Download Video
+Preview
 
-Duration options should only be enabled when supported by the actual AI provider.
+Every request must have a unique generation ID.
 
-Possible options:
+Prevent old browser cache from showing a previous generation.
 
+==================================================
+3. VIDEO OPTIONS
+==================================================
+
+Add these controls:
+
+Duration:
 5 seconds
 6 seconds
 10 seconds
 15 seconds
 20 seconds
 
-Aspect ratio:
-
+Video Size:
 9:16
 16:9
 1:1
 
 Quality:
-
 Low
 Standard
 High
 Ultra
 
-Only show quality levels actually supported by the connected provider.
+Only enable options actually supported by the connected AI provider.
 
 ==================================================
-VOICE OPTIONS
+4. VOICE OPTIONS
 ==================================================
 
-Add a voice selector.
+Add:
 
-Possible categories:
+Voice
+
+Options where supported:
 
 Young
 Adult
@@ -149,19 +98,21 @@ Male
 Female
 Neutral
 
-The selected voice must actually be passed to the connected voice/video provider.
+The selected voice must actually be sent to the AI provider.
 
-Do not create fake voice buttons that all produce the same voice.
+Do not make fake voice buttons.
 
 ==================================================
+5. VIDEO LANGUAGE
+==================================================
+
+Add:
+
 VIDEO LANGUAGE
-==================================================
 
-Add a video-language selector.
+Support as many languages as the connected AI provider actually supports.
 
-Support as many languages as the connected provider genuinely supports.
-
-Include, where supported:
+Include:
 
 English
 Urdu
@@ -182,12 +133,41 @@ Chinese
 Japanese
 Korean
 
-Also support additional languages provided by the actual AI provider.
-
-Do not claim unlimited language support if the provider does not support it.
+Also automatically include other languages supported by the provider.
 
 ==================================================
-CAPTIONS
+6. WEBSITE LANGUAGE
+==================================================
+
+Add a separate:
+
+WEBSITE LANGUAGE
+
+Default:
+
+English
+
+The user must be able to change the entire website interface language.
+
+Translate:
+
+Home
+AI Tools
+Videos
+Purple Grapes
+Seasons
+Shorts
+Settings
+Buttons
+Menus
+Error messages
+Install instructions
+Help text
+
+Website language and video language must be separate settings.
+
+==================================================
+7. CAPTIONS
 ==================================================
 
 Add:
@@ -195,197 +175,140 @@ Add:
 Captions ON
 Captions OFF
 
-If the provider supports caption removal, provide:
+If technically supported:
 
 Remove Captions
 
-Do not pretend captions were removed if the provider cannot actually remove them.
+Do not claim captions were removed unless they actually were.
 
 ==================================================
-IMAGE TO VIDEO
+8. IMAGE TO VIDEO
 ==================================================
 
 Add:
 
 IMAGE TO VIDEO
 
-Allow the user to upload an image.
+Allow the user to upload an image and enter a prompt.
 
-Allow the user to enter a prompt describing how the image should be animated.
-
-The resulting video must use the uploaded image and prompt.
+The AI must use the uploaded image as the visual reference.
 
 ==================================================
-ADVANCED AI SETTINGS
+9. AI IMAGE GENERATOR
 ==================================================
 
-Add an Advanced Settings panel.
+Add:
 
-Where supported, include:
+AI IMAGE GENERATOR
+
+Options:
+
+Text to Image
+Image Size
+Aspect Ratio
+Quality
+Style
+Download
+
+==================================================
+10. ADVANCED AI OPTIONS
+==================================================
+
+Add an Advanced Options section.
+
+Where supported:
 
 Camera Movement
-Motion Level
-Creativity
+Motion
 Lighting
 Style
 FPS
 Seed
+Creativity
 Negative Prompt
 Reference Image
 Resolution
 
-Only activate controls that the connected provider can actually use.
+Only use controls that the actual connected provider supports.
 
 ==================================================
-NO FAKE AI BACKEND
+11. BEST GRAPES KING LIVE YOUTUBE CHANNEL
 ==================================================
 
-The frontend must NOT pretend that AI video generation works if no real AI provider is connected.
-
-Create a secure backend endpoint:
-
-POST /api/generate-video
-
-The backend must connect to a real AI video-generation provider.
-
-Never put private API keys inside frontend JavaScript.
-
-Use environment variables for API keys.
-
-If the provider returns an error:
-
-Show the real error.
-
-Do not show an old video.
-
-Do not show a demo video.
-
-Do not show a random video.
-
-==================================================
-WEBSITE LANGUAGE
-==================================================
-
-The default website language must be:
-
-English
-
-Add a Language selector.
-
-The entire website interface must be translatable.
-
-Support as many languages as practical, including:
-
-English
-Urdu
-Hindi
-Bengali
-Marathi
-Punjabi
-Arabic
-Persian
-Turkish
-French
-Spanish
-German
-Italian
-Portuguese
-Russian
-Chinese
-Japanese
-Korean
-
-When the user changes the website language, translate:
-
-Navigation
-Buttons
-Menus
-Settings
-AI Video Generator
-Error messages
-Help text
-Install instructions
-Video library labels
-
-This is the WEBSITE language, separate from the VIDEO language.
-
-==================================================
-YOUTUBE CHANNEL
-==================================================
-
-Add a large button near the top:
+Add a prominent button:
 
 SUBSCRIBE TO BEST GRAPES KING LIVE
 
-When clicked, open:
+Official channel:
 
 https://youtube.com/@bestgrapeskinglive-k7f2q
 
-Add:
+Clicking the button must open the official channel.
 
-YouTube icon
-Channel button
-Videos button
-Shorts button
+Also add:
+
+WATCH CHANNEL
+VIDEOS
+SHORTS
+SUBSCRIBE
 
 ==================================================
-PURPLE GRAPES LIBRARY
+12. PURPLE GRAPES VIDEO LIBRARY
 ==================================================
 
-Create:
+Add a complete:
 
 PURPLE GRAPES
 
-Create separate sections:
-
-PURPLE GRAPES — SEASON 1
-
-PURPLE GRAPES — SEASON 2
-
-PURPLE GRAPES — SEASON 3
-
-PURPLE GRAPES — SHORTS
-
-Every real episode should contain:
-
-Thumbnail
-Exact YouTube title
-Season
-Episode number
-Watch button
-Official YouTube URL
-
-IMPORTANT:
-
-DO NOT INVENT YOUTUBE VIDEO LINKS.
-
-Use the real YouTube URLs.
-
-If YouTube Data API is available, automatically retrieve the official channel's videos and organize them into Season 1, Season 2 and Season 3.
-
-If API access is unavailable, provide an owner/admin area where real YouTube URLs can be added manually.
-
-Future episodes must be addable without rebuilding the website.
-
-==================================================
-SHORTS
-==================================================
+section.
 
 Create:
 
+PURPLE GRAPES SEASON 1
+PURPLE GRAPES SEASON 2
+PURPLE GRAPES SEASON 3
+PURPLE GRAPES SHORTS
+
+Each real episode should show:
+
+Thumbnail
+Title
+Episode number
+Season
+Watch button
+Official YouTube link
+
+IMPORTANT:
+
+Never invent YouTube links.
+
+Use real videos from the official Best Grapes King Live channel.
+
+If YouTube API access is available, automatically load the real videos.
+
+If API access is not available, create an owner/admin area where real YouTube URLs can be added.
+
+Future episodes must be easy to add.
+
+==================================================
+13. SHORTS
+==================================================
+
+Add:
+
 BEST GRAPES KING LIVE SHORTS
 
-Use the official Shorts page:
+Official Shorts page:
 
 https://www.youtube.com/@bestgrapeskinglive-k7f2q/shorts
 
-Do not create fake Shorts URLs.
+Show real Shorts only.
 
 ==================================================
-GRAPES CREATOR
+14. GRAPES CREATOR
 ==================================================
 
-Create a section:
+Add:
 
 GRAPES CREATOR
 
@@ -393,243 +316,205 @@ Include:
 
 Grape Video Prompt Generator
 Grape Image Prompt Generator
-Grape Growth/Lifecycle Prompts
-Purple Grapes Video Ideas
-Grape Preparation/Cutting Tutorial Prompts
-
-Create clear food-safe preparation content.
+Grape Growth/Lifecycle
+Purple Grapes Ideas
+Grape Preparation/Cutting Tutorial
 
 ==================================================
-APP / PWA
+15. APP INSTALL OPTION
 ==================================================
-
-Make the website a real Progressive Web App.
-
-App name:
-
-Best Grapes King Live
 
 Add:
 
-manifest.webmanifest
-service worker
-app icon
-splash screen
-standalone display mode
-responsive mobile interface
-
-Add a button:
-
 INSTALL BEST GRAPES KING LIVE APP
 
-On supported Chrome/Android browsers, use the REAL browser installation prompt.
-
-Do not create a fake APK download.
-
-Do not pretend a website has become an APK.
-
-If Chrome supports installation, trigger the real PWA installation flow.
-
-If installation is unavailable, show:
-
-"Chrome has not made this website installable yet. Use Chrome's menu and choose Install app or Add to Home screen when available."
-
-==================================================
-MOBILE APP EXPERIENCE
-==================================================
-
-The website must look and work like a real mobile application.
+The website must be a real Progressive Web App.
 
 Use:
 
-Mobile-first layout
-Large touch buttons
-Bottom navigation
-Clean cards
-Fast interface
-Dark/light theme
-Search
-Favorites
-History
-Settings
+manifest
+service worker
+app icon
+splash screen
+standalone mode
 
-Main navigation:
+When Chrome supports installation, use the real Chrome installation prompt.
+
+Do not create a fake installation animation.
+
+==================================================
+16. REAL ANDROID APK OPTION
+==================================================
+
+Add a separate section:
+
+BEST GRAPES KING LIVE APP
+
+Button:
+
+DOWNLOAD ANDROID APK
+
+IMPORTANT:
+
+This button must only download a REAL APK file that has actually been built and signed.
+
+Do not create a fake .apk file.
+
+Do not rename an HTML file to .apk.
+
+If an APK has not yet been built, show:
+
+"Android APK is not available yet."
+
+Do not pretend it exists.
+
+After the real APK is provided, connect the button to the real APK download URL.
+
+The Android application name must be:
+
+Best Grapes King Live App
+
+==================================================
+17. APP FEATURES
+==================================================
+
+The Android app should contain:
 
 Home
+YouTube Channel
+Subscribe
+Videos
+Purple Grapes
+Season 1
+Season 2
+Season 3
+Shorts
 AI Video
 AI Image
-Purple Grapes
-Seasons
-Shorts
+Image to Video
 My Generations
-Install App
 Settings
+Language
+Install/About
 
 ==================================================
-MY GENERATIONS
+18. MY GENERATIONS
 ==================================================
 
-Create:
+Add:
 
 MY GENERATIONS
 
-Each generated video should store:
+Show:
 
 Prompt
 Date
 Time
 Duration
-Aspect Ratio
+Video Size
 Quality
 Language
 Voice
-Video Preview
+Preview
 Download
 Delete
 Regenerate
 
-Do not reuse old generation results.
-
 ==================================================
-DOWNLOAD
+19. DOWNLOAD
 ==================================================
 
-Add a real:
+Every successfully generated video must have:
 
 DOWNLOAD VIDEO
 
-button after a successful generation.
-
 The download must point to the newly generated video.
 
-Do not download a demo file.
+Never download an old/demo video.
 
 ==================================================
-ERROR HANDLING
+20. ERROR HANDLING
 ==================================================
 
-If generation fails:
+If the AI provider fails:
 
-Show the real error.
+Show the actual error.
 
 Example:
 
-"Generation failed. Please try again."
+"Video generation failed. Please try again."
 
-or:
+Add:
 
-"Your selected provider does not support this duration."
+RETRY GENERATION
 
-or:
+Never show an old video after an error.
 
-"Your selected provider does not support this language."
-
-Never hide the error by displaying an old video.
-
-Never substitute a demo video.
+Never show a demo video after an error.
 
 ==================================================
-CACHE PROTECTION
+21. CACHE PROTECTION
 ==================================================
 
-Prevent stale results.
+Fix the previous problem where different prompts produced the same video.
 
-Every generation must have:
+For every generation:
 
-Unique request ID
-Unique generation ID
-Timestamp
+Create a unique request ID.
+Create a unique generation ID.
+Clear the previous active result.
+Disable stale cache.
+Do not reuse the previous video URL.
+Return only the newly generated video.
 
-Use:
-
-cache: "no-store"
-
-for generation requests.
-
-Never reuse a previous video URL.
-
-Never use one permanent video URL for all prompts.
+Use no-store/cache protection for generation requests.
 
 ==================================================
-SECURITY
+22. SECURITY
 ==================================================
 
-Never expose private API keys in:
+Never expose AI API keys in frontend code.
 
-HTML
-CSS
-JavaScript
-Frontend source code
+Use a secure backend/serverless API.
 
-Use secure backend/serverless functions and environment variables.
+Use environment variables for private keys.
+
+Create:
+
+POST /api/generate-video
+
+for the real AI video-generation backend.
 
 ==================================================
-HOME PAGE
+23. GOOGLE VERIFICATION
 ==================================================
 
-Display:
+Keep the Google verification tag inside the HTML <head>:
+
+<meta name="google-site-verification" content="f8Y0j9sO6L9wG0f-X4X8_Y1Z2a3b4c5d" />
+
+Do not display this verification code on the webpage.
+
+==================================================
+24. FINAL UPDATE RULE
+==================================================
+
+DO NOT DELETE THE CURRENT WEBSITE.
+
+DO NOT REPLACE THE CURRENT WEBSITE WITH THIS TEXT.
+
+DO NOT DISPLAY THIS PROMPT ON THE WEBSITE.
+
+UPDATE THE EXISTING WEBSITE ONLY.
+
+Keep all currently working features.
+
+Add all requested AI, YouTube, Purple Grapes, language, voice, video, PWA and Android APK features.
+
+The final website must remain:
 
 BEST GRAPES KING LIVE
 
-Official Channel Website
+The installed Android application must be:
 
-Buttons:
-
-SUBSCRIBE CHANNEL
-AI VIDEO GENERATOR
-PURPLE GRAPES
-SEASON 1
-SEASON 2
-SEASON 3
-SHORTS
-INSTALL APP
-
-==================================================
-DESIGN
-==================================================
-
-Create a premium modern design.
-
-It must NOT look like plain text.
-
-It must NOT display this prompt.
-
-Use:
-
-Professional cards
-Modern buttons
-Responsive layout
-Smooth animations
-Premium typography
-Mobile-friendly controls
-Clean spacing
-Dark premium theme
-Purple/grape visual identity
-
-==================================================
-FINAL REQUIREMENT
-==================================================
-
-The final website must be actual working HTML/CSS/JavaScript with a proper backend integration point.
-
-Do not display the instructions on the webpage.
-
-Do not create fake buttons.
-
-Do not create fake videos.
-
-Do not create demo videos.
-
-Do not create placeholder generation results.
-
-Do not return the same video for different prompts.
-
-Do not invent YouTube episode links.
-
-Use the official Best Grapes King Live YouTube channel.
-
-The exact website/app name is:
-
-BEST GRAPES KING LIVE
-
-The website must be ready for real AI provider integration and real PWA installation through Chrome.
+BEST GRAPES KING LIVE APP
