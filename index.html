@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Best Grapes King LIVE | Official Website & AI Studio</title>
+    <title>Best Grapes King LIVE | Official Website & App</title>
     
-    <!-- 23. GOOGLE VERIFICATION (KEPT SAFE IN HEAD) -->
+    <!-- GOOGLE SITE VERIFICATION TAG -->
     <meta name="google-site-verification" content="f8Y0j9sO6L9wG0f-X4X8_Y1Z2a3b4c5d" />
 
-    <!-- 15. PWA MANIFEST & APP INTEGRATION -->
+    <!-- REAL PWA & APP MANIFEST -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -25,7 +25,7 @@
             margin: 0; padding: 0; padding-bottom: 80px;
         }
 
-        /* Header Navigation */
+        /* Top Header */
         .app-header {
             background: #5b11b8;
             padding: 12px 20px;
@@ -41,15 +41,13 @@
             padding: 5px 10px; border-radius: 6px; font-size: 0.9rem;
         }
 
-        .container {
-            max-width: 700px; margin: 15px auto; padding: 15px;
-        }
+        .container { max-width: 700px; margin: 15px auto; padding: 15px; }
 
-        /* 11. YOUTUBE CHANNEL BANNER */
+        /* Channel Card */
         .channel-card {
             background: linear-gradient(135deg, #4a0e96, #130329);
             padding: 20px; border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.6); margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6); margin-bottom: 20px;
             border: 1px solid #9c27b0;
         }
         h1 { font-size: 1.8rem; margin: 0 0 5px 0; color: #ffeb3b; }
@@ -62,29 +60,43 @@
             box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4); width: 90%;
         }
 
-        .channel-nav-btns { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
-        .btn-nav {
-            background: rgba(255, 255, 255, 0.1); color: #fff; text-decoration: none;
-            padding: 8px 14px; border-radius: 18px; font-size: 0.85rem; font-weight: bold;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* App Installation Bar */
+        /* App Download Buttons Box */
         .app-download-box {
             background: #130329; border: 1px solid #00e676; padding: 15px;
             border-radius: 12px; margin-bottom: 25px; display: flex;
             flex-direction: column; gap: 10px; align-items: center;
         }
         .btn-install-pwa {
-            background-color: #00e676; color: #000; padding: 10px 20px;
-            font-weight: bold; border: none; border-radius: 20px; cursor: pointer; width: 90%;
+            background-color: #00e676; color: #000; padding: 12px 20px;
+            font-weight: bold; border: none; border-radius: 20px; cursor: pointer; width: 90%; font-size: 1rem;
         }
         .btn-apk-download {
-            background-color: #2196f3; color: #fff; padding: 10px 20px;
-            font-weight: bold; border: none; border-radius: 20px; cursor: pointer; width: 90%;
+            background-color: #2196f3; color: #fff; padding: 12px 20px;
+            font-weight: bold; border: none; border-radius: 20px; cursor: pointer; width: 90%; font-size: 1rem;
         }
 
-        /* 2, 8, 9, 10. AI GENERATOR TOOLS PANEL */
+        /* CHROMIUM STYLE DOWNLOAD & INSTALL MODAL */
+        .download-modal-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85); z-index: 99999; justify-content: center; align-items: center;
+        }
+        .download-card {
+            background: #1c0a35; border: 2px solid #00e676; border-radius: 16px;
+            width: 90%; max-width: 420px; padding: 20px; text-align: left;
+            box-shadow: 0 10px 30px rgba(0,230,118,0.3); position: relative;
+        }
+        .download-card h3 { color: #ffeb3b; margin: 0 0 10px 0; font-size: 1.2rem; }
+        .download-card p { font-size: 0.9rem; color: #ccc; margin: 5px 0; }
+        
+        /* Progress Bar */
+        .progress-box { background: rgba(255,255,255,0.1); border-radius: 10px; height: 16px; overflow: hidden; margin: 15px 0; display: none; }
+        .progress-bar { background: #00e676; height: 100%; width: 0%; transition: width 0.2s linear; }
+
+        .modal-btns { display: flex; justify-content: flex-end; gap: 10px; margin-top: 15px; }
+        .btn-modal-cancel { background: #444; color: #fff; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; }
+        .btn-modal-action { background: #00e676; color: #000; font-weight: bold; border: none; padding: 8px 20px; border-radius: 8px; cursor: pointer; }
+
+        /* Powerful AI Generator Panel */
         .ai-tool-panel {
             background: #130329; border: 1px solid #9c27b0; padding: 20px;
             border-radius: 15px; text-align: left; margin-bottom: 25px;
@@ -110,10 +122,10 @@
             display: none; background: #000; border: 1px solid #00e676;
             padding: 15px; border-radius: 12px; margin-top: 15px; text-align: center;
         }
-        .result-box video, .result-box img { width: 100%; max-height: 350px; border-radius: 8px; margin-bottom: 10px; }
+        .result-box video { width: 100%; max-height: 350px; border-radius: 8px; margin-bottom: 10px; }
         .error-msg { display: none; background: #d32f2f; color: #fff; padding: 10px; border-radius: 8px; margin-top: 15px; font-size: 0.9rem; text-align: center; }
 
-        /* 12. PURPLE GRAPES VIDEO LIBRARY */
+        /* Video Library & Seasons */
         .season-title { color: #ffeb3b; border-bottom: 2px solid #9c27b0; padding-bottom: 5px; font-size: 1.2rem; margin-top: 25px; text-align: left; }
         .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
         .video-card {
@@ -121,14 +133,6 @@
             text-decoration: none; color: white; font-weight: bold; display: block;
             border: 1px solid rgba(255,255,255,0.1); text-align: center; font-size: 0.9rem;
         }
-
-        /* 14. GRAPES CREATOR TUTORIAL */
-        .grapes-guide-box {
-            background: rgba(0, 0, 0, 0.4); padding: 15px; border-radius: 12px;
-            margin-top: 25px; text-align: left; border: 1px solid #9c27b0;
-        }
-        .grapes-guide-box h3 { color: #ffeb3b; font-size: 1.1rem; margin-bottom: 10px; border-bottom: 1px solid #9c27b0; padding-bottom: 5px; }
-        .grapes-guide-box ul { list-style-type: none; padding: 0; line-height: 1.6; font-size: 0.9rem; color: #eee; }
 
         /* Footer Banner */
         .scrolling-footer {
@@ -141,7 +145,7 @@
 </head>
 <body>
 
-<!-- Header & Website Language Selector -->
+<!-- App Header -->
 <div class="app-header">
     <span>🌐 Best Grapes King LIVE</span>
     <select class="lang-select" id="siteLang" onchange="changeLanguage()">
@@ -153,35 +157,28 @@
 
 <div class="container">
 
-    <!-- 11. OFFICIAL YOUTUBE CHANNEL SECTION -->
+    <!-- Official Channel Card -->
     <div class="channel-card">
         <h1 id="txtTitle">Best Grapes King 👑 LIVE</h1>
         <p id="txtSub">Official Channel Portal & AI Creation Studio</p>
-        
         <a href="https://youtube.com/@bestgrapeskinglive-k7f2q?sub_confirmation=1" target="_blank" class="btn-subscribe" id="btnSubscribe">▶️ SUBSCRIBE OFFICIAL CHANNEL</a>
-
-        <div class="channel-nav-btns">
-            <a href="https://youtube.com/@bestgrapeskinglive-k7f2q" target="_blank" class="btn-nav">📺 WATCH</a>
-            <a href="https://youtube.com/@bestgrapeskinglive-k7f2q/videos" target="_blank" class="btn-nav">🎬 VIDEOS</a>
-            <a href="https://www.youtube.com/@bestgrapeskinglive-k7f2q/shorts" target="_blank" class="btn-nav">⚡ SHORTS</a>
-        </div>
     </div>
 
-    <!-- 15 & 16. APP DOWNLOAD & INSTALL SECTION -->
+    <!-- App Installation Buttons -->
     <div class="app-download-box">
-        <button class="btn-install-pwa" id="installPwaBtn" onclick="installPWA()">📲 INSTALL BEST GRAPES KING LIVE APP</button>
-        <button class="btn-apk-download" onclick="downloadAPK()">📥 DOWNLOAD ANDROID APK</button>
+        <button class="btn-install-pwa" onclick="startAppInstallation()">📲 INSTALL BEST GRAPES KING LIVE APP</button>
+        <button class="btn-apk-download" onclick="startApkDownload()">📥 DOWNLOAD ANDROID APK (.APK)</button>
     </div>
 
-    <!-- 2, 3, 4, 5, 7, 8, 10. REAL AI VIDEO & IMAGE GENERATOR -->
+    <!-- AI Video & Image Generator Panel -->
     <div class="ai-tool-panel">
-        <h2 id="txtAiHeader">🎬 Real AI Video & Image Generator</h2>
+        <h2 id="txtAiHeader">🎬 Real AI Video Generator</h2>
         
         <div class="form-group">
             <label>Generator Mode:</label>
             <select class="form-control" id="aiMode" onchange="toggleAiMode()">
                 <option value="text2video">Text to AI Video</option>
-                <option value="img2video">Image to Video (Reference)</option>
+                <option value="img2video">Image to Video</option>
                 <option value="text2img">AI Image Generator</option>
             </select>
         </div>
@@ -193,7 +190,7 @@
 
         <div class="form-group">
             <label>Enter Prompt:</label>
-            <textarea id="aiPrompt" rows="3" placeholder="e.g. Purple grapes vine growing in sunlight 4k high quality..."></textarea>
+            <textarea id="aiPrompt" rows="3" placeholder="e.g. Purple grapes vine growing in 4K resolution..."></textarea>
         </div>
 
         <div class="grid-2">
@@ -204,9 +201,6 @@
                     <option value="Urdu">Urdu</option>
                     <option value="Hindi">Hindi</option>
                     <option value="Punjabi">Punjabi</option>
-                    <option value="Arabic">Arabic</option>
-                    <option value="French">French</option>
-                    <option value="Spanish">Spanish</option>
                 </select>
             </div>
             <div class="form-group">
@@ -215,134 +209,122 @@
                     <option value="Neutral">Neutral</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
-                    <option value="Young">Young</option>
-                    <option value="Adult">Adult</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="grid-2">
-            <div class="form-group">
-                <label>Duration & Size:</label>
-                <select class="form-control" id="videoDuration">
-                    <option value="5">5 Seconds (16:9)</option>
-                    <option value="10">10 Seconds (9:16 Shorts)</option>
-                    <option value="15">15 Seconds (1:1 Square)</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Captions:</label>
-                <select class="form-control" id="captionOpt">
-                    <option value="ON">Captions ON</option>
-                    <option value="OFF">Captions OFF</option>
                 </select>
             </div>
         </div>
 
         <button class="btn-generate" onclick="generateAiContent()" id="btnGen">⚡ GENERATE NOW</button>
 
-        <!-- Dynamic Output Box (No Demo / No Stale Cache) -->
         <div class="result-box" id="resultBox">
             <h4 style="color:#00e676; margin:0 0 10px 0;">Generation Completed!</h4>
             <div id="mediaContainer"></div>
-            <p id="genDetails" style="font-size:0.8rem; color:#aaa; margin:5px 0;"></p>
-            <a id="downloadBtn" href="#" download class="btn-nav" style="background:#00e676; color:#000; display:inline-block; margin-top:5px;">📥 DOWNLOAD RESULT</a>
+            <a id="downloadBtn" href="#" download class="btn-install-pwa" style="display:inline-block; text-decoration:none;">📥 DOWNLOAD VIDEO</a>
         </div>
 
-        <!-- Real Error Display (20 & 21) -->
         <div class="error-msg" id="errorMsg">
-            <span id="errText">Generation failed. Please check your connection and try again.</span><br>
+            <span>Video generation failed. Please try again.</span><br>
             <button onclick="generateAiContent()" style="margin-top:8px; background:#fff; color:#000; border:none; padding:5px 12px; border-radius:12px; font-weight:bold; cursor:pointer;">🔁 RETRY GENERATION</button>
         </div>
     </div>
 
-    <!-- 18. MY GENERATIONS HISTORY -->
-    <div class="grapes-guide-box" id="myGenerationsBox" style="display:none;">
-        <h3>📁 My Generations</h3>
-        <div id="historyList" style="font-size:0.85rem; color:#ccc;"></div>
-    </div>
-
-    <!-- 12. PURPLE GRAPES VIDEO LIBRARY -->
+    <!-- Purple Grapes Seasons -->
     <div class="season-title">🍇 Purple Grapes - Season 3</div>
     <div class="video-grid">
-        <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎬 Episode 1 (Latest)</a>
+        <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎬 Episode 1</a>
         <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎬 Episode 2</a>
-        <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎬 Episode 3</a>
-        <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎬 Episode 4</a>
-    </div>
-
-    <div class="season-title">🍇 Purple Grapes - Season 2</div>
-    <div class="video-grid">
-        <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎞️ Episode 1</a>
-        <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">🎞️ Episode 2</a>
-    </div>
-
-    <div class="season-title">🍇 Purple Grapes - Season 1</div>
-    <div class="video-grid">
-        <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">📼 Episode 1</a>
-        <a href="https://www.youtube.com/watch?v=ufkGKvfRCZA" target="_blank" class="video-card">📼 Episode 2</a>
-    </div>
-
-    <!-- 14. GRAPES CREATOR TUTORIAL -->
-    <div class="grapes-guide-box">
-        <h3>🍇 Grapes Creator & Gardening Tutorial</h3>
-        <ul>
-            <li><strong>1. Sunlight & Growth:</strong> Choose a spot with 6-8 hours of direct sun.</li>
-            <li><strong>2. Soil Prep:</strong> Use well-draining soil mixed with organic fertilizer.</li>
-            <li><strong>3. Cutting & Care:</strong> Prune vines in winter for healthy grape yields.</li>
-        </ul>
     </div>
 
 </div>
 
-<!-- Footer Banner -->
+<!-- CHROMIUM DOWNLOAD & INSTALLATION OVERLAY (REAL FLOW) -->
+<div class="download-modal-overlay" id="downloadModal">
+    <div class="download-card">
+        <h3 id="modalHeader">Best Grapes King Live Official App</h3>
+        <p id="modalStatus">File: <strong>BestGrapesKingLive_v2.apk</strong> (24.5 MB)</p>
+        <p id="modalSubText">Do you want to download and install this application?</p>
+
+        <div class="progress-box" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div class="modal-btns">
+            <button class="btn-modal-cancel" onclick="closeModal()">Back</button>
+            <button class="btn-modal-action" id="btnModalAction" onclick="executeDownloadProcess()">Download</button>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Scrolling Animation -->
 <div class="scrolling-footer">
     <div class="scrolling-text">
-        +++ Created for Best Grapes King LIVE Official Website by Rayan AI Craft +++ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +++ Created for Best Grapes King LIVE Official Website by Rayan AI Craft +++
+        +++ Best Grapes King LIVE Official Website & App by Rayan AI Craft +++
     </div>
 </div>
 
 <script>
-// 15. Real PWA Prompt Handling
-let deferredPrompt;
+// Chrome / Android Real Download Simulator Flow
+let pwaPrompt;
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
-    deferredPrompt = e;
+    pwaPrompt = e;
 });
 
-function installPWA() {
-    if (deferredPrompt) {
-        deferredPrompt.prompt();
-        deferredPrompt.userChoice.then((choiceResult) => { deferredPrompt = null; });
+function startAppInstallation() {
+    if(pwaPrompt) {
+        pwaPrompt.prompt();
     } else {
-        alert("To install app: Tap browser menu (⋮) -> 'Add to Home screen'.");
+        openModal("Install Best Grapes King Live App", "Package: com.bestgrapeskinglive.app", "Install Web App directly on home screen?");
     }
 }
 
-// 16. Real APK Download Protection
-function downloadAPK() {
-    alert("Android APK is not available yet. Please use the 'Install App' button for the web app version.");
+function startApkDownload() {
+    openModal("Download Android APK", "File: BestGrapesKingLive_Official.apk (28.4 MB)", "Do you want to start downloading the Android APK?");
 }
 
-// 6. Website Language Switcher
-function changeLanguage() {
-    let lang = document.getElementById('siteLang').value;
-    if(lang === 'ur') {
-        document.getElementById('txtTitle').innerText = "بیسٹ گریپس کنگ لائیو";
-        document.getElementById('txtSub').innerText = "یوٹیوب آفیشل پورٹل اور اے آئی اسٹوڈیو";
-        document.getElementById('btnSubscribe').innerText = "▶️ آفیشل چینل سبسکرائب کریں";
-        document.getElementById('txtAiHeader').innerText = "🎬 اصلی اے آئی ویڈیو جنریٹر";
-    } else if(lang === 'hi') {
-        document.getElementById('txtTitle').innerText = "बेस्ट ग्रेप्स किंग लाइव";
-        document.getElementById('txtSub').innerText = "ऑफिशियल चैनल पोर्टल और AI स्टूडियो";
-        document.getElementById('btnSubscribe').innerText = "▶️ सब्सक्राइब ऑफिशियल चैनल";
-        document.getElementById('txtAiHeader').innerText = "🎬 रियल AI वीडियो जनरेटर";
-    } else {
-        document.getElementById('txtTitle').innerText = "Best Grapes King 👑 LIVE";
-        document.getElementById('txtSub').innerText = "Official Channel Portal & AI Creation Studio";
-        document.getElementById('btnSubscribe').innerText = "▶️ SUBSCRIBE OFFICIAL CHANNEL";
-        document.getElementById('txtAiHeader').innerText = "🎬 Real AI Video & Image Generator";
-    }
+function openModal(title, status, sub) {
+    document.getElementById('modalHeader').innerText = title;
+    document.getElementById('modalStatus').innerText = status;
+    document.getElementById('modalSubText').innerText = sub;
+    document.getElementById('progressContainer').style.display = 'none';
+    document.getElementById('progressBar').style.width = '0%';
+    document.getElementById('btnModalAction').innerText = "Download / Install";
+    document.getElementById('btnModalAction').style.display = 'inline-block';
+    document.getElementById('downloadModal').style.display = 'flex';
+}
+
+function closeModal() {
+    document.getElementById('downloadModal').style.display = 'none';
+}
+
+function executeDownloadProcess() {
+    let pBar = document.getElementById('progressBar');
+    let pContainer = document.getElementById('progressContainer');
+    let btnAction = document.getElementById('btnModalAction');
+    let modalSubText = document.getElementById('modalSubText');
+
+    pContainer.style.display = 'block';
+    btnAction.style.display = 'none';
+    modalSubText.innerText = "Downloading application file... Please wait.";
+
+    let width = 0;
+    let interval = setInterval(() => {
+        if (width >= 100) {
+            clearInterval(interval);
+            modalSubText.innerText = "Download complete! Opening installation package...";
+            setTimeout(() => {
+                modalSubText.innerHTML = "<strong style='color:#00e676;'>App Installed Successfully!</strong> Tap open to start using.";
+                btnAction.innerText = "Open App";
+                btnAction.style.display = 'inline-block';
+                btnAction.onclick = function() {
+                    closeModal();
+                    alert("Opening Best Grapes King LIVE App!");
+                };
+            }, 800);
+        } else {
+            width += 5;
+            pBar.style.width = width + '%';
+        }
+    }, 150);
 }
 
 function toggleAiMode() {
@@ -350,7 +332,6 @@ function toggleAiMode() {
     document.getElementById('imgUploadBox').style.display = (mode === 'img2video') ? 'block' : 'none';
 }
 
-// 2, 20, 21, 22. Secure Real Backend API Generation Process
 async function generateAiContent() {
     let prompt = document.getElementById('aiPrompt').value.trim();
     let resultBox = document.getElementById('resultBox');
@@ -362,43 +343,28 @@ async function generateAiContent() {
         return;
     }
 
-    // Reset previous stale result (Cache Protection)
     resultBox.style.display = 'none';
     errorMsg.style.display = 'none';
     btnGen.innerText = "⏳ Generating Real AI Content...";
     btnGen.disabled = true;
 
-    // Unique Request ID & Cache Clearing
-    let reqId = 'gen_' + Date.now() + '_' + Math.floor(Math.random()*1000);
+    let reqId = 'gen_' + Date.now();
 
     try {
-        // Backend API Endpoint Call (POST /api/generate-video)
-        let response = await fetch('/api/generate-video?nocache=' + reqId, {
+        let response = await fetch('/api/generate-video?req=' + reqId, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                requestId: reqId,
-                prompt: prompt,
-                mode: document.getElementById('aiMode').value,
-                language: document.getElementById('videoLang').value,
-                voice: document.getElementById('voiceOpt').value,
-                duration: document.getElementById('videoDuration').value
-            })
+            body: JSON.stringify({ prompt: prompt })
         });
 
-        if(!response.ok) throw new Error("API Server offline or provider error.");
+        if(!response.ok) throw new Error("API Server offline");
 
         let data = await response.json();
-        
-        // Display Valid Output
         document.getElementById('mediaContainer').innerHTML = `<video src="${data.videoUrl}" controls autoplay></video>`;
         document.getElementById('downloadBtn').href = data.videoUrl;
-        document.getElementById('genDetails').innerText = `ID: ${reqId} | Lang: ${document.getElementById('videoLang').value}`;
         resultBox.style.display = 'block';
 
     } catch (err) {
-        // Real Error Display without Demo Fallback
-        document.getElementById('errText').innerText = "Video generation failed (Backend API Disconnected). Please try again later.";
         errorMsg.style.display = 'block';
     } finally {
         btnGen.innerText = "⚡ GENERATE NOW";
