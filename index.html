@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Best Grapes King LIVE | Official Web App & Studio</title>
+    <title>Best Grapes King LIVE | Official Web App & AI Studio</title>
 
     <!-- Google Site Verification Tag -->
     <meta name="google-site-verification" content="f8Y0j9sO6L9wG0f-X4X8_Y1Z2a3b4c5d" />
@@ -19,7 +19,7 @@
     <!-- Dynamic PWA Manifest Generator Link -->
     <link rel="manifest" id="pwaManifestLink">
 
-    <!-- Tailwind CSS & Font Awesome -->
+    <!-- Tailwind CSS & Font Awesome Icons -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Noto+Sans+Devanagari:wght@400;600;800&display=swap" rel="stylesheet">
@@ -36,21 +36,21 @@
             color: #ffffff;
             margin: 0;
             padding: 0;
-            padding-bottom: 75px;
+            padding-bottom: 80px;
             overflow-x: hidden;
             user-select: none;
             -webkit-user-select: none;
         }
 
-        /* Standalone PWA UI Tweaks */
+        /* Standalone PWA Safe Area Adjustments */
         @media display-mode: standalone {
             body {
                 padding-top: env(safe-area-inset-top);
-                padding-bottom: calc(75px + env(safe-area-inset-bottom));
+                padding-bottom: calc(80px + env(safe-area-inset-bottom));
             }
         }
 
-        /* Custom Scrollbar */
+        /* Custom Scrollbars */
         ::-webkit-scrollbar {
             width: 6px;
             height: 6px;
@@ -77,11 +77,11 @@
         }
 
         .custom-glow {
-            box-shadow: 0 0 20px rgba(156, 39, 176, 0.4);
+            box-shadow: 0 0 25px rgba(156, 39, 176, 0.4);
         }
 
         .neon-glow-green {
-            box-shadow: 0 0 20px rgba(0, 230, 118, 0.35);
+            box-shadow: 0 0 25px rgba(0, 230, 118, 0.35);
         }
 
         @keyframes marquee {
@@ -107,7 +107,7 @@
 
     <header class="sticky top-0 z-50 bg-[#5b11b8]/95 backdrop-blur-md px-4 py-3 shadow-lg flex justify-between items-center border-b border-purple-500/40">
         <div class="flex items-center gap-2 cursor-pointer" onclick="switchTab('episodes')">
-            <span class="text-2xl">🍇</span>
+            <span class="text-2xl animate-bounce">🍇</span>
             <div>
                 <span class="font-black text-yellow-300 text-base sm:text-lg tracking-wide flex items-center gap-1.5">
                     Best Grapes King <span class="bg-red-600 text-white text-[9px] uppercase font-black px-1.5 py-0.5 rounded-full animate-pulse">LIVE APP</span>
@@ -119,7 +119,7 @@
             <!-- Native PWA Direct Install Button -->
             <button id="pwaInstallHeaderBtn" onclick="triggerPwaInstall()" class="bg-gradient-to-r from-emerald-400 to-green-500 hover:from-emerald-500 hover:to-green-600 text-gray-950 font-black text-xs px-3 py-1.5 rounded-xl shadow-md flex items-center gap-1.5 transition-transform active:scale-95">
                 <i class="fa-solid fa-circle-down text-sm"></i>
-                <span class="hidden sm:inline">INSTALL APP</span>
+                <span class="hidden sm:inline" id="txtInstallBtn">INSTALL APP</span>
             </button>
 
             <!-- Language Switcher -->
@@ -153,13 +153,13 @@
             <!-- Navigation Shortcuts -->
             <div class="flex justify-center gap-2 pt-1 flex-wrap">
                 <a href="https://youtube.com/@bestgrapeskinglive-k7f2q" target="_blank" class="bg-purple-900/60 hover:bg-purple-800 text-xs font-semibold text-purple-200 px-3.5 py-1.5 rounded-full border border-purple-500/40 flex items-center gap-1.5">
-                    <i class="fas fa-play-circle text-yellow-400"></i> चैनल देखें
+                    <i class="fas fa-play-circle text-yellow-400"></i> <span id="lblChannel">चैनल देखें</span>
                 </a>
                 <a href="https://youtube.com/@bestgrapeskinglive-k7f2q/videos" target="_blank" class="bg-purple-900/60 hover:bg-purple-800 text-xs font-semibold text-purple-200 px-3.5 py-1.5 rounded-full border border-purple-500/40 flex items-center gap-1.5">
-                    <i class="fas fa-film text-pink-400"></i> वीडियोज़
+                    <i class="fas fa-film text-pink-400"></i> <span id="lblVideos">वीडियोज़</span>
                 </a>
                 <a href="https://youtube.com/@bestgrapeskinglive-k7f2q/shorts" target="_blank" class="bg-purple-900/60 hover:bg-purple-800 text-xs font-semibold text-purple-200 px-3.5 py-1.5 rounded-full border border-purple-500/40 flex items-center gap-1.5">
-                    <i class="fas fa-bolt text-yellow-300"></i> शॉर्ट्स
+                    <i class="fas fa-bolt text-yellow-300"></i> <span id="lblShorts">शॉर्ट्स</span>
                 </a>
             </div>
         </div>
@@ -167,23 +167,23 @@
         <div class="glass-card p-4 sm:p-5 rounded-2xl border border-emerald-500/40 space-y-3 text-center">
             <div class="text-xs sm:text-sm font-bold text-emerald-400 flex items-center justify-center gap-2">
                 <i class="fas fa-mobile-screen-button text-base"></i>
-                <span>Get Official Standalone Mobile App Package</span>
+                <span id="lblApkBanner">Get Official Standalone Mobile App Package</span>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <button onclick="startApkInstaller()" class="bg-emerald-400 hover:bg-emerald-500 text-gray-950 font-black py-3 px-4 rounded-xl text-xs sm:text-sm shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2">
                     <i class="fas fa-download text-base"></i>
-                    <span>Download Android APK</span>
+                    <span id="btnDownloadApk">Download Android APK</span>
                 </button>
                 <button onclick="openSourceCodeModal()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl text-xs sm:text-sm shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2 border border-blue-400/30">
                     <i class="fas fa-code text-base"></i>
-                    <span>View & Copy HTML Code</span>
+                    <span id="btnViewCode">View & Copy HTML Code</span>
                 </button>
             </div>
         </div>
 
-        <!-- Main Tab Content Views -->
         <main>
+            <!-- TAB 1: EPISODES VIEW -->
             <section id="view-episodes" class="tab-content space-y-6">
                 <!-- Search & Filters -->
                 <div class="flex flex-col sm:flex-row items-center justify-between gap-3 glass-card p-3.5 rounded-2xl">
@@ -214,7 +214,7 @@
                     </div>
 
                     <div>
-                        <label class="block text-xs text-purple-200 font-semibold mb-1">Enter your Prompt / Video Topic:</label>
+                        <label class="block text-xs text-purple-200 font-semibold mb-1">Enter your Prompt / Story Concept:</label>
                         <textarea id="aiPrompt" rows="3" class="w-full bg-[#0b0214] border border-purple-500/40 rounded-xl p-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-yellow-400" placeholder="उदा. पर्पल ग्रेप्स किंग की नई जादुई कहानी और नए सीज़न का सीन..."></textarea>
                     </div>
 
@@ -270,12 +270,13 @@
                         </div>
                     </div>
 
-                    <div class="relative w-full max-w-md mx-auto aspect-[4/3] bg-[#0b0214] border-2 border-purple-600 rounded-2xl overflow-hidden">
+                    <div class="relative w-full max-w-md mx-auto aspect-[4/3] bg-[#0b0214] border-2 border-purple-600 rounded-2xl overflow-hidden shadow-2xl">
                         <canvas id="gameCanvas" class="w-full h-full block cursor-pointer"></canvas>
                         <div id="gameOverlay" class="absolute inset-0 bg-[#0b0214]/90 flex flex-col items-center justify-center p-4 space-y-3">
                             <span class="text-4xl">🍇👑</span>
                             <h4 class="text-lg font-black text-yellow-300">Grapes Catcher Arcade</h4>
-                            <button onclick="startGame()" class="bg-yellow-400 hover:bg-yellow-500 text-gray-950 font-black px-6 py-2 rounded-full text-xs shadow-lg">
+                            <p class="text-xs text-purple-200">Move touch / mouse left and right to collect grapes!</p>
+                            <button onclick="startGame()" class="bg-yellow-400 hover:bg-yellow-500 text-gray-950 font-black px-6 py-2.5 rounded-full text-xs shadow-lg transition transform active:scale-95">
                                 <i class="fa-solid fa-play"></i> START GAME
                             </button>
                         </div>
@@ -327,6 +328,7 @@
         </div>
     </nav>
 
+    <!-- APK DOWNLOAD MODAL -->
     <div id="apkModal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-[99999] hidden flex items-center justify-center p-4">
         <div class="bg-[#1c0a35] border-2 border-emerald-400 rounded-3xl w-full max-w-sm p-5 space-y-4 shadow-2xl relative neon-glow-green">
             <button onclick="closeApkModal()" class="absolute top-4 right-4 text-purple-400 hover:text-white">
@@ -358,6 +360,7 @@
         </div>
     </div>
 
+    <!-- SOURCE CODE VIEW MODAL -->
     <div id="codeModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-[99999] hidden flex items-center justify-center p-3">
         <div class="bg-[#130329] border border-blue-500 rounded-3xl w-full max-w-xl h-[80vh] p-4 flex flex-col justify-between space-y-3 relative">
             <div class="flex justify-between items-center border-b border-purple-800/60 pb-2">
@@ -487,7 +490,7 @@
                     <div class="relative aspect-video bg-purple-950/60 cursor-pointer" onclick="openVideoModal('${ep.id}', '${ep.title}')">
                         <img src="https://img.youtube.com/vi/${ep.id}/hqdefault.jpg" alt="${ep.title}" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
-                            <div class="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg">
+                            <div class="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg transform transition hover:scale-110">
                                 <i class="fa-solid fa-play text-sm ml-0.5"></i>
                             </div>
                         </div>
@@ -526,7 +529,6 @@
 
         async function generateAiVideoAndAudio() {
             const promptInput = document.getElementById('aiPrompt').value.trim();
-            const lang = document.getElementById('aiLang').value;
             const voicePreset = document.getElementById('aiVoice').value;
 
             if(!promptInput) {
@@ -552,7 +554,7 @@
                     renderCanvasVideoPreview(promptInput);
                 }
 
-                // 2. Prepare audio buttons
+                // 2. Prepare audio playback controls
                 audioBox.innerHTML = `
                     <button id="geminiAudioBtn" onclick="playGeminiVoiceover('${promptInput.replace(/'/g, "\\'")}', '${voicePreset}')" class="bg-gradient-to-r from-emerald-400 to-green-500 hover:from-emerald-500 hover:to-green-600 text-gray-950 font-black px-4 py-2 rounded-xl text-xs inline-flex items-center gap-2 shadow-lg transition active:scale-95">
                         <i class="fa-solid fa-wand-magic-sparkles"></i> Play Gemini Speech Voice
@@ -562,7 +564,7 @@
                     </button>
                 `;
 
-                // Auto-trigger speech audio
+                // Auto-trigger voiceover playback
                 playGeminiVoiceover(promptInput, voicePreset);
 
                 loader.classList.add('hidden');
@@ -830,16 +832,17 @@
             ctx = canvas.getContext('2d');
             canvas.width = 400; canvas.height = 270;
 
-            const handleTouch = (e) => {
+            const handleMove = (clientX) => {
                 if(!gameRunning) return;
                 const rect = canvas.getBoundingClientRect();
-                const clientX = e.touches ? e.touches[0].clientX : e.clientX;
                 const touchX = (clientX - rect.left) * (canvas.width / rect.width);
                 basket.x = Math.max(0, Math.min(canvas.width - basket.w, touchX - basket.w/2));
             };
 
-            canvas.addEventListener('mousemove', handleTouch);
-            canvas.addEventListener('touchmove', handleTouch, { passive: true });
+            canvas.addEventListener('mousemove', (e) => handleMove(e.clientX));
+            canvas.addEventListener('touchmove', (e) => {
+                if(e.touches && e.touches[0]) handleMove(e.touches[0].clientX);
+            }, { passive: true });
         }
 
         function startGame() {
@@ -884,7 +887,18 @@
 
         function changeWebsiteLanguage() {
             const lang = document.getElementById('siteLang').value;
-            showToast(`भाषा बदल गई: ${lang.toUpperCase()}`);
+            const dict = {
+                hi: { sub: "ऑफ़िशियल यूट्यूब हब, पर्पल ग्रेप्स सीरीज़ और AI स्टूडियो। क्रोम में डायरेक्ट इंस्टॉल और APK डाउनलोड करें!", subBtn: "यूट्यूब चैनल सब्सक्राइब करें" },
+                en: { sub: "Official YouTube Hub, Purple Grapes Series & AI Studio. Install directly in Chrome or download APK!", subBtn: "Subscribe on YouTube" },
+                ur: { sub: "آفیشل یوٹیوب ہب، پرپل گریپس سیریز اور AI اسٹوڈیو۔ براہ راست انسٹال اور اے پی کے ڈاؤن لوڈ کریں!", subBtn: "یوٹیوب چینل کو سبسکرائب کریں" },
+                pa: { sub: "ਓਫੀਸ਼ੀਅਲ ਯੂਟਿਊਬ ਹਬ, ਪਰਪਲ ਗ੍ਰੇਪਸ ਸੀਰੀਜ਼ ਅਤੇ AI ਸਟੂਡੀਓ। ਡਾਇਰੈਕਟ ਇੰਸਟਾਲ ਅਤੇ APK ਡਾਊਨਲੋਡ ਕਰੋ!", subBtn: "ਯੂਟਿਊਬ ਚੈਨਲ ਨੂੰ ਸਬਸਕ੍ਰਾਈਬ ਕਰੋ" }
+            };
+            
+            if(dict[lang]) {
+                document.getElementById('appSub').innerText = dict[lang].sub;
+                document.getElementById('btnSubText').innerText = dict[lang].subBtn;
+            }
+            showToast(`Language switched: ${lang.toUpperCase()}`);
         }
     </script>
 </body>
