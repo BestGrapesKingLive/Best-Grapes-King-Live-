@@ -1,6 +1,6 @@
 ```html
 <!DOCTYPE html>
-<html lang="hi" class="dark">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
@@ -22,13 +22,13 @@
     <!-- Tailwind CSS & Font Awesome Icons -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Noto+Sans+Devanagari:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
     <style>
         * {
             box-sizing: border-box;
             -webkit-tap-highlight-color: transparent;
-            font-family: 'Outfit', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         body {
@@ -122,12 +122,13 @@
                 <span class="hidden sm:inline" id="txtInstallBtn">INSTALL APP</span>
             </button>
 
-            <!-- Language Switcher -->
+            <!-- Language Switcher (Hindi Removed) -->
             <select id="siteLang" onchange="changeWebsiteLanguage()" class="bg-[#130329] text-xs text-purple-200 border border-purple-400/50 rounded-xl px-2 py-1.5 outline-none font-semibold focus:border-yellow-400">
-                <option value="hi">🇮🇳 हिंदी</option>
-                <option value="en">🇬🇧 English</option>
+                <option value="en" selected>🇬🇧 English</option>
                 <option value="ur">🇵🇰 اردو</option>
-                <option value="pa">🌾 ਪੰਜਾਬੀ</option>
+                <option value="pa">🌾 ਪੰਜਾਬੀ / ਪੰਜਾਬੀ (PK)</option>
+                <option value="ar">🇸🇦 العربية</option>
+                <option value="es">🇪🇸 Español</option>
             </select>
         </div>
     </header>
@@ -141,25 +142,25 @@
                 Best Grapes King <span class="gradient-text">👑 LIVE PORTAL</span>
             </h1>
             <p class="text-purple-200/90 text-xs sm:text-sm max-w-xl mx-auto" id="appSub">
-                ऑफ़िशियल यूट्यूब हब, पर्पल ग्रेप्स सीरीज़ और AI स्टूडियो। क्रोम में डायरेक्ट इंस्टॉल और APK डाउनलोड करें!
+                Official YouTube Hub, Purple Grapes Series & AI Studio. Direct Chrome Install & APK Download Available!
             </p>
 
             <!-- YouTube Subscribe Button -->
             <a href="https://youtube.com/@bestgrapeskinglive-k7f2q?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="w-full bg-red-600 hover:bg-red-700 text-white font-black py-3 px-6 rounded-full shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2 text-sm sm:text-base border border-red-400/40">
                 <i class="fab fa-youtube text-xl"></i>
-                <span id="btnSubText">यूट्यूब चैनल सब्सक्राइब करें</span>
+                <span id="btnSubText">Subscribe YouTube Channel</span>
             </a>
 
             <!-- Navigation Shortcuts -->
             <div class="flex justify-center gap-2 pt-1 flex-wrap">
                 <a href="https://youtube.com/@bestgrapeskinglive-k7f2q" target="_blank" class="bg-purple-900/60 hover:bg-purple-800 text-xs font-semibold text-purple-200 px-3.5 py-1.5 rounded-full border border-purple-500/40 flex items-center gap-1.5">
-                    <i class="fas fa-play-circle text-yellow-400"></i> <span id="lblChannel">चैनल देखें</span>
+                    <i class="fas fa-play-circle text-yellow-400"></i> <span id="lblChannel">Visit Channel</span>
                 </a>
                 <a href="https://youtube.com/@bestgrapeskinglive-k7f2q/videos" target="_blank" class="bg-purple-900/60 hover:bg-purple-800 text-xs font-semibold text-purple-200 px-3.5 py-1.5 rounded-full border border-purple-500/40 flex items-center gap-1.5">
-                    <i class="fas fa-film text-pink-400"></i> <span id="lblVideos">वीडियोज़</span>
+                    <i class="fas fa-film text-pink-400"></i> <span id="lblVideos">Videos</span>
                 </a>
                 <a href="https://youtube.com/@bestgrapeskinglive-k7f2q/shorts" target="_blank" class="bg-purple-900/60 hover:bg-purple-800 text-xs font-semibold text-purple-200 px-3.5 py-1.5 rounded-full border border-purple-500/40 flex items-center gap-1.5">
-                    <i class="fas fa-bolt text-yellow-300"></i> <span id="lblShorts">शॉर्ट्स</span>
+                    <i class="fas fa-bolt text-yellow-300"></i> <span id="lblShorts">Shorts</span>
                 </a>
             </div>
         </div>
@@ -188,7 +189,7 @@
                 <!-- Search & Filters -->
                 <div class="flex flex-col sm:flex-row items-center justify-between gap-3 glass-card p-3.5 rounded-2xl">
                     <div class="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0">
-                        <button onclick="filterEpisodes('all')" class="ep-filter-btn bg-yellow-400 text-black font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap">सभी सीज़न</button>
+                        <button onclick="filterEpisodes('all')" class="ep-filter-btn bg-yellow-400 text-black font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap">All Seasons</button>
                         <button onclick="filterEpisodes('s3')" class="ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30">Season 3</button>
                         <button onclick="filterEpisodes('s2')" class="ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30">Season 2</button>
                         <button onclick="filterEpisodes('s1')" class="ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30">Season 1</button>
@@ -196,7 +197,7 @@
 
                     <div class="relative w-full sm:w-56">
                         <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-purple-400 text-xs"></i>
-                        <input type="text" id="episodeSearch" oninput="searchEpisodes()" placeholder="एपिसोड खोजें..." class="w-full bg-[#0b0214] border border-purple-700/50 rounded-xl pl-8 pr-3 py-1.5 text-xs text-white focus:outline-none focus:border-yellow-400">
+                        <input type="text" id="episodeSearch" oninput="searchEpisodes()" placeholder="Search episodes..." class="w-full bg-[#0b0214] border border-purple-700/50 rounded-xl pl-8 pr-3 py-1.5 text-xs text-white focus:outline-none focus:border-yellow-400">
                     </div>
                 </div>
 
@@ -215,17 +216,17 @@
 
                     <div>
                         <label class="block text-xs text-purple-200 font-semibold mb-1">Enter your Prompt / Story Concept:</label>
-                        <textarea id="aiPrompt" rows="3" class="w-full bg-[#0b0214] border border-purple-500/40 rounded-xl p-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-yellow-400" placeholder="उदा. पर्पल ग्रेप्स किंग की नई जादुई कहानी और नए सीज़न का सीन..."></textarea>
+                        <textarea id="aiPrompt" rows="3" class="w-full bg-[#0b0214] border border-purple-500/40 rounded-xl p-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-yellow-400" placeholder="e.g., Magical story and new season scene of Purple Grapes King..."></textarea>
                     </div>
 
                     <div class="grid grid-cols-2 gap-3">
                         <div>
                             <label class="block text-xs text-purple-300 font-semibold mb-1">Video Language:</label>
                             <select id="aiLang" class="w-full bg-[#0b0214] border border-purple-500/40 rounded-lg p-2 text-xs text-white">
-                                <option value="Hindi">Hindi (हिंदी)</option>
                                 <option value="English">English</option>
                                 <option value="Urdu">Urdu (اردو)</option>
                                 <option value="Punjabi">Punjabi (ਪੰਜਾਬੀ)</option>
+                                <option value="Arabic">Arabic (العربية)</option>
                             </select>
                         </div>
                         <div>
@@ -263,7 +264,7 @@
                     <div class="flex items-center justify-between border-b border-purple-800/60 pb-2">
                         <div class="text-left">
                             <h3 class="text-base font-black text-yellow-300">🍇 Grape Basket Catcher</h3>
-                            <p class="text-[11px] text-purple-300">गिरे हुए पर्पल ग्रेप्स को बास्केट में पकड़ें!</p>
+                            <p class="text-[11px] text-purple-300">Catch the falling purple grapes into the basket!</p>
                         </div>
                         <div class="bg-[#0b0214] px-3 py-1 rounded-xl border border-purple-700/50">
                             <span class="text-xs font-bold text-yellow-400">Score: <span id="gameScore">0</span></span>
@@ -290,10 +291,10 @@
                         <i class="fa-solid fa-seedling text-emerald-400"></i> 🍇 Complete Grape Farming Guide
                     </h3>
                     <ul class="text-xs text-purple-200 space-y-2 list-disc pl-4">
-                        <li><strong>Sunlight (धूप):</strong> अंगूर के पौधों को रोज़ाना 6 से 8 घंटे की सीधी धूप की आवश्यकता होती है।</li>
-                        <li><strong>Soil (मिट्टी):</strong> जल निकास वाली रेतीली दोमट मिट्टी सबसे उत्तम रहती है।</li>
-                        <li><strong>Planting (रोपाई):</strong> अंगूर की कलम लगाने का सही समय फरवरी या मार्च है।</li>
-                        <li><strong>Pruning (कटाई-छंटाई):</strong> सर्दियों में हर साल पुरानी टहनियों की छंटाई से पैदावार दोगुनी होती है।</li>
+                        <li><strong>Sunlight:</strong> Grape plants require 6 to 8 hours of direct sunlight daily for optimal yield.</li>
+                        <li><strong>Soil:</strong> Well-drained sandy loam soil with good fertility is best for cultivation.</li>
+                        <li><strong>Planting:</strong> The ideal planting time for grape cuttings is February or March.</li>
+                        <li><strong>Pruning:</strong> Annual winter pruning of old vines doubles harvest efficiency and berry quality.</li>
                     </ul>
                 </div>
             </section>
@@ -346,7 +347,7 @@
             </div>
 
             <p id="apkStatusText" class="text-xs text-purple-200 leading-relaxed">
-                क्या आप Android Package (.apk) अपने क्रोम डाउनलोडर में डाउनलोड करना चाहते हैं?
+                Do you want to download the Android Package (.apk) to your device downloader?
             </p>
 
             <div id="apkProgressBg" class="w-full bg-[#0b0214] rounded-full h-3 overflow-hidden p-0.5 border border-purple-700/50 hidden">
@@ -354,8 +355,8 @@
             </div>
 
             <div class="flex justify-end gap-2 pt-1" id="apkActionBtns">
-                <button onclick="closeApkModal()" class="bg-purple-900/60 text-purple-200 font-bold px-4 py-2 rounded-xl text-xs">रद्द करें</button>
-                <button onclick="executeRealChromeBlobDownload()" class="bg-emerald-400 text-gray-950 font-black px-5 py-2 rounded-xl text-xs shadow-lg">डाउनलोड शुरू करें</button>
+                <button onclick="closeApkModal()" class="bg-purple-900/60 text-purple-200 font-bold px-4 py-2 rounded-xl text-xs">Cancel</button>
+                <button onclick="executeRealChromeBlobDownload()" class="bg-emerald-400 text-gray-950 font-black px-5 py-2 rounded-xl text-xs shadow-lg">Start Download</button>
             </div>
         </div>
     </div>
@@ -532,7 +533,7 @@
             const voicePreset = document.getElementById('aiVoice').value;
 
             if(!promptInput) {
-                showToast("कृपया AI के लिए प्रोम्प्ट या विचार लिखें!");
+                showToast("Please enter a prompt or concept for AI!");
                 return;
             }
 
@@ -544,7 +545,6 @@
             resultBox.classList.add('hidden');
 
             try {
-                // 1. Try real Gemini Image generation first
                 let generatedImageUrl = await callGeminiImageApi(promptInput);
 
                 if (generatedImageUrl) {
@@ -554,7 +554,6 @@
                     renderCanvasVideoPreview(promptInput);
                 }
 
-                // 2. Prepare audio playback controls
                 audioBox.innerHTML = `
                     <button id="geminiAudioBtn" onclick="playGeminiVoiceover('${promptInput.replace(/'/g, "\\'")}', '${voicePreset}')" class="bg-gradient-to-r from-emerald-400 to-green-500 hover:from-emerald-500 hover:to-green-600 text-gray-950 font-black px-4 py-2 rounded-xl text-xs inline-flex items-center gap-2 shadow-lg transition active:scale-95">
                         <i class="fa-solid fa-wand-magic-sparkles"></i> Play Gemini Speech Voice
@@ -564,7 +563,6 @@
                     </button>
                 `;
 
-                // Auto-trigger voiceover playback
                 playGeminiVoiceover(promptInput, voicePreset);
 
                 loader.classList.add('hidden');
@@ -753,7 +751,7 @@
             document.getElementById('apkModal').classList.add('flex');
             document.getElementById('apkProgressBg').classList.add('hidden');
             document.getElementById('apkProgressBar').style.width = '0%';
-            document.getElementById('apkStatusText').innerText = "क्या आप Android Package (.apk) अपने क्रोम डाउनलोडर में डाउनलोड करना चाहते हैं?";
+            document.getElementById('apkStatusText').innerText = "Do you want to download the Android Package (.apk) to your device downloader?";
         }
 
         function closeApkModal() {
@@ -788,9 +786,9 @@
                     document.body.removeChild(link);
                     URL.revokeObjectURL(blobUrl);
 
-                    status.innerHTML = "<strong class='text-emerald-400'>फ़ाइल क्रोम डाउनलोड मैनेजर में भेजी गई!</strong>";
+                    status.innerHTML = "<strong class='text-emerald-400'>File dispatched to Download Manager!</strong>";
                     btns.style.display = 'flex';
-                    btns.innerHTML = `<button onclick="closeApkModal()" class="bg-emerald-400 text-gray-950 font-black px-6 py-2 rounded-xl text-xs w-full">संपन्न</button>`;
+                    btns.innerHTML = `<button onclick="closeApkModal()" class="bg-emerald-400 text-gray-950 font-black px-6 py-2 rounded-xl text-xs w-full">Done</button>`;
                     showToast("Chrome Download Triggered!");
                 } else {
                     width += 10;
@@ -817,7 +815,7 @@
             const copyMsg = document.getElementById('copyMsg');
             copyMsg.classList.remove('hidden');
             setTimeout(() => copyMsg.classList.add('hidden'), 2500);
-            showToast("HTML सोर्स कोड कॉपी हो गया!");
+            showToast("HTML Source Code copied to clipboard!");
         }
 
         let canvas, ctx;
@@ -888,10 +886,11 @@
         function changeWebsiteLanguage() {
             const lang = document.getElementById('siteLang').value;
             const dict = {
-                hi: { sub: "ऑफ़िशियल यूट्यूब हब, पर्पल ग्रेप्स सीरीज़ और AI स्टूडियो। क्रोम में डायरेक्ट इंस्टॉल और APK डाउनलोड करें!", subBtn: "यूट्यूब चैनल सब्सक्राइब करें" },
-                en: { sub: "Official YouTube Hub, Purple Grapes Series & AI Studio. Install directly in Chrome or download APK!", subBtn: "Subscribe on YouTube" },
+                en: { sub: "Official YouTube Hub, Purple Grapes Series & AI Studio. Direct Chrome Install & APK Download Available!", subBtn: "Subscribe YouTube Channel" },
                 ur: { sub: "آفیشل یوٹیوب ہب، پرپل گریپس سیریز اور AI اسٹوڈیو۔ براہ راست انسٹال اور اے پی کے ڈاؤن لوڈ کریں!", subBtn: "یوٹیوب چینل کو سبسکرائب کریں" },
-                pa: { sub: "ਓਫੀਸ਼ੀਅਲ ਯੂਟਿਊਬ ਹਬ, ਪਰਪਲ ਗ੍ਰੇਪਸ ਸੀਰੀਜ਼ ਅਤੇ AI ਸਟੂਡੀਓ। ਡਾਇਰੈਕਟ ਇੰਸਟਾਲ ਅਤੇ APK ਡਾਊਨਲੋਡ ਕਰੋ!", subBtn: "ਯੂਟਿਊਬ ਚੈਨਲ ਨੂੰ ਸਬਸਕ੍ਰਾਈਬ ਕਰੋ" }
+                pa: { sub: "ਓਫੀਸ਼ੀਅਲ ਯੂਟਿਊਬ ਹਬ, ਪਰਪਲ ਗ੍ਰੇਪਸ ਸੀਰੀਜ਼ ਅਤੇ AI ਸਟੂਡੀਓ। ਡਾਇਰੈਕਟ ਇੰਸਟਾਲ ਅਤੇ APK ਡਾਊਨਲੋਡ ਕਰੋ!", subBtn: "ਯੂਟਿਊਬ ਚੈਨਲ ਨੂੰ ਸਬਸਕ੍ਰਾਈਬ ਕਰੋ" },
+                ar: { sub: "المركز الرسمي لليوتيوب، سلسلة العنب الأرجواني واستوديو الذكاء الاصطناعي!", subBtn: "اشترك في قناة اليوتيوب" },
+                es: { sub: "¡Hub oficial de YouTube, Serie Purple Grapes y Estudio de IA!", subBtn: "Suscribirse al canal de YouTube" }
             };
             
             if(dict[lang]) {
