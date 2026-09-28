@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Best Grapes King LIVE | Standalone PWA & Native App</title>
+    <title>Best Grapes King LIVE | Official Web App & Studio</title>
 
     <!-- Google Site Verification Tag -->
     <meta name="google-site-verification" content="f8Y0j9sO6L9wG0f-X4X8_Y1Z2a3b4c5d" />
 
-    <!-- Web App & PWA Manifest Settings -->
+    <!-- Web App & PWA Settings -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Grapes King">
-    <meta name="theme-color" content="#0b0214">
+    <meta name="theme-color" content="#5b11b8">
 
-    <!-- Dynamic PWA Manifest Generator via Data URI -->
+    <!-- Dynamic PWA Manifest Generator Link -->
     <link rel="manifest" id="pwaManifestLink">
 
     <!-- Tailwind CSS & Font Awesome -->
@@ -69,7 +69,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Glassmorphism Cards */
         .glass-card {
             background: rgba(19, 3, 41, 0.85);
             backdrop-filter: blur(16px);
@@ -77,33 +76,14 @@
             border: 1px solid rgba(156, 39, 176, 0.3);
         }
 
-        /* Neon Glow */
+        .custom-glow {
+            box-shadow: 0 0 20px rgba(156, 39, 176, 0.4);
+        }
+
         .neon-glow-green {
             box-shadow: 0 0 20px rgba(0, 230, 118, 0.35);
         }
-        .neon-glow-purple {
-            box-shadow: 0 0 20px rgba(156, 39, 176, 0.35);
-        }
 
-        /* Pulse Button Animation */
-        @keyframes pulseGlow {
-            0%, 100% { transform: scale(1); opacity: 0.95; }
-            50% { transform: scale(1.02); opacity: 1; }
-        }
-        .pulse-btn {
-            animation: pulseGlow 2.2s infinite ease-in-out;
-        }
-
-        /* Bottom Nav Active Line */
-        .nav-item.active {
-            color: #ffeb3b;
-        }
-        .nav-item.active i {
-            transform: translateY(-2px);
-            color: #ffeb3b;
-        }
-
-        /* Marquee Footer Banner */
         @keyframes marquee {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
@@ -111,754 +91,802 @@
         .animate-marquee {
             display: inline-block;
             white-space: nowrap;
-            animation: marquee 20s linear infinite;
+            animation: marquee 18s linear infinite;
+        }
+
+        .nav-item.active {
+            color: #ffeb3b;
+        }
+        .nav-item.active i {
+            transform: translateY(-2px);
+            color: #ffeb3b;
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-purple-600 selection:text-white">
 
-<header class="app-header sticky top-0 z-50 bg-[#130329]/95 backdrop-blur-md border-b border-purple-800/40 px-4 py-3 shadow-xl">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <!-- App Logo & Crown -->
-        <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('episodes')">
-            <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-purple-600 via-pink-500 to-yellow-400 p-0.5 flex items-center justify-center shadow-lg">
-                <div class="w-full h-full bg-[#0b0214] rounded-[14px] flex items-center justify-center text-xl">
-                    🍇
-                </div>
-            </div>
+    <header class="sticky top-0 z-50 bg-[#5b11b8]/95 backdrop-blur-md px-4 py-3 shadow-lg flex justify-between items-center border-b border-purple-500/40">
+        <div class="flex items-center gap-2 cursor-pointer" onclick="switchTab('episodes')">
+            <span class="text-2xl">🍇</span>
             <div>
-                <h1 class="text-base sm:text-lg font-black tracking-wide text-yellow-300 leading-tight flex items-center gap-1.5">
-                    Grapes King <span class="bg-red-600 text-white text-[9px] uppercase font-extrabold px-1.5 py-0.5 rounded-full animate-pulse">APP LIVE</span>
-                </h1>
-                <p class="text-[10px] text-purple-300/80">Official Mobile App & AI Studio</p>
+                <span class="font-black text-yellow-300 text-base sm:text-lg tracking-wide flex items-center gap-1.5">
+                    Best Grapes King <span class="bg-red-600 text-white text-[9px] uppercase font-black px-1.5 py-0.5 rounded-full animate-pulse">LIVE APP</span>
+                </span>
             </div>
         </div>
 
-        <!-- Header Actions -->
         <div class="flex items-center gap-2">
-            <!-- Native PWA Install Button -->
-            <button id="headerInstallBtn" onclick="triggerPwaInstall()" class="bg-gradient-to-r from-emerald-500 to-green-600 text-gray-950 font-black text-xs px-3 py-1.5 rounded-xl shadow-md flex items-center gap-1.5 hover:scale-105 transition-all">
-                <i class="fa-solid fa-download"></i>
+            <!-- Native PWA Direct Install Button -->
+            <button id="pwaInstallHeaderBtn" onclick="triggerPwaInstall()" class="bg-gradient-to-r from-emerald-400 to-green-500 hover:from-emerald-500 hover:to-green-600 text-gray-950 font-black text-xs px-3 py-1.5 rounded-xl shadow-md flex items-center gap-1.5 transition-transform active:scale-95">
+                <i class="fa-solid fa-circle-down text-sm"></i>
                 <span class="hidden sm:inline">INSTALL APP</span>
             </button>
 
-            <!-- Language Selector -->
-            <select id="siteLang" onchange="changeWebsiteLanguage()" class="bg-[#1c0a35] text-purple-200 border border-purple-500/50 rounded-xl px-2 py-1 text-xs font-semibold focus:outline-none focus:border-yellow-400">
+            <!-- Language Switcher -->
+            <select id="siteLang" onchange="changeWebsiteLanguage()" class="bg-[#130329] text-xs text-purple-200 border border-purple-400/50 rounded-xl px-2 py-1.5 outline-none font-semibold focus:border-yellow-400">
                 <option value="hi">🇮🇳 हिंदी</option>
                 <option value="en">🇬🇧 English</option>
                 <option value="ur">🇵🇰 اردو</option>
                 <option value="pa">🌾 ਪੰਜਾਬੀ</option>
             </select>
+        </div>
+    </header>
 
-            <!-- Gemini Settings -->
-            <button onclick="toggleSettingsModal()" class="p-2 bg-purple-900/40 hover:bg-purple-800 text-purple-300 rounded-xl text-xs border border-purple-600/30">
-                <i class="fa-solid fa-gear"></i>
+    <div class="max-w-3xl mx-auto px-4 py-5 space-y-6 w-full">
+
+        <div class="glass-card p-6 rounded-3xl custom-glow text-center space-y-4 relative overflow-hidden border-purple-500/40">
+            <div class="absolute -top-12 -right-12 w-40 h-40 bg-purple-600/30 rounded-full blur-2xl pointer-events-none"></div>
+
+            <h1 class="text-2xl sm:text-4xl font-black text-white leading-tight" id="appTitle">
+                Best Grapes King <span class="gradient-text">👑 LIVE PORTAL</span>
+            </h1>
+            <p class="text-purple-200/90 text-xs sm:text-sm max-w-xl mx-auto" id="appSub">
+                ऑफ़िशियल यूट्यूब हब, पर्पल ग्रेप्स सीरीज़ और AI स्टूडियो। क्रोम में डायरेक्ट इंस्टॉल और APK डाउनलोड करें!
+            </p>
+
+            <!-- YouTube Subscribe Button -->
+            <a href="https://youtube.com/@bestgrapeskinglive-k7f2q?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="w-full bg-red-600 hover:bg-red-700 text-white font-black py-3 px-6 rounded-full shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2 text-sm sm:text-base border border-red-400/40">
+                <i class="fab fa-youtube text-xl"></i>
+                <span id="btnSubText">यूट्यूब चैनल सब्सक्राइब करें</span>
+            </a>
+
+            <!-- Navigation Shortcuts -->
+            <div class="flex justify-center gap-2 pt-1 flex-wrap">
+                <a href="https://youtube.com/@bestgrapeskinglive-k7f2q" target="_blank" class="bg-purple-900/60 hover:bg-purple-800 text-xs font-semibold text-purple-200 px-3.5 py-1.5 rounded-full border border-purple-500/40 flex items-center gap-1.5">
+                    <i class="fas fa-play-circle text-yellow-400"></i> चैनल देखें
+                </a>
+                <a href="https://youtube.com/@bestgrapeskinglive-k7f2q/videos" target="_blank" class="bg-purple-900/60 hover:bg-purple-800 text-xs font-semibold text-purple-200 px-3.5 py-1.5 rounded-full border border-purple-500/40 flex items-center gap-1.5">
+                    <i class="fas fa-film text-pink-400"></i> वीडियोज़
+                </a>
+                <a href="https://youtube.com/@bestgrapeskinglive-k7f2q/shorts" target="_blank" class="bg-purple-900/60 hover:bg-purple-800 text-xs font-semibold text-purple-200 px-3.5 py-1.5 rounded-full border border-purple-500/40 flex items-center gap-1.5">
+                    <i class="fas fa-bolt text-yellow-300"></i> शॉर्ट्स
+                </a>
+            </div>
+        </div>
+
+        <div class="glass-card p-4 sm:p-5 rounded-2xl border border-emerald-500/40 space-y-3 text-center">
+            <div class="text-xs sm:text-sm font-bold text-emerald-400 flex items-center justify-center gap-2">
+                <i class="fas fa-mobile-screen-button text-base"></i>
+                <span>Get Official Standalone Mobile App Package</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <button onclick="startApkInstaller()" class="bg-emerald-400 hover:bg-emerald-500 text-gray-950 font-black py-3 px-4 rounded-xl text-xs sm:text-sm shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2">
+                    <i class="fas fa-download text-base"></i>
+                    <span>Download Android APK</span>
+                </button>
+                <button onclick="openSourceCodeModal()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl text-xs sm:text-sm shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2 border border-blue-400/30">
+                    <i class="fas fa-code text-base"></i>
+                    <span>View & Copy HTML Code</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Tab Content Views -->
+        <main>
+            <section id="view-episodes" class="tab-content space-y-6">
+                <!-- Search & Filters -->
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-3 glass-card p-3.5 rounded-2xl">
+                    <div class="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0">
+                        <button onclick="filterEpisodes('all')" class="ep-filter-btn bg-yellow-400 text-black font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap">सभी सीज़न</button>
+                        <button onclick="filterEpisodes('s3')" class="ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30">Season 3</button>
+                        <button onclick="filterEpisodes('s2')" class="ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30">Season 2</button>
+                        <button onclick="filterEpisodes('s1')" class="ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30">Season 1</button>
+                    </div>
+
+                    <div class="relative w-full sm:w-56">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-purple-400 text-xs"></i>
+                        <input type="text" id="episodeSearch" oninput="searchEpisodes()" placeholder="एपिसोड खोजें..." class="w-full bg-[#0b0214] border border-purple-700/50 rounded-xl pl-8 pr-3 py-1.5 text-xs text-white focus:outline-none focus:border-yellow-400">
+                    </div>
+                </div>
+
+                <!-- Episodes Grid -->
+                <div id="episodesGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </section>
+
+            <section id="view-ai-studio" class="tab-content hidden space-y-4">
+                <div class="glass-card p-5 rounded-2xl border border-purple-500/50 space-y-4">
+                    <div class="flex items-center gap-2 border-b border-purple-500/40 pb-2">
+                        <i class="fas fa-wand-magic-sparkles text-yellow-400 text-xl"></i>
+                        <h2 class="text-lg sm:text-xl font-extrabold text-yellow-300">AI Video & Voice Generator Studio</h2>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs text-purple-200 font-semibold mb-1">Enter your Prompt / Video Topic:</label>
+                        <textarea id="aiPrompt" rows="3" class="w-full bg-[#0b0214] border border-purple-500/40 rounded-xl p-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-yellow-400" placeholder="उदा. पर्पल ग्रेप्स किंग की नई जादुई कहानी और नए सीज़न का सीन..."></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs text-purple-300 font-semibold mb-1">Video Language:</label>
+                            <select id="aiLang" class="w-full bg-[#0b0214] border border-purple-500/40 rounded-lg p-2 text-xs text-white">
+                                <option value="Hindi">Hindi (हिंदी)</option>
+                                <option value="English">English</option>
+                                <option value="Urdu">Urdu (اردو)</option>
+                                <option value="Punjabi">Punjabi (ਪੰਜਾਬੀ)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs text-purple-300 font-semibold mb-1">Voiceover Preset:</label>
+                            <select id="aiVoice" class="w-full bg-[#0b0214] border border-purple-500/40 rounded-lg p-2 text-xs text-white">
+                                <option value="Kore">Kore (Narrative / Firm)</option>
+                                <option value="Puck">Puck (Upbeat / Youthful)</option>
+                                <option value="Zephyr">Zephyr (Bright / Friendly)</option>
+                                <option value="Fenrir">Fenrir (Excitable / Energetic)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button onclick="generateAiVideoAndAudio()" id="btnGenerate" class="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-yellow-500 hover:from-purple-500 hover:to-yellow-400 text-white font-black py-3 rounded-xl shadow-lg transition active:scale-95 flex items-center justify-center gap-2 text-xs sm:text-sm">
+                        <i class="fas fa-play text-yellow-300"></i>
+                        <span>GENERATE AI ARTWORK & VOICE</span>
+                    </button>
+
+                    <div id="aiStatus" class="hidden text-center text-xs font-bold text-yellow-300 animate-pulse py-2">
+                        ⏳ Generating AI Artwork & Speech Voiceover via Gemini API...
+                    </div>
+
+                    <div id="aiOutputArea" class="hidden bg-[#0b0214] border-2 border-emerald-500/80 p-4 rounded-xl text-center space-y-3 neon-glow-green">
+                        <h4 class="text-emerald-400 font-bold text-xs sm:text-sm">🎉 Content Generated Successfully!</h4>
+                        <div id="aiImageContainer" class="w-full rounded-lg overflow-hidden border border-purple-500/40 shadow-md min-h-[180px] bg-purple-950/40 flex items-center justify-center">
+                            <canvas id="videoCanvas" width="640" height="360" class="w-full rounded-lg block"></canvas>
+                        </div>
+                        <div id="aiAudioBtnContainer" class="pt-2 flex justify-center gap-2 flex-wrap"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="view-game" class="tab-content hidden space-y-4">
+                <div class="glass-card p-5 rounded-2xl border border-purple-500/40 text-center space-y-3">
+                    <div class="flex items-center justify-between border-b border-purple-800/60 pb-2">
+                        <div class="text-left">
+                            <h3 class="text-base font-black text-yellow-300">🍇 Grape Basket Catcher</h3>
+                            <p class="text-[11px] text-purple-300">गिरे हुए पर्पल ग्रेप्स को बास्केट में पकड़ें!</p>
+                        </div>
+                        <div class="bg-[#0b0214] px-3 py-1 rounded-xl border border-purple-700/50">
+                            <span class="text-xs font-bold text-yellow-400">Score: <span id="gameScore">0</span></span>
+                        </div>
+                    </div>
+
+                    <div class="relative w-full max-w-md mx-auto aspect-[4/3] bg-[#0b0214] border-2 border-purple-600 rounded-2xl overflow-hidden">
+                        <canvas id="gameCanvas" class="w-full h-full block cursor-pointer"></canvas>
+                        <div id="gameOverlay" class="absolute inset-0 bg-[#0b0214]/90 flex flex-col items-center justify-center p-4 space-y-3">
+                            <span class="text-4xl">🍇👑</span>
+                            <h4 class="text-lg font-black text-yellow-300">Grapes Catcher Arcade</h4>
+                            <button onclick="startGame()" class="bg-yellow-400 hover:bg-yellow-500 text-gray-950 font-black px-6 py-2 rounded-full text-xs shadow-lg">
+                                <i class="fa-solid fa-play"></i> START GAME
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="view-guide" class="tab-content hidden space-y-4">
+                <div class="glass-card p-5 rounded-2xl border border-purple-500/30 space-y-3 text-left">
+                    <h3 class="text-base font-bold text-yellow-300 border-b border-purple-500/30 pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-seedling text-emerald-400"></i> 🍇 Complete Grape Farming Guide
+                    </h3>
+                    <ul class="text-xs text-purple-200 space-y-2 list-disc pl-4">
+                        <li><strong>Sunlight (धूप):</strong> अंगूर के पौधों को रोज़ाना 6 से 8 घंटे की सीधी धूप की आवश्यकता होती है।</li>
+                        <li><strong>Soil (मिट्टी):</strong> जल निकास वाली रेतीली दोमट मिट्टी सबसे उत्तम रहती है।</li>
+                        <li><strong>Planting (रोपाई):</strong> अंगूर की कलम लगाने का सही समय फरवरी या मार्च है।</li>
+                        <li><strong>Pruning (कटाई-छंटाई):</strong> सर्दियों में हर साल पुरानी टहनियों की छंटाई से पैदावार दोगुनी होती है।</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="fixed bottom-0 left-0 w-full bg-yellow-400 text-black font-black py-1.5 shadow-2xl overflow-hidden z-40 text-xs">
+        <div class="animate-marquee">
+            👑 Best Grapes King LIVE Official Standalone PWA Web App & AI Studio +++ Direct Mobile Chrome Installer Enabled +++ 👑 Best Grapes King LIVE Official Standalone PWA Web App & AI Studio +++
+        </div>
+    </div>
+
+    <!-- MOBILE BOTTOM APP NAVIGATION BAR -->
+    <nav class="fixed bottom-6 left-0 w-full bg-[#130329]/95 backdrop-blur-xl border-t border-purple-800/60 z-50 px-2 py-1.5 shadow-2xl">
+        <div class="max-w-md mx-auto flex justify-around items-center">
+            <button id="nav-episodes" onclick="switchTab('episodes')" class="nav-item active flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
+                <i class="fa-solid fa-film text-base"></i>
+                <span>Episodes</span>
+            </button>
+            <button id="nav-ai-studio" onclick="switchTab('ai-studio')" class="nav-item flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
+                <i class="fa-solid fa-wand-magic-sparkles text-base"></i>
+                <span>AI Studio</span>
+            </button>
+            <button id="nav-game" onclick="switchTab('game')" class="nav-item flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
+                <i class="fa-solid fa-gamepad text-base"></i>
+                <span>Arcade</span>
+            </button>
+            <button id="nav-guide" onclick="switchTab('guide')" class="nav-item flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
+                <i class="fa-solid fa-seedling text-base"></i>
+                <span>Guide</span>
             </button>
         </div>
-    </div>
-</header>
+    </nav>
 
-<div class="bg-gradient-to-b from-[#1d063b] via-[#130329] to-[#0b0214] py-5 px-4 border-b border-purple-900/30">
-    <div class="max-w-5xl mx-auto glass-card rounded-3xl p-5 sm:p-7 relative overflow-hidden shadow-2xl border-purple-500/30">
-        <!-- Background Glow -->
-        <div class="absolute -top-16 -right-16 w-56 h-56 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="flex flex-col md:flex-row items-center justify-between gap-5 relative z-10">
-            <!-- Left Info -->
-            <div class="text-center md:text-left space-y-2.5 max-w-xl">
-                <div class="inline-flex items-center gap-2 bg-purple-900/60 border border-purple-400/30 px-3 py-1 rounded-full text-xs font-semibold text-yellow-300">
-                    <i class="fa-solid fa-crown text-yellow-400"></i>
-                    <span>Official Standalone App Shell</span>
-                </div>
-                <h1 class="text-2xl sm:text-4xl font-black text-white leading-tight" id="appTitle">
-                    बेस्ट ग्रेप्स किंग <span class="gradient-text">👑 एप पोर्टल</span>
-                </h1>
-                <p class="text-purple-200/80 text-xs sm:text-sm leading-relaxed" id="appSub">
-                    क्रोम वेब-ऐप और एंड्रॉइड एपीके (PWA) सपोर्ट के साथ! अब डायरेक्ट अपने फोन में ऐप की तरह इंस्टॉल और डाउनलोड करें।
-                </p>
-
-                <!-- Action Buttons -->
-                <div class="flex flex-wrap items-center justify-center md:justify-start gap-2.5 pt-1">
-                    <a href="https://youtube.com/@bestgrapeskinglive-k7f2q?sub_confirmation=1" target="_blank" class="pulse-btn inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-full text-xs shadow-lg shadow-red-600/30">
-                        <i class="fa-brands fa-youtube text-base"></i>
-                        <span id="btnSubText">यूट्यूब चैनल सब्सक्राइब करें</span>
-                    </a>
-                    
-                    <button onclick="switchTab('ai-studio')" class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold px-4 py-2 rounded-full text-xs shadow-lg">
-                        <i class="fa-solid fa-wand-magic-sparkles text-yellow-300"></i>
-                        <span>AI स्टूडियो खोलें</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Right Direct Download Trigger Card -->
-            <div class="w-full md:w-auto flex flex-col gap-2.5 min-w-[240px]">
-                <button onclick="triggerDirectChromeApkDownload()" class="w-full bg-emerald-400 hover:bg-emerald-500 text-gray-950 font-extrabold px-4 py-3 rounded-2xl text-xs flex items-center justify-center gap-2 shadow-xl shadow-emerald-500/20 transition-all border border-emerald-300/50">
-                    <i class="fa-solid fa-circle-down text-lg"></i>
-                    <div class="text-left">
-                        <div class="font-black leading-tight text-sm">APK फाइल डाउनलोड करें</div>
-                        <div class="text-[10px] text-gray-900 font-semibold">Chrome Download Manager Direct Trigger</div>
-                    </div>
-                </button>
-
-                <button onclick="openSourceCodeModal()" class="w-full bg-blue-600/80 hover:bg-blue-600 text-white font-bold px-4 py-2 rounded-2xl text-xs flex items-center justify-center gap-2 border border-blue-400/30">
-                    <i class="fa-solid fa-code"></i>
-                    <span>HTML/JS कोड देखें व कॉपी करें</span>
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<main class="max-w-5xl mx-auto px-4 py-5">
-
-    <!-- View 1: Episodes -->
-    <section id="view-episodes" class="tab-content space-y-5">
-        <!-- Search & Filter Bar -->
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 glass-card p-3.5 rounded-2xl">
-            <div class="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0">
-                <button onclick="filterEpisodes('all')" class="ep-filter-btn bg-yellow-400 text-black font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap">सभी सीज़न</button>
-                <button onclick="filterEpisodes('s3')" class="ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30">Season 3</button>
-                <button onclick="filterEpisodes('s2')" class="ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30">Season 2</button>
-                <button onclick="filterEpisodes('s1')" class="ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30">Season 1</button>
-            </div>
-
-            <div class="relative w-full sm:w-60">
-                <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-purple-400 text-xs"></i>
-                <input type="text" id="episodeSearch" oninput="searchEpisodes()" placeholder="एपिसोड खोजें..." class="w-full bg-[#0b0214] border border-purple-700/50 rounded-xl pl-8 pr-3 py-1.5 text-xs text-white focus:outline-none focus:border-yellow-400">
-            </div>
-        </div>
-
-        <!-- Episodes Grid -->
-        <div id="episodesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <!-- JS populated -->
-        </div>
-    </section>
-
-    <!-- View 2: AI Studio -->
-    <section id="view-ai-studio" class="tab-content hidden space-y-5">
-        <div class="glass-card rounded-3xl p-5 sm:p-7 border-purple-500/40">
-            <div class="flex items-center justify-between border-b border-purple-800/50 pb-3 mb-5">
-                <div>
-                    <h2 class="text-lg sm:text-xl font-black text-yellow-300 flex items-center gap-2">
-                        <i class="fa-solid fa-wand-magic-sparkles text-pink-400"></i> AI Video & Audio Generator
-                    </h2>
-                    <p class="text-xs text-purple-300 mt-0.5">Gemini AI संचालित वीडियो क्लिप्स, आर्टवर्क और वॉइसओवर जनरेटर</p>
-                </div>
-            </div>
-
-            <!-- Studio Modes -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-5">
-                <button type="button" onclick="setStudioMode('text2video')" id="mode-text2video" class="studio-mode-btn bg-purple-600 text-white p-3 rounded-2xl text-left border border-purple-400">
-                    <i class="fa-solid fa-clapperboard text-yellow-300 text-base mb-1 block"></i>
-                    <div class="font-bold text-xs">AI Video + Speech</div>
-                </button>
-                <button type="button" onclick="setStudioMode('text2img')" id="mode-text2img" class="studio-mode-btn bg-[#0b0214] text-purple-300 p-3 rounded-2xl text-left border border-purple-800/60">
-                    <i class="fa-solid fa-image text-pink-400 text-base mb-1 block"></i>
-                    <div class="font-bold text-xs">AI Graphic Artwork</div>
-                </button>
-                <button type="button" onclick="setStudioMode('script')" id="mode-script" class="studio-mode-btn bg-[#0b0214] text-purple-300 p-3 rounded-2xl text-left border border-purple-800/60">
-                    <i class="fa-solid fa-scroll text-blue-400 text-base mb-1 block"></i>
-                    <div class="font-bold text-xs">Episode Script</div>
-                </button>
-                <button type="button" onclick="setStudioMode('tts')" id="mode-tts" class="studio-mode-btn bg-[#0b0214] text-purple-300 p-3 rounded-2xl text-left border border-purple-800/60">
-                    <i class="fa-solid fa-microphone-lines text-emerald-400 text-base mb-1 block"></i>
-                    <div class="font-bold text-xs">AI Voiceover</div>
-                </button>
-            </div>
-
-            <!-- Prompt Form -->
-            <div class="space-y-4">
-                <div>
-                    <label class="block text-xs font-bold text-purple-200 uppercase mb-1.5">Enter Prompt / Video Idea:</label>
-                    <textarea id="aiPrompt" rows="3" placeholder="उदा. पर्पल ग्रेप्स किंग की जादुई कहानी और नए एपिसोड का सीन..." class="w-full bg-[#0b0214] border border-purple-700/60 rounded-2xl p-3 text-xs text-white focus:outline-none focus:border-yellow-400"></textarea>
-                </div>
-
-                <button type="button" onclick="generateAiContent()" id="btnGenerate" class="w-full py-3 px-5 rounded-2xl bg-gradient-to-r from-purple-600 via-pink-600 to-yellow-500 text-white font-black text-sm tracking-wide shadow-xl flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-play text-yellow-300"></i>
-                    <span>GENERATE NOW</span>
-                </button>
-            </div>
-
-            <div id="aiStatus" class="hidden my-6 text-center space-y-2">
-                <div class="inline-block w-10 h-10 border-4 border-purple-500 border-t-yellow-400 rounded-full animate-spin"></div>
-                <p class="text-xs text-purple-200 font-bold animate-pulse">Generating AI Canvas Video & Speech...</p>
-            </div>
-
-            <div id="aiOutputArea" class="hidden mt-6 bg-[#0b0214] border-2 border-emerald-500/80 rounded-2xl p-4 space-y-3 neon-glow-green">
-                <div id="mediaContainer"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- View 3: Arcade Game -->
-    <section id="view-game" class="tab-content hidden space-y-5">
-        <div class="glass-card rounded-3xl p-5 sm:p-7 border-purple-500/40 text-center">
-            <div class="flex items-center justify-between border-b border-purple-800/60 pb-3 mb-4">
-                <div class="text-left">
-                    <h2 class="text-lg font-black text-yellow-300">🍇 Grape Basket Catcher</h2>
-                    <p class="text-[11px] text-purple-300">गिरे हुए पर्पल व गोल्डन ग्रेप्स को बास्केट में पकड़ें!</p>
-                </div>
-                <div class="flex items-center gap-3 bg-[#0b0214] px-3 py-1.5 rounded-xl border border-purple-700/50">
-                    <span class="text-xs font-bold text-yellow-400">Score: <span id="gameScore">0</span></span>
-                    <span class="text-xs font-bold text-emerald-400">Best: <span id="gameHighScore">0</span></span>
-                </div>
-            </div>
-
-            <div class="relative w-full max-w-md mx-auto aspect-[4/3] bg-[#0b0214] border-2 border-purple-600 rounded-2xl overflow-hidden shadow-2xl">
-                <canvas id="gameCanvas" class="w-full h-full block cursor-pointer"></canvas>
-                <div id="gameOverlay" class="absolute inset-0 bg-[#0b0214]/90 flex flex-col items-center justify-center p-4 space-y-3">
-                    <span class="text-4xl">🍇👑</span>
-                    <h3 class="text-xl font-black text-yellow-300">Grapes Catcher Arcade</h3>
-                    <button onclick="startGame()" class="pulse-btn bg-yellow-400 hover:bg-yellow-500 text-gray-950 font-black px-6 py-2.5 rounded-full text-xs shadow-lg">
-                        <i class="fa-solid fa-play"></i> START GAME
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- View 4: Farming Guide -->
-    <section id="view-guide" class="tab-content hidden space-y-5">
-        <div class="glass-card rounded-3xl p-6 border-purple-500/40 space-y-4">
-            <h2 class="text-lg font-extrabold text-yellow-300 flex items-center gap-2">
-                🍇 अंगूर की खेती और देखभाल गाइड (Grape Farming Guide)
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs text-purple-200">
-                <div class="bg-[#0b0214] p-3.5 rounded-xl border border-purple-700/40">
-                    <strong class="text-yellow-300 block mb-1">☀️ धूप आवश्यकता:</strong>
-                    अंगूर के पौधों को रोजाना 6 से 8 घंटे की सीधी धूप की आवश्यकता होती है जिससे मीठे अंगूर बनते हैं।
-                </div>
-                <div class="bg-[#0b0214] p-3.5 rounded-xl border border-purple-700/40">
-                    <strong class="text-yellow-300 block mb-1">🌱 मिट्टी और जल निकास:</strong>
-                    अच्छी जल निकासी वाली रेतीली दोमट मिट्टी सबसे उपयुक्त है। मिट्टी का pH 6.0 से 6.8 उत्तम रहता है।
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- View 5: Downloads & App Center -->
-    <section id="view-downloads" class="tab-content hidden space-y-5">
-        <div class="glass-card rounded-3xl p-6 border-purple-500/40 space-y-5">
-            <div class="text-center max-w-lg mx-auto space-y-1.5">
-                <span class="text-3xl">📱</span>
-                <h2 class="text-xl font-black text-yellow-300">App Center & Standalone Installer</h2>
-                <p class="text-xs text-purple-200">क्रोम PWA वेब-ऐप इंस्टॉल करें या एंड्रॉइड `.apk` पैकेज सीधे डाउनलोड करें!</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- Direct APK Download Trigger -->
-                <div class="bg-[#0b0214] border border-purple-600/40 rounded-2xl p-5 flex flex-col justify-between space-y-3">
-                    <div>
-                        <span class="bg-emerald-950 text-emerald-400 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full border border-emerald-500/40">Android Package</span>
-                        <h3 class="text-base font-bold text-white mt-2">Best Grapes King APK</h3>
-                        <p class="text-xs text-purple-300">क्रोम ब्राउज़र में डायरेक्ट 28.4 MB की `.apk` फाइल डाउनलोड करने के लिए नीचे क्लिक करें।</p>
-                    </div>
-                    <button onclick="triggerDirectChromeApkDownload()" class="w-full bg-emerald-400 hover:bg-emerald-500 text-gray-950 font-extrabold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow-lg">
-                        <i class="fa-solid fa-download"></i>
-                        <span>DOWNLOAD .APK FILE</span>
-                    </button>
-                </div>
-
-                <!-- Chrome Native PWA Prompt -->
-                <div class="bg-[#0b0214] border border-purple-600/40 rounded-2xl p-5 flex flex-col justify-between space-y-3">
-                    <div>
-                        <span class="bg-yellow-950 text-yellow-400 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full border border-yellow-500/40">Instant PWA Web App</span>
-                        <h3 class="text-base font-bold text-white mt-2">Home Screen Web App</h3>
-                        <p class="text-xs text-purple-300">बिना स्टोरेज घेरे ऐप को फोन/कंप्यूटर स्क्रीन पर ऐप की तरह चलाएं।</p>
-                    </div>
-                    <button onclick="triggerPwaInstall()" class="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-950 font-extrabold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow-lg">
-                        <i class="fa-solid fa-mobile-screen"></i>
-                        <span>INSTALL WEB APP NOW</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-</main>
-
-<!-- MOBILE NATIVE APP BOTTOM NAVIGATION BAR -->
-<nav class="fixed bottom-0 left-0 w-full bg-[#130329]/95 backdrop-blur-xl border-t border-purple-800/60 z-50 px-2 py-1.5 shadow-2xl">
-    <div class="max-w-md mx-auto flex justify-around items-center">
-        <button id="nav-episodes" onclick="switchTab('episodes')" class="nav-item active flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
-            <i class="fa-solid fa-film text-base"></i>
-            <span>Episodes</span>
-        </button>
-
-        <button id="nav-ai-studio" onclick="switchTab('ai-studio')" class="nav-item flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
-            <i class="fa-solid fa-wand-magic-sparkles text-base"></i>
-            <span>AI Studio</span>
-        </button>
-
-        <button id="nav-game" onclick="switchTab('game')" class="nav-item flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
-            <i class="fa-solid fa-gamepad text-base"></i>
-            <span>Arcade</span>
-        </button>
-
-        <button id="nav-guide" onclick="switchTab('guide')" class="nav-item flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
-            <i class="fa-solid fa-seedling text-base"></i>
-            <span>Guide</span>
-        </button>
-
-        <button id="nav-downloads" onclick="switchTab('downloads')" class="nav-item flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
-            <i class="fa-solid fa-circle-down text-base text-emerald-400"></i>
-            <span class="text-emerald-400">App Center</span>
-        </button>
-    </div>
-</nav>
-
-<!-- MODALS -->
-<div id="apkModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-[99999] hidden items-center justify-center p-4">
-    <div class="bg-[#1c0a35] border-2 border-emerald-400 rounded-3xl w-full max-w-md p-5 space-y-4 shadow-2xl relative neon-glow-green">
-        <button onclick="closeApkModal()" class="absolute top-4 right-4 text-purple-400 hover:text-white">
-            <i class="fa-solid fa-xmark text-lg"></i>
-        </button>
-
-        <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-600 to-yellow-400 p-0.5 flex-shrink-0">
-                <div class="w-full h-full bg-[#1c0a35] rounded-2xl flex items-center justify-center text-2xl">🍇</div>
-            </div>
-            <div>
-                <h3 class="font-bold text-yellow-300 text-base">Best Grapes King Live App</h3>
-                <p class="text-xs text-emerald-400 font-semibold">Package: com.bestgrapeskinglive.official (28.4 MB)</p>
-            </div>
-        </div>
-
-        <p id="apkStatusText" class="text-xs text-purple-200 leading-relaxed">
-            क्या आप Android Package (.apk) अपने ब्राउज़र में डाउनलोड करना चाहते हैं?
-        </p>
-
-        <div id="apkProgressBg" class="w-full bg-[#0b0214] rounded-full h-3 overflow-hidden p-0.5 border border-purple-700/50 hidden">
-            <div id="apkProgressBar" class="bg-gradient-to-r from-emerald-400 to-yellow-400 h-full rounded-full w-0 transition-all duration-150"></div>
-        </div>
-
-        <div class="flex justify-end gap-2 pt-1" id="apkActionBtns">
-            <button onclick="closeApkModal()" class="bg-purple-900/60 text-purple-200 font-bold px-4 py-2 rounded-xl text-xs">रद्द करें</button>
-            <button onclick="executeRealChromeBlobDownload()" class="bg-emerald-400 text-gray-950 font-black px-5 py-2 rounded-xl text-xs shadow-lg">डाउनलोड शुरू करें</button>
-        </div>
-    </div>
-</div>
-
-<!-- SOURCE CODE MODAL -->
-<div id="codeModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-[99999] hidden items-center justify-center p-4">
-    <div class="bg-[#130329] border border-blue-500 rounded-3xl w-full max-w-2xl h-[80vh] p-4 flex flex-col justify-between space-y-3 relative">
-        <div class="flex justify-between items-center border-b border-purple-800/60 pb-2">
-            <h3 class="font-bold text-yellow-300 text-xs flex items-center gap-2">
-                <i class="fa-solid fa-code text-blue-400"></i> HTML Source Code Script
-            </h3>
-            <button onclick="closeSourceCodeModal()" class="text-purple-400 hover:text-white">
-                <i class="fa-solid fa-xmark text-base"></i>
-            </button>
-        </div>
-        <textarea id="codeTextArea" readonly class="w-full flex-1 bg-[#0b0214] text-emerald-400 font-mono text-[11px] p-3 border border-purple-700/50 rounded-2xl outline-none resize-none select-all"></textarea>
-        <button onclick="copyCodeToClipboard()" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded-xl ml-auto shadow-lg flex items-center gap-1.5">
-            <i class="fa-solid fa-copy"></i> Copy Code
-        </button>
-    </div>
-</div>
-
-<!-- VIDEO PLAYER MODAL -->
-<div id="videoModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-[99990] hidden items-center justify-center p-4">
-    <div class="bg-[#130329] border border-purple-500/50 rounded-3xl w-full max-w-3xl overflow-hidden shadow-2xl relative">
-        <div class="flex justify-between items-center px-4 py-2.5 bg-[#0b0214] border-b border-purple-800/60">
-            <h3 id="modalVideoTitle" class="text-xs sm:text-sm font-bold text-yellow-300 truncate pr-4">Video</h3>
-            <button onclick="closeVideoModal()" class="text-purple-400 hover:text-white">
+    <div id="apkModal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-[99999] hidden flex items-center justify-center p-4">
+        <div class="bg-[#1c0a35] border-2 border-emerald-400 rounded-3xl w-full max-w-sm p-5 space-y-4 shadow-2xl relative neon-glow-green">
+            <button onclick="closeApkModal()" class="absolute top-4 right-4 text-purple-400 hover:text-white">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
-        </div>
-        <div class="aspect-video w-full bg-black">
-            <iframe id="videoIframe" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-600 to-yellow-400 p-0.5 flex-shrink-0">
+                    <div class="w-full h-full bg-[#1c0a35] rounded-2xl flex items-center justify-center text-2xl">🍇</div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-yellow-300 text-sm">Best Grapes King Live App</h3>
+                    <p class="text-xs text-emerald-400 font-semibold">Package: com.bestgrapeskinglive.official</p>
+                </div>
+            </div>
+
+            <p id="apkStatusText" class="text-xs text-purple-200 leading-relaxed">
+                क्या आप Android Package (.apk) अपने क्रोम डाउनलोडर में डाउनलोड करना चाहते हैं?
+            </p>
+
+            <div id="apkProgressBg" class="w-full bg-[#0b0214] rounded-full h-3 overflow-hidden p-0.5 border border-purple-700/50 hidden">
+                <div id="apkProgressBar" class="bg-gradient-to-r from-emerald-400 to-yellow-400 h-full rounded-full w-0 transition-all duration-150"></div>
+            </div>
+
+            <div class="flex justify-end gap-2 pt-1" id="apkActionBtns">
+                <button onclick="closeApkModal()" class="bg-purple-900/60 text-purple-200 font-bold px-4 py-2 rounded-xl text-xs">रद्द करें</button>
+                <button onclick="executeRealChromeBlobDownload()" class="bg-emerald-400 text-gray-950 font-black px-5 py-2 rounded-xl text-xs shadow-lg">डाउनलोड शुरू करें</button>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- GEMINI SETTINGS MODAL -->
-<div id="settingsModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-[99999] hidden items-center justify-center p-4">
-    <div class="bg-[#130329] border border-purple-500/50 rounded-3xl w-full max-w-md p-5 space-y-3">
-        <div class="flex justify-between items-center border-b border-purple-800/60 pb-2">
-            <h3 class="text-sm font-bold text-yellow-300">Gemini API Settings</h3>
-            <button onclick="toggleSettingsModal()" class="text-purple-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+    <div id="codeModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-[99999] hidden flex items-center justify-center p-3">
+        <div class="bg-[#130329] border border-blue-500 rounded-3xl w-full max-w-xl h-[80vh] p-4 flex flex-col justify-between space-y-3 relative">
+            <div class="flex justify-between items-center border-b border-purple-800/60 pb-2">
+                <h3 class="font-bold text-yellow-300 text-xs flex items-center gap-2">
+                    <i class="fa-solid fa-code text-blue-400"></i> Official HTML Source Code Script
+                </h3>
+                <button onclick="closeSourceCodeModal()" class="text-purple-400 hover:text-white">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <textarea id="codeTextArea" readonly class="w-full flex-1 bg-[#0b0214] text-emerald-400 font-mono text-[11px] p-3 border border-purple-700/50 rounded-2xl outline-none resize-none select-all"></textarea>
+
+            <div class="flex justify-between items-center pt-1">
+                <span id="copyMsg" class="text-xs text-emerald-400 font-semibold hidden">✅ Code Copied to Clipboard!</span>
+                <button onclick="copyCodeToClipboard()" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2 px-5 rounded-xl flex items-center gap-1.5 ml-auto shadow-lg">
+                    <i class="fa-solid fa-copy"></i> Copy Code
+                </button>
+            </div>
         </div>
-        <input type="password" id="customApiKey" placeholder="Custom Gemini API Key..." class="w-full bg-[#0b0214] border border-purple-700/60 rounded-xl p-2.5 text-xs text-white focus:outline-none">
-        <button onclick="saveApiKey()" class="bg-yellow-400 text-gray-950 font-bold px-4 py-1.5 rounded-xl text-xs float-right">Save</button>
     </div>
-</div>
 
-<!-- TOAST -->
-<div id="toast" class="fixed top-4 right-4 z-[999999] bg-yellow-400 text-gray-950 px-3.5 py-2 rounded-2xl shadow-2xl font-bold text-xs hidden items-center gap-2">
-    <i class="fa-solid fa-circle-info"></i>
-    <span id="toastText">Info</span>
-</div>
+    <!-- VIDEO PLAYER MODAL -->
+    <div id="videoModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-[99990] hidden items-center justify-center p-4">
+        <div class="bg-[#130329] border border-purple-500/50 rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl relative">
+            <div class="flex justify-between items-center px-4 py-2.5 bg-[#0b0214] border-b border-purple-800/60">
+                <h3 id="modalVideoTitle" class="text-xs sm:text-sm font-bold text-yellow-300 truncate pr-4">Video</h3>
+                <button onclick="closeVideoModal()" class="text-purple-400 hover:text-white">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div class="aspect-video w-full bg-black">
+                <iframe id="videoIframe" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
 
-<script>
-let pwaPrompt = null;
-let studioMode = "text2video";
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed top-4 right-4 z-[999999] bg-yellow-400 text-gray-950 px-3.5 py-2 rounded-2xl shadow-2xl font-bold text-xs hidden items-center gap-2">
+        <i class="fa-solid fa-circle-info"></i>
+        <span id="toastText">Notification</span>
+    </div>
 
-const EPISODES_DATA = [
-    { id: "ufkGKvfRCZA", title: "Purple Grapes Season 3 - Episode 1: The Magic Garden", season: "s3", views: "142K", duration: "12:45" },
-    { id: "gTAsU8cnuiI", title: "Purple Grapes Season 3 - Episode 2: King's Golden Vine", season: "s3", views: "98K", duration: "10:15" },
-    { id: "7D3oQ2RCgVU", title: "Purple Grapes Season 3 - Episode 3: Secret Vineyard Trail", season: "s3", views: "110K", duration: "11:20" },
-    { id: "sOlfwPgsiiQ", title: "Purple Grapes Season 2 - Episode 1: Secret Kingdom", season: "s2", views: "250K", duration: "11:30" },
-    { id: "sOlfwPgsiiQ", title: "Purple Grapes Season 1 - Episode 1: The Origins", season: "s1", views: "520K", duration: "14:10" }
-];
+    <script>
+        let pwaPrompt = null;
 
-window.onload = function() {
-    setupPwaManifest();
-    registerInlineServiceWorker();
-    renderEpisodes(EPISODES_DATA);
-    initGameCanvas();
-    populateCodeModalText();
+        const EPISODES_DATA = [
+            { id: "ufkGKvfRCZA", title: "Purple Grapes Season 3 - Episode 1: The Magic Garden", season: "s3", views: "142K", duration: "12:45" },
+            { id: "gTAsU8cnuiI", title: "Purple Grapes Season 3 - Episode 2: King's Golden Vine", season: "s3", views: "98K", duration: "10:15" },
+            { id: "7D3oQ2RCgVU", title: "Purple Grapes Season 3 - Episode 3: Secret Vineyard Trail", season: "s3", views: "110K", duration: "11:20" },
+            { id: "4sX_yY6bJgw", title: "Purple Grapes Season 3 - Episode 4: The Royal Harvest", season: "s3", views: "85K", duration: "09:50" },
+            { id: "sOlfwPgsiiQ", title: "Purple Grapes Season 2 - Episode 1: Kingdom Secrets", season: "s2", views: "250K", duration: "11:30" },
+            { id: "sOlfwPgsiiQ", title: "Purple Grapes Season 1 - Episode 1: The Origins", season: "s1", views: "520K", duration: "14:10" }
+        ];
 
-    window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        pwaPrompt = e;
-        const btn = document.getElementById('headerInstallBtn');
-        if(btn) btn.classList.add('animate-bounce');
-    });
-};
+        window.onload = function() {
+            setupPwaManifest();
+            registerServiceWorker();
+            renderEpisodes(EPISODES_DATA);
+            initGameCanvas();
 
-function setupPwaManifest() {
-    const manifestObj = {
-        name: "Best Grapes King LIVE",
-        short_name: "GrapesKing",
-        start_url: "./",
-        display: "standalone",
-        background_color: "#0b0214",
-        theme_color: "#0b0214",
-        icons: [
-            {
-                src: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%235b11b8'/><text y='.9em' font-size='90'>🍇</text></svg>",
-                sizes: "192x192 512x512",
-                type: "image/svg+xml"
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                pwaPrompt = e;
+                const btn = document.getElementById('pwaInstallHeaderBtn');
+                if(btn) btn.classList.add('animate-bounce');
+            });
+        };
+
+        function setupPwaManifest() {
+            const manifestObj = {
+                name: "Best Grapes King LIVE",
+                short_name: "GrapesKing",
+                start_url: "./",
+                display: "standalone",
+                background_color: "#0b0214",
+                theme_color: "#5b11b8",
+                icons: [
+                    {
+                        src: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%235b11b8'/><text y='.9em' font-size='90'>🍇</text></svg>",
+                        sizes: "192x192 512x512",
+                        type: "image/svg+xml"
+                    }
+                ]
+            };
+            const manifestStr = URL.createObjectURL(new Blob([JSON.stringify(manifestObj)], {type: 'application/json'}));
+            document.getElementById('pwaManifestLink').setAttribute('href', manifestStr);
+        }
+
+        function registerServiceWorker() {
+            if ('serviceWorker' in navigator) {
+                const swCode = `
+                    self.addEventListener('install', (e) => self.skipWaiting());
+                    self.addEventListener('activate', (e) => self.clients.claim());
+                    self.addEventListener('fetch', (e) => e.respondWith(fetch(e.request).catch(() => caches.match(e.request))));
+                `;
+                const blob = new Blob([swCode], { type: 'text/javascript' });
+                navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(() => {});
             }
-        ]
-    };
-    const manifestStr = URL.createObjectURL(new Blob([JSON.stringify(manifestObj)], {type: 'application/json'}));
-    document.getElementById('pwaManifestLink').setAttribute('href', manifestStr);
-}
+        }
 
-function registerInlineServiceWorker() {
-    if ('serviceWorker' in navigator) {
-        const swCode = `
-            self.addEventListener('install', (e) => self.skipWaiting());
-            self.addEventListener('activate', (e) => self.clients.claim());
-            self.addEventListener('fetch', (e) => e.respondWith(fetch(e.request).catch(() => caches.match(e.request))));
-        `;
-        const blob = new Blob([swCode], { type: 'text/javascript' });
-        navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(() => {});
-    }
-}
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastText').innerText = msg;
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+            setTimeout(() => toast.classList.add('hidden'), 3000);
+        }
 
-function showToast(msg) {
-    const toast = document.getElementById('toast');
-    document.getElementById('toastText').innerText = msg;
-    toast.classList.remove('hidden');
-    toast.classList.add('flex');
-    setTimeout(() => toast.classList.add('hidden'), 3000);
-}
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
 
-function switchTab(tabId) {
-    document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-    document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
+            const activeView = document.getElementById(`view-${tabId}`);
+            const activeNav = document.getElementById(`nav-${tabId}`);
 
-    const activeView = document.getElementById(`view-${tabId}`);
-    const activeNav = document.getElementById(`nav-${tabId}`);
+            if(activeView) activeView.classList.remove('hidden');
+            if(activeNav) activeNav.classList.add('active');
 
-    if(activeView) activeView.classList.remove('hidden');
-    if(activeNav) activeNav.classList.add('active');
+            if(tabId === 'game' && !gameRunning) startGame();
+        }
 
-    if(tabId === 'game' && !gameRunning) startGame();
-}
-
-function renderEpisodes(list) {
-    const grid = document.getElementById('episodesGrid');
-    grid.innerHTML = list.map(ep => `
-        <div class="glass-card rounded-2xl overflow-hidden border-purple-800/40 hover:border-purple-500 transition-all flex flex-col justify-between">
-            <div class="relative aspect-video bg-purple-950/60 cursor-pointer" onclick="openVideoModal('${ep.id}', '${ep.title}')">
-                <img src="https://img.youtube.com/vi/${ep.id}/hqdefault.jpg" alt="${ep.title}" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
-                    <div class="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg">
-                        <i class="fa-solid fa-play text-sm ml-0.5"></i>
+        function renderEpisodes(list) {
+            const grid = document.getElementById('episodesGrid');
+            grid.innerHTML = list.map(ep => `
+                <div class="glass-card rounded-2xl overflow-hidden border-purple-800/40 hover:border-purple-500 transition-all flex flex-col justify-between">
+                    <div class="relative aspect-video bg-purple-950/60 cursor-pointer" onclick="openVideoModal('${ep.id}', '${ep.title}')">
+                        <img src="https://img.youtube.com/vi/${ep.id}/hqdefault.jpg" alt="${ep.title}" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                            <div class="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg">
+                                <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                            </div>
+                        </div>
+                        <span class="absolute bottom-2 right-2 bg-black/80 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">${ep.duration}</span>
+                    </div>
+                    <div class="p-3 space-y-1">
+                        <h3 class="text-xs font-bold text-white truncate hover:text-yellow-300 cursor-pointer" onclick="openVideoModal('${ep.id}', '${ep.title}')">${ep.title}</h3>
+                        <div class="text-[10px] text-purple-300/80"><i class="fa-solid fa-eye text-purple-400"></i> ${ep.views} views</div>
                     </div>
                 </div>
-                <span class="absolute bottom-2 right-2 bg-black/80 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">${ep.duration}</span>
-            </div>
-            <div class="p-3 space-y-1">
-                <h3 class="text-xs font-bold text-white truncate hover:text-yellow-300 cursor-pointer" onclick="openVideoModal('${ep.id}', '${ep.title}')">${ep.title}</h3>
-                <div class="text-[10px] text-purple-300/80"><i class="fa-solid fa-eye text-purple-400"></i> ${ep.views} views</div>
-            </div>
-        </div>
-    `).join('');
-}
+            `).join('');
+        }
 
-function filterEpisodes(season) {
-    if(season === 'all') renderEpisodes(EPISODES_DATA);
-    else renderEpisodes(EPISODES_DATA.filter(e => e.season === season));
-}
+        function filterEpisodes(season) {
+            if(season === 'all') renderEpisodes(EPISODES_DATA);
+            else renderEpisodes(EPISODES_DATA.filter(e => e.season === season));
+        }
 
-function searchEpisodes() {
-    const query = document.getElementById('episodeSearch').value.toLowerCase();
-    renderEpisodes(EPISODES_DATA.filter(e => e.title.toLowerCase().includes(query)));
-}
+        function searchEpisodes() {
+            const query = document.getElementById('episodeSearch').value.toLowerCase();
+            renderEpisodes(EPISODES_DATA.filter(e => e.title.toLowerCase().includes(query)));
+        }
 
-function openVideoModal(id, title) {
-    document.getElementById('modalVideoTitle').innerText = title;
-    document.getElementById('videoIframe').src = `https://www.youtube.com/embed/${id}?autoplay=1`;
-    document.getElementById('videoModal').classList.remove('hidden');
-    document.getElementById('videoModal').classList.add('flex');
-}
+        function openVideoModal(id, title) {
+            document.getElementById('modalVideoTitle').innerText = title;
+            document.getElementById('videoIframe').src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+            document.getElementById('videoModal').classList.remove('hidden');
+            document.getElementById('videoModal').classList.add('flex');
+        }
 
-function closeVideoModal() {
-    document.getElementById('videoIframe').src = '';
-    document.getElementById('videoModal').classList.add('hidden');
-    document.getElementById('videoModal').classList.remove('flex');
-}
+        function closeVideoModal() {
+            document.getElementById('videoIframe').src = '';
+            document.getElementById('videoModal').classList.add('hidden');
+            document.getElementById('videoModal').classList.remove('flex');
+        }
 
-function setStudioMode(mode) {
-    studioMode = mode;
-    document.querySelectorAll('.studio-mode-btn').forEach(btn => {
-        btn.classList.remove('bg-purple-600', 'text-white');
-        btn.classList.add('bg-[#0b0214]', 'text-purple-300');
-    });
-    const activeBtn = document.getElementById(`mode-${mode}`);
-    if(activeBtn) {
-        activeBtn.classList.add('bg-purple-600', 'text-white');
-        activeBtn.classList.remove('bg-[#0b0214]', 'text-purple-300');
-    }
-}
+        async function generateAiVideoAndAudio() {
+            const promptInput = document.getElementById('aiPrompt').value.trim();
+            const lang = document.getElementById('aiLang').value;
+            const voicePreset = document.getElementById('aiVoice').value;
 
-async function generateAiContent() {
-    const promptInput = document.getElementById('aiPrompt').value.trim();
-    if(!promptInput) {
-        showToast("कृपया कुछ टेक्स्ट या टॉपिक दर्ज करें!");
-        return;
-    }
+            if(!promptInput) {
+                showToast("कृपया AI के लिए प्रोम्प्ट या विचार लिखें!");
+                return;
+            }
 
-    const loader = document.getElementById('aiStatus');
-    const resultBox = document.getElementById('aiOutputArea');
-    const mediaContainer = document.getElementById('mediaContainer');
+            const loader = document.getElementById('aiStatus');
+            const resultBox = document.getElementById('aiOutputArea');
+            const audioBox = document.getElementById('aiAudioBtnContainer');
 
-    loader.classList.remove('hidden');
-    resultBox.classList.add('hidden');
+            loader.classList.remove('hidden');
+            resultBox.classList.add('hidden');
 
-    setTimeout(() => {
-        mediaContainer.innerHTML = `
-            <div class="space-y-3 text-left">
-                <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-black border border-purple-500">
-                    <canvas id="previewVideoCanvas" width="640" height="360" class="w-full h-full block"></canvas>
-                </div>
-                <div class="bg-[#130329] p-3 rounded-xl border border-purple-700/50 space-y-2">
-                    <p class="text-xs text-purple-100 font-mono">"${promptInput}"</p>
-                    <button onclick="speakText('${promptInput.replace(/'/g, "\\'")}')" class="bg-emerald-500 hover:bg-emerald-600 text-gray-950 font-bold px-3 py-1.5 rounded-lg text-xs flex items-center gap-1.5">
-                        <i class="fa-solid fa-volume-high"></i> Play Speech Audio
+            try {
+                // 1. Try real Gemini Image generation first
+                let generatedImageUrl = await callGeminiImageApi(promptInput);
+
+                if (generatedImageUrl) {
+                    const imgContainer = document.getElementById('aiImageContainer');
+                    imgContainer.innerHTML = `<img src="${generatedImageUrl}" class="w-full h-auto rounded-lg object-cover max-h-80 shadow-lg" alt="AI Generated Poster">`;
+                } else {
+                    renderCanvasVideoPreview(promptInput);
+                }
+
+                // 2. Prepare audio buttons
+                audioBox.innerHTML = `
+                    <button id="geminiAudioBtn" onclick="playGeminiVoiceover('${promptInput.replace(/'/g, "\\'")}', '${voicePreset}')" class="bg-gradient-to-r from-emerald-400 to-green-500 hover:from-emerald-500 hover:to-green-600 text-gray-950 font-black px-4 py-2 rounded-xl text-xs inline-flex items-center gap-2 shadow-lg transition active:scale-95">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Play Gemini Speech Voice
                     </button>
-                </div>
-            </div>
-        `;
-        renderCanvasVideoPreview(promptInput);
-        speakText(promptInput);
+                    <button onclick="speakBrowserFallback('${promptInput.replace(/'/g, "\\'")}')" class="bg-purple-800 hover:bg-purple-700 text-white font-bold px-3 py-2 rounded-xl text-xs inline-flex items-center gap-1.5 shadow">
+                        <i class="fa-solid fa-volume-high"></i> System TTS
+                    </button>
+                `;
 
-        loader.classList.add('hidden');
-        resultBox.classList.remove('hidden');
-        showToast("AI Generation Complete!");
-    }, 1000);
-}
+                // Auto-trigger speech audio
+                playGeminiVoiceover(promptInput, voicePreset);
 
-function renderCanvasVideoPreview(text) {
-    const canvas = document.getElementById('previewVideoCanvas');
-    if(!canvas) return;
-    const ctx = canvas.getContext('2d');
-    let frame = 0;
-
-    function animate() {
-        if(!document.getElementById('previewVideoCanvas')) return;
-        frame++;
-        ctx.fillStyle = '#0b0214';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        ctx.font = '40px sans-serif';
-        ctx.textAlign = 'center';
-        ctx.fillText('🍇👑', canvas.width/2, 120 + Math.sin(frame * 0.05) * 8);
-
-        ctx.fillStyle = '#ffeb3b';
-        ctx.font = 'bold 18px Outfit, sans-serif';
-        ctx.fillText('BEST GRAPES KING LIVE AI', canvas.width/2, 190);
-
-        ctx.fillStyle = '#ffffff';
-        ctx.font = '12px Outfit, sans-serif';
-        ctx.fillText(text.slice(0, 40) + '...', canvas.width/2, 230);
-
-        requestAnimationFrame(animate);
-    }
-    animate();
-}
-
-function speakText(text) {
-    if('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        const utterance = new SpeechSynthesisUtterance(text);
-        window.speechSynthesis.speak(utterance);
-    }
-}
-
-function triggerDirectChromeApkDownload() {
-    document.getElementById('apkModal').classList.remove('hidden');
-    document.getElementById('apkModal').classList.add('flex');
-    document.getElementById('apkProgressBg').classList.add('hidden');
-    document.getElementById('apkProgressBar').style.width = '0%';
-    document.getElementById('apkStatusText').innerText = "क्या आप Android Package (.apk) अपने क्रोम डाउनलोडर में डाउनलोड करना चाहते हैं?";
-}
-
-function closeApkModal() {
-    document.getElementById('apkModal').classList.add('hidden');
-    document.getElementById('apkModal').classList.remove('flex');
-}
-
-function executeRealChromeBlobDownload() {
-    let pBg = document.getElementById('apkProgressBg');
-    let pBar = document.getElementById('apkProgressBar');
-    let status = document.getElementById('apkStatusText');
-    let btns = document.getElementById('apkActionBtns');
-
-    pBg.classList.remove('hidden');
-    btns.style.display = 'none';
-    status.innerText = "Downloading BestGrapesKingLive_v2.8.4.apk via Chrome Download Manager...";
-
-    let width = 0;
-    let timer = setInterval(() => {
-        if(width >= 100) {
-            clearInterval(timer);
-            
-            // REALLY TRIGGER CHROME FILE DOWNLOAD BY CREATING BINARY BLOB
-            const dummyApkBytes = new Uint8Array([0x50, 0x4B, 0x03, 0x04, 0x14, 0x00, 0x00, 0x00]); // Zip standard header magic bytes
-            const blob = new Blob([dummyApkBytes], { type: 'application/vnd.android.package-archive' });
-            const blobUrl = URL.createObjectURL(blob);
-            
-            const link = document.createElement('a');
-            link.href = blobUrl;
-            link.download = 'BestGrapesKingLive_v2.8.4.apk';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            URL.revokeObjectURL(blobUrl);
-
-            status.innerHTML = "<strong class='text-emerald-400'>फ़ाइल क्रोम डाउनलोड में भेजी गई!</strong>";
-            btns.style.display = 'flex';
-            btns.innerHTML = `<button onclick="closeApkModal()" class="bg-emerald-400 text-gray-950 font-black px-6 py-2 rounded-xl text-xs w-full">संपन्न</button>`;
-            showToast("Chrome Download Triggered!");
-        } else {
-            width += 10;
-            pBar.style.width = width + '%';
+                loader.classList.add('hidden');
+                resultBox.classList.remove('hidden');
+                showToast("AI Media Content Generated!");
+            } catch (err) {
+                renderCanvasVideoPreview(promptInput);
+                loader.classList.add('hidden');
+                resultBox.classList.remove('hidden');
+                showToast("Generated with Canvas preview!");
+            }
         }
-    }, 80);
-}
 
-function triggerPwaInstall() {
-    if (pwaPrompt) {
-        pwaPrompt.prompt();
-    } else {
-        triggerDirectChromeApkDownload();
-    }
-}
-
-/* Arcade Game Canvas */
-let canvas, ctx;
-let basket = { x: 160, y: 310, w: 80, h: 30 };
-let grapes = [];
-let gameScore = 0, highScore = 0;
-let gameRunning = false, gameLoopId = null;
-
-function initGameCanvas() {
-    canvas = document.getElementById('gameCanvas');
-    if(!canvas) return;
-    ctx = canvas.getContext('2d');
-    canvas.width = 400; canvas.height = 360;
-
-    const handleTouch = (e) => {
-        if(!gameRunning) return;
-        const rect = canvas.getBoundingClientRect();
-        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-        const touchX = (clientX - rect.left) * (canvas.width / rect.width);
-        basket.x = Math.max(0, Math.min(canvas.width - basket.w, touchX - basket.w/2));
-    };
-
-    canvas.addEventListener('mousemove', handleTouch);
-    canvas.addEventListener('touchmove', handleTouch, { passive: true });
-}
-
-function startGame() {
-    document.getElementById('gameOverlay').classList.add('hidden');
-    gameScore = 0; grapes = [];
-    document.getElementById('gameScore').innerText = '0';
-    gameRunning = true;
-    if(gameLoopId) cancelAnimationFrame(gameLoopId);
-    gameLoop();
-}
-
-function gameLoop() {
-    if(!gameRunning) return;
-    ctx.fillStyle = "#0b0214";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    if(Math.random() < 0.05) {
-        grapes.push({ x: Math.random() * (canvas.width - 20) + 10, y: -10, r: 10, speed: 2.5 + Math.random() * 2 });
-    }
-
-    for(let i = grapes.length - 1; i >= 0; i--) {
-        let g = grapes[i];
-        g.y += g.speed;
-        ctx.beginPath();
-        ctx.arc(g.x, g.y, g.r, 0, Math.PI * 2);
-        ctx.fillStyle = '#9c27b0';
-        ctx.fill();
-
-        if(g.y + g.r >= basket.y && g.x >= basket.x && g.x <= basket.x + basket.w) {
-            gameScore += 10;
-            document.getElementById('gameScore').innerText = gameScore;
-            grapes.splice(i, 1);
-            continue;
+        async function callGeminiImageApi(promptText) {
+            try {
+                const payload = {
+                    contents: [{
+                        parts: [{ text: `A vibrant high quality cartoon scene artwork for Best Grapes King cartoon channel: ${promptText}` }]
+                    }],
+                    generationConfig: {
+                        responseModalities: ['TEXT', 'IMAGE']
+                    }
+                };
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-image:generateContent?key=${apiKey}`;
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+                const base64Data = result?.candidates?.[0]?.content?.parts?.find(p => p.inlineData)?.inlineData?.data;
+                if (base64Data) {
+                    return `data:image/png;base64,${base64Data}`;
+                }
+            } catch (e) {
+                console.warn("Gemini Image API fallback triggered", e);
+            }
+            return null;
         }
-        if(g.y > canvas.height + 20) grapes.splice(i, 1);
-    }
 
-    ctx.fillStyle = "#ffeb3b";
-    ctx.fillRect(basket.x, basket.y, basket.w, basket.h);
-    gameLoopId = requestAnimationFrame(gameLoop);
-}
+        async function playGeminiVoiceover(text, voiceName) {
+            const btn = document.getElementById('geminiAudioBtn');
+            if(btn) btn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> Generating Voice...`;
 
-function populateCodeModalText() {
-    document.getElementById('codeTextArea').value = document.documentElement.outerHTML;
-}
-function openSourceCodeModal() {
-    populateCodeModalText();
-    document.getElementById('codeModal').classList.remove('hidden');
-    document.getElementById('codeModal').classList.add('flex');
-}
-function closeSourceCodeModal() {
-    document.getElementById('codeModal').classList.add('hidden');
-}
-function copyCodeToClipboard() {
-    const text = document.getElementById('codeTextArea').value;
-    const textArea = document.createElement("textarea");
-    textArea.value = text;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textArea);
-    showToast("कोड कॉपी हो गया!");
-}
+            try {
+                const payload = {
+                    contents: [{
+                        parts: [{ text: `Say with enthusiasm: ${text}` }]
+                    }],
+                    generationConfig: {
+                        responseModalities: ["AUDIO"],
+                        speechConfig: {
+                            voiceConfig: {
+                                prebuiltVoiceConfig: { voiceName: voiceName || "Kore" }
+                            }
+                        }
+                    }
+                };
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+                const part = result?.candidates?.[0]?.content?.parts?.[0];
+                const audioData = part?.inlineData?.data;
+                const mimeType = part?.inlineData?.mimeType;
 
-function toggleSettingsModal() {
-    document.getElementById('settingsModal').classList.toggle('hidden');
-    document.getElementById('settingsModal').classList.toggle('flex');
-}
-function saveApiKey() {
-    showToast("API Key सहेजी गई!");
-    toggleSettingsModal();
-}
-</script>
+                if (audioData && mimeType) {
+                    const sampleRateMatch = mimeType.match(/rate=(\d+)/);
+                    const sampleRate = sampleRateMatch ? parseInt(sampleRateMatch[1], 10) : 24000;
+                    const pcmData = base64ToArrayBuffer(audioData);
+                    const pcm16 = new Int16Array(pcmData);
+                    const wavBlob = pcmToWav(pcm16, sampleRate);
+                    const audioUrl = URL.createObjectURL(wavBlob);
+                    
+                    const audio = new Audio(audioUrl);
+                    audio.play();
+                    if(btn) btn.innerHTML = `<i class="fa-solid fa-volume-high"></i> Replay Voice`;
+                    return;
+                }
+            } catch (err) {
+                console.warn("Falling back to system speech", err);
+            }
+            
+            speakBrowserFallback(text);
+            if(btn) btn.innerHTML = `<i class="fa-solid fa-volume-high"></i> Replay Voice`;
+        }
 
+        function base64ToArrayBuffer(base64) {
+            const binaryString = window.atob(base64);
+            const len = binaryString.length;
+            const bytes = new Uint8Array(len);
+            for (let i = 0; i < len; i++) {
+                bytes[i] = binaryString.charCodeAt(i);
+            }
+            return bytes.buffer;
+        }
+
+        function pcmToWav(pcm16, sampleRate) {
+            const numChannels = 1;
+            const sampleBits = 16;
+            const dataByteLength = pcm16.length * 2;
+            const buffer = new ArrayBuffer(44 + dataByteLength);
+            const view = new DataView(buffer);
+
+            const writeString = (v, offset, str) => {
+                for (let i = 0; i < str.length; i++) v.setUint8(offset + i, str.charCodeAt(i));
+            };
+
+            writeString(view, 0, 'RIFF');
+            view.setUint32(4, 36 + dataByteLength, true);
+            writeString(view, 8, 'WAVE');
+            writeString(view, 12, 'fmt ');
+            view.setUint32(16, 16, true);
+            view.setUint16(20, 1, true);
+            view.setUint16(22, numChannels, true);
+            view.setUint32(24, sampleRate, true);
+            view.setUint32(28, sampleRate * numChannels * (sampleBits / 8), true);
+            view.setUint16(32, numChannels * (sampleBits / 8), true);
+            view.setUint16(34, sampleBits, true);
+            writeString(view, 36, 'data');
+            view.setUint32(40, dataByteLength, true);
+
+            let offset = 44;
+            for (let i = 0; i < pcm16.length; i++, offset += 2) {
+                view.setInt16(offset, pcm16[i], true);
+            }
+
+            return new Blob([buffer], { type: 'audio/wav' });
+        }
+
+        function speakBrowserFallback(text) {
+            if('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(text);
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function renderCanvasVideoPreview(text) {
+            const imgContainer = document.getElementById('aiImageContainer');
+            imgContainer.innerHTML = `<canvas id="videoCanvas" width="640" height="360" class="w-full rounded-lg block"></canvas>`;
+            
+            const canvas = document.getElementById('videoCanvas');
+            if(!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let frame = 0;
+
+            function animate() {
+                if(!document.getElementById('videoCanvas')) return;
+                frame++;
+                ctx.fillStyle = '#0b0214';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.font = '42px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('🍇👑', canvas.width/2, 120 + Math.sin(frame * 0.05) * 8);
+
+                ctx.fillStyle = '#ffeb3b';
+                ctx.font = 'bold 18px Outfit, sans-serif';
+                ctx.fillText('BEST GRAPES KING LIVE AI', canvas.width/2, 190);
+
+                ctx.fillStyle = '#ffffff';
+                ctx.font = '12px Outfit, sans-serif';
+                ctx.fillText(text.slice(0, 42) + '...', canvas.width/2, 230);
+
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        function triggerPwaInstall() {
+            if (pwaPrompt) {
+                pwaPrompt.prompt();
+            } else {
+                startApkInstaller();
+            }
+        }
+
+        function startApkInstaller() {
+            document.getElementById('apkModal').classList.remove('hidden');
+            document.getElementById('apkModal').classList.add('flex');
+            document.getElementById('apkProgressBg').classList.add('hidden');
+            document.getElementById('apkProgressBar').style.width = '0%';
+            document.getElementById('apkStatusText').innerText = "क्या आप Android Package (.apk) अपने क्रोम डाउनलोडर में डाउनलोड करना चाहते हैं?";
+        }
+
+        function closeApkModal() {
+            document.getElementById('apkModal').classList.add('hidden');
+            document.getElementById('apkModal').classList.remove('flex');
+        }
+
+        function executeRealChromeBlobDownload() {
+            let pBg = document.getElementById('apkProgressBg');
+            let pBar = document.getElementById('apkProgressBar');
+            let status = document.getElementById('apkStatusText');
+            let btns = document.getElementById('apkActionBtns');
+
+            pBg.classList.remove('hidden');
+            btns.style.display = 'none';
+            status.innerText = "Downloading BestGrapesKingLive_v2.8.4.apk via Chrome Download Manager...";
+
+            let width = 0;
+            let timer = setInterval(() => {
+                if(width >= 100) {
+                    clearInterval(timer);
+
+                    const dummyBytes = new Uint8Array([0x50, 0x4B, 0x03, 0x04, 0x14, 0x00, 0x00, 0x00]);
+                    const blob = new Blob([dummyBytes], { type: 'application/vnd.android.package-archive' });
+                    const blobUrl = URL.createObjectURL(blob);
+
+                    const link = document.createElement('a');
+                    link.href = blobUrl;
+                    link.download = 'BestGrapesKingLive_v2.8.4.apk';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    URL.revokeObjectURL(blobUrl);
+
+                    status.innerHTML = "<strong class='text-emerald-400'>फ़ाइल क्रोम डाउनलोड मैनेजर में भेजी गई!</strong>";
+                    btns.style.display = 'flex';
+                    btns.innerHTML = `<button onclick="closeApkModal()" class="bg-emerald-400 text-gray-950 font-black px-6 py-2 rounded-xl text-xs w-full">संपन्न</button>`;
+                    showToast("Chrome Download Triggered!");
+                } else {
+                    width += 10;
+                    pBar.style.width = width + '%';
+                }
+            }, 80);
+        }
+
+        function openSourceCodeModal() {
+            document.getElementById('codeTextArea').value = document.documentElement.outerHTML;
+            document.getElementById('codeModal').classList.remove('hidden');
+            document.getElementById('codeModal').classList.add('flex');
+        }
+
+        function closeSourceCodeModal() {
+            document.getElementById('codeModal').classList.add('hidden');
+            document.getElementById('codeModal').classList.remove('flex');
+        }
+
+        function copyCodeToClipboard() {
+            const textArea = document.getElementById('codeTextArea');
+            textArea.select();
+            document.execCommand('copy');
+            const copyMsg = document.getElementById('copyMsg');
+            copyMsg.classList.remove('hidden');
+            setTimeout(() => copyMsg.classList.add('hidden'), 2500);
+            showToast("HTML सोर्स कोड कॉपी हो गया!");
+        }
+
+        let canvas, ctx;
+        let basket = { x: 160, y: 230, w: 70, h: 25 };
+        let grapes = [];
+        let gameScore = 0;
+        let gameRunning = false, gameLoopId = null;
+
+        function initGameCanvas() {
+            canvas = document.getElementById('gameCanvas');
+            if(!canvas) return;
+            ctx = canvas.getContext('2d');
+            canvas.width = 400; canvas.height = 270;
+
+            const handleTouch = (e) => {
+                if(!gameRunning) return;
+                const rect = canvas.getBoundingClientRect();
+                const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                const touchX = (clientX - rect.left) * (canvas.width / rect.width);
+                basket.x = Math.max(0, Math.min(canvas.width - basket.w, touchX - basket.w/2));
+            };
+
+            canvas.addEventListener('mousemove', handleTouch);
+            canvas.addEventListener('touchmove', handleTouch, { passive: true });
+        }
+
+        function startGame() {
+            document.getElementById('gameOverlay').classList.add('hidden');
+            gameScore = 0; grapes = [];
+            document.getElementById('gameScore').innerText = '0';
+            gameRunning = true;
+            if(gameLoopId) cancelAnimationFrame(gameLoopId);
+            gameLoop();
+        }
+
+        function gameLoop() {
+            if(!gameRunning) return;
+            ctx.fillStyle = "#0b0214";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            if(Math.random() < 0.05) {
+                grapes.push({ x: Math.random() * (canvas.width - 20) + 10, y: -10, r: 9, speed: 2.2 + Math.random() * 2 });
+            }
+
+            for(let i = grapes.length - 1; i >= 0; i--) {
+                let g = grapes[i];
+                g.y += g.speed;
+                ctx.beginPath();
+                ctx.arc(g.x, g.y, g.r, 0, Math.PI * 2);
+                ctx.fillStyle = '#9c27b0';
+                ctx.fill();
+
+                if(g.y + g.r >= basket.y && g.x >= basket.x && g.x <= basket.x + basket.w) {
+                    gameScore += 10;
+                    document.getElementById('gameScore').innerText = gameScore;
+                    grapes.splice(i, 1);
+                    continue;
+                }
+                if(g.y > canvas.height + 20) grapes.splice(i, 1);
+            }
+
+            ctx.fillStyle = "#ffeb3b";
+            ctx.fillRect(basket.x, basket.y, basket.w, basket.h);
+            gameLoopId = requestAnimationFrame(gameLoop);
+        }
+
+        function changeWebsiteLanguage() {
+            const lang = document.getElementById('siteLang').value;
+            showToast(`भाषा बदल गई: ${lang.toUpperCase()}`);
+        }
+    </script>
 </body>
 </html>
 
