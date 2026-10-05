@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
@@ -144,12 +145,6 @@
                 Official YouTube Hub, Purple Grapes Series & AI Studio. Direct Chrome Install & APK Download Available!
             </p>
 
-            <!-- Notice Banner: Profile Photo Update (English) -->
-            <div class="bg-purple-900/80 border border-yellow-400/50 p-3 rounded-2xl flex items-center justify-center gap-2 text-xs text-yellow-300 font-bold shadow-md">
-                <i class="fas fa-bell text-yellow-400 animate-bounce"></i>
-                <span>Notice: Best Grapes King LIVE YouTube channel profile photo has been updated!</span>
-            </div>
-
             <!-- YouTube Subscribe Button -->
             <a href="https://youtube.com/@bestgrapeskinglive-k7f2q?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="w-full bg-red-600 hover:bg-red-700 text-white font-black py-3 px-6 rounded-full shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2 text-sm sm:text-base border border-red-400/40">
                 <i class="fab fa-youtube text-xl"></i>
@@ -195,11 +190,9 @@
                 <div class="flex flex-col sm:flex-row items-center justify-between gap-3 glass-card p-3.5 rounded-2xl">
                     <div class="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0">
                         <button onclick="filterEpisodes('all')" class="ep-filter-btn bg-yellow-400 text-black font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap">All Seasons</button>
-                        <button onclick="filterEpisodes('s4')" class="ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30">Season 4</button>
                         <button onclick="filterEpisodes('s3')" class="ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30">Season 3</button>
                         <button onclick="filterEpisodes('s2')" class="ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30">Season 2</button>
                         <button onclick="filterEpisodes('s1')" class="ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30">Season 1</button>
-                        <button onclick="filterEpisodes('drama')" class="ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30">New Drama</button>
                     </div>
 
                     <div class="relative w-full sm:w-56">
@@ -208,93 +201,9 @@
                     </div>
                 </div>
 
-                <!-- Episodes Grid with Added Links -->
+                <!-- Episodes Grid -->
                 <div id="episodesGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-
-                    <!-- Season 4 Episode 1 -->
-                    <div class="glass-card p-4 rounded-2xl space-y-3 border border-purple-500/30 flex flex-col justify-between" data-season="s4">
-                        <div>
-                            <span class="bg-purple-900/80 text-yellow-300 text-[10px] font-black px-2 py-0.5 rounded-md uppercase">Season 4</span>
-                            <h3 class="text-sm font-bold text-white mt-2">Purple Grapes Season 4 - Episode 1</h3>
-                            <p class="text-xs text-purple-200/80 mt-1">Watch Episode 1 of Purple Grapes Season 4 on Best Grapes King LIVE!</p>
-                        </div>
-                        <a href="https://youtu.be/qITtO9Z40L0?si=0-cObGG5zsPwlgif" target="_blank" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-xl text-xs text-center flex items-center justify-center gap-2 mt-3">
-                            <i class="fab fa-youtube"></i> Watch Episode 1
-                        </a>
-                    </div>
-
-                    <!-- Season 4 Episode 2 -->
-                    <div class="glass-card p-4 rounded-2xl space-y-3 border border-purple-500/30 flex flex-col justify-between" data-season="s4">
-                        <div>
-                            <span class="bg-purple-900/80 text-yellow-300 text-[10px] font-black px-2 py-0.5 rounded-md uppercase">Season 4</span>
-                            <h3 class="text-sm font-bold text-white mt-2">Purple Grapes Season 4 - Episode 2</h3>
-                            <p class="text-xs text-purple-200/80 mt-1">Watch Episode 2 of Purple Grapes Season 4 full story update!</p>
-                        </div>
-                        <a href="https://youtu.be/eBfA00aa1-4?si=4auTvl7-LiRdWGyi" target="_blank" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-xl text-xs text-center flex items-center justify-center gap-2 mt-3">
-                            <i class="fab fa-youtube"></i> Watch Episode 2
-                        </a>
-                    </div>
-
-                    <!-- Season 4 Episode 3 -->
-                    <div class="glass-card p-4 rounded-2xl space-y-3 border border-purple-500/30 flex flex-col justify-between" data-season="s4">
-                        <div>
-                            <span class="bg-purple-900/80 text-yellow-300 text-[10px] font-black px-2 py-0.5 rounded-md uppercase">Season 4</span>
-                            <h3 class="text-sm font-bold text-white mt-2">Purple Grapes Season 4 - Episode 3</h3>
-                            <p class="text-xs text-purple-200/80 mt-1">Watch Episode 3 of Purple Grapes Season 4!</p>
-                        </div>
-                        <a href="https://youtu.be/qVSy7SLrFqs?si=crHxoZoxE5DkccaG" target="_blank" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-xl text-xs text-center flex items-center justify-center gap-2 mt-3">
-                            <i class="fab fa-youtube"></i> Watch Episode 3
-                        </a>
-                    </div>
-
-                    <!-- Season 4 Notice Video -->
-                    <div class="glass-card p-4 rounded-2xl space-y-3 border border-red-500/50 flex flex-col justify-between" data-season="s4">
-                        <div>
-                            <span class="bg-red-900/80 text-red-300 text-[10px] font-black px-2 py-0.5 rounded-md uppercase">Notice / Announcement</span>
-                            <h3 class="text-sm font-bold text-yellow-300 mt-2">Purple Grapes Season 4 Discontinued Notice</h3>
-                            <p class="text-xs text-purple-200/80 mt-1">Important channel update regarding Season 4 pause and new projects.</p>
-                        </div>
-                        <a href="https://youtu.be/4VglmJTdEYI?si=MPD8RxqdN8WC1Tb8" target="_blank" class="w-full bg-purple-800 hover:bg-purple-900 text-white font-bold py-2 rounded-xl text-xs text-center flex items-center justify-center gap-2 mt-3">
-                            <i class="fab fa-youtube"></i> Watch Notice Video
-                        </a>
-                    </div>
-
-                    <!-- Season 4 Episode 4 (Resumed) -->
-                    <div class="glass-card p-4 rounded-2xl space-y-3 border border-emerald-500/40 flex flex-col justify-between" data-season="s4">
-                        <div>
-                            <span class="bg-emerald-900/80 text-emerald-300 text-[10px] font-black px-2 py-0.5 rounded-md uppercase">Season 4 Resumed</span>
-                            <h3 class="text-sm font-bold text-white mt-2">Purple Grapes Season 4 - Episode 4 (Full Episode)</h3>
-                            <p class="text-xs text-purple-200/80 mt-1">Season 4 is back! Watch Episode 4 with new music & hype!</p>
-                        </div>
-                        <a href="https://youtu.be/hT8kPR7P2Do?si=FoyOJ3rqTbFJnTiI" target="_blank" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-xl text-xs text-center flex items-center justify-center gap-2 mt-3">
-                            <i class="fab fa-youtube"></i> Watch Episode 4
-                        </a>
-                    </div>
-
-                    <!-- New Drama Project Announcement -->
-                    <div class="glass-card p-4 rounded-2xl space-y-3 border border-yellow-500/40 flex flex-col justify-between" data-season="drama">
-                        <div>
-                            <span class="bg-yellow-500/30 text-yellow-300 text-[10px] font-black px-2 py-0.5 rounded-md uppercase">Drama Announcement</span>
-                            <h3 class="text-sm font-bold text-white mt-2">New Drama Project Announcement & Trailer Update</h3>
-                            <p class="text-xs text-purple-200/80 mt-1">Details on our upcoming brand new drama series!</p>
-                        </div>
-                        <a href="https://youtu.be/tzD3GVEREXM?si=3patFntmiPS6tg9q" target="_blank" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 rounded-xl text-xs text-center flex items-center justify-center gap-2 mt-3">
-                            <i class="fab fa-youtube"></i> Watch Announcement
-                        </a>
-                    </div>
-
-                    <!-- New Drama Music Teaser / News Show -->
-                    <div class="glass-card p-4 rounded-2xl space-y-3 border border-pink-500/50 flex flex-col justify-between" data-season="drama">
-                        <div>
-                            <span class="bg-pink-900/80 text-pink-300 text-[10px] font-black px-2 py-0.5 rounded-md uppercase">Teaser / Music Track</span>
-                            <h3 class="text-sm font-bold text-yellow-300 mt-2">New Show Music Track & Drama Trailer Coming Soon!</h3>
-                            <p class="text-xs text-purple-200/80 mt-1">Official music track released! Official drama trailer releasing in 2 to 3 days!</p>
-                        </div>
-                        <a href="https://youtu.be/K-APxCziai0?si=QLU22f69ajjpYCtQ" target="_blank" class="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 rounded-xl text-xs text-center flex items-center justify-center gap-2 mt-3">
-                            <i class="fab fa-youtube"></i> Listen Music / Teaser
-                        </a>
-                    </div>
-
+                    <!-- Populated dynamically via JS -->
                 </div>
             </section>
 
@@ -411,53 +320,7 @@
             </button>
             <button id="nav-game" onclick="switchTab('game')" class="nav-item flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
                 <i class="fa-solid fa-gamepad text-base"></i>
-                <span>Game</span>
-            </button>
-            <button id="nav-guide" onclick="switchTab('guide')" class="nav-item flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
-                <i class="fa-solid fa-circle-info text-base"></i>
-                <span>Info</span>
-            </button>
-        </div>
-    </nav>
-
-    <script>
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-            
-            const target = document.getElementById('view-' + tabId);
-            if(target) target.classList.remove('hidden');
-            
-            const navBtn = document.getElementById('nav-' + tabId);
-            if(navBtn) navBtn.classList.add('active');
-        }
-
-        function filterEpisodes(season) {
-            const cards = document.querySelectorAll('#episodesGrid > div');
-            cards.forEach(card => {
-                if (season === 'all' || card.getAttribute('data-season') === season) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        function searchEpisodes() {
-            const query = document.getElementById('episodeSearch').value.toLowerCase();
-            const cards = document.querySelectorAll('#episodesGrid > div');
-            cards.forEach(card => {
-                const text = card.innerText.toLowerCase();
-                if (text.includes(query)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
-</body>
-</html>
+               
 
 
-Best Grapes 🍇 King 👑 Live Subscribe Now 
+
