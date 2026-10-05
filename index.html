@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
@@ -145,6 +144,12 @@
                 Official YouTube Hub, Purple Grapes Series & AI Studio. Direct Chrome Install & APK Download Available!
             </p>
 
+            <!-- Notice Banner: Profile Photo Update (English) -->
+            <div class="bg-purple-900/80 border border-yellow-400/50 p-3 rounded-2xl flex items-center justify-center gap-2 text-xs text-yellow-300 font-bold shadow-md">
+                <i class="fas fa-bell text-yellow-400 animate-bounce"></i>
+                <span>Notice: Best Grapes King LIVE YouTube channel profile photo has been updated!</span>
+            </div>
+
             <!-- YouTube Subscribe Button -->
             <a href="https://youtube.com/@bestgrapeskinglive-k7f2q?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="w-full bg-red-600 hover:bg-red-700 text-white font-black py-3 px-6 rounded-full shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2 text-sm sm:text-base border border-red-400/40">
                 <i class="fab fa-youtube text-xl"></i>
@@ -190,9 +195,11 @@
                 <div class="flex flex-col sm:flex-row items-center justify-between gap-3 glass-card p-3.5 rounded-2xl">
                     <div class="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0">
                         <button onclick="filterEpisodes('all')" class="ep-filter-btn bg-yellow-400 text-black font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap">All Seasons</button>
+                        <button onclick="filterEpisodes('s4')" class="ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30">Season 4</button>
                         <button onclick="filterEpisodes('s3')" class="ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30">Season 3</button>
                         <button onclick="filterEpisodes('s2')" class="ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30">Season 2</button>
                         <button onclick="filterEpisodes('s1')" class="ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30">Season 1</button>
+                        <button onclick="filterEpisodes('drama')" class="ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30">New Drama</button>
                     </div>
 
                     <div class="relative w-full sm:w-56">
@@ -201,9 +208,93 @@
                     </div>
                 </div>
 
-                <!-- Episodes Grid -->
+                <!-- Episodes Grid with Added Links -->
                 <div id="episodesGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <!-- Populated dynamically via JS -->
+
+                    <!-- Season 4 Episode 1 -->
+                    <div class="glass-card p-4 rounded-2xl space-y-3 border border-purple-500/30 flex flex-col justify-between" data-season="s4">
+                        <div>
+                            <span class="bg-purple-900/80 text-yellow-300 text-[10px] font-black px-2 py-0.5 rounded-md uppercase">Season 4</span>
+                            <h3 class="text-sm font-bold text-white mt-2">Purple Grapes Season 4 - Episode 1</h3>
+                            <p class="text-xs text-purple-200/80 mt-1">Watch Episode 1 of Purple Grapes Season 4 on Best Grapes King LIVE!</p>
+                        </div>
+                        <a href="https://youtu.be/qITtO9Z40L0?si=0-cObGG5zsPwlgif" target="_blank" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-xl text-xs text-center flex items-center justify-center gap-2 mt-3">
+                            <i class="fab fa-youtube"></i> Watch Episode 1
+                        </a>
+                    </div>
+
+                    <!-- Season 4 Episode 2 -->
+                    <div class="glass-card p-4 rounded-2xl space-y-3 border border-purple-500/30 flex flex-col justify-between" data-season="s4">
+                        <div>
+                            <span class="bg-purple-900/80 text-yellow-300 text-[10px] font-black px-2 py-0.5 rounded-md uppercase">Season 4</span>
+                            <h3 class="text-sm font-bold text-white mt-2">Purple Grapes Season 4 - Episode 2</h3>
+                            <p class="text-xs text-purple-200/80 mt-1">Watch Episode 2 of Purple Grapes Season 4 full story update!</p>
+                        </div>
+                        <a href="https://youtu.be/eBfA00aa1-4?si=4auTvl7-LiRdWGyi" target="_blank" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-xl text-xs text-center flex items-center justify-center gap-2 mt-3">
+                            <i class="fab fa-youtube"></i> Watch Episode 2
+                        </a>
+                    </div>
+
+                    <!-- Season 4 Episode 3 -->
+                    <div class="glass-card p-4 rounded-2xl space-y-3 border border-purple-500/30 flex flex-col justify-between" data-season="s4">
+                        <div>
+                            <span class="bg-purple-900/80 text-yellow-300 text-[10px] font-black px-2 py-0.5 rounded-md uppercase">Season 4</span>
+                            <h3 class="text-sm font-bold text-white mt-2">Purple Grapes Season 4 - Episode 3</h3>
+                            <p class="text-xs text-purple-200/80 mt-1">Watch Episode 3 of Purple Grapes Season 4!</p>
+                        </div>
+                        <a href="https://youtu.be/qVSy7SLrFqs?si=crHxoZoxE5DkccaG" target="_blank" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-xl text-xs text-center flex items-center justify-center gap-2 mt-3">
+                            <i class="fab fa-youtube"></i> Watch Episode 3
+                        </a>
+                    </div>
+
+                    <!-- Season 4 Notice Video -->
+                    <div class="glass-card p-4 rounded-2xl space-y-3 border border-red-500/50 flex flex-col justify-between" data-season="s4">
+                        <div>
+                            <span class="bg-red-900/80 text-red-300 text-[10px] font-black px-2 py-0.5 rounded-md uppercase">Notice / Announcement</span>
+                            <h3 class="text-sm font-bold text-yellow-300 mt-2">Purple Grapes Season 4 Discontinued Notice</h3>
+                            <p class="text-xs text-purple-200/80 mt-1">Important channel update regarding Season 4 pause and new projects.</p>
+                        </div>
+                        <a href="https://youtu.be/4VglmJTdEYI?si=MPD8RxqdN8WC1Tb8" target="_blank" class="w-full bg-purple-800 hover:bg-purple-900 text-white font-bold py-2 rounded-xl text-xs text-center flex items-center justify-center gap-2 mt-3">
+                            <i class="fab fa-youtube"></i> Watch Notice Video
+                        </a>
+                    </div>
+
+                    <!-- Season 4 Episode 4 (Resumed) -->
+                    <div class="glass-card p-4 rounded-2xl space-y-3 border border-emerald-500/40 flex flex-col justify-between" data-season="s4">
+                        <div>
+                            <span class="bg-emerald-900/80 text-emerald-300 text-[10px] font-black px-2 py-0.5 rounded-md uppercase">Season 4 Resumed</span>
+                            <h3 class="text-sm font-bold text-white mt-2">Purple Grapes Season 4 - Episode 4 (Full Episode)</h3>
+                            <p class="text-xs text-purple-200/80 mt-1">Season 4 is back! Watch Episode 4 with new music & hype!</p>
+                        </div>
+                        <a href="https://youtu.be/hT8kPR7P2Do?si=FoyOJ3rqTbFJnTiI" target="_blank" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-xl text-xs text-center flex items-center justify-center gap-2 mt-3">
+                            <i class="fab fa-youtube"></i> Watch Episode 4
+                        </a>
+                    </div>
+
+                    <!-- New Drama Project Announcement -->
+                    <div class="glass-card p-4 rounded-2xl space-y-3 border border-yellow-500/40 flex flex-col justify-between" data-season="drama">
+                        <div>
+                            <span class="bg-yellow-500/30 text-yellow-300 text-[10px] font-black px-2 py-0.5 rounded-md uppercase">Drama Announcement</span>
+                            <h3 class="text-sm font-bold text-white mt-2">New Drama Project Announcement & Trailer Update</h3>
+                            <p class="text-xs text-purple-200/80 mt-1">Details on our upcoming brand new drama series!</p>
+                        </div>
+                        <a href="https://youtu.be/tzD3GVEREXM?si=3patFntmiPS6tg9q" target="_blank" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 rounded-xl text-xs text-center flex items-center justify-center gap-2 mt-3">
+                            <i class="fab fa-youtube"></i> Watch Announcement
+                        </a>
+                    </div>
+
+                    <!-- New Drama Music Teaser / News Show -->
+                    <div class="glass-card p-4 rounded-2xl space-y-3 border border-pink-500/50 flex flex-col justify-between" data-season="drama">
+                        <div>
+                            <span class="bg-pink-900/80 text-pink-300 text-[10px] font-black px-2 py-0.5 rounded-md uppercase">Teaser / Music Track</span>
+                            <h3 class="text-sm font-bold text-yellow-300 mt-2">New Show Music Track & Drama Trailer Coming Soon!</h3>
+                            <p class="text-xs text-purple-200/80 mt-1">Official music track released! Official drama trailer releasing in 2 to 3 days!</p>
+                        </div>
+                        <a href="https://youtu.be/K-APxCziai0?si=QLU22f69ajjpYCtQ" target="_blank" class="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 rounded-xl text-xs text-center flex items-center justify-center gap-2 mt-3">
+                            <i class="fab fa-youtube"></i> Listen Music / Teaser
+                        </a>
+                    </div>
+
                 </div>
             </section>
 
@@ -320,1488 +411,50 @@
             </button>
             <button id="nav-game" onclick="switchTab('game')" class="nav-item flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
                 <i class="fa-solid fa-gamepad text-base"></i>
-                <span>Arcade</span>
+                <span>Game</span>
             </button>
             <button id="nav-guide" onclick="switchTab('guide')" class="nav-item flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
-                <i class="fa-solid fa-seedling text-base"></i>
-                <span>Guide</span>
+                <i class="fa-solid fa-circle-info text-base"></i>
+                <span>Info</span>
             </button>
         </div>
     </nav>
 
-    <!-- APK DOWNLOAD MODAL -->
-    <div id="apkModal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-[99999] hidden flex items-center justify-center p-4">
-        <div class="bg-[#1c0a35] border-2 border-emerald-400 rounded-3xl w-full max-w-sm p-5 space-y-4 shadow-2xl relative neon-glow-green">
-            <button onclick="closeApkModal()" class="absolute top-4 right-4 text-purple-400 hover:text-white">
-                <i class="fa-solid fa-xmark text-lg"></i>
-            </button>
-
-            <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-600 to-yellow-400 p-0.5 flex-shrink-0">
-                    <div class="w-full h-full bg-[#1c0a35] rounded-2xl flex items-center justify-center text-2xl">🍇</div>
-                </div>
-                <div>
-                    <h3 class="font-bold text-yellow-300 text-sm">Best Grapes King Live App</h3>
-                    <p class="text-xs text-emerald-400 font-semibold">Package: com.bestgrapeskinglive.official</p>
-                </div>
-            </div>
-
-            <p id="apkStatusText" class="text-xs text-purple-200 leading-relaxed">
-                Do you want to download the Android Package (.apk) to your device downloader?
-            </p>
-
-            <div id="apkProgressBg" class="w-full bg-[#0b0214] rounded-full h-3 overflow-hidden p-0.5 border border-purple-700/50 hidden">
-                <div id="apkProgressBar" class="bg-gradient-to-r from-emerald-400 to-yellow-400 h-full rounded-full w-0 transition-all duration-150"></div>
-            </div>
-
-            <div class="flex justify-end gap-2 pt-1" id="apkActionBtns">
-                <button onclick="closeApkModal()" class="bg-purple-900/60 text-purple-200 font-bold px-4 py-2 rounded-xl text-xs">Cancel</button>
-                <button onclick="executeRealChromeBlobDownload()" class="bg-emerald-400 text-gray-950 font-black px-5 py-2 rounded-xl text-xs shadow-lg">Start Download</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- SOURCE CODE VIEW MODAL -->
-    <div id="codeModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-[99999] hidden flex items-center justify-center p-3">
-        <div class="bg-[#130329] border border-blue-500 rounded-3xl w-full max-w-xl h-[80vh] p-4 flex flex-col justify-between space-y-3 relative">
-            <div class="flex justify-between items-center border-b border-purple-800/60 pb-2">
-                <h3 class="font-bold text-yellow-300 text-xs flex items-center gap-2">
-                    <i class="fa-solid fa-code text-blue-400"></i> Official HTML Source Code Script
-                </h3>
-                <button onclick="closeSourceCodeModal()" class="text-purple-400 hover:text-white">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
-            </div>
-
-            <textarea id="codeTextArea" readonly class="w-full flex-1 bg-[#0b0214] text-emerald-400 font-mono text-[11px] p-3 border border-purple-700/50 rounded-2xl outline-none resize-none select-all"></textarea>
-
-            <div class="flex justify-between items-center pt-1">
-                <span id="copyMsg" class="text-xs text-emerald-400 font-semibold hidden">✅ Code Copied to Clipboard!</span>
-                <button onclick="copyCodeToClipboard()" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2 px-5 rounded-xl flex items-center gap-1.5 ml-auto shadow-lg">
-                    <i class="fa-solid fa-copy"></i> Copy Code
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- VIDEO PLAYER MODAL -->
-    <div id="videoModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-[99990] hidden items-center justify-center p-4">
-        <div class="bg-[#130329] border border-purple-500/50 rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl relative">
-            <div class="flex justify-between items-center px-4 py-2.5 bg-[#0b0214] border-b border-purple-800/60">
-                <h3 id="modalVideoTitle" class="text-xs sm:text-sm font-bold text-yellow-300 truncate pr-4">Video</h3>
-                <button onclick="closeVideoModal()" class="text-purple-400 hover:text-white">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
-            </div>
-            <div class="aspect-video w-full bg-black">
-                <iframe id="videoIframe" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-
-    <!-- TOAST NOTIFICATION -->
-    <div id="toast" class="fixed top-4 right-4 z-[999999] bg-yellow-400 text-gray-950 px-3.5 py-2 rounded-2xl shadow-2xl font-bold text-xs hidden items-center gap-2">
-        <i class="fa-solid fa-circle-info"></i>
-        <span id="toastText">Notification</span>
-    </div>
-
     <script>
-        let pwaPrompt = null;
-
-        const EPISODES_DATA = [
-            { id: "ufkGKvfRCZA", title: "Purple Grapes Season 3 - Episode 1: The Magic Garden", season: "s3", views: "142K", duration: "12:45" },
-            { id: "gTAsU8cnuiI", title: "Purple Grapes Season 3 - Episode 2: King's Golden Vine", season: "s3", views: "98K", duration: "10:15" },
-            { id: "7D3oQ2RCgVU", title: "Purple Grapes Season 3 - Episode 3: Secret Vineyard Trail", season: "s3", views: "110K", duration: "11:20" },
-            { id: "4sX_yY6bJgw", title: "Purple Grapes Season 3 - Episode 4: The Royal Harvest", season: "s3", views: "85K", duration: "09:50" },
-            { id: "sOlfwPgsiiQ", title: "Purple Grapes Season 2 - Episode 1: Kingdom Secrets", season: "s2", views: "250K", duration: "11:30" },
-            { id: "sOlfwPgsiiQ", title: "Purple Grapes Season 1 - Episode 1: The Origins", season: "s1", views: "520K", duration: "14:10" }
-        ];
-
-        window.onload = function() {
-            setupPwaManifest();
-            registerServiceWorker();
-            renderEpisodes(EPISODES_DATA);
-            initGameCanvas();
-
-            window.addEventListener('beforeinstallprompt', (e) => {
-                e.preventDefault();
-                pwaPrompt = e;
-                const btn = document.getElementById('pwaInstallHeaderBtn');
-                if(btn) btn.classList.add('animate-bounce');
-            });
-        };
-
-        function setupPwaManifest() {
-            const manifestObj = {
-                name: "Best Grapes King LIVE",
-                short_name: "GrapesKing",
-                start_url: "./",
-                display: "standalone",
-                background_color: "#0b0214",
-                theme_color: "#5b11b8",
-                icons: [
-                    {
-                        src: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%235b11b8'/><text y='.9em' font-size='90'>🍇</text></svg>",
-                        sizes: "192x192 512x512",
-                        type: "image/svg+xml"
-                    }
-                ]
-            };
-            const manifestStr = URL.createObjectURL(new Blob([JSON.stringify(manifestObj)], {type: 'application/json'}));
-            document.getElementById('pwaManifestLink').setAttribute('href', manifestStr);
-        }
-
-        function registerServiceWorker() {
-            if ('serviceWorker' in navigator) {
-                const swCode = `
-                    self.addEventListener('install', (e) => self.skipWaiting());
-                    self.addEventListener('activate', (e) => self.clients.claim());
-                    self.addEventListener('fetch', (e) => e.respondWith(fetch(e.request).catch(() => caches.match(e.request))));
-                `;
-                const blob = new Blob([swCode], { type: 'text/javascript' });
-                navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(() => {});
-            }
-        }
-
-        function showToast(msg) {
-            const toast = document.getElementById('toast');
-            document.getElementById('toastText').innerText = msg;
-            toast.classList.remove('hidden');
-            toast.classList.add('flex');
-            setTimeout(() => toast.classList.add('hidden'), 3000);
-        }
-
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
-
-            const activeView = document.getElementById(`view-${tabId}`);
-            const activeNav = document.getElementById(`nav-${tabId}`);
-
-            if(activeView) activeView.classList.remove('hidden');
-            if(activeNav) activeNav.classList.add('active');
-
-            if(tabId === 'game' && !gameRunning) startGame();
-        }
-
-        function renderEpisodes(list) {
-            const grid = document.getElementById('episodesGrid');
-            grid.innerHTML = list.map(ep => `
-                <div class="glass-card rounded-2xl overflow-hidden border-purple-800/40 hover:border-purple-500 transition-all flex flex-col justify-between">
-                    <div class="relative aspect-video bg-purple-950/60 cursor-pointer" onclick="openVideoModal('${ep.id}', '${ep.title}')">
-                        <img src="https://img.youtube.com/vi/${ep.id}/hqdefault.jpg" alt="${ep.title}" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
-                            <div class="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg transform transition hover:scale-110">
-                                <i class="fa-solid fa-play text-sm ml-0.5"></i>
-                            </div>
-                        </div>
-                        <span class="absolute bottom-2 right-2 bg-black/80 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">${ep.duration}</span>
-                    </div>
-                    <div class="p-3 space-y-1">
-                        <h3 class="text-xs font-bold text-white truncate hover:text-yellow-300 cursor-pointer" onclick="openVideoModal('${ep.id}', '${ep.title}')">${ep.title}</h3>
-                        <div class="text-[10px] text-purple-300/80"><i class="fa-solid fa-eye text-purple-400"></i> ${ep.views} views</div>
-                    </div>
-                </div>
-            `).join('');
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            
+            const target = document.getElementById('view-' + tabId);
+            if(target) target.classList.remove('hidden');
+            
+            const navBtn = document.getElementById('nav-' + tabId);
+            if(navBtn) navBtn.classList.add('active');
         }
 
         function filterEpisodes(season) {
-            if(season === 'all') renderEpisodes(EPISODES_DATA);
-            else renderEpisodes(EPISODES_DATA.filter(e => e.season === season));
+            const cards = document.querySelectorAll('#episodesGrid > div');
+            cards.forEach(card => {
+                if (season === 'all' || card.getAttribute('data-season') === season) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
         }
 
         function searchEpisodes() {
             const query = document.getElementById('episodeSearch').value.toLowerCase();
-            renderEpisodes(EPISODES_DATA.filter(e => e.title.toLowerCase().includes(query)));
-        }
-
-        function openVideoModal(id, title) {
-            document.getElementById('modalVideoTitle').innerText = title;
-            document.getElementById('videoIframe').src = `https://www.youtube.com/embed/${id}?autoplay=1`;
-            document.getElementById('videoModal').classList.remove('hidden');
-            document.getElementById('videoModal').classList.add('flex');
-        }
-
-        function closeVideoModal() {
-            document.getElementById('videoIframe').src = '';
-            document.getElementById('videoModal').classList.add('hidden');
-            document.getElementById('videoModal').classList.remove('flex');
-        }
-
-        async function generateAiVideoAndAudio() {
-            const promptInput = document.getElementById('aiPrompt').value.trim();
-            const voicePreset = document.getElementById('aiVoice').value;
-
-            if(!promptInput) {
-                showToast("Please enter a prompt or concept for AI!");
-                return;
-            }
-
-            const loader = document.getElementById('aiStatus');
-            const resultBox = document.getElementById('aiOutputArea');
-            const audioBox = document.getElementById('aiAudioBtnContainer');
-
-            loader.classList.remove('hidden');
-            resultBox.classList.add('hidden');
-
-            try {
-                let generatedImageUrl = await callGeminiImageApi(promptInput);
-
-                if (generatedImageUrl) {
-                    const imgContainer = document.getElementById('aiImageContainer');
-                    imgContainer.innerHTML = `<img src="${generatedImageUrl}" class="w-full h-auto rounded-lg object-cover max-h-80 shadow-lg" alt="AI Generated Poster">`;
+            const cards = document.querySelectorAll('#episodesGrid > div');
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    card.style.display = 'flex';
                 } else {
-                    renderCanvasVideoPreview(promptInput);
+                    card.style.display = 'none';
                 }
-
-                audioBox.innerHTML = `
-                    <button id="geminiAudioBtn" onclick="playGeminiVoiceover('${promptInput.replace(/'/g, "\\'")}', '${voicePreset}')" class="bg-gradient-to-r from-emerald-400 to-green-500 hover:from-emerald-500 hover:to-green-600 text-gray-950 font-black px-4 py-2 rounded-xl text-xs inline-flex items-center gap-2 shadow-lg transition active:scale-95">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i> Play Gemini Speech Voice
-                    </button>
-                    <button onclick="speakBrowserFallback('${promptInput.replace(/'/g, "\\'")}')" class="bg-purple-800 hover:bg-purple-700 text-white font-bold px-3 py-2 rounded-xl text-xs inline-flex items-center gap-1.5 shadow">
-                        <i class="fa-solid fa-volume-high"></i> System TTS
-                    </button>
-                `;
-
-                playGeminiVoiceover(promptInput, voicePreset);
-
-                loader.classList.add('hidden');
-                resultBox.classList.remove('hidden');
-                showToast("AI Media Content Generated!");
-            } catch (err) {
-                renderCanvasVideoPreview(promptInput);
-                loader.classList.add('hidden');
-                resultBox.classList.remove('hidden');
-                showToast("Generated with Canvas preview!");
-            }
-        }
-
-        async function callGeminiImageApi(promptText) {
-            try {
-                const payload = {
-                    contents: [{
-                        parts: [{ text: `A vibrant high quality cartoon scene artwork for Best Grapes King cartoon channel: ${promptText}` }]
-                    }],
-                    generationConfig: {
-                        responseModalities: ['TEXT', 'IMAGE']
-                    }
-                };
-                const apiKey = "";
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-image:generateContent?key=${apiKey}`;
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                const result = await response.json();
-                const base64Data = result?.candidates?.[0]?.content?.parts?.find(p => p.inlineData)?.inlineData?.data;
-                if (base64Data) {
-                    return `data:image/png;base64,${base64Data}`;
-                }
-            } catch (e) {
-                console.warn("Gemini Image API fallback triggered", e);
-            }
-            return null;
-        }
-
-        async function playGeminiVoiceover(text, voiceName) {
-            const btn = document.getElementById('geminiAudioBtn');
-            if(btn) btn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> Generating Voice...`;
-
-            try {
-                const payload = {
-                    contents: [{
-                        parts: [{ text: `Say with enthusiasm: ${text}` }]
-                    }],
-                    generationConfig: {
-                        responseModalities: ["AUDIO"],
-                        speechConfig: {
-                            voiceConfig: {
-                                prebuiltVoiceConfig: { voiceName: voiceName || "Kore" }
-                            }
-                        }
-                    }
-                };
-                const apiKey = "";
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                const result = await response.json();
-                const part = result?.candidates?.[0]?.content?.parts?.[0];
-                const audioData = part?.inlineData?.data;
-                const mimeType = part?.inlineData?.mimeType;
-
-                if (audioData && mimeType) {
-                    const sampleRateMatch = mimeType.match(/rate=(\d+)/);
-                    const sampleRate = sampleRateMatch ? parseInt(sampleRateMatch[1], 10) : 24000;
-                    const pcmData = base64ToArrayBuffer(audioData);
-                    const pcm16 = new Int16Array(pcmData);
-                    const wavBlob = pcmToWav(pcm16, sampleRate);
-                    const audioUrl = URL.createObjectURL(wavBlob);
-                    
-                    const audio = new Audio(audioUrl);
-                    audio.play();
-                    if(btn) btn.innerHTML = `<i class="fa-solid fa-volume-high"></i> Replay Voice`;
-                    return;
-                }
-            } catch (err) {
-                console.warn("Falling back to system speech", err);
-            }
-            
-            speakBrowserFallback(text);
-            if(btn) btn.innerHTML = `<i class="fa-solid fa-volume-high"></i> Replay Voice`;
-        }
-
-        function base64ToArrayBuffer(base64) {
-            const binaryString = window.atob(base64);
-            const len = binaryString.length;
-            const bytes = new Uint8Array(len);
-            for (let i = 0; i < len; i++) {
-                bytes[i] = binaryString.charCodeAt(i);
-            }
-            return bytes.buffer;
-        }
-
-        function pcmToWav(pcm16, sampleRate) {
-            const numChannels = 1;
-            const sampleBits = 16;
-            const dataByteLength = pcm16.length * 2;
-            const buffer = new ArrayBuffer(44 + dataByteLength);
-            const view = new DataView(buffer);
-
-            const writeString = (v, offset, str) => {
-                for (let i = 0; i < str.length; i++) v.setUint8(offset + i, str.charCodeAt(i));
-            };
-
-            writeString(view, 0, 'RIFF');
-            view.setUint32(4, 36 + dataByteLength, true);
-            writeString(view, 8, 'WAVE');
-            writeString(view, 12, 'fmt ');
-            view.setUint32(16, 16, true);
-            view.setUint16(20, 1, true);
-            view.setUint16(22, numChannels, true);
-            view.setUint32(24, sampleRate, true);
-            view.setUint32(28, sampleRate * numChannels * (sampleBits / 8), true);
-            view.setUint16(32, numChannels * (sampleBits / 8), true);
-            view.setUint16(34, sampleBits, true);
-            writeString(view, 36, 'data');
-            view.setUint32(40, dataByteLength, true);
-
-            let offset = 44;
-            for (let i = 0; i < pcm16.length; i++, offset += 2) {
-                view.setInt16(offset, pcm16[i], true);
-            }
-
-            return new Blob([buffer], { type: 'audio/wav' });
-        }
-
-        function speakBrowserFallback(text) {
-            if('speechSynthesis' in window) {
-                window.speechSynthesis.cancel();
-                const utterance = new SpeechSynthesisUtterance(text);
-                window.speechSynthesis.speak(utterance);
-            }
-        }
-
-        function renderCanvasVideoPreview(text) {
-            const imgContainer = document.getElementById('aiImageContainer');
-            imgContainer.innerHTML = `<canvas id="videoCanvas" width="640" height="360" class="w-full rounded-lg block"></canvas>`;
-            
-            const canvas = document.getElementById('videoCanvas');
-            if(!canvas) return;
-            const ctx = canvas.getContext('2d');
-            let frame = 0;
-
-            function animate() {
-                if(!document.getElementById('videoCanvas')) return;
-                frame++;
-                ctx.fillStyle = '#0b0214';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-                ctx.font = '42px sans-serif';
-                ctx.textAlign = 'center';
-                ctx.fillText('🍇👑', canvas.width/2, 120 + Math.sin(frame * 0.05) * 8);
-
-                ctx.fillStyle = '#ffeb3b';
-                ctx.font = 'bold 18px Outfit, sans-serif';
-                ctx.fillText('BEST GRAPES KING LIVE AI', canvas.width/2, 190);
-
-                ctx.fillStyle = '#ffffff';
-                ctx.font = '12px Outfit, sans-serif';
-                ctx.fillText(text.slice(0, 42) + '...', canvas.width/2, 230);
-
-                requestAnimationFrame(animate);
-            }
-            animate();
-        }
-
-        function triggerPwaInstall() {
-            if (pwaPrompt) {
-                pwaPrompt.prompt();
-            } else {
-                startApkInstaller();
-            }
-        }
-
-        function startApkInstaller() {
-            document.getElementById('apkModal').classList.remove('hidden');
-            document.getElementById('apkModal').classList.add('flex');
-            document.getElementById('apkProgressBg').classList.add('hidden');
-            document.getElementById('apkProgressBar').style.width = '0%';
-            document.getElementById('apkStatusText').innerText = "Do you want to download the Android Package (.apk) to your device downloader?";
-        }
-
-        function closeApkModal() {
-            document.getElementById('apkModal').classList.add('hidden');
-            document.getElementById('apkModal').classList.remove('flex');
-        }
-
-        function executeRealChromeBlobDownload() {
-            let pBg = document.getElementById('apkProgressBg');
-            let pBar = document.getElementById('apkProgressBar');
-            let status = document.getElementById('apkStatusText');
-            let btns = document.getElementById('apkActionBtns');
-
-            pBg.classList.remove('hidden');
-            btns.style.display = 'none';
-            status.innerText = "Downloading BestGrapesKingLive_v2.8.4.apk via Chrome Download Manager...";
-
-            let width = 0;
-            let timer = setInterval(() => {
-                if(width >= 100) {
-                    clearInterval(timer);
-
-                    const dummyBytes = new Uint8Array([0x50, 0x4B, 0x03, 0x04, 0x14, 0x00, 0x00, 0x00]);
-                    const blob = new Blob([dummyBytes], { type: 'application/vnd.android.package-archive' });
-                    const blobUrl = URL.createObjectURL(blob);
-
-                    const link = document.createElement('a');
-                    link.href = blobUrl;
-                    link.download = 'BestGrapesKingLive_v2.8.4.apk';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                    URL.revokeObjectURL(blobUrl);
-
-                    status.innerHTML = "<strong class='text-emerald-400'>File dispatched to Download Manager!</strong>";
-                    btns.style.display = 'flex';
-                    btns.innerHTML = `<button onclick="closeApkModal()" class="bg-emerald-400 text-gray-950 font-black px-6 py-2 rounded-xl text-xs w-full">Done</button>`;
-                    showToast("Chrome Download Triggered!");
-                } else {
-                    width += 10;
-                    pBar.style.width = width + '%';
-                }
-            }, 80);
-        }
-
-        function openSourceCodeModal() {
-            document.getElementById('codeTextArea').value = document.documentElement.outerHTML;
-            document.getElementById('codeModal').classList.remove('hidden');
-            document.getElementById('codeModal').classList.add('flex');
-        }
-
-        function closeSourceCodeModal() {
-            document.getElementById('codeModal').classList.add('hidden');
-            document.getElementById('codeModal').classList.remove('flex');
-        }
-
-        function copyCodeToClipboard() {
-            const textArea = document.getElementById('codeTextArea');
-            textArea.select();
-            document.execCommand('copy');
-            const copyMsg = document.getElementById('copyMsg');
-            copyMsg.classList.remove('hidden');
-            setTimeout(() => copyMsg.classList.add('hidden'), 2500);
-            showToast("HTML Source Code copied to clipboard!");
-        }
-
-        let canvas, ctx;
-        let basket = { x: 160, y: 230, w: 70, h: 25 };
-        let grapes = [];
-        let gameScore = 0;
-        let gameRunning = false, gameLoopId = null;
-
-        function initGameCanvas() {
-            canvas = document.getElementById('gameCanvas');
-            if(!canvas) return;
-            ctx = canvas.getContext('2d');
-            canvas.width = 400; canvas.height = 270;
-
-            const handleMove = (clientX) => {
-                if(!gameRunning) return;
-                const rect = canvas.getBoundingClientRect();
-                const touchX = (clientX - rect.left) * (canvas.width / rect.width);
-                basket.x = Math.max(0, Math.min(canvas.width - basket.w, touchX - basket.w/2));
-            };
-
-            canvas.addEventListener('mousemove', (e) => handleMove(e.clientX));
-            canvas.addEventListener('touchmove', (e) => {
-                if(e.touches && e.touches[0]) handleMove(e.touches[0].clientX);
-            }, { passive: true });
-        }
-
-        function startGame() {
-            document.getElementById('gameOverlay').classList.add('hidden');
-            gameScore = 0; grapes = [];
-            document.getElementById('gameScore').innerText = '0';
-            gameRunning = true;
-            if(gameLoopId) cancelAnimationFrame(gameLoopId);
-            gameLoop();
-        }
-
-        function gameLoop() {
-            if(!gameRunning) return;
-            ctx.fillStyle = "#0b0214";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            if(Math.random() < 0.05) {
-                grapes.push({ x: Math.random() * (canvas.width - 20) + 10, y: -10, r: 9, speed: 2.2 + Math.random() * 2 });
-            }
-
-            for(let i = grapes.length - 1; i >= 0; i--) {
-                let g = grapes[i];
-                g.y += g.speed;
-                ctx.beginPath();
-                ctx.arc(g.x, g.y, g.r, 0, Math.PI * 2);
-                ctx.fillStyle = '#9c27b0';
-                ctx.fill();
-
-                if(g.y + g.r >= basket.y && g.x >= basket.x && g.x <= basket.x + basket.w) {
-                    gameScore += 10;
-                    document.getElementById('gameScore').innerText = gameScore;
-                    grapes.splice(i, 1);
-                    continue;
-                }
-                if(g.y > canvas.height + 20) grapes.splice(i, 1);
-            }
-```html
-<!DOCTYPE html>
-<html lang="en" class="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Best Grapes King LIVE | Official Web App & AI Studio</title>
-
-    <!-- Google Site Verification Tag -->
-    <meta name="google-site-verification" content="f8Y0j9sO6L9wG0f-X4X8_Y1Z2a3b4c5d" />
-
-    <!-- Web App & PWA Settings -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Grapes King">
-    <meta name="theme-color" content="#5b11b8">
-
-    <!-- Dynamic PWA Manifest Generator Link -->
-    <link rel="manifest" id="pwaManifestLink">
-
-    <!-- Tailwind CSS & Font Awesome Icons -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-
-    <style>
-        * {
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-
-        body {
-            background-color: #0b0214;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-            padding-bottom: 80px;
-            overflow-x: hidden;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-
-        /* Standalone PWA Safe Area Adjustments */
-        @media display-mode: standalone {
-            body {
-                padding-top: env(safe-area-inset-top);
-                padding-bottom: calc(80px + env(safe-area-inset-bottom));
-            }
-        }
-
-        /* Custom Scrollbars */
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0b0214;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #5b11b8;
-            border-radius: 4px;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #ffeb3b, #ff9800, #e91e63);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .glass-card {
-            background: rgba(19, 3, 41, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(156, 39, 176, 0.3);
-        }
-
-        .custom-glow {
-            box-shadow: 0 0 25px rgba(156, 39, 176, 0.4);
-        }
-
-        .neon-glow-green {
-            box-shadow: 0 0 25px rgba(0, 230, 118, 0.35);
-        }
-
-        @keyframes marquee {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-        .animate-marquee {
-            display: inline-block;
-            white-space: nowrap;
-            animation: marquee 18s linear infinite;
-        }
-
-        .nav-item.active {
-            color: #ffeb3b;
-        }
-        .nav-item.active i {
-            transform: translateY(-2px);
-            color: #ffeb3b;
-        }
-    </style>
-</head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-purple-600 selection:text-white">
-
-    <header class="sticky top-0 z-50 bg-[#5b11b8]/95 backdrop-blur-md px-4 py-3 shadow-lg flex justify-between items-center border-b border-purple-500/40">
-        <div class="flex items-center gap-2 cursor-pointer" onclick="switchTab('episodes')">
-            <span class="text-2xl animate-bounce">🍇</span>
-            <div>
-                <span class="font-black text-yellow-300 text-base sm:text-lg tracking-wide flex items-center gap-1.5">
-                    Best Grapes King <span class="bg-red-600 text-white text-[9px] uppercase font-black px-1.5 py-0.5 rounded-full animate-pulse">LIVE APP</span>
-                </span>
-            </div>
-        </div>
-
-        <div class="flex items-center gap-2">
-            <!-- Native PWA Direct Install Button -->
-            <button id="pwaInstallHeaderBtn" onclick="triggerPwaInstall()" class="bg-gradient-to-r from-emerald-400 to-green-500 hover:from-emerald-500 hover:to-green-600 text-gray-950 font-black text-xs px-3 py-1.5 rounded-xl shadow-md flex items-center gap-1.5 transition-transform active:scale-95">
-                <i class="fa-solid fa-circle-down text-sm"></i>
-                <span class="hidden sm:inline" id="txtInstallBtn">INSTALL APP</span>
-            </button>
-
-            <!-- Language Switcher (Hindi Removed) -->
-            <select id="siteLang" onchange="changeWebsiteLanguage()" class="bg-[#130329] text-xs text-purple-200 border border-purple-400/50 rounded-xl px-2 py-1.5 outline-none font-semibold focus:border-yellow-400">
-                <option value="en" selected>🇬🇧 English</option>
-                <option value="ur">🇵🇰 اردو</option>
-                <option value="pa">🌾 ਪੰਜਾਬੀ / ਪੰਜਾਬੀ (PK)</option>
-                <option value="ar">🇸🇦 العربية</option>
-                <option value="es">🇪🇸 Español</option>
-            </select>
-        </div>
-    </header>
-
-    <div class="max-w-3xl mx-auto px-4 py-5 space-y-6 w-full">
-
-        <div class="glass-card p-6 rounded-3xl custom-glow text-center space-y-4 relative overflow-hidden border-purple-500/40">
-            <div class="absolute -top-12 -right-12 w-40 h-40 bg-purple-600/30 rounded-full blur-2xl pointer-events-none"></div>
-
-            <h1 class="text-2xl sm:text-4xl font-black text-white leading-tight" id="appTitle">
-                Best Grapes King <span class="gradient-text">👑 LIVE PORTAL</span>
-            </h1>
-            <p class="text-purple-200/90 text-xs sm:text-sm max-w-xl mx-auto" id="appSub">
-                Official YouTube Hub, Purple Grapes Series & AI Studio. Direct Chrome Install & APK Download Available!
-            </p>
-
-            <!-- YouTube Subscribe Button -->
-            <a href="https://youtube.com/@bestgrapeskinglive-k7f2q?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="w-full bg-red-600 hover:bg-red-700 text-white font-black py-3 px-6 rounded-full shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2 text-sm sm:text-base border border-red-400/40">
-                <i class="fab fa-youtube text-xl"></i>
-                <span id="btnSubText">Subscribe YouTube Channel</span>
-            </a>
-
-            <!-- Navigation Shortcuts -->
-            <div class="flex justify-center gap-2 pt-1 flex-wrap">
-                <a href="https://youtube.com/@bestgrapeskinglive-k7f2q" target="_blank" class="bg-purple-900/60 hover:bg-purple-800 text-xs font-semibold text-purple-200 px-3.5 py-1.5 rounded-full border border-purple-500/40 flex items-center gap-1.5">
-                    <i class="fas fa-play-circle text-yellow-400"></i> <span id="lblChannel">Visit Channel</span>
-                </a>
-                <a href="https://youtube.com/@bestgrapeskinglive-k7f2q/videos" target="_blank" class="bg-purple-900/60 hover:bg-purple-800 text-xs font-semibold text-purple-200 px-3.5 py-1.5 rounded-full border border-purple-500/40 flex items-center gap-1.5">
-                    <i class="fas fa-film text-pink-400"></i> <span id="lblVideos">Videos</span>
-                </a>
-                <a href="https://youtube.com/@bestgrapeskinglive-k7f2q/shorts" target="_blank" class="bg-purple-900/60 hover:bg-purple-800 text-xs font-semibold text-purple-200 px-3.5 py-1.5 rounded-full border border-purple-500/40 flex items-center gap-1.5">
-                    <i class="fas fa-bolt text-yellow-300"></i> <span id="lblShorts">Shorts</span>
-                </a>
-            </div>
-        </div>
-
-        <div class="glass-card p-4 sm:p-5 rounded-2xl border border-emerald-500/40 space-y-3 text-center">
-            <div class="text-xs sm:text-sm font-bold text-emerald-400 flex items-center justify-center gap-2">
-                <i class="fas fa-mobile-screen-button text-base"></i>
-                <span id="lblApkBanner">Get Official Standalone Mobile App Package</span>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <button onclick="startApkInstaller()" class="bg-emerald-400 hover:bg-emerald-500 text-gray-950 font-black py-3 px-4 rounded-xl text-xs sm:text-sm shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2">
-                    <i class="fas fa-download text-base"></i>
-                    <span id="btnDownloadApk">Download Android APK</span>
-                </button>
-                <button onclick="openSourceCodeModal()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl text-xs sm:text-sm shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2 border border-blue-400/30">
-                    <i class="fas fa-code text-base"></i>
-                    <span id="btnViewCode">View & Copy HTML Code</span>
-                </button>
-            </div>
-        </div>
-
-        <main>
-            <!-- TAB 1: EPISODES VIEW -->
-            <section id="view-episodes" class="tab-content space-y-6">
-                <!-- Search & Filters -->
-                <div class="flex flex-col sm:flex-row items-center justify-between gap-3 glass-card p-3.5 rounded-2xl">
-                    <div class="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0">
-                        <button onclick="filterEpisodes('all')" class="ep-filter-btn bg-yellow-400 text-black font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap">All Seasons</button>
-                        <button onclick="filterEpisodes('s3')" class="ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30">Season 3</button>
-                        <button onclick="filterEpisodes('s2')" class="ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30">Season 2</button>
-                        <button onclick="filterEpisodes('s1')" class="ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30">Season 1</button>
-                    </div>
-
-                    <div class="relative w-full sm:w-56">
-                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-purple-400 text-xs"></i>
-                        <input type="text" id="episodeSearch" oninput="searchEpisodes()" placeholder="Search episodes..." class="w-full bg-[#0b0214] border border-purple-700/50 rounded-xl pl-8 pr-3 py-1.5 text-xs text-white focus:outline-none focus:border-yellow-400">
-                    </div>
-                </div>
-
-                <!-- Episodes Grid -->
-                <div id="episodesGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <!-- Populated dynamically via JS -->
-                </div>
-            </section>
-
-            <section id="view-ai-studio" class="tab-content hidden space-y-4">
-                <div class="glass-card p-5 rounded-2xl border border-purple-500/50 space-y-4">
-                    <div class="flex items-center gap-2 border-b border-purple-500/40 pb-2">
-                        <i class="fas fa-wand-magic-sparkles text-yellow-400 text-xl"></i>
-                        <h2 class="text-lg sm:text-xl font-extrabold text-yellow-300">AI Video & Voice Generator Studio</h2>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs text-purple-200 font-semibold mb-1">Enter your Prompt / Story Concept:</label>
-                        <textarea id="aiPrompt" rows="3" class="w-full bg-[#0b0214] border border-purple-500/40 rounded-xl p-3 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-yellow-400" placeholder="e.g., Magical story and new season scene of Purple Grapes King..."></textarea>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-3">
-                        <div>
-                            <label class="block text-xs text-purple-300 font-semibold mb-1">Video Language:</label>
-                            <select id="aiLang" class="w-full bg-[#0b0214] border border-purple-500/40 rounded-lg p-2 text-xs text-white">
-                                <option value="English">English</option>
-                                <option value="Urdu">Urdu (اردو)</option>
-                                <option value="Punjabi">Punjabi (ਪੰਜਾਬੀ)</option>
-                                <option value="Arabic">Arabic (العربية)</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs text-purple-300 font-semibold mb-1">Voiceover Preset:</label>
-                            <select id="aiVoice" class="w-full bg-[#0b0214] border border-purple-500/40 rounded-lg p-2 text-xs text-white">
-                                <option value="Kore">Kore (Narrative / Firm)</option>
-                                <option value="Puck">Puck (Upbeat / Youthful)</option>
-                                <option value="Zephyr">Zephyr (Bright / Friendly)</option>
-                                <option value="Fenrir">Fenrir (Excitable / Energetic)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <button onclick="generateAiVideoAndAudio()" id="btnGenerate" class="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-yellow-500 hover:from-purple-500 hover:to-yellow-400 text-white font-black py-3 rounded-xl shadow-lg transition active:scale-95 flex items-center justify-center gap-2 text-xs sm:text-sm">
-                        <i class="fas fa-play text-yellow-300"></i>
-                        <span>GENERATE AI ARTWORK & VOICE</span>
-                    </button>
-
-                    <div id="aiStatus" class="hidden text-center text-xs font-bold text-yellow-300 animate-pulse py-2">
-                        ⏳ Generating AI Artwork & Speech Voiceover via Gemini API...
-                    </div>
-
-                    <div id="aiOutputArea" class="hidden bg-[#0b0214] border-2 border-emerald-500/80 p-4 rounded-xl text-center space-y-3 neon-glow-green">
-                        <h4 class="text-emerald-400 font-bold text-xs sm:text-sm">🎉 Content Generated Successfully!</h4>
-                        <div id="aiImageContainer" class="w-full rounded-lg overflow-hidden border border-purple-500/40 shadow-md min-h-[180px] bg-purple-950/40 flex items-center justify-center">
-                            <canvas id="videoCanvas" width="640" height="360" class="w-full rounded-lg block"></canvas>
-                        </div>
-                        <div id="aiAudioBtnContainer" class="pt-2 flex justify-center gap-2 flex-wrap"></div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="view-game" class="tab-content hidden space-y-4">
-                <div class="glass-card p-5 rounded-2xl border border-purple-500/40 text-center space-y-3">
-                    <div class="flex items-center justify-between border-b border-purple-800/60 pb-2">
-                        <div class="text-left">
-                            <h3 class="text-base font-black text-yellow-300">🍇 Grape Basket Catcher</h3>
-                            <p class="text-[11px] text-purple-300">Catch the falling purple grapes into the basket!</p>
-                        </div>
-                        <div class="bg-[#0b0214] px-3 py-1 rounded-xl border border-purple-700/50">
-                            <span class="text-xs font-bold text-yellow-400">Score: <span id="gameScore">0</span></span>
-                        </div>
-                    </div>
-
-                    <div class="relative w-full max-w-md mx-auto aspect-[4/3] bg-[#0b0214] border-2 border-purple-600 rounded-2xl overflow-hidden shadow-2xl">
-                        <canvas id="gameCanvas" class="w-full h-full block cursor-pointer"></canvas>
-                        <div id="gameOverlay" class="absolute inset-0 bg-[#0b0214]/90 flex flex-col items-center justify-center p-4 space-y-3">
-                            <span class="text-4xl">🍇👑</span>
-                            <h4 class="text-lg font-black text-yellow-300">Grapes Catcher Arcade</h4>
-                            <p class="text-xs text-purple-200">Move touch / mouse left and right to collect grapes!</p>
-                            <button onclick="startGame()" class="bg-yellow-400 hover:bg-yellow-500 text-gray-950 font-black px-6 py-2.5 rounded-full text-xs shadow-lg transition transform active:scale-95">
-                                <i class="fa-solid fa-play"></i> START GAME
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="view-guide" class="tab-content hidden space-y-4">
-                <div class="glass-card p-5 rounded-2xl border border-purple-500/30 space-y-3 text-left">
-                    <h3 class="text-base font-bold text-yellow-300 border-b border-purple-500/30 pb-2 flex items-center gap-2">
-                        <i class="fa-solid fa-seedling text-emerald-400"></i> 🍇 Complete Grape Farming Guide
-                    </h3>
-                    <ul class="text-xs text-purple-200 space-y-2 list-disc pl-4">
-                        <li><strong>Sunlight:</strong> Grape plants require 6 to 8 hours of direct sunlight daily for optimal yield.</li>
-                        <li><strong>Soil:</strong> Well-drained sandy loam soil with good fertility is best for cultivation.</li>
-                        <li><strong>Planting:</strong> The ideal planting time for grape cuttings is February or March.</li>
-                        <li><strong>Pruning:</strong> Annual winter pruning of old vines doubles harvest efficiency and berry quality.</li>
-                    </ul>
-                </div>
-            </section>
-        </main>
-    </div>
-
-    <div class="fixed bottom-0 left-0 w-full bg-yellow-400 text-black font-black py-1.5 shadow-2xl overflow-hidden z-40 text-xs">
-        <div class="animate-marquee">
-            👑 Best Grapes King LIVE Official Standalone PWA Web App & AI Studio +++ Direct Mobile Chrome Installer Enabled +++ 👑 Best Grapes King LIVE Official Standalone PWA Web App & AI Studio +++
-        </div>
-    </div>
-
-    <!-- MOBILE BOTTOM APP NAVIGATION BAR -->
-    <nav class="fixed bottom-6 left-0 w-full bg-[#130329]/95 backdrop-blur-xl border-t border-purple-800/60 z-50 px-2 py-1.5 shadow-2xl">
-        <div class="max-w-md mx-auto flex justify-around items-center">
-            <button id="nav-episodes" onclick="switchTab('episodes')" class="nav-item active flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
-                <i class="fa-solid fa-film text-base"></i>
-                <span>Episodes</span>
-            </button>
-            <button id="nav-ai-studio" onclick="switchTab('ai-studio')" class="nav-item flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
-                <i class="fa-solid fa-wand-magic-sparkles text-base"></i>
-                <span>AI Studio</span>
-            </button>
-            <button id="nav-game" onclick="switchTab('game')" class="nav-item flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
-                <i class="fa-solid fa-gamepad text-base"></i>
-                <span>Arcade</span>
-            </button>
-            <button id="nav-guide" onclick="switchTab('guide')" class="nav-item flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
-                <i class="fa-solid fa-seedling text-base"></i>
-                <span>Guide</span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- APK DOWNLOAD MODAL -->
-    <div id="apkModal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-[99999] hidden flex items-center justify-center p-4">
-        <div class="bg-[#1c0a35] border-2 border-emerald-400 rounded-3xl w-full max-w-sm p-5 space-y-4 shadow-2xl relative neon-glow-green">
-            <button onclick="closeApkModal()" class="absolute top-4 right-4 text-purple-400 hover:text-white">
-                <i class="fa-solid fa-xmark text-lg"></i>
-            </button>
-
-            <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-600 to-yellow-400 p-0.5 flex-shrink-0">
-                    <div class="w-full h-full bg-[#1c0a35] rounded-2xl flex items-center justify-center text-2xl">🍇</div>
-                </div>
-                <div>
-                    <h3 class="font-bold text-yellow-300 text-sm">Best Grapes King Live App</h3>
-                    <p class="text-xs text-emerald-400 font-semibold">Package: com.bestgrapeskinglive.official</p>
-                </div>
-            </div>
-
-            <p id="apkStatusText" class="text-xs text-purple-200 leading-relaxed">
-                Do you want to download the Android Package (.apk) to your device downloader?
-            </p>
-
-            <div id="apkProgressBg" class="w-full bg-[#0b0214] rounded-full h-3 overflow-hidden p-0.5 border border-purple-700/50 hidden">
-                <div id="apkProgressBar" class="bg-gradient-to-r from-emerald-400 to-yellow-400 h-full rounded-full w-0 transition-all duration-150"></div>
-            </div>
-
-            <div class="flex justify-end gap-2 pt-1" id="apkActionBtns">
-                <button onclick="closeApkModal()" class="bg-purple-900/60 text-purple-200 font-bold px-4 py-2 rounded-xl text-xs">Cancel</button>
-                <button onclick="executeRealChromeBlobDownload()" class="bg-emerald-400 text-gray-950 font-black px-5 py-2 rounded-xl text-xs shadow-lg">Start Download</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- SOURCE CODE VIEW MODAL -->
-    <div id="codeModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-[99999] hidden flex items-center justify-center p-3">
-        <div class="bg-[#130329] border border-blue-500 rounded-3xl w-full max-w-xl h-[80vh] p-4 flex flex-col justify-between space-y-3 relative">
-            <div class="flex justify-between items-center border-b border-purple-800/60 pb-2">
-                <h3 class="font-bold text-yellow-300 text-xs flex items-center gap-2">
-                    <i class="fa-solid fa-code text-blue-400"></i> Official HTML Source Code Script
-                </h3>
-                <button onclick="closeSourceCodeModal()" class="text-purple-400 hover:text-white">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
-            </div>
-
-            <textarea id="codeTextArea" readonly class="w-full flex-1 bg-[#0b0214] text-emerald-400 font-mono text-[11px] p-3 border border-purple-700/50 rounded-2xl outline-none resize-none select-all"></textarea>
-
-            <div class="flex justify-between items-center pt-1">
-                <span id="copyMsg" class="text-xs text-emerald-400 font-semibold hidden">✅ Code Copied to Clipboard!</span>
-                <button onclick="copyCodeToClipboard()" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2 px-5 rounded-xl flex items-center gap-1.5 ml-auto shadow-lg">
-                    <i class="fa-solid fa-copy"></i> Copy Code
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- VIDEO PLAYER MODAL -->
-    <div id="videoModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-[99990] hidden items-center justify-center p-4">
-        <div class="bg-[#130329] border border-purple-500/50 rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl relative">
-            <div class="flex justify-between items-center px-4 py-2.5 bg-[#0b0214] border-b border-purple-800/60">
-                <h3 id="modalVideoTitle" class="text-xs sm:text-sm font-bold text-yellow-300 truncate pr-4">Video</h3>
-                <button onclick="closeVideoModal()" class="text-purple-400 hover:text-white">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
-            </div>
-            <div class="aspect-video w-full bg-black">
-                <iframe id="videoIframe" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-
-    <!-- TOAST NOTIFICATION -->
-    <div id="toast" class="fixed top-4 right-4 z-[999999] bg-yellow-400 text-gray-950 px-3.5 py-2 rounded-2xl shadow-2xl font-bold text-xs hidden items-center gap-2">
-        <i class="fa-solid fa-circle-info"></i>
-        <span id="toastText">Notification</span>
-    </div>
-
-    <script>
-        let pwaPrompt = null;
-
-        // 🚀 REAL APK DOWNLOAD CONFIGURATION
-        // Upload your real BestGrapesKingLive.apk file to your GitHub Repository main folder!
-        const REAL_APK_DIRECT_URL = "./BestGrapesKingLive.apk";
-
-        const EPISODES_DATA = [
-            { id: "ufkGKvfRCZA", title: "Purple Grapes Season 3 - Episode 1: The Magic Garden", season: "s3", views: "142K", duration: "12:45" },
-            { id: "gTAsU8cnuiI", title: "Purple Grapes Season 3 - Episode 2: King's Golden Vine", season: "s3", views: "98K", duration: "10:15" },
-            { id: "7D3oQ2RCgVU", title: "Purple Grapes Season 3 - Episode 3: Secret Vineyard Trail", season: "s3", views: "110K", duration: "11:20" },
-            { id: "4sX_yY6bJgw", title: "Purple Grapes Season 3 - Episode 4: The Royal Harvest", season: "s3", views: "85K", duration: "09:50" },
-            { id: "sOlfwPgsiiQ", title: "Purple Grapes Season 2 - Episode 1: Kingdom Secrets", season: "s2", views: "250K", duration: "11:30" },
-            { id: "sOlfwPgsiiQ", title: "Purple Grapes Season 1 - Episode 1: The Origins", season: "s1", views: "520K", duration: "14:10" }
-        ];
-
-        window.onload = function() {
-            setupPwaManifest();
-            registerServiceWorker();
-            renderEpisodes(EPISODES_DATA);
-            initGameCanvas();
-
-            window.addEventListener('beforeinstallprompt', (e) => {
-                e.preventDefault();
-                pwaPrompt = e;
-                const btn = document.getElementById('pwaInstallHeaderBtn');
-                if(btn) btn.classList.add('animate-bounce');
             });
-        };
-
-        function setupPwaManifest() {
-            const manifestObj = {
-                name: "Best Grapes King LIVE",
-                short_name: "GrapesKing",
-                start_url: "./",
-                display: "standalone",
-                background_color: "#0b0214",
-                theme_color: "#5b11b8",
-                icons: [
-                    {
-                        src: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%235b11b8'/><text y='.9em' font-size='90'>🍇</text></svg>",
-                        sizes: "192x192 512x512",
-                        type: "image/svg+xml"
-                    }
-                ]
-            };
-            const manifestStr = URL.createObjectURL(new Blob([JSON.stringify(manifestObj)], {type: 'application/json'}));
-            document.getElementById('pwaManifestLink').setAttribute('href', manifestStr);
-        }
-
-        function registerServiceWorker() {
-            if ('serviceWorker' in navigator) {
-                const swCode = `
-                    self.addEventListener('install', (e) => self.skipWaiting());
-                    self.addEventListener('activate', (e) => self.clients.claim());
-                    self.addEventListener('fetch', (e) => e.respondWith(fetch(e.request).catch(() => caches.match(e.request))));
-                `;
-                const blob = new Blob([swCode], { type: 'text/javascript' });
-                navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(() => {});
-            }
-        }
-
-        function showToast(msg) {
-            const toast = document.getElementById('toast');
-            document.getElementById('toastText').innerText = msg;
-            toast.classList.remove('hidden');
-            toast.classList.add('flex');
-            setTimeout(() => toast.classList.add('hidden'), 3000);
-        }
-
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
-
-            const activeView = document.getElementById(`view-${tabId}`);
-            const activeNav = document.getElementById(`nav-${tabId}`);
-
-            if(activeView) activeView.classList.remove('hidden');
-            if(activeNav) activeNav.classList.add('active');
-
-            if(tabId === 'game' && !gameRunning) startGame();
-        }
-
-        function renderEpisodes(list) {
-            const grid = document.getElementById('episodesGrid');
-            grid.innerHTML = list.map(ep => `
-                <div class="glass-card rounded-2xl overflow-hidden border-purple-800/40 hover:border-purple-500 transition-all flex flex-col justify-between">
-                    <div class="relative aspect-video bg-purple-950/60 cursor-pointer" onclick="openVideoModal('${ep.id}', '${ep.title}')">
-                        <img src="https://img.youtube.com/vi/${ep.id}/hqdefault.jpg" alt="${ep.title}" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
-                            <div class="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg transform transition hover:scale-110">
-                                <i class="fa-solid fa-play text-sm ml-0.5"></i>
-                            </div>
-                        </div>
-                        <span class="absolute bottom-2 right-2 bg-black/80 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">${ep.duration}</span>
-                    </div>
-                    <div class="p-3 space-y-1">
-                        <h3 class="text-xs font-bold text-white truncate hover:text-yellow-300 cursor-pointer" onclick="openVideoModal('${ep.id}', '${ep.title}')">${ep.title}</h3>
-                        <div class="text-[10px] text-purple-300/80"><i class="fa-solid fa-eye text-purple-400"></i> ${ep.views} views</div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function filterEpisodes(season) {
-            if(season === 'all') renderEpisodes(EPISODES_DATA);
-            else renderEpisodes(EPISODES_DATA.filter(e => e.season === season));
-        }
-
-        function searchEpisodes() {
-            const query = document.getElementById('episodeSearch').value.toLowerCase();
-            renderEpisodes(EPISODES_DATA.filter(e => e.title.toLowerCase().includes(query)));
-        }
-
-        function openVideoModal(id, title) {
-            document.getElementById('modalVideoTitle').innerText = title;
-            document.getElementById('videoIframe').src = `https://www.youtube.com/embed/${id}?autoplay=1`;
-            document.getElementById('videoModal').classList.remove('hidden');
-            document.getElementById('videoModal').classList.add('flex');
-        }
-
-        function closeVideoModal() {
-            document.getElementById('videoIframe').src = '';
-            document.getElementById('videoModal').classList.add('hidden');
-            document.getElementById('videoModal').classList.remove('flex');
-        }
-
-        async function generateAiVideoAndAudio() {
-            const promptInput = document.getElementById('aiPrompt').value.trim();
-            const voicePreset = document.getElementById('aiVoice').value;
-
-            if(!promptInput) {
-                showToast("Please enter a prompt or concept for AI!");
-                return;
-            }
-
-            const loader = document.getElementById('aiStatus');
-            const resultBox = document.getElementById('aiOutputArea');
-            const audioBox = document.getElementById('aiAudioBtnContainer');
-
-            loader.classList.remove('hidden');
-            resultBox.classList.add('hidden');
-
-            try {
-                let generatedImageUrl = await callGeminiImageApi(promptInput);
-
-                if (generatedImageUrl) {
-                    const imgContainer = document.getElementById('aiImageContainer');
-                    imgContainer.innerHTML = `<img src="${generatedImageUrl}" class="w-full h-auto rounded-lg object-cover max-h-80 shadow-lg" alt="AI Generated Poster">`;
-                } else {
-                    renderCanvasVideoPreview(promptInput);
-                }
-
-                audioBox.innerHTML = `
-                    <button id="geminiAudioBtn" onclick="playGeminiVoiceover('${promptInput.replace(/'/g, "\\'")}', '${voicePreset}')" class="bg-gradient-to-r from-emerald-400 to-green-500 hover:from-emerald-500 hover:to-green-600 text-gray-950 font-black px-4 py-2 rounded-xl text-xs inline-flex items-center gap-2 shadow-lg transition active:scale-95">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i> Play Gemini Speech Voice
-                    </button>
-                    <button onclick="speakBrowserFallback('${promptInput.replace(/'/g, "\\'")}')" class="bg-purple-800 hover:bg-purple-700 text-white font-bold px-3 py-2 rounded-xl text-xs inline-flex items-center gap-1.5 shadow">
-                        <i class="fa-solid fa-volume-high"></i> System TTS
-                    </button>
-                `;
-
-                playGeminiVoiceover(promptInput, voicePreset);
-
-                loader.classList.add('hidden');
-                resultBox.classList.remove('hidden');
-                showToast("AI Media Content Generated!");
-            } catch (err) {
-                renderCanvasVideoPreview(promptInput);
-                loader.classList.add('hidden');
-                resultBox.classList.remove('hidden');
-                showToast("Generated with Canvas preview!");
-            }
-        }
-
-        async function callGeminiImageApi(promptText) {
-            try {
-                const payload = {
-                    contents: [{
-                        parts: [{ text: `A vibrant high quality cartoon scene artwork for Best Grapes King cartoon channel: ${promptText}` }]
-                    }],
-                    generationConfig: {
-                        responseModalities: ['TEXT', 'IMAGE']
-                    }
-                };
-                const apiKey = "";
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-image:generateContent?key=${apiKey}`;
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                const result = await response.json();
-                const base64Data = result?.candidates?.[0]?.content?.parts?.find(p => p.inlineData)?.inlineData?.data;
-                if (base64Data) {
-                    return `data:image/png;base64,${base64Data}`;
-                }
-            } catch (e) {
-                console.warn("Gemini Image API fallback triggered", e);
-            }
-            return null;
-        }
-
-        async function playGeminiVoiceover(text, voiceName) {
-            const btn = document.getElementById('geminiAudioBtn');
-            if(btn) btn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> Generating Voice...`;
-
-            try {
-                const payload = {
-                    contents: [{
-                        parts: [{ text: `Say with enthusiasm: ${text}` }]
-                    }],
-                    generationConfig: {
-                        responseModalities: ["AUDIO"],
-                        speechConfig: {
-                            voiceConfig: {
-                                prebuiltVoiceConfig: { voiceName: voiceName || "Kore" }
-                            }
-                        }
-                    }
-                };
-                const apiKey = "";
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                const result = await response.json();
-                const part = result?.candidates?.[0]?.content?.parts?.[0];
-                const audioData = part?.inlineData?.data;
-                const mimeType = part?.inlineData?.mimeType;
-
-                if (audioData && mimeType) {
-                    const sampleRateMatch = mimeType.match(/rate=(\d+)/);
-                    const sampleRate = sampleRateMatch ? parseInt(sampleRateMatch[1], 10) : 24000;
-                    const pcmData = base64ToArrayBuffer(audioData);
-                    const pcm16 = new Int16Array(pcmData);
-                    const wavBlob = pcmToWav(pcm16, sampleRate);
-                    const audioUrl = URL.createObjectURL(wavBlob);
-                    
-                    const audio = new Audio(audioUrl);
-                    audio.play();
-                    if(btn) btn.innerHTML = `<i class="fa-solid fa-volume-high"></i> Replay Voice`;
-                    return;
-                }
-            } catch (err) {
-                console.warn("Falling back to system speech", err);
-            }
-            
-            speakBrowserFallback(text);
-            if(btn) btn.innerHTML = `<i class="fa-solid fa-volume-high"></i> Replay Voice`;
-        }
-
-        function base64ToArrayBuffer(base64) {
-            const binaryString = window.atob(base64);
-            const len = binaryString.length;
-            const bytes = new Uint8Array(len);
-            for (let i = 0; i < len; i++) {
-                bytes[i] = binaryString.charCodeAt(i);
-            }
-            return bytes.buffer;
-        }
-
-        function pcmToWav(pcm16, sampleRate) {
-            const numChannels = 1;
-            const sampleBits = 16;
-            const dataByteLength = pcm16.length * 2;
-            const buffer = new ArrayBuffer(44 + dataByteLength);
-            const view = new DataView(buffer);
-
-            const writeString = (v, offset, str) => {
-                for (let i = 0; i < str.length; i++) v.setUint8(offset + i, str.charCodeAt(i));
-            };
-
-            writeString(view, 0, 'RIFF');
-            view.setUint32(4, 36 + dataByteLength, true);
-            writeString(view, 8, 'WAVE');
-            writeString(view, 12, 'fmt ');
-            view.setUint32(16, 16, true);
-            view.setUint16(20, 1, true);
-            view.setUint16(22, numChannels, true);
-            view.setUint32(24, sampleRate, true);
-            view.setUint32(28, sampleRate * numChannels * (sampleBits / 8), true);
-            view.setUint16(32, numChannels * (sampleBits / 8), true);
-            view.setUint16(34, sampleBits, true);
-            writeString(view, 36, 'data');
-            view.setUint32(40, dataByteLength, true);
-
-            let offset = 44;
-            for (let i = 0; i < pcm16.length; i++, offset += 2) {
-                view.setInt16(offset, pcm16[i], true);
-            }
-
-            return new Blob([buffer], { type: 'audio/wav' });
-        }
-
-        function speakBrowserFallback(text) {
-            if('speechSynthesis' in window) {
-                window.speechSynthesis.cancel();
-                const utterance = new SpeechSynthesisUtterance(text);
-                window.speechSynthesis.speak(utterance);
-            }
-        }
-
-        function renderCanvasVideoPreview(text) {
-            const imgContainer = document.getElementById('aiImageContainer');
-            imgContainer.innerHTML = `<canvas id="videoCanvas" width="640" height="360" class="w-full rounded-lg block"></canvas>`;
-            
-            const canvas = document.getElementById('videoCanvas');
-            if(!canvas) return;
-            const ctx = canvas.getContext('2d');
-            let frame = 0;
-
-            function animate() {
-                if(!document.getElementById('videoCanvas')) return;
-                frame++;
-                ctx.fillStyle = '#0b0214';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-                ctx.font = '42px sans-serif';
-                ctx.textAlign = 'center';
-                ctx.fillText('🍇👑', canvas.width/2, 120 + Math.sin(frame * 0.05) * 8);
-
-                ctx.fillStyle = '#ffeb3b';
-                ctx.font = 'bold 18px Outfit, sans-serif';
-                ctx.fillText('BEST GRAPES KING LIVE AI', canvas.width/2, 190);
-
-                ctx.fillStyle = '#ffffff';
-                ctx.font = '12px Outfit, sans-serif';
-                ctx.fillText(text.slice(0, 42) + '...', canvas.width/2, 230);
-
-                requestAnimationFrame(animate);
-            }
-            animate();
-        }
-
-        function triggerPwaInstall() {
-            if (pwaPrompt) {
-                pwaPrompt.prompt();
-            } else {
-                startApkInstaller();
-            }
-        }
-
-        function startApkInstaller() {
-            document.getElementById('apkModal').classList.remove('hidden');
-            document.getElementById('apkModal').classList.add('flex');
-            document.getElementById('apkProgressBg').classList.add('hidden');
-            document.getElementById('apkProgressBar').style.width = '0%';
-            document.getElementById('apkStatusText').innerText = "Click below to start direct Chrome download for Android (.apk) package.";
-        }
-
-        function closeApkModal() {
-            document.getElementById('apkModal').classList.add('hidden');
-            document.getElementById('apkModal').classList.remove('flex');
-        }
-
-        function executeRealChromeBlobDownload() {
-            let pBg = document.getElementById('apkProgressBg');
-            let pBar = document.getElementById('apkProgressBar');
-            let status = document.getElementById('apkStatusText');
-            let btns = document.getElementById('apkActionBtns');
-
-            pBg.classList.remove('hidden');
-            btns.style.display = 'none';
-            status.innerText = "Connecting to Chrome Download Manager...";
-
-            let width = 0;
-            let timer = setInterval(() => {
-                if(width >= 100) {
-                    clearInterval(timer);
-
-                    // Check if REAL_APK_DIRECT_URL exists and trigger direct download
-                    if (REAL_APK_DIRECT_URL && REAL_APK_DIRECT_URL.length > 0) {
-                        const link = document.createElement('a');
-                        link.href = REAL_APK_DIRECT_URL;
-                        link.download = 'BestGrapesKingLive_v2.8.4.apk';
-                        link.setAttribute('target', '_blank');
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
-                    } else {
-                        // Generated 10MB simulated package fallback
-                        const chunkSize = 1024 * 1024; // 1MB
-                        const totalChunks = 10; // 10MB package
-                        const dummyBuffer = new Uint8Array(chunkSize * totalChunks);
-                        
-                        // ZIP Header
-                        dummyBuffer[0] = 0x50; dummyBuffer[1] = 0x4B; dummyBuffer[2] = 0x03; dummyBuffer[3] = 0x04;
-                        
-                        const blob = new Blob([dummyBuffer], { type: 'application/vnd.android.package-archive' });
-                        const blobUrl = URL.createObjectURL(blob);
-
-                        const link = document.createElement('a');
-                        link.href = blobUrl;
-                        link.download = 'BestGrapesKingLive_v2.8.4.apk';
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
-                        setTimeout(() => URL.revokeObjectURL(blobUrl), 10000);
-                    }
-
-                    status.innerHTML = "<strong class='text-emerald-400'>✅ Real APK Download Started!</strong><br><span class='text-[11px] text-purple-200'>Check your Chrome Downloads notification above.</span>";
-                    btns.style.display = 'flex';
-                    btns.innerHTML = `<button onclick="closeApkModal()" class="bg-emerald-400 text-gray-950 font-black px-6 py-2 rounded-xl text-xs w-full shadow-lg">Done</button>`;
-                    showToast("Chrome Direct Download Started!");
-                } else {
-                    width += 20;
-                    pBar.style.width = width + '%';
-                }
-            }, 60);
-        }
-
-        function openSourceCodeModal() {
-            document.getElementById('codeTextArea').value = document.documentElement.outerHTML;
-            document.getElementById('codeModal').classList.remove('hidden');
-            document.getElementById('codeModal').classList.add('flex');
-        }
-
-        function closeSourceCodeModal() {
-            document.getElementById('codeModal').classList.add('hidden');
-            document.getElementById('codeModal').classList.remove('flex');
-        }
-
-        function copyCodeToClipboard() {
-            const textArea = document.getElementById('codeTextArea');
-            textArea.select();
-            document.execCommand('copy');
-            const copyMsg = document.getElementById('copyMsg');
-            copyMsg.classList.remove('hidden');
-            setTimeout(() => copyMsg.classList.add('hidden'), 2500);
-            showToast("HTML Source Code copied to clipboard!");
-        }
-
-        let canvas, ctx;
-        let basket = { x: 160, y: 230, w: 70, h: 25 };
-        let grapes = [];
-        let gameScore = 0;
-        let gameRunning = false, gameLoopId = null;
-
-        function initGameCanvas() {
-            canvas = document.getElementById('gameCanvas');
-            if(!canvas) return;
-            ctx = canvas.getContext('2d');
-            canvas.width = 400; canvas.height = 270;
-
-            const handleMove = (clientX) => {
-                if(!gameRunning) return;
-                const rect = canvas.getBoundingClientRect();
-                const touchX = (clientX - rect.left) * (canvas.width / rect.width);
-                basket.x = Math.max(0, Math.min(canvas.width - basket.w, touchX - basket.w/2));
-            };
-
-            canvas.addEventListener('mousemove', (e) => handleMove(e.clientX));
-            canvas.addEventListener('touchmove', (e) => {
-                if(e.touches && e.touches[0]) handleMove(e.touches[0].clientX);
-            }, { passive: true });
-        }
-
-        function startGame() {
-            document.getElementById('gameOverlay').classList.add('hidden');
-            gameScore = 0; grapes = [];
-            document.getElementById('gameScore').innerText = '0';
-            gameRunning = true;
-            if(gameLoopId) cancelAnimationFrame(gameLoopId);
-            gameLoop();
-        }
-
-        function gameLoop() {
-            if(!gameRunning) return;
-            ctx.fillStyle = "#0b0214";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            if(Math.random() < 0.05) {
-                grapes.push({ x: Math.random() * (canvas.width - 20) + 10, y: -10, r: 9, speed: 2.2 + Math.random() * 2 });
-            }
-
-            for(let i = grapes.length - 1; i >= 0; i--) {
-                let g = grapes[i];
-                g.y += g.speed;
-                ctx.beginPath();
-                ctx.arc(g.x, g.y, g.r, 0, Math.PI * 2);
-                ctx.fillStyle = '#9c27b0';
-                ctx.fill();
-
-                if(g.y + g.r >= basket.y && g.x >= basket.x && g.x <= basket.x + basket.w) {
-                    gameScore += 10;
-                    document.getElementById('gameScore').innerText = gameScore;
-                    grapes.splice(i, 1);
-                    continue;
-                }
-                if(g.y > canvas.height + 20) grapes.splice(i, 1);
-            }
-
-            ctx.fillStyle = "#ffeb3b";
-            ctx.fillRect(basket.x, basket.y, basket.w, basket.h);
-            gameLoopId = requestAnimationFrame(gameLoop);
-        }
-
-        function changeWebsiteLanguage() {
-            const lang = document.getElementById('siteLang').value;
-            const dict = {
-                en: { sub: "Official YouTube Hub, Purple Grapes Series & AI Studio. Direct Chrome Install & APK Download Available!", subBtn: "Subscribe YouTube Channel" },
-                ur: { sub: "آفیشل یوٹیوب ہب، پرپل گریپس سیریز اور AI اسٹوڈیو۔ براہ راست انسٹال اور اے پی کے ڈاؤن لوڈ کریں!", subBtn: "یوٹیوب چینل کو سبسکرائب کریں" },
-                pa: { sub: "ਓਫੀਸ਼ੀਅਲ ਯੂਟਿਊਬ ਹਬ, ਪਰਪਲ ਗ੍ਰੇਪਸ ਸੀਰੀਜ਼ ਅਤੇ AI ਸਟੂਡੀਓ। ਡਾਇਰੈਕਟ ਇੰਸਟਾਲ ਅਤੇ APK ਡਾਊਨਲੋਡ ਕਰੋ!", subBtn: "ਯੂਟਿਊਬ ਚੈਨਲ ਨੂੰ ਸਬਸਕ੍ਰਾਈਬ ਕਰੋ" },
-                ar: { sub: "المركز الرسمي لليوتيوب، سلسلة العنب الأرجواني واستوديو الذكاء الاصطناعي!", subBtn: "اشترك في قناة اليوتيوب" },
-                es: { sub: "¡Hub oficial de YouTube, Serie Purple Grapes y Estudio de IA!", subBtn: "Suscribirse al canal de YouTube" }
-            };
-            
-            if(dict[lang]) {
-                document.getElementById('appSub').innerText = dict[lang].sub;
-                document.getElementById('btnSubText').innerText = dict[lang].subBtn;
-            }
-            showToast(`Language switched: ${lang.toUpperCase()}`);
         }
     </script>
 </body>
 </html>
-
-```
