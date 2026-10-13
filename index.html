@@ -3,52 +3,352 @@
 <html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Best Grapes King LIVE | Official Web App & AI Studio</title>
-
-    <!-- Google Site Verification Tag -->
-    <meta name="google-site-verification" content="f8Y0j9sO6L9wG0f-X4X8_Y1Z2a3b4c5d" />
-
-    <!-- Web App & PWA Settings -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Grapes King">
-    <meta name="theme-color" content="#5b11b8">
-
-    <!-- Dynamic PWA Manifest Generator Link -->
-    <link rel="manifest" id="pwaManifestLink">
-
-    <!-- Tailwind CSS & Font Awesome Icons -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Grapes King Live 🍇 - Arcade & Vineyard Masterclass</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-
-    <style>
-        * {
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-
-        body {
-            background-color: #0b0214;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-            padding-bottom: 80px;
-            overflow-x: hidden;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-
-        /* Standalone PWA Safe Area Adjustments */
-        @media display-mode: standalone {
-            body {
-                padding-top: env(safe-area-inset-top);
-                padding-bottom: calc(80px + env(safe-area-inset-bottom));
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        grape: {
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7e22ce',
+                            800: '#6b21a8',
+                            900: '#581c87',
+                            950: '#2e1065',
+                        },
+                        kingGold: '#facc15',
+                        kingEmerald: '#10b981',
+                        kingRuby: '#ef4444'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Segoe UI', 'system-ui', 'sans-serif'],
+                    }
+                }
             }
         }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@300;400;600;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f051d;
+            color: #f3e8ff;
+            overflow-x: hidden;
+            user-select: none;
+        }
+
+        .heading-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        /* Glassmorphism containers */
+        .glass-panel {
+            background: rgba(46, 16, 101, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(168, 85, 247, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-panel-gold {
+            background: rgba(59, 7, 100, 0.7);
+            border: 1px solid rgba(250, 204, 21, 0.4);
+            box-shadow: 0 0 20px rgba(250, 204, 21, 0.15);
+        }
+
+        /* Custom Scrollbars */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e1b4b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #7e22ce;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a855f7;
+        }
+
+        /* Glowing Effects */
+        .glow-purple {
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
+        }
+        .glow-gold {
+            box-shadow: 0 0 25px rgba(250, 204, 21, 0.6);
+        }
+
+        /* Keyframe animations */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(3deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.03); }
+        }
+        .pulse-btn {
+            animation: pulse-glow 2s infinite;
+        }
+
+        /* Canvas game canvas responsive styling */
+        #runnerCanvas {
+            background: linear-gradient(180deg, #1e1b4b 0%, #3b0764 40%, #2e1065 100%);
+            border-radius: 12px;
+            touch-action: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-purple-500 selection:text-white">
+
+    <!-- Top Global Header -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-purple-800/50 px-4 py-3">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('runner')">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-purple-700 via-grape-500 to-yellow-400 p-0.5 shadow-lg flex items-center justify-center animate-float">
+                    <div class="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center text-2xl">
+                        🍇
+                    </div>
+                </div>
+                <div>
+                    <h1 class="heading-font text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-purple-300 to-yellow-400 drop-shadow">
+                        BEST GRAPES KING LIVE
+                    </h1>
+                    <p class="text-[11px] text-purple-300 font-medium tracking-wide flex items-center gap-1.5">
+                        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        SEASON 2026 • ROYAL VINEYARD EDITION
+                    </p>
+                </div>
+            </div>
+
+            <!-- Global Player Wallet / Stats -->
+            <div class="flex items-center gap-2 sm:gap-4 bg-purple-950/80 px-3 py-1.5 rounded-xl border border-purple-700/50 text-xs sm:text-sm font-semibold">
+                <div class="flex items-center gap-1.5 text-yellow-400" title="Total Grapes Harvested">
+                    <span class="text-base">🍇</span>
+                    <span id="global-grapes-display">0</span>
+                </div>
+                <div class="h-4 w-px bg-purple-800"></div>
+                <div class="flex items-center gap-1.5 text-amber-300" title="Royal Coins">
+                    <span class="text-base">🪙</span>
+                    <span id="global-coins-display">150</span>
+                </div>
+                <div class="h-4 w-px bg-purple-800"></div>
+                <button onclick="toggleAudio()" id="sound-btn" class="p-1.5 hover:bg-purple-800/50 rounded-lg text-purple-300 transition" title="Toggle Sound">
+                    <i class="fa-solid fa-volume-high"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs Bar -->
+    <nav class="bg-purple-950/90 border-b border-purple-800/40 px-2 py-2 sticky top-[65px] z-40 backdrop-blur-md">
+        <div class="max-w-4xl mx-auto flex justify-center sm:justify-around items-center gap-1 sm:gap-2 overflow-x-auto no-scrollbar py-1">
+            <button id="nav-runner" onclick="switchTab('runner')" class="tab-btn active px-3 sm:px-5 py-2 rounded-xl font-bold text-xs sm:text-sm transition flex items-center gap-2 whitespace-nowrap bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg shadow-purple-900/50">
+                <i class="fa-solid fa-gamepad"></i> 3D Grape Runner
+            </button>
+            <button id="nav-hub" onclick="switchTab('hub')" class="tab-btn px-3 sm:px-5 py-2 rounded-xl font-bold text-xs sm:text-sm transition flex items-center gap-2 whitespace-nowrap text-purple-300 hover:bg-purple-900/40">
+                <i class="fa-solid fa-th"></i> 200 Games Hub
+            </button>
+            <button id="nav-sim" onclick="switchTab('sim')" class="tab-btn px-3 sm:px-5 py-2 rounded-xl font-bold text-xs sm:text-sm transition flex items-center gap-2 whitespace-nowrap text-purple-300 hover:bg-purple-900/40">
+                <i class="fa-solid fa-seedling"></i> Vineyard Idle Sim
+            </button>
+            <button id="nav-guide" onclick="switchTab('guide')" class="tab-btn px-3 sm:px-5 py-2 rounded-xl font-bold text-xs sm:text-sm transition flex items-center gap-2 whitespace-nowrap text-purple-300 hover:bg-purple-900/40">
+                <i class="fa-solid fa-book-open"></i> Growing Masterclass
+            </button>
+            <button id="nav-trophy" onclick="switchTab('trophy')" class="tab-btn px-3 sm:px-5 py-2 rounded-xl font-bold text-xs sm:text-sm transition flex items-center gap-2 whitespace-nowrap text-purple-300 hover:bg-purple-900/40">
+                <i class="fa-solid fa-trophy text-yellow-400"></i> Royal Vault
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Dynamic Content Container -->
+    <main class="flex-1 max-w-7xl w-full mx-auto p-3 sm:p-5">
+
+        <!-- TAB 1: 3D Grape Runner Endless Arcade Engine -->
+        <section id="tab-runner" class="tab-content space-y-4">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 items-start">
+                
+                <!-- Left Sidebar Controls / Perks -->
+                <div class="glass-panel rounded-2xl p-4 space-y-4 lg:col-span-1">
+                    <h3 class="heading-font text-lg font-bold text-yellow-400 flex items-center gap-2">
+                        <i class="fa-solid fa-user-gear"></i> Royal Berry Heroes
+                    </h3>
+                    <p class="text-xs text-purple-300">Choose your grape champion to enter the endless track!</p>
+                    
+                    <div class="grid grid-cols-3 gap-2" id="character-selector">
+                        <!-- Populated by JS -->
+                    </div>
+
+                    <!-- Selected Hero Stats Box -->
+                    <div id="hero-info" class="bg-purple-950/80 rounded-xl p-3 border border-purple-700/40 space-y-2">
+                        <div class="flex justify-between items-center text-sm font-bold text-yellow-300">
+                            <span id="hero-name">Purple Concord King</span>
+                            <span id="hero-emoji" class="text-xl">🍇</span>
+                        </div>
+                        <p id="hero-desc" class="text-[11px] text-purple-200">Balanced stats. Earns 1.2x points on golden bunches!</p>
+                        <div class="space-y-1">
+                            <div class="flex justify-between text-[10px] text-purple-300">
+                                <span>Speed: <b id="hero-stat-speed">Medium</b></span>
+                                <span>Shield: <b id="hero-stat-shield">1 Hit</b></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 pt-2 border-t border-purple-800/40">
+                        <h4 class="text-xs font-bold text-purple-300">Controls & Powerups:</h4>
+                        <ul class="text-[11px] space-y-1 text-purple-200">
+                            <li class="flex items-center gap-2"><span class="px-1.5 py-0.5 bg-purple-900 border border-purple-600 rounded text-[10px]">← / A</span> <span class="px-1.5 py-0.5 bg-purple-900 border border-purple-600 rounded text-[10px]">→ / D</span> Move Lane</li>
+                            <li class="flex items-center gap-2"><span class="px-1.5 py-0.5 bg-purple-900 border border-purple-600 rounded text-[10px]">Space / ↑</span> Jump Over Hazards</li>
+                            <li class="flex items-center gap-2"><span class="text-amber-400">🛡️ Juice Shield:</span> Absorbs 1 collision</li>
+                            <li class="flex items-center gap-2"><span class="text-yellow-300">🧲 Grape Magnet:</span> Attracts distant grapes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Main Game Screen Canvas -->
+                <div class="glass-panel rounded-2xl p-4 lg:col-span-3 flex flex-col items-center justify-center relative overflow-hidden">
+                    
+                    <!-- HUD overlay inside Canvas Container -->
+                    <div class="w-full max-w-[500px] flex justify-between items-center bg-purple-950/90 px-4 py-2 rounded-xl mb-3 border border-purple-700/50 font-bold text-sm text-yellow-400">
+                        <div class="flex items-center gap-2">
+                            <span>🍇 Session:</span>
+                            <span id="run-grapes" class="text-white text-base">0</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span>⚡ Multiplier:</span>
+                            <span id="run-multiplier" class="text-emerald-400">1.0x</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span>⭐ Score:</span>
+                            <span id="run-score" class="text-yellow-300 text-lg">0</span>
+                        </div>
+                    </div>
+
+                    <div class="relative w-full max-w-[500px] aspect-[4/3] flex items-center justify-center">
+                        <canvas id="runnerCanvas" width="500" height="380" class="w-full h-full shadow-2xl border-2 border-purple-500/40 rounded-2xl cursor-pointer"></canvas>
+
+                        <!-- Start / Game Over Overlay -->
+                        <div id="game-overlay" class="absolute inset-0 bg-slate-950/85 backdrop-blur-sm rounded-2xl flex flex-col items-center justify-center p-6 text-center z-20 space-y-4">
+                            <div class="w-16 h-16 rounded-full bg-purple-600/30 border-2 border-purple-400 flex items-center justify-center text-4xl animate-bounce">
+                                🍇
+                            </div>
+                            <h2 id="overlay-title" class="heading-font text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-purple-300">
+                                READY TO RUN, KING?
+                            </h2>
+                            <p id="overlay-subtitle" class="text-xs sm:text-sm text-purple-200 max-w-xs">
+                                Dodge wooden crates & raven birds while harvesting high-value grapes across 3 vineyard lanes!
+                            </p>
+                            <button id="start-btn" onclick="startRunnerGame()" class="pulse-btn px-8 py-3 bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-500 text-slate-950 font-extrabold rounded-2xl text-base sm:text-lg shadow-xl shadow-yellow-500/20 hover:scale-105 active:scale-95 transition">
+                                <i class="fa-solid fa-play mr-2"></i> START RUN
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Touch Controls for Mobile Devices -->
+                    <div class="w-full max-w-[500px] grid grid-cols-3 gap-2 mt-3 sm:hidden">
+                        <button onclick="handleMobileMove(-1)" class="py-3 bg-purple-900/80 rounded-xl font-bold text-white text-lg active:bg-purple-700">
+                            ◀ LEFT
+                        </button>
+                        <button onclick="handleMobileJump()" class="py-3 bg-yellow-500/80 rounded-xl font-bold text-slate-950 text-lg active:bg-yellow-400">
+                            ▲ JUMP
+                        </button>
+                        <button onclick="handleMobileMove(1)" class="py-3 bg-purple-900/80 rounded-xl font-bold text-white text-lg active:bg-purple-700">
+                            RIGHT ▶
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: 200 Games Hub with Search, Categories & Modal Mini-Game Engine -->
+        <section id="tab-hub" class="tab-content hidden space-y-4">
+            
+            <!-- Hub Controls Header -->
+            <div class="glass-panel p-4 rounded-2xl flex flex-wrap items-center justify-between gap-3">
+                <div>
+                    <h2 class="heading-font text-xl font-bold text-yellow-400 flex items-center gap-2">
+                        <i class="fa-solid fa-gamepad"></i> 200 Viral Grapes Games Directory
+                    </h2>
+                    <p class="text-xs text-purple-300">Instant browser-ready mini-games and grape-themed arcade challenges!</p>
+                </div>
+
+                <!-- Search and Filter Bar -->
+                <div class="flex items-center gap-2 w-full md:w-auto">
+                    <div class="relative flex-1 md:w-64">
+                        <i class="fa-solid fa-search absolute left-3 top-3 text-purple-400 text-xs"></i>
+                        <input type="text" id="game-search" oninput="filterGamesHub()" placeholder="Search 200 games..." class="w-full bg-purple-950/80 border border-purple-700 rounded-xl pl-9 pr-3 py-2 text-xs text-white placeholder-purple-400 focus:outline-none focus:border-yellow-400">
+                    </div>
+                    <select id="game-category-select" onchange="filterGamesHub()" class="bg-purple-950/80 border border-purple-700 rounded-xl px-3 py-2 text-xs text-purple-200 focus:outline-none focus:border-yellow-400">
+                        <option value="ALL">All Categories</option>
+                        <option value="ARCADE">Arcade</option>
+                        <option value="PUZZLE">Puzzle / Match</option>
+                        <option value="ACTION">Action / Ninja</option>
+                        <option value="CASUAL">Casual</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Featured Live Playable Mini-Games Bar -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div onclick="openMiniGame('ninja')" class="glass-panel p-3.5 rounded-2xl flex items-center gap-3 cursor-pointer hover:border-yellow-400 transition group">
+                    <div class="w-12 h-12 rounded-xl bg-red-600/30 border border-red-500/50 flex items-center justify-center text-2xl group-hover:scale-110 transition">
+                        🥷
+                    </div>
+                    <div>
+                        <span class="text-[10px] bg-red-500/20 text-red-300 px-2 py-0.5 rounded-full font-bold">LIVE MINI-GAME</span>
+                        <h4 class="font-bold text-sm text-purple-100 group-hover:text-yellow-300">Grape Ninja Slice</h4>
+                        <p class="text-[11px] text-purple-300">Slice flying berries!</p>
+                    </div>
+                </div>
+
+                <div onclick="openMiniGame('crush')" class="glass-panel p-3.5 rounded-2xl flex items-center gap-3 cursor-pointer hover:border-yellow-400 transition group">
+                    <div class="w-12 h-12 rounded-xl bg-purple-600/30 border border-purple-500/50 flex items-center justify-center text-2xl group-hover:scale-110 transition">
+                        🍇
+                    </div>
+                    <div>
+                        <span class="text-[10px] bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded-full font-bold">LIVE MINI-GAME</span>
+                        <h4 class="font-bold text-sm text-purple-100 group-hover:text-yellow-300">Grape Crush Match-3</h4>
+                        <p class="text-[11px] text-purple-300">Swap and clear vines!</p>
+                    </div>
+                </div>
+
+                <div onclick="openMiniGame('flappy')" class="glass-panel p-3.5 rounded-2xl flex items-center gap-3 cursor-pointer hover:border-yellow-400 transition group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-600/30 border border-emerald-500/50 flex items-center justify-center text-2xl group-hover:scale-110 transition">
+                        🦅
+                    </div>
+                    <div>
+                        <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full font-bold">LIVE MINI-GAME</span>
+                        <h4 class="font-bold text-sm text-purple-100 group-hover:text-yellow-300">Flappy King Berry</h4>
+                        <p class="text-[11px] text-purple-300">Tap to float through gates!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 200 Games Grid -->
+            <
+
 
         /* Custom Scrollbars */
         ::-webkit-scrollbar {
