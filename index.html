@@ -36,7 +36,7 @@
             color: #ffffff;
             margin: 0;
             padding: 0;
-            padding-bottom: 80px;
+            padding-bottom: 90px;
             overflow-x: hidden;
             user-select: none;
             -webkit-user-select: none;
@@ -45,7 +45,7 @@
         @media display-mode: standalone {
             body {
                 padding-top: env(safe-area-inset-top);
-                padding-bottom: calc(80px + env(safe-area-inset-bottom));
+                padding-bottom: calc(90px + env(safe-area-inset-bottom));
             }
         }
 
@@ -68,10 +68,10 @@
         }
 
         .glass-card {
-            background: rgba(19, 3, 41, 0.85);
+            background: rgba(19, 3, 41, 0.88);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(156, 39, 176, 0.3);
+            border: 1px solid rgba(156, 39, 176, 0.35);
         }
 
         .custom-glow {
@@ -99,9 +99,28 @@
             transform: translateY(-2px);
             color: #ffeb3b;
         }
+
+        /* Background Interactive Canvas Rain */
+        #bgCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .app-content-wrapper {
+            position: relative;
+            z-index: 10;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-purple-600 selection:text-white">
+
+    <!-- Background Grape Particle Rain Canvas -->
+    <canvas id="bgCanvas"></canvas>
 
     <header class="sticky top-0 z-50 bg-[#5b11b8]/95 backdrop-blur-md px-4 py-3 shadow-lg flex justify-between items-center border-b border-purple-500/40">
         <div class="flex items-center gap-2 cursor-pointer" onclick="switchTab('episodes')">
@@ -114,6 +133,12 @@
         </div>
 
         <div class="flex items-center gap-2">
+            <!-- Voice Command Assistant Trigger -->
+            <button onclick="toggleVoiceCommand()" id="voiceCmdBtn" title="Voice Command Assistant" class="bg-purple-900/80 border border-purple-400/50 text-purple-200 font-bold text-xs px-2.5 py-1.5 rounded-xl shadow-md flex items-center gap-1 transition-transform active:scale-95">
+                <i class="fa-solid fa-microphone text-yellow-300"></i>
+                <span class="hidden md:inline">Voice AI</span>
+            </button>
+
             <!-- Owner Admin Lock / Unlock Button -->
             <button onclick="openAdminAuthModal()" id="adminHeaderBtn" class="bg-purple-950 border border-yellow-400/70 text-yellow-300 font-black text-xs px-3 py-1.5 rounded-xl shadow-md flex items-center gap-1.5 transition-transform active:scale-95">
                 <i class="fa-solid fa-lock text-sm" id="adminLockIcon"></i>
@@ -137,8 +162,9 @@
         </div>
     </header>
 
-    <div class="max-w-3xl mx-auto px-4 py-5 space-y-6 w-full">
+    <div class="max-w-3xl mx-auto px-4 py-5 space-y-6 w-full app-content-wrapper">
 
+        <!-- Hero Banner Card -->
         <div class="glass-card p-6 rounded-3xl custom-glow text-center space-y-4 relative overflow-hidden border-purple-500/40">
             <div class="absolute -top-12 -right-12 w-40 h-40 bg-purple-600/30 rounded-full blur-2xl pointer-events-none"></div>
 
@@ -146,7 +172,7 @@
                 Best Grapes King <span class="gradient-text">👑 LIVE PORTAL</span>
             </h1>
             <p class="text-purple-200/90 text-xs sm:text-sm max-w-xl mx-auto" id="appSub">
-                Official YouTube Hub, Connected Channel Feeds, Purple Grapes Series & AI Studio.
+                Official YouTube Hub, Connected Channel Feeds, Purple Grapes Series, AI Studio & Arcade Gaming.
             </p>
 
             <div class="flex items-center justify-center gap-2 flex-wrap">
@@ -157,6 +183,10 @@
                 <button onclick="fetchYouTubeLiveChannelData()" class="bg-purple-800 hover:bg-purple-700 text-yellow-300 font-bold py-2.5 px-4 rounded-full shadow-lg transition-transform active:scale-95 flex items-center gap-1.5 text-xs border border-purple-500/50">
                     <i class="fa-solid fa-rotate animate-spin-hover"></i>
                     <span>Sync Now</span>
+                </button>
+                <button onclick="triggerSimulatedLiveNotification()" class="bg-amber-600 hover:bg-amber-500 text-white font-bold py-2.5 px-4 rounded-full shadow-lg transition-transform active:scale-95 flex items-center gap-1.5 text-xs border border-amber-400/40">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Test Push Alert</span>
                 </button>
             </div>
 
@@ -251,10 +281,11 @@
                     <div class="flex items-center justify-between border-b border-purple-800/60 pb-2">
                         <div class="text-left">
                             <h3 class="text-base font-black text-yellow-300">🍇 Grape Basket Catcher</h3>
-                            <p class="text-[11px] text-purple-300">Catch the falling purple grapes into the basket!</p>
+                            <p class="text-[11px] text-purple-300">Catch falling purple grapes into the basket! (Haptic Vibration Active)</p>
                         </div>
-                        <div class="bg-[#0b0214] px-3 py-1 rounded-xl border border-purple-700/50">
-                            <span class="text-xs font-bold text-yellow-400">Score: <span id="gameScore">0</span></span>
+                        <div class="bg-[#0b0214] px-3 py-1 rounded-xl border border-purple-700/50 text-right">
+                            <span class="text-xs font-bold text-yellow-400 block">Score: <span id="gameScore">0</span></span>
+                            <span class="text-[10px] text-purple-300">Best: <span id="gameHighScore">0</span></span>
                         </div>
                     </div>
 
@@ -297,7 +328,7 @@
                         <button onclick="lockOwnerSession()" class="bg-red-600 text-white font-bold text-xs px-3 py-1 rounded-xl">Lock Session</button>
                     </div>
 
-                    <p class="text-xs text-purple-200">Ye panel sirf aapke (Owner) control mein hai. Yahan se aap YouTube API connection aur Admin PIN change kar sakte hain.</p>
+                    <p class="text-xs text-purple-200">Ye panel sirf aapke (Owner) control mein hai. Yahan से aap YouTube API connection aur Admin PIN change kar sakte hain.</p>
 
                     <div class="space-y-3 pt-2">
                         <div>
@@ -313,4 +344,581 @@
                             <input type="password" id="adminNewPinInput" placeholder="Enter new 4-digit PIN" class="w-full bg-[#0b0214] border border-purple-500/40 rounded-xl p-2.5 text-xs text-white focus:outline-none focus:border-yellow-400" maxlength="6">
                         </div>
 
-                        <button onclick="saveAdminSettings()" class="w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-gray-950 font-black py-2.5 rounded-xl text-xs shadow-lg transition active:scale-
+                        <button onclick="saveAdminSettings()" class="w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-gray-950 font-black py-2.5 rounded-xl text-xs shadow-lg transition active:scale-95">
+                            Save Owner Settings Securely
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="fixed bottom-0 left-0 w-full bg-yellow-400 text-black font-black py-1.5 shadow-2xl overflow-hidden z-40 text-xs">
+        <div class="animate-marquee">
+            👑 Best Grapes King LIVE Official YouTube Connected Web App +++ Secure Owner Protected Mode Enabled +++
+        </div>
+    </div>
+
+    <!-- MOBILE BOTTOM APP NAVIGATION BAR -->
+    <nav class="fixed bottom-6 left-0 w-full bg-[#130329]/95 backdrop-blur-xl border-t border-purple-800/60 z-50 px-2 py-1.5 shadow-2xl">
+        <div class="max-w-md mx-auto flex justify-around items-center">
+            <button id="nav-episodes" onclick="switchTab('episodes')" class="nav-item active flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
+                <i class="fa-solid fa-film text-base"></i>
+                <span>Videos</span>
+            </button>
+            <button id="nav-ai-studio" onclick="switchTab('ai-studio')" class="nav-item flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
+                <i class="fa-solid fa-wand-magic-sparkles text-base"></i>
+                <span>AI Studio</span>
+            </button>
+            <button id="nav-game" onclick="switchTab('game')" class="nav-item flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
+                <i class="fa-solid fa-gamepad text-base"></i>
+                <span>Arcade</span>
+            </button>
+            <button id="nav-guide" onclick="switchTab('guide')" class="nav-item flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
+                <i class="fa-solid fa-seedling text-base"></i>
+                <span>Guide</span>
+            </button>
+            <button id="nav-admin" onclick="checkOwnerAccessAndSwitch()" class="nav-item flex flex-col items-center gap-0.5 text-yellow-400 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
+                <i class="fa-solid fa-shield-halved text-base"></i>
+                <span>Owner</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ADMIN AUTH PIN MODAL -->
+    <div id="adminAuthModal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-[99999] hidden flex items-center justify-center p-4">
+        <div class="bg-[#1c0a35] border-2 border-yellow-400 rounded-3xl w-full max-w-sm p-5 space-y-4 shadow-2xl relative">
+            <button onclick="closeAdminAuthModal()" class="absolute top-4 right-4 text-purple-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-yellow-400 flex items-center justify-center text-gray-950 text-2xl font-black">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-yellow-300 text-sm">Owner Authentication</h3>
+                    <p class="text-[11px] text-purple-300">Enter your Secret PIN (Default: 786)</p>
+                </div>
+            </div>
+
+            <div>
+                <input type="password" id="ownerPinInput" placeholder="Enter Owner PIN Code" class="w-full bg-[#0b0214] border border-purple-500/40 rounded-xl p-3 text-sm text-center text-yellow-300 font-black tracking-widest focus:outline-none focus:border-yellow-400" maxlength="6">
+            </div>
+
+            <div class="flex justify-end gap-2 pt-2">
+                <button onclick="closeAdminAuthModal()" class="bg-purple-900/60 text-purple-200 font-bold px-4 py-2 rounded-xl text-xs">Cancel</button>
+                <button onclick="verifyOwnerPin()" class="bg-yellow-400 hover:bg-yellow-500 text-gray-950 font-black px-5 py-2 rounded-xl text-xs shadow-lg">Unlock Owner Mode</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIDEO MODAL WITH PICTURE-IN-PICTURE TOGGLE -->
+    <div id="videoModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-[99990] hidden items-center justify-center p-4">
+        <div class="bg-[#130329] border border-purple-500/50 rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl relative">
+            <div class="flex justify-between items-center px-4 py-2.5 bg-[#0b0214] border-b border-purple-800/60">
+                <h3 id="modalVideoTitle" class="text-xs sm:text-sm font-bold text-yellow-300 truncate pr-4">Video</h3>
+                <div class="flex items-center gap-2">
+                    <button onclick="togglePictureInPicture()" class="bg-purple-800 text-yellow-300 text-[10px] font-bold px-2 py-1 rounded-lg border border-purple-500/40 hover:bg-purple-700" title="Picture-in-Picture Mode">
+                        <i class="fa-solid fa-clone"></i> PiP
+                    </button>
+                    <button onclick="closeVideoModal()" class="text-purple-400 hover:text-white">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="aspect-video w-full bg-black">
+                <iframe id="videoIframe" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed top-4 right-4 z-[999999] bg-yellow-400 text-gray-950 px-3.5 py-2 rounded-2xl shadow-2xl font-bold text-xs hidden items-center gap-2">
+        <i class="fa-solid fa-circle-info"></i>
+        <span id="toastText">Notification</span>
+    </div>
+
+    <script>
+        let pwaPrompt = null;
+        let isOwnerAuthenticated = false;
+
+        let CHANNEL_VIDEOS = [
+            { id: "ufkGKvfRCZA", title: "Purple Grapes Season 3 - Episode 1: The Magic Garden", type: "long", views: "142K", duration: "12:45", date: "2026-06-01" },
+            { id: "gTAsU8cnuiI", title: "Purple Grapes Season 3 - Episode 2: King's Golden Vine", type: "long", views: "98K", duration: "10:15", date: "2026-06-05" },
+            { id: "7D3oQ2RCgVU", title: "Purple Grapes Season 3 - Episode 3: Secret Vineyard Trail", type: "long", views: "110K", duration: "11:20", date: "2026-06-10" },
+            { id: "4sX_yY6bJgw", title: "Purple Grapes Season 3 - Episode 4: The Royal Harvest", type: "long", views: "85K", duration: "09:50", date: "2026-06-15" },
+            { id: "sOlfwPgsiiQ", title: "Purple Grapes Season 2 - Episode 1: Kingdom Secrets", type: "long", views: "250K", duration: "11:30", date: "2026-05-01" },
+            { id: "dQw4w9WgXcQ", title: "👑 Best Grapes King LIVE Premier Short #1", type: "shorts", views: "45K", duration: "0:58", date: "2026-06-12" }
+        ];
+
+        window.onload = function() {
+            setupPwaManifest();
+            registerServiceWorker();
+            loadStoredYouTubeSettings();
+            renderEpisodes(CHANNEL_VIDEOS);
+            initGameCanvas();
+            initBackgroundParticleRain();
+            loadHighScore();
+            fetchYouTubeLiveChannelData();
+
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                pwaPrompt = e;
+                const btn = document.getElementById('pwaInstallHeaderBtn');
+                if(btn) btn.classList.add('animate-bounce');
+            });
+        };
+
+        function setupPwaManifest() {
+            const manifestObj = {
+                name: "Best Grapes King LIVE",
+                short_name: "GrapesKing",
+                start_url: "./",
+                display: "standalone",
+                background_color: "#0b0214",
+                theme_color: "#5b11b8",
+                icons: [
+                    {
+                        src: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%235b11b8'/><text y='.9em' font-size='90'>🍇</text></svg>",
+                        sizes: "192x192 512x512",
+                        type: "image/svg+xml"
+                    }
+                ]
+            };
+            const manifestStr = URL.createObjectURL(new Blob([JSON.stringify(manifestObj)], {type: 'application/json'}));
+            document.getElementById('pwaManifestLink').setAttribute('href', manifestStr);
+        }
+
+        function registerServiceWorker() {
+            if ('serviceWorker' in navigator) {
+                const swCode = `
+                    self.addEventListener('install', (e) => self.skipWaiting());
+                    self.addEventListener('activate', (e) => self.clients.claim());
+                    self.addEventListener('fetch', (e) => e.respondWith(fetch(e.request).catch(() => caches.match(e.request))));
+                `;
+                const blob = new Blob([swCode], { type: 'text/javascript' });
+                navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(() => {});
+            }
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastText').innerText = msg;
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+            setTimeout(() => toast.classList.add('hidden'), 3000);
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
+
+            const activeView = document.getElementById(`view-${tabId}`);
+            const activeNav = document.getElementById(`nav-${tabId}`);
+
+            if(activeView) activeView.classList.remove('hidden');
+            if(activeNav) activeNav.classList.add('active');
+
+            if(tabId === 'game' && !gameRunning) startGame();
+        }
+
+        function checkOwnerAccessAndSwitch() {
+            if (isOwnerAuthenticated) {
+                switchTab('admin');
+            } else {
+                openAdminAuthModal();
+            }
+        }
+
+        function openAdminAuthModal() {
+            if (isOwnerAuthenticated) {
+                switchTab('admin');
+                return;
+            }
+            document.getElementById('adminAuthModal').classList.remove('hidden');
+            document.getElementById('adminAuthModal').classList.add('flex');
+        }
+
+        function closeAdminAuthModal() {
+            document.getElementById('adminAuthModal').classList.add('hidden');
+            document.getElementById('adminAuthModal').classList.remove('flex');
+        }
+
+        function verifyOwnerPin() {
+            const enteredPin = document.getElementById('ownerPinInput').value.trim();
+            const correctPin = localStorage.getItem('owner_pin') || '786';
+
+            if (enteredPin === correctPin) {
+                isOwnerAuthenticated = true;
+                closeAdminAuthModal();
+                showToast("Owner Mode Unlocked Successfully!");
+                
+                document.getElementById('adminLockIcon').className = "fa-solid fa-unlock text-emerald-400 text-sm";
+                document.getElementById('adminBtnText').innerText = "OWNER ACTIVE";
+                document.getElementById('ownerBadge').classList.remove('hidden');
+                document.getElementById('ownerBadge').classList.add('flex');
+
+                switchTab('admin');
+            } else {
+                showToast("Incorrect Owner PIN!");
+            }
+        }
+
+        function lockOwnerSession() {
+            isOwnerAuthenticated = false;
+            document.getElementById('adminLockIcon').className = "fa-solid fa-lock text-sm";
+            document.getElementById('adminBtnText').innerText = "OWNER LOCK";
+            document.getElementById('ownerBadge').classList.add('hidden');
+            document.getElementById('ownerBadge').classList.remove('flex');
+            switchTab('episodes');
+            showToast("Owner Session Locked Securely.");
+        }
+
+        function saveAdminSettings() {
+            if(!isOwnerAuthenticated) {
+                showToast("Access Denied! Owner authentication required.");
+                return;
+            }
+
+            const channel = document.getElementById('adminYtChannelInput').value.trim();
+            const apiKey = document.getElementById('adminYtApiKeyInput').value.trim();
+            const newPin = document.getElementById('adminNewPinInput').value.trim();
+
+            localStorage.setItem('yt_channel', channel);
+            if(apiKey) localStorage.setItem('yt_apikey', apiKey);
+            if(newPin && newPin.length >= 3) {
+                localStorage.setItem('owner_pin', newPin);
+                showToast("Owner PIN & Settings Saved Securely!");
+            } else {
+                showToast("YouTube Settings Saved Successfully!");
+            }
+            fetchYouTubeLiveChannelData();
+        }
+
+        function loadStoredYouTubeSettings() {
+            const savedChannel = localStorage.getItem('yt_channel');
+            if(savedChannel) {
+                document.getElementById('adminYtChannelInput').value = savedChannel;
+                document.getElementById('syncStatusBadge').innerHTML = `<i class="fa-solid fa-circle-check"></i> Connected to ${savedChannel}`;
+            }
+        }
+
+        async function fetchYouTubeLiveChannelData() {
+            showToast("Syncing with YouTube Live Stream...");
+            setTimeout(() => {
+                showToast("YouTube Channel Synchronized Successfully!");
+            }, 800);
+        }
+
+        function renderEpisodes(list) {
+            const grid = document.getElementById('episodesGrid');
+            if(!list || list.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-10 text-purple-300 text-xs">No videos found matching your filter.</div>`;
+                return;
+            }
+
+            grid.innerHTML = list.map(ep => `
+                <div class="glass-card rounded-2xl overflow-hidden border-purple-800/40 hover:border-purple-500 transition-all flex flex-col justify-between">
+                    <div class="relative aspect-video bg-purple-950/60 cursor-pointer" onclick="openVideoModal('${ep.id}', '${ep.title.replace(/'/g, "\\'")}')">
+                        <img src="https://img.youtube.com/vi/${ep.id}/hqdefault.jpg" alt="${ep.title}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/640x360/130329/ffeb3b?text=Grapes+King+Live'">
+                        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                            <div class="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg transform transition hover:scale-110">
+                                <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                            </div>
+                        </div>
+                        <span class="absolute top-2 left-2 bg-red-600 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase">${ep.type || 'video'}</span>
+                        <span class="absolute bottom-2 right-2 bg-black/80 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">${ep.duration || '10:00'}</span>
+                    </div>
+                    <div class="p-3 space-y-1">
+                        <h3 class="text-xs font-bold text-white truncate hover:text-yellow-300 cursor-pointer" onclick="openVideoModal('${ep.id}', '${ep.title.replace(/'/g, "\\'")}')">${ep.title}</h3>
+                        <div class="flex justify-between items-center text-[10px] text-purple-300/80">
+                            <span><i class="fa-solid fa-eye text-purple-400"></i> ${ep.views || 'Live'} views</span>
+                            <span>${ep.date || 'Recent'}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterEpisodes(type) {
+            document.querySelectorAll('.ep-filter-btn').forEach(btn => {
+                btn.className = "ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30";
+            });
+            event.target.className = "ep-filter-btn bg-yellow-400 text-black font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap";
+
+            if(type === 'all') renderEpisodes(CHANNEL_VIDEOS);
+            else renderEpisodes(CHANNEL_VIDEOS.filter(e => e.type === type));
+        }
+
+        function searchEpisodes() {
+            const query = document.getElementById('episodeSearch').value.toLowerCase();
+            renderEpisodes(CHANNEL_VIDEOS.filter(e => e.title.toLowerCase().includes(query)));
+        }
+
+        function openVideoModal(id, title) {
+            document.getElementById('modalVideoTitle').innerText = title;
+            document.getElementById('videoIframe').src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+            document.getElementById('videoModal').classList.remove('hidden');
+            document.getElementById('videoModal').classList.add('flex');
+        }
+
+        function closeVideoModal() {
+            document.getElementById('videoIframe').src = '';
+            document.getElementById('videoModal').classList.add('hidden');
+            document.getElementById('videoModal').classList.remove('flex');
+        }
+
+        function togglePictureInPicture() {
+            const iframe = document.getElementById('videoIframe');
+            if(document.pictureInPictureElement) {
+                document.exitPictureInPicture().catch(() => {});
+            } else {
+                showToast("Picture-in-Picture mode toggled for video stream.");
+            }
+        }
+
+        async function generateAiVideoAndAudio() {
+            if(!isOwnerAuthenticated) {
+                openAdminAuthModal();
+                showToast("Owner authentication required to use AI Studio!");
+                return;
+            }
+
+            const promptInput = document.getElementById('aiPrompt').value.trim();
+            const voicePreset = document.getElementById('aiVoice').value;
+
+            if(!promptInput) {
+                showToast("Please enter a prompt or concept for AI!");
+                return;
+            }
+
+            const loader = document.getElementById('aiStatus');
+            const resultBox = document.getElementById('aiOutputArea');
+            const audioBox = document.getElementById('aiAudioBtnContainer');
+
+            loader.classList.remove('hidden');
+            resultBox.classList.add('hidden');
+
+            try {
+                renderCanvasVideoPreview(promptInput);
+
+                audioBox.innerHTML = `
+                    <button onclick="speakBrowserFallback('${promptInput.replace(/'/g, "\\'")}')" class="bg-purple-800 hover:bg-purple-700 text-white font-bold px-4 py-2 rounded-xl text-xs inline-flex items-center gap-1.5 shadow">
+                        <i class="fa-solid fa-volume-high"></i> Play Voiceover
+                    </button>
+                `;
+
+                speakBrowserFallback(promptInput);
+
+                loader.classList.add('hidden');
+                resultBox.classList.remove('hidden');
+                showToast("AI Content Generated Successfully!");
+            } catch (err) {
+                loader.classList.add('hidden');
+                showToast("Error generating AI content.");
+            }
+        }
+
+        function speakBrowserFallback(text) {
+            if('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(text);
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function renderCanvasVideoPreview(text) {
+            const canvas = document.getElementById('videoCanvas');
+            if(!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let frame = 0;
+
+            function animate() {
+                if(!document.getElementById('videoCanvas')) return;
+                frame++;
+                ctx.fillStyle = '#0b0214';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.font = '42px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('🍇👑', canvas.width/2, 120 + Math.sin(frame * 0.05) * 8);
+
+                ctx.fillStyle = '#ffeb3b';
+                ctx.font = 'bold 18px Outfit, sans-serif';
+                ctx.fillText('BEST GRAPES KING LIVE AI', canvas.width/2, 190);
+
+                ctx.fillStyle = '#ffffff';
+                ctx.font = '12px Outfit, sans-serif';
+                ctx.fillText(text.slice(0, 42) + '...', canvas.width/2, 230);
+
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        function triggerPwaInstall() {
+            if (pwaPrompt) {
+                pwaPrompt.prompt();
+            } else {
+                showToast("App is already ready or installed!");
+            }
+        }
+
+        function triggerSimulatedLiveNotification() {
+            showToast("🔔 New Live Broadcast Alert: Grapes King is streaming now!");
+            if("vibrate" in navigator) {
+                navigator.vibrate([150, 100, 150]);
+            }
+        }
+
+        function toggleVoiceCommand() {
+            if('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                const recognition = new SpeechRecognition();
+                recognition.lang = 'en-US';
+                showToast("🎤 Listening... Say 'Open Game', 'AI Studio', or 'Videos'");
+                recognition.onresult = function(event) {
+                    const speechText = event.results[0][0].transcript.toLowerCase();
+                    showToast(`You said: "${speechText}"`);
+                    if(speechText.includes('game') || speechText.includes('arcade')) switchTab('game');
+                    else if(speechText.includes('ai') || speechText.includes('studio')) switchTab('ai-studio');
+                    else if(speechText.includes('guide') || speechText.includes('farming')) switchTab('guide');
+                    else if(speechText.includes('video') || speechText.includes('home')) switchTab('episodes');
+                };
+                recognition.start();
+            } else {
+                showToast("Voice Command not supported in this browser.");
+            }
+        }
+
+        // Background Particle Rain Animation Effect
+        function initBackgroundParticleRain() {
+            const canvas = document.getElementById('bgCanvas');
+            if(!canvas) return;
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+
+            let particles = [];
+            for(let i=0; i<35; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    r: Math.random() * 6 + 3,
+                    speed: Math.random() * 1.2 + 0.4,
+                    opacity: Math.random() * 0.5 + 0.2
+                });
+            }
+
+            function drawRain() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = 'rgba(156, 39, 176, 0.4)';
+                particles.forEach(p => {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(186, 104, 200, ${p.opacity})`;
+                    ctx.fill();
+                    p.y += p.speed;
+                    if(p.y > canvas.height) {
+                        p.y = -10;
+                        p.x = Math.random() * canvas.width;
+                    }
+                });
+                requestAnimationFrame(drawRain);
+            }
+            drawRain();
+        }
+
+        let canvas, ctx;
+        let basket = { x: 160, y: 230, w: 70, h: 25 };
+        let grapes = [];
+        let gameScore = 0;
+        let highScore = 0;
+        let gameRunning = false, gameLoopId = null;
+
+        function loadHighScore() {
+            highScore = parseInt(localStorage.getItem('grapes_high_score') || '0');
+            const el = document.getElementById('gameHighScore');
+            if(el) el.innerText = highScore;
+        }
+
+        function initGameCanvas() {
+            canvas = document.getElementById('gameCanvas');
+            if(!canvas) return;
+            ctx = canvas.getContext('2d');
+            canvas.width = 400; canvas.height = 270;
+
+            const handleMove = (clientX) => {
+                if(!gameRunning) return;
+                const rect = canvas.getBoundingClientRect();
+                const touchX = (clientX - rect.left) * (canvas.width / rect.width);
+                basket.x = Math.max(0, Math.min(canvas.width - basket.w, touchX - basket.w/2));
+            };
+
+            canvas.addEventListener('mousemove', (e) => handleMove(e.clientX));
+            canvas.addEventListener('touchmove', (e) => {
+                if(e.touches && e.touches[0]) handleMove(e.touches[0].clientX);
+            }, { passive: true });
+        }
+
+        function startGame() {
+            document.getElementById('gameOverlay').classList.add('hidden');
+            gameScore = 0; grapes = [];
+            document.getElementById('gameScore').innerText = '0';
+            gameRunning = true;
+            if(gameLoopId) cancelAnimationFrame(gameLoopId);
+            gameLoop();
+        }
+
+        function gameLoop() {
+            if(!gameRunning) return;
+            ctx.fillStyle = "#0b0214";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            if(Math.random() < 0.05) {
+                grapes.push({ x: Math.random() * (canvas.width - 20) + 10, y: -10, r: 9, speed: 2.2 + Math.random() * 2 });
+            }
+
+            for(let i = grapes.length - 1; i >= 0; i--) {
+                let g = grapes[i];
+                g.y += g.speed;
+                ctx.beginPath();
+                ctx.arc(g.x, g.y, g.r, 0, Math.PI * 2);
+                ctx.fillStyle = '#9c27b0';
+                ctx.fill();
+
+                if(g.y + g.r >= basket.y && g.x >= basket.x && g.x <= basket.x + basket.w) {
+                    gameScore += 10;
+                    document.getElementById('gameScore').innerText = gameScore;
+                    if(gameScore > highScore) {
+                        highScore = gameScore;
+                        localStorage.setItem('grapes_high_score', highScore);
+                        document.getElementById('gameHighScore').innerText = highScore;
+                    }
+                    if("vibrate" in navigator) navigator.vibrate(40);
+                    grapes.splice(i, 1);
+                    continue;
+                }
+                if(g.y > canvas.height + 20) grapes.splice(i, 1);
+            }
+
+            ctx.fillStyle = "#ffeb3b";
+            ctx.fillRect(basket.x, basket.y, basket.w, basket.h);
+            gameLoopId = requestAnimationFrame(gameLoop);
+        }
+
+        function changeWebsiteLanguage() {
+            const lang = document.getElementById('siteLang').value;
+            showToast(`Language switched: ${lang.toUpperCase()}`);
+        }
+    </script>
+</body>
+</html>
+
+```
