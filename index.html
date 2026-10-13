@@ -359,4 +359,34 @@
                 let g = grapes[i];
                 g.y += g.speed;
                 ctx.beginPath();
-                ctx.arc(g.x, g.y, g.r, 0, Math.PI * 2
+                ctx.arc(g.x, g.y, g.r, 0, Math.PI * 2);
+                ctx.fillStyle = '#9c27b0';
+                ctx.fill();
+
+                if(g.y + g.r >= basket.y && g.x >= basket.x && g.x <= basket.x + basket.w) {
+                    gameScore += 10;
+                    document.getElementById('gameScore').innerText = gameScore;
+                    if(gameScore > highScore) {
+                        highScore = gameScore;
+                        localStorage.setItem('grapes_high_score', highScore);
+                        document.getElementById('gameHighScore').innerText = highScore;
+                    }
+                    grapes.splice(i, 1);
+                    continue;
+                }
+                if(g.y > canvas.height + 20) grapes.splice(i, 1);
+            }
+
+            ctx.fillStyle = "#ffeb3b";
+            ctx.fillRect(basket.x, basket.y, basket.w, basket.h);
+            gameLoopId = requestAnimationFrame(gameLoop);
+        }
+
+        function changeWebsiteLanguage() {
+            const lang = document.getElementById('siteLang').value;
+        }
+    </script>
+</body>
+</html>
+
+```
