@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Best Grapes 🍇 King 👑 Live</title>
+
     <style>
         :root {
             --bg-color: #0b0712;
@@ -33,7 +35,7 @@
 
         .container {
             width: 100%;
-            max-width: 480px; /* Mobile-friendly width container */
+            max-width: 480px;
             background-color: var(--bg-color);
             min-height: 100vh;
             box-shadow: 0 0 20px rgba(142, 68, 173, 0.2);
@@ -54,11 +56,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 8px;
             margin-bottom: 15px;
         }
 
         h1 {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             color: var(--text-main);
             display: flex;
             align-items: center;
@@ -69,11 +72,12 @@
             background-color: var(--card-bg);
             color: var(--text-secondary);
             border: 1px solid var(--border-color);
-            padding: 6px 10px;
+            padding: 6px 8px;
             border-radius: 8px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             outline: none;
             cursor: pointer;
+            max-width: 105px;
         }
 
         .subscribe-btn {
@@ -136,13 +140,15 @@
             font-size: 1rem;
             font-weight: 600;
             color: var(--text-main);
-            line-height: 1.4;
+            line-height: 1.5;
+            overflow-wrap: anywhere;
         }
 
         .video-desc {
             font-size: 0.85rem;
             color: var(--text-secondary);
-            line-height: 1.3;
+            line-height: 1.5;
+            overflow-wrap: anywhere;
         }
 
         .watch-btn {
@@ -169,15 +175,28 @@
             margin-top: 40px;
             font-size: 0.95rem;
         }
+
+        footer {
+            padding: 18px 15px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border-color);
+        }
     </style>
 </head>
-<body>
 
+<body>
     <div class="container" id="app-container">
+
         <header>
             <div class="header-top">
                 <h1 id="app-title">Best Grapes 🍇 King 👑 Live</h1>
-                <select class="lang-select" id="langSelect" onchange="changeLanguage(this.value)">
+
+                <select class="lang-select"
+                        id="langSelect"
+                        onchange="changeLanguage(this.value)"
+                        aria-label="Choose language">
                     <option value="en">English</option>
                     <option value="ur">اردو</option>
                     <option value="hi">हिन्दी</option>
@@ -197,40 +216,179 @@
                     <option value="ps">پښتو</option>
                 </select>
             </div>
-            <a href="https://youtube.com/@bestgrapeskinglive-k7f2q?si=2Kuhu93v4jZEk_E0" target="_blank" class="subscribe-btn" id="subBtn">Subscribe to Channel</a>
+
+            <a
+                href="https://youtube.com/@bestgrapeskinglive-k7f2q?si=2Kuhu93v4jZEk_E0"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="subscribe-btn"
+                id="subBtn">
+                Subscribe to Channel
+            </a>
+
             <div class="search-container">
-                <input type="text" class="search-input" id="searchInput" placeholder="Search videos by title..." oninput="filterVideos()">
+                <input
+                    type="text"
+                    class="search-input"
+                    id="searchInput"
+                    placeholder="Search videos by title..."
+                    oninput="filterVideos()"
+                    aria-label="Search videos">
             </div>
         </header>
 
-        <div class="video-list" id="videoList">
-            <!-- Videos will be injected here -->
-        </div>
+        <main class="video-list" id="videoList">
+            <!-- Videos are rendered here by JavaScript. -->
+        </main>
+
+        <footer>
+            Best Grapes 🍇 King 👑 Live
+        </footer>
     </div>
 
     <script>
         const translations = {
-            en: { title: "Best Grapes 🍇 King 👑 Live", subscribe: "Subscribe to Channel", searchPlaceholder: "Search videos by title...", watch: "Watch Video", noResults: "No videos found" },
-            ur: { title: "بیسٹ گریپس 🍇 کنگ 👑 لائیو", subscribe: "چینل سبسکرائب کریں", searchPlaceholder: "عنوان سے ویڈیوز تلاش کریں...", watch: "ویڈیو دیکھیں", noResults: "کوئی ویڈیو نہیں ملی" },
-            hi: { title: "बेस्ट ग्रेप्स 🍇 किंग 👑 लाइव", subscribe: "चैनल की सदस्यता लें", searchPlaceholder: "शीर्षक से वीडियो खोजें...", watch: "वीडियो देखें", noResults: "कोई वीडियो नहीं मिला" },
-            ar: { title: "أفضل العنب 🍇 الملك 👑 لايف", subscribe: "اشتراك في القناة", searchPlaceholder: "بحث عن الفيديوهات...", watch: "مشاهدة الفيديو", noResults: "لم يتم العثور على فيديوهات" },
-            bn: { title: "বেস্ট গ্রেপস 🍇 কিং 👑 লাইভ", subscribe: "চ্যানেল সাবস্ক্রাইব করুন", searchPlaceholder: "শিরোনাম দ্বারা ভিডিও অনুসন্ধান করুন...", watch: "ভিডিও দেখুন", noResults: "কোনো ভিডিও পাওয়া যায়নি" },
-            pa: { title: "ਬੈਸਟ ਗ੍ਰੇਪਸ 🍇 ਕਿੰਗ 👑 ਲਾਈਵ", subscribe: "ਚੈਨਲ ਨੂੰ ਸਬਸਕ੍ਰਾਈਬ ਕਰੋ", searchPlaceholder: "ਸਿਰਲੇਖ ਰਾਹੀਂ ਵੀਡੀਓ ਖੋਜੋ...", watch: "ਵੀਡੀਓ ਦੇਖੋ", noResults: "ਕੋਈ ਵੀਡੀਓ ਨਹੀਂ ਮلی" },
-            zh: { title: "最佳葡萄 🍇 国王 👑 直播", subscribe: "订阅频道", searchPlaceholder: "按标题搜索视频...", watch: "观看视频", noResults: "未找到视频" },
-            es: { title: "Best Grapes 🍇 King 👑 Live", subscribe: "Suscribirse al canal", searchPlaceholder: "Buscar vídeos por título...", watch: "Ver vídeo", noResults: "No se encontraron vídeos" },
-            fr: { title: "Best Grapes 🍇 King 👑 Live", subscribe: "S'abonner au canal", searchPlaceholder: "Rechercher des vidéos par titre...", watch: "Regarder la vidéo", noResults: "Aucune vidéo trouvée" },
-            de: { title: "Best Grapes 🍇 King 👑 Live", subscribe: "Kanal abonnieren", searchPlaceholder: "Videos nach Titel suchen...", watch: "Video ansehen", noResults: "Keine Videos gefunden" },
-            tr: { title: "Best Grapes 🍇 King 👑 Live", subscribe: "Kanalımıza Abone Olun", searchPlaceholder: "Videoları başlığa göre ara...", watch: "Videoyu İzle", noResults: "Video bulunamadı" },
-            id: { title: "Best Grapes 🍇 King 👑 Live", subscribe: "Berlangganan Saluran", searchPlaceholder: "Cari video berdasarkan judul...", watch: "Tonton Video", noResults: "Tidak ada video yang ditemukan" },
-            pt: { title: "Best Grapes 🍇 King 👑 Live", subscribe: "Inscrever-se no canal", searchPlaceholder: "Pesquisar vídeos por título...", watch: "Assistir ao Vídeo", noResults: "Nenhum vídeo encontrado" },
-            ja: { title: "Best Grapes 🍇 King 👑 Live", subscribe: "チャンネル登録", searchPlaceholder: "タイトルで動画を検索...", watch: "動画を見る", noResults: "動画が見つかりませんでした" },
-            ko: { title: "Best Grapes 🍇 King 👑 Live", subscribe: "채널 구독하기", searchPlaceholder: "제목으로 동영상 검색...", watch: "동영상 시청", noResults: "동영상을 찾을 수 없습니다" },
-            fa: { title: "بهترین انگور 🍇 پادشاه 👑 زنده", subscribe: "اشتراک در کانال", searchPlaceholder: "جستجوی ویدیوها بر اساس عنوان...", watch: "تماشای ویدیو", noResults: "ویدیویی یافت نشد" },
-            ps: { title: "Best Grapes 🍇 King 👑 Live", subscribe: "چینل سبسکرایب کړئ", searchPlaceholder: "د سرلیک په واسطه ویډیوګانې لټوئ...", watch: "ویډیو وګورئ", noResults: "هیڅ ویډیو ونه موندل شوه" }
+            en: {
+                title: "Best Grapes 🍇 King 👑 Live",
+                subscribe: "Subscribe to Channel",
+                searchPlaceholder: "Search videos by title...",
+                watch: "Watch Video",
+                post: "Open Post",
+                noResults: "No videos found"
+            },
+            ur: {
+                title: "گریپس 🍇 کنگ 👑",
+                subscribe: "چینل سبسکرائب کریں",
+                searchPlaceholder: "ویڈیوز کے عنوان سے تلاش کریں...",
+                watch: "ویڈیو دیکھیں",
+                post: "پوسٹ کھولیں",
+                noResults: "کوئی ویڈیو نہیں ملی"
+            },
+            hi: {
+                title: "बेस्ट ग्रेप्स 🍇 किंग 👑 लाइव",
+                subscribe: "चैनल सब्सक्राइब करें",
+                searchPlaceholder: "वीडियो के शीर्षक से खोजें...",
+                watch: "वीडियो देखें",
+                post: "पोस्ट खोलें",
+                noResults: "कोई वीडियो नहीं मिला"
+            },
+            ar: {
+                title: "أفضل العنب 🍇 الملك 👑 لايف",
+                subscribe: "اشترك في القناة",
+                searchPlaceholder: "ابحث عن الفيديوهات...",
+                watch: "شاهد الفيديو",
+                post: "فتح المنشور",
+                noResults: "لم يتم العثور على فيديوهات"
+            },
+            bn: {
+                title: "বেস্ট গ্রেপস 🍇 কিং 👑 লাইভ",
+                subscribe: "চ্যানেল সাবস্ক্রাইব করুন",
+                searchPlaceholder: "ভিডিওর শিরোনাম দিয়ে খুঁজুন...",
+                watch: "ভিডিও দেখুন",
+                post: "পোস্ট খুলুন",
+                noResults: "কোনো ভিডিও পাওয়া যায়নি"
+            },
+            pa: {
+                title: "ਬੈਸਟ ਗ੍ਰੇਪਸ 🍇 ਕਿੰਗ 👑 ਲਾਈਵ",
+                subscribe: "ਚੈਨਲ ਸਬਸਕ੍ਰਾਈਬ ਕਰੋ",
+                searchPlaceholder: "ਵੀਡੀਓ ਦੇ ਸਿਰਲੇਖ ਨਾਲ ਖੋਜੋ...",
+                watch: "ਵੀਡੀਓ ਦੇਖੋ",
+                post: "ਪੋਸਟ ਖੋਲ੍ਹੋ",
+                noResults: "ਕੋਈ ਵੀਡੀਓ ਨਹੀਂ ਮਿਲੀ"
+            },
+            zh: {
+                title: "最佳葡萄 🍇 国王 👑 直播",
+                subscribe: "订阅频道",
+                searchPlaceholder: "按标题搜索视频...",
+                watch: "观看视频",
+                post: "打开帖子",
+                noResults: "未找到视频"
+            },
+            es: {
+                title: "Best Grapes 🍇 King 👑 Live",
+                subscribe: "Suscribirse al canal",
+                searchPlaceholder: "Buscar vídeos por título...",
+                watch: "Ver vídeo",
+                post: "Abrir publicación",
+                noResults: "No se encontraron vídeos"
+            },
+            fr: {
+                title: "Best Grapes 🍇 King 👑 Live",
+                subscribe: "S'abonner à la chaîne",
+                searchPlaceholder: "Rechercher par titre...",
+                watch: "Regarder la vidéo",
+                post: "Ouvrir la publication",
+                noResults: "Aucune vidéo trouvée"
+            },
+            de: {
+                title: "Best Grapes 🍇 King 👑 Live",
+                subscribe: "Kanal abonnieren",
+                searchPlaceholder: "Videos nach Titel suchen...",
+                watch: "Video ansehen",
+                post: "Beitrag öffnen",
+                noResults: "Keine Videos gefunden"
+            },
+            tr: {
+                title: "Best Grapes 🍇 King 👑 Live",
+                subscribe: "Kanala Abone Ol",
+                searchPlaceholder: "Videoları başlığa göre ara...",
+                watch: "Videoyu İzle",
+                post: "Gönderiyi Aç",
+                noResults: "Video bulunamadı"
+            },
+            id: {
+                title: "Best Grapes 🍇 King 👑 Live",
+                subscribe: "Berlangganan",
+                searchPlaceholder: "Cari video berdasarkan judul...",
+                watch: "Tonton Video",
+                post: "Buka Postingan",
+                noResults: "Video tidak ditemukan"
+            },
+            pt: {
+                title: "Best Grapes 🍇 King 👑 Live",
+                subscribe: "Inscrever-se no canal",
+                searchPlaceholder: "Pesquisar vídeos por título...",
+                watch: "Assistir ao vídeo",
+                post: "Abrir publicação",
+                noResults: "Nenhum vídeo encontrado"
+            },
+            ja: {
+                title: "Best Grapes 🍇 King 👑 Live",
+                subscribe: "チャンネル登録",
+                searchPlaceholder: "タイトルで動画を検索...",
+                watch: "動画を見る",
+                post: "投稿を開く",
+                noResults: "動画が見つかりません"
+            },
+            ko: {
+                title: "Best Grapes 🍇 King 👑 Live",
+                subscribe: "채널 구독",
+                searchPlaceholder: "제목으로 동영상 검색...",
+                watch: "동영상 보기",
+                post: "게시물 열기",
+                noResults: "동영상을 찾을 수 없습니다"
+            },
+            fa: {
+                title: "بهترین انگور 🍇 پادشاه 👑 زنده",
+                subscribe: "عضویت در کانال",
+                searchPlaceholder: "جستجو بر اساس عنوان...",
+                watch: "تماشای ویدیو",
+                post: "باز کردن پست",
+                noResults: "ویدیویی پیدا نشد"
+            },
+            ps: {
+                title: "Best Grapes 🍇 King 👑 Live",
+                subscribe: "چینل سبسکرایب کړئ",
+                searchPlaceholder: "د ویډیو سرلیک ولټوئ...",
+                watch: "ویډیو وګورئ",
+                post: "پوسټ خلاص کړئ",
+                noResults: "ویډیو ونه موندل شوه"
+            }
         };
 
-        const rtlLangs = ['ur', 'ar', 'fa', 'ps'];
+        const rtlLangs = ["ur", "ar", "fa", "ps"];
 
+        // Existing videos plus the seven new links.
         const videos = [
             {
                 title: "Purple Grapes Ka Chhupa Hua Raaz — Episode 1 Introduction",
@@ -244,7 +402,7 @@
             },
             {
                 title: "Official Trailer 1",
-                description: "Watch the first official trailer and enjoy a preview of the upcoming drama. Do not reveal the drama name in this description.",
+                description: "Watch the first official trailer and enjoy a preview of the upcoming drama.",
                 url: "https://youtu.be/k9S9YPGz2so?si=It1WbNWj5bOd9H4f"
             },
             {
@@ -311,49 +469,136 @@
                 title: "Purple Grapes — Season 3 Episode 1",
                 description: "Watch Season 3 Episode 1 of Purple Grapes.",
                 url: "https://youtu.be/ufkGKvfRCZA?si=3LAOrGZKlNKnQlL9"
+            },
+
+            // NEW LINK 1 — Long video: hacking prank
+            {
+                title: "MY CHANNEL WAS HACKED?! 😱 The Truth Behind the Prank!",
+                description: "A channel hacking prank announcement! A post showed the launch date of Purple Grapes کا چھپا ہوا راز as October 23, 2026. The apparent hacking was part of a prank. The drama is scheduled to launch on October 23, 2026. Subscribe to Best Grapes King Live for updates!",
+                url: "https://youtu.be/KcXPtAv-6VA?si=1bvV_di1ewUyP3KU"
+            },
+
+            // NEW LINK 2 — Short: another person announces the drama
+            {
+                title: "Purple Grapes کا چھپا ہوا راز 🍇 | COMING SOON",
+                description: "A short teaser featuring another person announcing the upcoming drama Purple Grapes کا چھپا ہوا راز. The scheduled launch date is October 23, 2026.",
+                url: "https://youtube.com/shorts/6EI5wAy2YEM?si=ox4b53p7HaZ5sQMA"
+            },
+
+            // NEW LINK 3 — AI-generated grape mystery Short
+            {
+                title: "A Deep Secret in the World of Grapes! 🍇 | COMING SOON",
+                description: "An AI-generated video announces that a deep secret is hidden in the world of grapes. Purple Grapes کا چھپا ہوا راز is coming soon! Launch date: October 23, 2026.",
+                url: "https://youtube.com/shorts/fpYF_w3nCNU?si=QNJO4fK808iMziAq"
+            },
+
+            // NEW LINK 4 — Short using Rayan's photo
+            {
+                title: "NEW SHOW COMING SOON! 🍇👑 | Rayan",
+                description: "An AI-generated promotional Short featuring Rayan's photo to promote the upcoming show. Subscribe to Best Grapes King Live and stay tuned for updates!",
+                url: "https://youtube.com/shorts/JALJ89mnA4g?si=3IHfNcrSzdccqdpL"
+            },
+
+            // NEW LINK 5 — New show announcement Short
+            {
+                title: "NEW SHOW COMING SOON! 🔥🍇 | BIG ANNOUNCEMENT",
+                description: "A special Short announcing that a new show is coming soon to Best Grapes King Live. Subscribe and stay tuned for upcoming updates!",
+                url: "https://youtube.com/shorts/mYwr9GLz27M?si=QY0kxWsZfZKpq0mM"
+            },
+
+            // NEW LINK 6 — Community Post with launch date and Pakistan flag
+            {
+                title: "OFFICIAL LAUNCH DATE ANNOUNCEMENT 🇵🇰🍇 | October 23, 2026",
+                description: "A community post featuring the drama artwork, the Pakistani flag, and the launch date for Purple Grapes کا چھپا ہوا راز: October 23, 2026. Subscribe to Best Grapes King Live for updates!",
+                url: "http://youtube.com/post/Ugkxpuax5thNZdIGj58BOo96LqnSrVVGTrc2?si=0J5sMf_6WXhfIi5B",
+                type: "post"
+            },
+
+            // NEW LINK 7 — Community Post with launch date and subscribe message
+            {
+                title: "Purple Grapes کا چھپا ہوا راز | Launch Date: October 23, 2026",
+                description: "A community post announcing the launch date of Purple Grapes کا چھپا ہوا راز — October 23, 2026. Subscribe to Best Grapes King Live for upcoming updates!",
+                url: "http://youtube.com/post/UgkxS79nwvGxzlG3QRI0KuvPO0FBbgm3ciBw?si=SpnWAhHbf4lFuqBS",
+                type: "post"
             }
         ];
 
         function renderVideos(filterText = "") {
-            const videoListEl = document.getElementById('videoList');
-            const currentLang = document.getElementById('langSelect').value;
-            const t = translations[currentLang] || translations['en'];
+            const videoListEl = document.getElementById("videoList");
+            const currentLang = document.getElementById("langSelect").value;
+            const t = translations[currentLang] || translations.en;
+            const query = filterText.trim().toLocaleLowerCase();
 
-            const filtered = videos.filter(v => v.title.toLowerCase().includes(filterText.toLowerCase()));
+            const filtered = videos.filter(video => {
+                return (
+                    video.title.toLocaleLowerCase().includes(query) ||
+                    video.description.toLocaleLowerCase().includes(query)
+                );
+            });
 
             if (filtered.length === 0) {
-                videoListEl.innerHTML = `<div class="no-results">${t.noResults}</div>`;
+                videoListEl.innerHTML = "";
+
+                const message = document.createElement("div");
+                message.className = "no-results";
+                message.textContent = t.noResults;
+
+                videoListEl.appendChild(message);
                 return;
             }
 
-            videoListEl.innerHTML = filtered.map(video => `
-                <div class="video-card">
-                    <div class="video-title">${video.title}</div>
-                    <div class="video-desc">${video.description}</div>
-                    <a href="${video.url}" target="_blank" class="watch-btn">${t.watch}</a>
-                </div>
-            `).join('');
+            videoListEl.innerHTML = "";
+
+            filtered.forEach(video => {
+                const card = document.createElement("article");
+                card.className = "video-card";
+
+                const title = document.createElement("div");
+                title.className = "video-title";
+                title.textContent = video.title;
+
+                const description = document.createElement("div");
+                description.className = "video-desc";
+                description.textContent = video.description;
+
+                const link = document.createElement("a");
+                link.className = "watch-btn";
+                link.href = video.url;
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+                link.textContent = video.type === "post" ? t.post : t.watch;
+
+                card.appendChild(title);
+                card.appendChild(description);
+                card.appendChild(link);
+
+                videoListEl.appendChild(card);
+            });
         }
 
         function changeLanguage(lang) {
-            const t = translations[lang] || translations['en'];
-            
-            document.getElementById('app-title').innerText = t.title;
-            document.getElementById('subBtn').innerText = t.subscribe;
-            document.getElementById('searchInput').placeholder = t.searchPlaceholder;
+            const t = translations[lang] || translations.en;
 
-            const container = document.getElementById('app-container');
+            document.getElementById("app-title").textContent = t.title;
+            document.getElementById("subBtn").textContent = t.subscribe;
+            document.getElementById("searchInput").placeholder = t.searchPlaceholder;
+
+            const container = document.getElementById("app-container");
+            const body = document.body;
+
             if (rtlLangs.includes(lang)) {
-                container.setAttribute('dir', 'rtl');
+                container.setAttribute("dir", "rtl");
+                body.setAttribute("dir", "rtl");
             } else {
-                container.setAttribute('dir', 'ltr');
+                container.setAttribute("dir", "ltr");
+                body.setAttribute("dir", "ltr");
             }
 
             filterVideos();
         }
 
         function filterVideos() {
-            const query = document.getElementById('searchInput').value;
+            const query = document.getElementById("searchInput").value;
             renderVideos(query);
         }
 
@@ -362,492 +607,3 @@
     </script>
 </body>
 </html>
-
-
-
-```html
-<!DOCTYPE html>
-<html lang="en" class="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Best Grapes King LIVE | Clean Portal & AI Studio</title>
-
-    <!-- Tailwind CSS & Font Awesome Icons -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-
-    <style>
-        * {
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-
-        body {
-            background-color: #0b0214;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-            padding-bottom: 90px;
-            overflow-x: hidden;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0b0214;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #5b11b8;
-            border-radius: 4px;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #ffeb3b, #ff9800, #e91e63);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .glass-card {
-            background: rgba(19, 3, 41, 0.88);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(156, 39, 176, 0.35);
-        }
-
-        .custom-glow {
-            box-shadow: 0 0 25px rgba(156, 39, 176, 0.4);
-        }
-
-        @keyframes marquee {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-        .animate-marquee {
-            display: inline-block;
-            white-space: nowrap;
-            animation: marquee 18s linear infinite;
-        }
-
-        .nav-item.active {
-            color: #ffeb3b;
-        }
-        .nav-item.active i {
-            transform: translateY(-2px);
-            color: #ffeb3b;
-        }
-    </style>
-</head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-purple-600 selection:text-white">
-
-    <header class="sticky top-0 z-50 bg-[#5b11b8]/95 backdrop-blur-md px-4 py-3 shadow-lg flex justify-between items-center border-b border-purple-500/40">
-        <div class="flex items-center gap-2 cursor-pointer" onclick="switchTab('episodes')">
-            <span class="text-2xl animate-bounce">🍇</span>
-            <div>
-                <span class="font-black text-yellow-300 text-base sm:text-lg tracking-wide flex items-center gap-1.5">
-                    Best Grapes King <span class="bg-red-600 text-white text-[9px] uppercase font-black px-1.5 py-0.5 rounded-full animate-pulse">LIVE</span>
-                </span>
-            </div>
-        </div>
-
-        <div class="flex items-center gap-2">
-            <!-- Language Switcher -->
-            <select id="siteLang" onchange="changeWebsiteLanguage()" class="bg-[#130329] text-xs text-purple-200 border border-purple-400/50 rounded-xl px-2 py-1.5 outline-none font-semibold focus:border-yellow-400">
-                <option value="en" selected>🇬🇧 English</option>
-                <option value="ur">🇵🇰 اردو</option>
-                <option value="pa">🌾 ਪੰਜਾਬੀ</option>
-            </select>
-        </div>
-    </header>
-
-    <div class="max-w-3xl mx-auto px-4 py-5 space-y-6 w-full">
-
-        <!-- Hero Banner Card -->
-        <div class="glass-card p-6 rounded-3xl custom-glow text-center space-y-4 relative overflow-hidden border-purple-500/40">
-            <h1 class="text-2xl sm:text-4xl font-black text-white leading-tight">
-                Best Grapes King <span class="gradient-text">👑 LIVE PORTAL</span>
-            </h1>
-            <p class="text-purple-200/90 text-xs sm:text-sm max-w-xl mx-auto">
-                Official YouTube Hub, Channel Feeds, Purple Grapes Series, Arcade Gaming & AI Video/Voice Studio.
-            </p>
-
-            <div class="flex items-center justify-center gap-2 flex-wrap">
-                <a href="https://youtube.com/@bestgrapeskinglive-k7f2q?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white font-black py-2.5 px-5 rounded-full shadow-lg transition-transform active:scale-95 flex items-center gap-2 text-xs sm:text-sm border border-red-400/40">
-                    <i class="fab fa-youtube text-lg"></i>
-                    <span>Subscribe YouTube Channel</span>
-                </a>
-            </div>
-        </div>
-
-        <main>
-            <!-- Videos Tab -->
-            <section id="view-episodes" class="tab-content space-y-6">
-                <div class="flex flex-col sm:flex-row items-center justify-between gap-3 glass-card p-3.5 rounded-2xl">
-                    <div class="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0">
-                        <button onclick="filterEpisodes('all')" class="ep-filter-btn bg-yellow-400 text-black font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap">All Videos</button>
-                        <button onclick="filterEpisodes('long')" class="ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30">Long Videos</button>
-                    </div>
-
-                    <div class="relative w-full sm:w-56">
-                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-purple-400 text-xs"></i>
-                        <input type="text" id="episodeSearch" oninput="searchEpisodes()" placeholder="Search videos..." class="w-full bg-[#0b0214] border border-purple-700/50 rounded-xl pl-8 pr-3 py-1.5 text-xs text-white focus:outline-none focus:border-yellow-400">
-                    </div>
-                </div>
-
-                <div id="episodesGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <!-- Populated dynamically via JS -->
-                </div>
-            </section>
-
-            <!-- Arcade Game Tab -->
-            <section id="view-game" class="tab-content hidden space-y-4">
-                <div class="glass-card p-5 rounded-2xl border border-purple-500/40 text-center space-y-3">
-                    <div class="flex items-center justify-between border-b border-purple-800/60 pb-2">
-                        <div class="text-left">
-                            <h3 class="text-base font-black text-yellow-300">🍇 Grape Basket Catcher</h3>
-                            <p class="text-[11px] text-purple-300">Catch falling purple grapes into the basket!</p>
-                        </div>
-                        <div class="bg-[#0b0214] px-3 py-1 rounded-xl border border-purple-700/50 text-right">
-                            <span class="text-xs font-bold text-yellow-400 block">Score: <span id="gameScore">0</span></span>
-                            <span class="text-[10px] text-purple-300">Best: <span id="gameHighScore">0</span></span>
-                        </div>
-                    </div>
-
-                    <div class="relative w-full max-w-md mx-auto aspect-[4/3] bg-[#0b0214] border-2 border-purple-600 rounded-2xl overflow-hidden shadow-2xl">
-                        <canvas id="gameCanvas" class="w-full h-full block cursor-pointer"></canvas>
-                        <div id="gameOverlay" class="absolute inset-0 bg-[#0b0214]/90 flex flex-col items-center justify-center p-4 space-y-3">
-                            <span class="text-4xl">🍇👑</span>
-                            <h4 class="text-lg font-black text-yellow-300">Grapes Catcher Arcade</h4>
-                            <p class="text-xs text-purple-200">Move touch / mouse left and right to collect grapes!</p>
-                            <button onclick="startGame()" class="bg-yellow-400 hover:bg-yellow-500 text-gray-950 font-black px-6 py-2.5 rounded-full text-xs shadow-lg transition transform active:scale-95">
-                                <i class="fa-solid fa-play"></i> START GAME
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- AI Video & Voice Studio Tab -->
-            <section id="view-studio" class="tab-content hidden space-y-4">
-                <div class="glass-card p-5 rounded-2xl border border-purple-500/40 space-y-4">
-                    <div class="flex items-center justify-between border-b border-purple-800/60 pb-3">
-                        <div>
-                            <h3 class="text-base font-black text-yellow-300 flex items-center gap-2">
-                                <i class="fa-solid fa-wand-magic-sparkles text-pink-400"></i> AI Video & Voice Studio
-                            </h3>
-                            <p class="text-[11px] text-purple-300">Create custom scripts, generate AI voiceover, and preview stories.</p>
-                        </div>
-                        <span class="bg-purple-900/80 text-yellow-300 text-[10px] font-bold px-2.5 py-1 rounded-full border border-purple-500/40">Studio v2.0</span>
-                    </div>
-
-                    <div class="space-y-3">
-                        <div>
-                            <label class="block text-xs font-semibold text-purple-200 mb-1">Story / Script Prompt:</label>
-                            <textarea id="aiPrompt" rows="3" class="w-full bg-[#0b0214] border border-purple-700/50 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-yellow-400 placeholder-purple-400/50" placeholder="e.g. Write a magical story about Purple Grapes King in the golden vineyard..."></textarea>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <div>
-                                <label class="block text-xs font-semibold text-purple-200 mb-1">Voice Style:</label>
-                                <select id="voiceStyle" class="w-full bg-[#0b0214] border border-purple-700/50 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-yellow-400">
-                                    <option value="story">👑 Royal Storyteller (Deep & Warm)</option>
-                                    <option value="excited">⚡ High Energy Vlogger (Fast & Fun)</option>
-                                    <option value="calm">🌿 Peaceful Farming Guide (Soft & Clear)</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-xs font-semibold text-purple-200 mb-1">Action:</label>
-                                <button onclick="generateAIScript()" class="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-950 font-black py-2 px-4 rounded-xl text-xs transition active:scale-95 flex items-center justify-center gap-2">
-                                    <i class="fa-solid fa-microphone-lines"></i> Generate Voice & Script
-                                </button>
-                            </div>
-                        </div>
-
-                        <div id="studioOutput" class="hidden bg-[#0b0214] border border-purple-700/60 rounded-xl p-4 space-y-3">
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs font-bold text-yellow-300 flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-400"></i> Generated Result</span>
-                                <button onclick="playAIVoice()" class="bg-purple-600 hover:bg-purple-700 text-white font-bold px-3 py-1 rounded-lg text-xs flex items-center gap-1.5">
-                                    <i class="fa-solid fa-play" id="playIcon"></i> <span id="playBtnText">Play Voice</span>
-                                </button>
-                            </div>
-                            <p id="outputText" class="text-xs text-purple-200 leading-relaxed"></p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Guide Tab -->
-            <section id="view-guide" class="tab-content hidden space-y-4">
-                <div class="glass-card p-5 rounded-2xl border border-purple-500/30 space-y-3 text-left">
-                    <h3 class="text-base font-bold text-yellow-300 border-b border-purple-500/30 pb-2 flex items-center gap-2">
-                        <i class="fa-solid fa-seedling text-emerald-400"></i> 🍇 Complete Grape Farming Guide
-                    </h3>
-                    <ul class="text-xs text-purple-200 space-y-2 list-disc pl-4">
-                        <li><strong>Sunlight:</strong> Grape plants require 6 to 8 hours of direct sunlight daily.</li>
-                        <li><strong>Soil:</strong> Well-drained sandy loam soil with good fertility is best.</li>
-                        <li><strong>Planting:</strong> Ideal planting time for grape cuttings is February or March.</li>
-                        <li><strong>Pruning:</strong> Annual winter pruning of old vines doubles harvest efficiency.</li>
-                    </ul>
-                </div>
-            </section>
-        </main>
-    </div>
-
-    <!-- Marquee Banner -->
-    <div class="fixed bottom-0 left-0 w-full bg-yellow-400 text-black font-black py-1.5 shadow-2xl overflow-hidden z-40 text-xs">
-        <div class="animate-marquee">
-            👑 Best Grapes King LIVE Official YouTube Connected Web App +++ Enjoy Videos, Arcade Game & AI Studio +++
-        </div>
-    </div>
-
-    <!-- Navigation Bar -->
-    <nav class="fixed bottom-6 left-0 w-full bg-[#130329]/95 backdrop-blur-xl border-t border-purple-800/60 z-50 px-2 py-1.5 shadow-2xl">
-        <div class="max-w-md mx-auto flex justify-around items-center">
-            <button id="nav-episodes" onclick="switchTab('episodes')" class="nav-item active flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
-                <i class="fa-solid fa-film text-base"></i>
-                <span>Videos</span>
-            </button>
-            <button id="nav-game" onclick="switchTab('game')" class="nav-item flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
-                <i class="fa-solid fa-gamepad text-base"></i>
-                <span>Arcade</span>
-            </button>
-            <button id="nav-studio" onclick="switchTab('studio')" class="nav-item flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
-                <i class="fa-solid fa-wand-magic-sparkles text-base"></i>
-                <span>AI Studio</span>
-            </button>
-            <button id="nav-guide" onclick="switchTab('guide')" class="nav-item flex flex-col items-center gap-0.5 text-purple-300 text-[10px] font-bold py-1 px-3 rounded-xl transition-all">
-                <i class="fa-solid fa-seedling text-base"></i>
-                <span>Guide</span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Video Player Modal -->
-    <div id="videoModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-[99990] hidden items-center justify-center p-4">
-        <div class="bg-[#130329] border border-purple-500/50 rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl relative">
-            <div class="flex justify-between items-center px-4 py-2.5 bg-[#0b0214] border-b border-purple-800/60">
-                <h3 id="modalVideoTitle" class="text-xs sm:text-sm font-bold text-yellow-300 truncate pr-4">Video</h3>
-                <button onclick="closeVideoModal()" class="text-purple-400 hover:text-white">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
-            </div>
-            <div class="aspect-video w-full bg-black">
-                <iframe id="videoIframe" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        let CHANNEL_VIDEOS = [
-            { id: "ufkGKvfRCZA", title: "Purple Grapes Season 3 - Episode 1: The Magic Garden", type: "long", views: "142K", duration: "12:45", date: "2026-06-01" },
-            { id: "gTAsU8cnuiI", title: "Purple Grapes Season 3 - Episode 2: King's Golden Vine", type: "long", views: "98K", duration: "10:15", date: "2026-06-05" },
-            { id: "7D3oQ2RCgVU", title: "Purple Grapes Season 3 - Episode 3: Secret Vineyard Trail", type: "long", views: "110K", duration: "11:20", date: "2026-06-10" },
-            { id: "4sX_yY6bJgw", title: "Purple Grapes Season 3 - Episode 4: The Royal Harvest", type: "long", views: "85K", duration: "09:50", date: "2026-06-15" },
-            { id: "sOlfwPgsiiQ", title: "Purple Grapes Season 2 - Episode 1: Kingdom Secrets", type: "long", views: "250K", duration: "11:30", date: "2026-05-01" }
-        ];
-
-        window.onload = function() {
-            renderEpisodes(CHANNEL_VIDEOS);
-            initGameCanvas();
-            loadHighScore();
-        };
-
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
-
-            const activeView = document.getElementById(`view-${tabId}`);
-            const activeNav = document.getElementById(`nav-${tabId}`);
-
-            if(activeView) activeView.classList.remove('hidden');
-            if(activeNav) activeNav.classList.add('active');
-
-            if(tabId === 'game' && !gameRunning) startGame();
-        }
-
-        function renderEpisodes(list) {
-            const grid = document.getElementById('episodesGrid');
-            if(!list || list.length === 0) {
-                grid.innerHTML = `<div class="col-span-full text-center py-10 text-purple-300 text-xs">No videos found matching your filter.</div>`;
-                return;
-            }
-
-            grid.innerHTML = list.map(ep => `
-                <div class="glass-card rounded-2xl overflow-hidden border-purple-800/40 hover:border-purple-500 transition-all flex flex-col justify-between">
-                    <div class="relative aspect-video bg-purple-950/60 cursor-pointer" onclick="openVideoModal('${ep.id}', '${ep.title.replace(/'/g, "\\'")}')">
-                        <img src="https://img.youtube.com/vi/${ep.id}/hqdefault.jpg" alt="${ep.title}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/640x360/130329/ffeb3b?text=Grapes+King+Live'">
-                        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
-                            <div class="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg transform transition hover:scale-110">
-                                <i class="fa-solid fa-play text-sm ml-0.5"></i>
-                            </div>
-                        </div>
-                        <span class="absolute top-2 left-2 bg-red-600 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase">${ep.type || 'video'}</span>
-                        <span class="absolute bottom-2 right-2 bg-black/80 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">${ep.duration || '10:00'}</span>
-                    </div>
-                    <div class="p-3 space-y-1">
-                        <h3 class="text-xs font-bold text-white truncate hover:text-yellow-300 cursor-pointer" onclick="openVideoModal('${ep.id}', '${ep.title.replace(/'/g, "\\'")}')">${ep.title}</h3>
-                        <div class="flex justify-between items-center text-[10px] text-purple-300/80">
-                            <span><i class="fa-solid fa-eye text-purple-400"></i> ${ep.views || 'Live'} views</span>
-                            <span>${ep.date || 'Recent'}</span>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function filterEpisodes(type) {
-            document.querySelectorAll('.ep-filter-btn').forEach(btn => {
-                btn.className = "ep-filter-btn bg-purple-900/60 text-purple-200 font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap border border-purple-600/30";
-            });
-            event.target.className = "ep-filter-btn bg-yellow-400 text-black font-bold px-3 py-1.5 rounded-xl text-xs whitespace-nowrap";
-
-            if(type === 'all') renderEpisodes(CHANNEL_VIDEOS);
-            else renderEpisodes(CHANNEL_VIDEOS.filter(e => e.type === type));
-        }
-
-        function searchEpisodes() {
-            const query = document.getElementById('episodeSearch').value.toLowerCase();
-            renderEpisodes(CHANNEL_VIDEOS.filter(e => e.title.toLowerCase().includes(query)));
-        }
-
-        function openVideoModal(id, title) {
-            document.getElementById('modalVideoTitle').innerText = title;
-            document.getElementById('videoIframe').src = `https://www.youtube.com/embed/${id}?autoplay=1`;
-            document.getElementById('videoModal').classList.remove('hidden');
-            document.getElementById('videoModal').classList.add('flex');
-        }
-
-        function closeVideoModal() {
-            document.getElementById('videoIframe').src = '';
-            document.getElementById('videoModal').classList.add('hidden');
-            document.getElementById('videoModal').classList.remove('flex');
-        }
-
-        let canvas, ctx;
-        let basket = { x: 160, y: 230, w: 70, h: 25 };
-        let grapes = [];
-        let gameScore = 0;
-        let highScore = 0;
-        let gameRunning = false, gameLoopId = null;
-
-        function loadHighScore() {
-            highScore = parseInt(localStorage.getItem('grapes_high_score') || '0');
-            const el = document.getElementById('gameHighScore');
-            if(el) el.innerText = highScore;
-        }
-
-        function initGameCanvas() {
-            canvas = document.getElementById('gameCanvas');
-            if(!canvas) return;
-            ctx = canvas.getContext('2d');
-            canvas.width = 400; canvas.height = 270;
-
-            const handleMove = (clientX) => {
-                if(!gameRunning) return;
-                const rect = canvas.getBoundingClientRect();
-                const touchX = (clientX - rect.left) * (canvas.width / rect.width);
-                basket.x = Math.max(0, Math.min(canvas.width - basket.w, touchX - basket.w/2));
-            };
-
-            canvas.addEventListener('mousemove', (e) => handleMove(e.clientX));
-            canvas.addEventListener('touchmove', (e) => {
-                if(e.touches && e.touches[0]) handleMove(e.touches[0].clientX);
-            }, { passive: true });
-        }
-
-        function startGame() {
-            document.getElementById('gameOverlay').classList.add('hidden');
-            gameScore = 0; grapes = [];
-            document.getElementById('gameScore').innerText = '0';
-            gameRunning = true;
-            if(gameLoopId) cancelAnimationFrame(gameLoopId);
-            gameLoop();
-        }
-
-        function gameLoop() {
-            if(!gameRunning) return;
-            ctx.fillStyle = "#0b0214";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            if(Math.random() < 0.05) {
-                grapes.push({ x: Math.random() * (canvas.width - 20) + 10, y: -10, r: 9, speed: 2.2 + Math.random() * 2 });
-            }
-
-            for(let i = grapes.length - 1; i >= 0; i--) {
-                let g = grapes[i];
-                g.y += g.speed;
-                ctx.beginPath();
-                ctx.arc(g.x, g.y, g.r, 0, Math.PI * 2);
-                ctx.fillStyle = '#9c27b0';
-                ctx.fill();
-
-                if(g.y + g.r >= basket.y && g.x >= basket.x && g.x <= basket.x + basket.w) {
-                    gameScore += 10;
-                    document.getElementById('gameScore').innerText = gameScore;
-                    if(gameScore > highScore) {
-                        highScore = gameScore;
-                        localStorage.setItem('grapes_high_score', highScore);
-                        document.getElementById('gameHighScore').innerText = highScore;
-                    }
-                    grapes.splice(i, 1);
-                    continue;
-                }
-                if(g.y > canvas.height + 20) grapes.splice(i, 1);
-            }
-
-            ctx.fillStyle = "#ffeb3b";
-            ctx.fillRect(basket.x, basket.y, basket.w, basket.h);
-            gameLoopId = requestAnimationFrame(gameLoop);
-        }
-
-        function generateAIScript() {
-            const prompt = document.getElementById('aiPrompt').value.trim() || "Welcome to Best Grapes King LIVE! Enjoy our magical purple grapes series and harvest adventures.";
-            const style = document.getElementById('voiceStyle').value;
-            
-            let generatedText = `👑 [Best Grapes King AI Studio]: ${prompt} (Style: ${style.toUpperCase()}) - Fresh magical grape storyline generated successfully for your next episode!`;
-            
-            document.getElementById('outputText').innerText = generatedText;
-            document.getElementById('studioOutput').classList.remove('hidden');
-        }
-
-        function playAIVoice() {
-            const text = document.getElementById('outputText').innerText;
-            if(!text) return;
-            
-            if ('speechSynthesis' in window) {
-                window.speechSynthesis.cancel();
-                const utterance = new SpeechSynthesisUtterance(text);
-                utterance.rate = 1.0;
-                utterance.pitch = 1.1;
-                
-                const playBtn = document.getElementById('playBtnText');
-                const playIcon = document.getElementById('playIcon');
-                
-                playBtn.innerText = "Speaking...";
-                playIcon.className = "fa-solid fa-spinner fa-spin";
-                
-                utterance.onend = function() {
-                    playBtn.innerText = "Play Voice";
-                    playIcon.className = "fa-solid fa-play";
-                };
-                
-                window.speechSynthesis.speak(utterance);
-            } else {
-                alert("Text-to-speech is not supported in your browser.");
-            }
-        }
-
-        function changeWebsiteLanguage() {
-            const lang = document.getElementById('siteLang').value;
-        }
-    </script>
-</body>
-</html>
-
-```
