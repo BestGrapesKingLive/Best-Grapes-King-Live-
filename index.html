@@ -1,3 +1,518 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Grapes 🍇 King 👑 Live</title>
+
+    <style>
+        :root {
+            --bg-color: #0b0712;
+            --card-bg: #160d22;
+            --accent-purple: #9b59b6;
+            --accent-bright: #8e44ad;
+            --text-main: #f5f3f7;
+            --text-secondary: #b19cd9;
+            --border-color: #2c163b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: var(--bg-color);
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(142, 68, 173, 0.2);
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1f0b2e, #100519);
+            padding: 20px;
+            border-bottom: 2px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 1.15rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .lang-select {
+            background-color: var(--card-bg);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            padding: 6px 8px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            outline: none;
+            cursor: pointer;
+            max-width: 105px;
+        }
+
+        .subscribe-btn {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, #8e44ad, #6c3483);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(142, 68, 173, 0.4);
+            transition: opacity 0.2s;
+        }
+
+        .subscribe-btn:active {
+            opacity: 0.8;
+        }
+
+        .search-container {
+            margin-top: 15px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 15px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .search-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .video-list {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .video-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .video-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            line-height: 1.5;
+            overflow-wrap: anywhere;
+        }
+
+        .video-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            overflow-wrap: anywhere;
+        }
+
+        .watch-btn {
+            align-self: flex-start;
+            background-color: #2c163b;
+            color: var(--text-secondary);
+            border: 1px solid var(--accent-purple);
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .watch-btn:hover {
+            background-color: var(--accent-purple);
+            color: white;
+        }
+
+        .no-results {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-top: 40px;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            padding: 18px 15px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="app-container">
+
+        <header>
+            <div class="header-top">
+                <h1 id="app-title">Best Grapes 🍇 King 👑 Live</h1>
+
+                <select class="lang-select"
+                        id="langSelect"
+                        onchange="changeLanguage(this.value)"
+                        aria-label="Choose language">
+                    <option value="en">English</option>
+                    <option value="ur">اردو</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="ar">العربية</option>
+                    <option value="bn">বাংলা</option>
+                    <option value="pa">ਪੰਜਾਬੀ</option>
+                    <option value="zh">中文</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="tr">Türkçe</option>
+                    <option value="id">Indonesian</option>
+                    <option value="pt">Português</option>
+                    <option value="ja">日本語</option>
+                    <option value="ko">한국어</option>
+                    <option value="fa">فارسی</option>
+                    <option value="ps">پښتو</option>
+                </select>
+            </div>
+
+            <a
+                href="https://youtube.com/@bestgrapeskinglive-k7f2q?si=2Kuhu93v4jZEk_E0"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="subscribe-btn"
+                id="subBtn">
+                Subscribe to Channel
+            </a>
+
+            <div class="search-container">
+                <input
+                    type="text"
+                    class="search-input"
+                    id="searchInput"
+                    placeholder="Search videos by title..."
+                    oninput="filterVideos()"
+                    aria-label="Search videos">
+            </div>
+        </header>
+
+        <main class="video-list" id="videoList">
+            <!-- Videos are rendered here by JavaScript. -->
+        </main>
+
+        <footer>
+            Best Grapes 🍇 King 👑 Live
+        </footer>
+    </div>
+
+    <script>
+        const translations = {
+            en: {
+                title: "Best Grapes 🍇 King 👑 Live",
+                subscribe: "Subscribe to Channel",
+                searchPlaceholder: "Search videos by title...",
+                watch: "Watch Video",
+                post: "Open Post",
+                noResults: "No videos found"
+            },
+            ur: {
+                title: "گریپس 🍇 کنگ 👑",
+                subscribe: "چینل سبسکرائب کریں",
+                searchPlaceholder: "ویڈیوز کے عنوان سے تلاش کریں...",
+                watch: "ویڈیو دیکھیں",
+                post: "پوسٹ کھولیں",
+                noResults: "کوئی ویڈیو نہیں ملی"
+            },
+            hi: {
+                title: "बेस्ट ग्रेप्स 🍇 किंग 👑 लाइव",
+                subscribe: "चैनल सब्सक्राइब करें",
+                searchPlaceholder: "वीडियो के शीर्षक से खोजें...",
+                watch: "वीडियो देखें",
+                post: "पोस्ट खोलें",
+                noResults: "कोई वीडियो नहीं मिला"
+            },
+            ar: {
+                title: "أفضل العنب 🍇 الملك 👑 لايف",
+                subscribe: "اشترك في القناة",
+                searchPlaceholder: "ابحث عن الفيديوهات...",
+                watch: "شاهد الفيديو",
+                post: "فتح المنشور",
+                noResults: "لم يتم العثور على فيديوهات"
+            },
+            bn: {
+                title: "বেস্ট গ্রেপস 🍇 কিং 👑 লাইভ",
+                subscribe: "চ্যানেল সাবস্ক্রাইব করুন",
+                searchPlaceholder: "ভিডিওর শিরোনাম দিয়ে খুঁজুন...",
+                watch: "ভিডিও দেখুন",
+                post: "পোস্ট খুলুন",
+                noResults: "কোনো ভিডিও পাওয়া যায়নি"
+            },
+            pa: {
+                title: "ਬੈਸਟ ਗ੍ਰੇਪਸ 🍇 ਕਿੰਗ 👑 ਲਾਈਵ",
+                subscribe: "ਚੈਨਲ ਸਬਸਕ੍ਰਾਈਬ ਕਰੋ",
+                searchPlaceholder: "ਵੀਡੀਓ ਦੇ ਸਿਰਲੇਖ ਨਾਲ ਖੋਜੋ...",
+                watch: "ਵੀਡੀਓ ਦੇਖੋ",
+                post: "ਪੋਸਟ ਖੋਲ੍ਹੋ",
+                noResults: "ਕੋਈ ਵੀਡੀਓ ਨਹੀਂ ਮਿਲੀ"
+            },
+            zh: {
+                title: "最佳葡萄 🍇 国王 👑 直播",
+                subscribe: "订阅频道",
+                searchPlaceholder: "按标题搜索视频...",
+                watch: "观看视频",
+                post: "打开帖子",
+                noResults: "未找到视频"
+            },
+            es: {
+                title: "Best Grapes 🍇 King 👑 Live",
+                subscribe: "Suscribirse al canal",
+                searchPlaceholder: "Buscar vídeos por título...",
+                watch: "Ver vídeo",
+                post: "Abrir publicación",
+                noResults: "No se encontraron vídeos"
+            },
+            fr: {
+                title: "Best Grapes 🍇 King 👑 Live",
+                subscribe: "S'abonner à la chaîne",
+                searchPlaceholder: "Rechercher par titre...",
+                watch: "Regarder la vidéo",
+                post: "Ouvrir la publication",
+                noResults: "Aucune vidéo trouvée"
+            },
+            de: {
+                title: "Best Grapes 🍇 King 👑 Live",
+                subscribe: "Kanal abonnieren",
+                searchPlaceholder: "Videos nach Titel suchen...",
+                watch: "Video ansehen",
+                post: "Beitrag öffnen",
+                noResults: "Keine Videos gefunden"
+            },
+            tr: {
+                title: "Best Grapes 🍇 King 👑 Live",
+                subscribe: "Kanala Abone Ol",
+                searchPlaceholder: "Videoları başlığa göre ara...",
+                watch: "Videoyu İzle",
+                post: "Gönderiyi Aç",
+                noResults: "Video bulunamadı"
+            },
+            id: {
+                title: "Best Grapes 🍇 King 👑 Live",
+                subscribe: "Berlangganan",
+                searchPlaceholder: "Cari video berdasarkan judul...",
+                watch: "Tonton Video",
+                post: "Buka Postingan",
+                noResults: "Video tidak ditemukan"
+            },
+            pt: {
+                title: "Best Grapes 🍇 King 👑 Live",
+                subscribe: "Inscrever-se no canal",
+                searchPlaceholder: "Pesquisar vídeos por título...",
+                watch: "Assistir ao vídeo",
+                post: "Abrir publicação",
+                noResults: "Nenhum vídeo encontrado"
+            },
+            ja: {
+                title: "Best Grapes 🍇 King 👑 Live",
+                subscribe: "チャンネル登録",
+                searchPlaceholder: "タイトルで動画を検索...",
+                watch: "動画を見る",
+                post: "投稿を開く",
+                noResults: "動画が見つかりません"
+            },
+            ko: {
+                title: "Best Grapes 🍇 King 👑 Live",
+                subscribe: "채널 구독",
+                searchPlaceholder: "제목으로 동영상 검색...",
+                watch: "동영상 보기",
+                post: "게시물 열기",
+                noResults: "동영상을 찾을 수 없습니다"
+            },
+            fa: {
+                title: "بهترین انگور 🍇 پادشاه 👑 زنده",
+                subscribe: "عضویت در کانال",
+                searchPlaceholder: "جستجو بر اساس عنوان...",
+                watch: "تماشای ویدیو",
+                post: "باز کردن پست",
+                noResults: "ویدیویی پیدا نشد"
+            },
+            ps: {
+                title: "Best Grapes 🍇 King 👑 Live",
+                subscribe: "چینل سبسکرایب کړئ",
+                searchPlaceholder: "د ویډیو سرلیک ولټوئ...",
+                watch: "ویډیو وګورئ",
+                post: "پوسټ خلاص کړئ",
+                noResults: "ویډیو ونه موندل شوه"
+            }
+        };
+
+        const rtlLangs = ["ur", "ar", "fa", "ps"];
+
+        const videos = [
+            // NEW SHORT LINK (Ep 1 Episode 1 Part 2)
+            {
+                title: "WHAT HAPPENED IN THE VINEYARD? 😱 Purple Grapes 🍇 Ka Chhupa Hua Raaz | Ep 1 Episode 1 Part 2",
+                description: "Watch Part 2 of Episode 1! Continue following the mystery and suspense in the vineyard on Best Grapes King Live.",
+                url: "Https://youtube.com/shorts/TxtJ1GB3V8Y?si=_m-PeeixAAKue935"
+            },
+            {
+                title: "WHAT HAPPENED IN THE VINEYARD? 😱 Purple Grapes 🍇 Ka Chhupa Hua Raaz | Ep 1 Part 1",
+                description: "Watch Part 1 of Episode 1! Follow the beginning of the mystery in the vineyard on Best Grapes King Live.",
+                url: "Https://youtube.com/shorts/Ri34cU7qVqk?si=RBbScR7Ekjmb1Nnh"
+            },
+            {
+                title: "Purple Grapes 🍇 Season 4 Episode 6",
+                description: "Watch Season 4 Episode 6 of Purple Grapes Ka Chhupa Hua Raaz! Continue following the thrilling mystery and vineyard adventures on Best Grapes King Live.",
+                url: "Https://youtu.be/mNe92Oe8lGw?si=NLrS7u6jH4QwPB4O"
+            },
+            {
+                title: "WHAT HAPPENED IN THE VINEYARD? 😱 Purple Grapes 🍇 Ka Chhupa Hua Raaz | Ep 1",
+                description: "Watch Episode 1 of Purple Grapes Ka Chhupa Hua Raaz! Discover what happened in the vineyard and who is behind the mystery.",
+                url: "https://youtu.be/tMOM6MF2QWo?si=9bb4TuFjeZ1BqHxl"
+            },
+            {
+                title: "Purple Grapes Ka Chhupa Hua Raaz — Official Song 🎶",
+                description: "Listen to the official song of Purple Grapes Ka Chhupa Hua Raaz! Enjoy the melodious tracks and musical vibe of the series on Best Grapes King Live.",
+                url: "https://youtu.be/2RcefNbE-Xk?si=PlTWa1x6tVX4pHF8"
+            },
+            {
+                title: "Purple Grapes Ka Chhupa Hua Raaz — Episode 1 Introduction",
+                description: "An introduction to Episode 1 of the Purple Grapes story. Watch the video to learn more about the story.",
+                url: "https://youtu.be/w8vFRGHLTns?si=An_XaUiMsMXoGYcM"
+            },
+            {
+                title: "Official Trailer 2",
+                description: "Watch the second official trailer and discover the drama title.",
+                url: "https://youtu.be/aaPeDI0wcGQ?si=elHvsCxect28WYH_"
+            },
+            {
+                title: "Official Trailer 1",
+                description: "Watch the first official trailer and enjoy a preview of the upcoming drama.",
+                url: "https://youtu.be/k9S9YPGz2so?si=It1WbNWj5bOd9H4f"
+            },
+            {
+                title: "Best Grapes King Live — Channel Announcement",
+                description: "A channel announcement inviting viewers to subscribe and stay updated about upcoming videos.",
+                url: "https://youtu.be/K-APxCziai0?si=Gpa9eSOWy36YAPMj"
+            },
+            {
+                title: "A New Drama Is Coming Soon",
+                description: "An announcement teasing a new drama coming soon.",
+                url: "https://youtu.be/tzD3GVEREXM?si=KVP4BQQWIl4-GzQs"
+            },
+            {
+                title: "Purple Grapes — Season 4 Episode 4",
+                description: "Watch Episode 4 of Season 4 and continue the Purple Grapes story.",
+                url: "https://youtu.be/hT8kPR7P2Do?si=XtzbN2gCP-EFmil_"
+            },
+            {
+                title: "Purple Grapes Ka Chhupa Hua Raaz — Season 4 Episode 5",
+                description: "Watch Season 4 Episode 5 and continue the story.",
+                url: "https://youtu.be/j_zrUQTiTAM?si=Yl6PjuZbPMgMMRAV"
+            },
+            {
+                title: "Season 4 Announcement",
+                description: "An announcement about Season 4 and the continuation of the series.",
+                url: "https://youtu.be/4VglmJTdEYI?si=tQRL3QYPAnMiVViD"
+            },
+            {
+                title: "Purple Grapes — Season 4 Episode 3",
+                description: "Watch Episode 3 of Season 4.",
+                url: "https://youtu.be/qVSy7SLrFqs?si=G6HupaCBrOvZyoyA"
+            },
+            {
+                title: "Purple Grapes — Season 4 Episode 2",
+                description: "Watch Episode 2 of Season 4.",
+                url: "https://youtu.be/eBfA00aa1-4?si=3LyUhYjFXLk9FEey"
+            },
+            {
+                title: "Purple Grapes — Season 4 Episode 1",
+                description: "Watch the first episode of Season 4.",
+                url: "https://youtu.be/qITtO9Z40L0?si=Y3M_4fsiU6CADyqf"
+            },
+            {
+                title: "The Rayan Games — New Gaming Channel",
+                description: "Discover the announcement of the new gaming channel, The Rayan Games.",
+                url: "https://youtu.be/vk2kYgEV8bc?si=KGNly7wKRlnKXWQd"
+            },
+            {
+                title: "Website Update Announcement",
+                description: "Watch the video about an update to the website.",
+                url: "https://youtu.be/CaGaDe9Vhms?si=-GqUucUnBdp4Gz2S"
+            },
+            {
+                title: "My New Website",
+                description: "Watch the announcement introducing a new website.",
+                url: "https://youtu.be/bgQZ4GaiXd0?si=9Ws1aKmRN6cdeb54"
+            },
+            {
+                title: "Channel Security Announcement",
+                description: "Watch the video discussing the channel hacking incident.",
+                url: "https://youtu.be/XdBCS6Tpi6A?si=-eGanUP4qSnu41Tx"
+            },
+            {
+                title: "Purple Grapes — Season 3 Episode 1",
+                description: "Watch Season 3 Episode 1 of Purple Grapes.",
+                url: "https://youtu.be/ufkGKvfRCZA?si=3LAOrGZKlNKnQlL9"
+            },
+            {
+                title: "MY CHANNEL WAS HACKED?! 😱 The Truth Behind the Prank!",
+                description: "A channel hacking prank announcement! A post showed the launch date of Purple Grapes کا چھپا ہوا راز as October 23, 2026. The apparent hacking was part of a prank. The drama is scheduled to launch on October 23, 2026. Subscribe to Best Grapes King Live for updates!",
+                url: "https://youtu.be/KcXPtAv-6VA?si=1bvV_di1ewUyP3KU"
+            },
+            {
+                title: "Purple Grapes کا چھپا ہوا راز 🍇 | COMING SOON",
+                description: "A short teaser featuring another person announcing the upcoming drama Purple Grapes کا چھپا ہوا راز. The scheduled launch date is October 23, 2026.",
+                url: "https://youtube.com/shorts/6EI5wAy2YEM?si=ox4b53p7HaZ5sQMA"
+            },
+            {
+                title: "A Deep Secret in the World of Grapes! 🍇 | COMING SOON",
+                description: "An AI-generated video announces that a deep secret is hidden in the world of grapes. Purple Grapes کا چھپا ہوا راز is coming soon! Launch date: October 23, 2026.",
+                url: "https://youtube.com/shorts/fpYF_w3nCNU?si=QNJO4fK808iMziAq"
+            },
+            {
+                title: "NEW SHOW COMING SOON! 🍇👑 | Rayan",
+                description: "An AI-generated promotional Short featuring Rayan's photo to promote the upcoming 
+
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
